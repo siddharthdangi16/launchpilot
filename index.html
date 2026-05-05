@@ -486,16 +486,98 @@
     .hero .ctas{align-items:flex-start;justify-self:start}
     nav.top ul{display:none}
   }
+
+  @media (max-width: 768px){
+    /* ── 1. Hero meta-row — stop collision ── */
+    .hero .meta-row{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+      padding-bottom:14px}
+    .hero .meta-row .l{gap:16px;flex-wrap:wrap}
+    .hero .meta-row .r{
+      display:none} /* hide the right-side "factory of entrepreneurs" on mobile */
+    .hero h1{font-size:clamp(38px,10vw,72px);margin-top:16px}
+    .hero{padding:56px 0 32px}
+    .hero .sub-row{
+      grid-template-columns:1fr;
+      gap:20px;margin-top:16px;padding-top:16px}
+    .hero .sub-row .lede{font-size:18px;max-width:100%}
+    .hero .ctas{flex-direction:column;align-items:flex-start;gap:10px}
+
+    /* ── 2. Students/startup grid — 2 cols, auto height ── */
+    .startup-grid{grid-template-columns:repeat(2,1fr) !important;gap:1px}
+    .startup{aspect-ratio:auto !important;min-height:0;padding:18px}
+    .startup .nm{font-size:16px}
+    .startup .by{font-size:9px}
+    .startup .desc{font-size:12px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+    .startup .raised{font-size:9px}
+
+    /* ── 3. City list — 2 cols, no overflow ── */
+    .city-list{
+      grid-template-columns:repeat(2,1fr) !important;
+      gap:8px;overflow:hidden}
+    .city{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;padding:10px}
+    .city .num{font-size:9px}
+    .city .nm{font-size:14px}
+    .city .meta{font-size:8px;text-align:left}
+
+    /* ── 4. Mentor rows — uniform card size across all rows ── */
+    .m-card{
+      padding:10px 14px;
+      gap:10px;
+      min-width:0}
+    .m-card .ph{width:36px;height:36px;flex-shrink:0}
+    .m-card .nm{font-size:14px}
+    .m-card .role{font-size:8px;letter-spacing:.04em}
+    .m-row{height:auto}
+
+    /* ── 5. Last section — partners & investors 2 cols ── */
+    .pp-card,.iv-card{padding:16px 8px}
+    .pp-nm{font-size:12px}
+    .pp-rl{font-size:8px}
+    .iv-nm{font-size:13px}
+    .iv-rl{font-size:8px}
+
+    /* ── General ── */
+    .wrap,nav.top .inner{padding-left:20px;padding-right:20px}
+    .sec-head{grid-template-columns:1fr;gap:10px}
+    .sec-head .aside{text-align:left;max-width:100%}
+    .program{grid-template-columns:1fr;gap:12px;padding:24px 0}
+    .programs{grid-template-columns:1fr}
+    .numbers{grid-template-columns:repeat(2,1fr)}
+    .num-cell:nth-child(2){border-right:0}
+
+    /* Podcast cards smaller */
+    .podcast-card{flex:0 0 260px !important}
+    .podcast-thumb{width:260px !important;height:146px !important}
+    .podcast-thumb img{width:260px !important;height:146px !important}
+
+    /* Reel cards smaller */
+    .reel-card{flex:0 0 150px !important}
+    .reel-thumb{width:150px !important;height:260px !important}
+    .reel-thumb img{width:150px !important;height:260px !important}
+
+    /* News cards smaller */
+    .news-card{flex:0 0 200px !important}
+    .news-img-box{width:200px !important;height:260px !important}
+    .news-img-box img{width:200px !important;height:260px !important}
+  }
+
+  @media (max-width: 480px){
+    .hero h1{font-size:clamp(32px,11vw,56px)}
+    .startup-grid{grid-template-columns:1fr !important}
+    .city-list{grid-template-columns:repeat(2,1fr) !important}
+    .numbers{grid-template-columns:1fr;border-bottom:0}
+    .num-cell{border-right:0;border-bottom:.5px solid rgba(245,238,216,0.12)}
+  }
+
   @media (max-width: 720px){
-    .wrap, nav.top .inner{padding-left:24px;padding-right:24px}
     .sec-head{grid-template-columns:1fr;gap:12px}
     .sec-head .aside{text-align:left}
-    .program{grid-template-columns: 1fr;gap:14px;padding:32px 0}
-    .programs{grid-template-columns:1fr}
-    .mentor-grid{grid-template-columns:repeat(2,1fr);gap:20px}
-    .city{grid-template-columns:72px 1fr;gap:14px}
-    .city .meta{grid-column:2;text-align:left}
-    .numbers{grid-template-columns:1fr;border-bottom:0}
     .num-cell{border-right:0;border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
   }
 </style>
@@ -921,7 +1003,7 @@
     <div class="news-fade-l"></div>
     <div class="news-fade-r"></div>
     <div class="news-track" id="news-track" style="display:flex;flex-direction:row;flex-wrap:nowrap;width:max-content">
-      <div class="news-card" style="flex:0 0 280px;flex-shrink:0;display:flex;flex-direction:column;gap:10px;cursor:pointer"><div class="news-img-box" style="width:280px;height:340px;overflow:hidden;position:relative;flex-shrink:0;border-radius:12px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s"><img src="images/podcast/01.jpg" alt="" onerror="this.style.opacity='0'" style="position:absolute;top:0;left:0;width:360px;height:202px;object-fit:cover;object-position:center;display:block;max-width:none"></div><div style="padding:0 2px"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#e07a3a;margin-bottom:4px">Forbes India</div><div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3">The startup school changing how India builds companies</div></div></div>
+      <div class="news-card" style="flex:0 0 280px;flex-shrink:0;display:flex;flex-direction:column;gap:10px;cursor:pointer"><div class="news-img-box" style="width:280px;height:340px;overflow:hidden;position:relative;flex-shrink:0;border-radius:12px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s"><img src="images/news/01.jpg" alt="" onerror="this.style.opacity='0'" style="position:absolute;top:0;left:0;width:280px;height:340px;object-fit:cover;object-position:top center;display:block;max-width:none"></div><div style="padding:0 2px"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#e07a3a;margin-bottom:4px">Forbes India</div><div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3">The startup school changing how India builds companies</div></div></div>
       <div class="news-card" style="flex:0 0 280px;flex-shrink:0;display:flex;flex-direction:column;gap:10px;cursor:pointer"><div class="news-img-box" style="width:280px;height:340px;overflow:hidden;position:relative;flex-shrink:0;border-radius:12px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s"><img src="images/news/02.jpg" alt="" onerror="this.style.opacity='0'" style="position:absolute;top:0;left:0;width:280px;height:340px;object-fit:cover;object-position:top center;display:block;max-width:none"></div><div style="padding:0 2px"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#e07a3a;margin-bottom:4px">Economic Times</div><div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3">Inside LaunchPilot — where founders are forged</div></div></div>
       <div class="news-card" style="flex:0 0 280px;flex-shrink:0;display:flex;flex-direction:column;gap:10px;cursor:pointer"><div class="news-img-box" style="width:280px;height:340px;overflow:hidden;position:relative;flex-shrink:0;border-radius:12px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s"><img src="images/news/03.jpg" alt="" onerror="this.style.opacity='0'" style="position:absolute;top:0;left:0;width:280px;height:340px;object-fit:cover;object-position:top center;display:block;max-width:none"></div><div style="padding:0 2px"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#e07a3a;margin-bottom:4px">TechCrunch</div><div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3">This programme sends founders to 6 countries in 12 months</div></div></div>
       <div class="news-card" style="flex:0 0 280px;flex-shrink:0;display:flex;flex-direction:column;gap:10px;cursor:pointer"><div class="news-img-box" style="width:280px;height:340px;overflow:hidden;position:relative;flex-shrink:0;border-radius:12px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s"><img src="images/news/04.jpg" alt="" onerror="this.style.opacity='0'" style="position:absolute;top:0;left:0;width:280px;height:340px;object-fit:cover;object-position:top center;display:block;max-width:none"></div><div style="padding:0 2px"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#e07a3a;margin-bottom:4px">YourStory</div><div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3">From idea to investor pitch in one year flat</div></div></div>
@@ -1622,6 +1704,109 @@ function TweaksPanel({ title = 'Tweaks', children }) {
   .iv-rl{font-family:'JetBrains Mono',monospace!important;font-size:10px;
     letter-spacing:.06em;text-transform:uppercase;
     color:rgba(245,238,216,0.5);line-height:1.4;margin-top:2px}
+
+  /* ═══════════════════════════════════════════════════════
+     MOBILE RESPONSIVE — covers all sections
+  ═══════════════════════════════════════════════════════ */
+
+  /* Add viewport meta if missing — handled in <head> */
+
+  @media (max-width: 768px){
+
+    /* ── Global ── */
+    .wrap, nav.top .inner{ padding-left:20px; padding-right:20px }
+    h2{ font-size:clamp(28px,8vw,44px) }
+
+    /* ── Nav ── */
+    nav.top ul{ display:none }
+    .brand .word{ font-size:14px }
+
+    /* ── Hero ── */
+    .hero{ padding:64px 0 36px }
+    .hero h1{ font-size:clamp(40px,11vw,80px); margin-top:20px }
+    .hero .sub-row{
+      grid-template-columns:1fr;
+      gap:24px; margin-top:20px; padding-top:20px }
+    .hero .sub-row .lede{ font-size:18px; max-width:100% }
+    .hero .ctas{ flex-direction:column; align-items:flex-start; gap:12px }
+    .hero .meta-row .l{ gap:16px; flex-wrap:wrap }
+
+    /* ── Programs ── */
+    .programs{ grid-template-columns:1fr }
+    .program{ grid-template-columns:1fr; gap:12px; padding:28px 0 }
+
+    /* ── Map / City list ── */
+    .globe-wrap{ grid-template-columns:1fr }
+    .city-list{ grid-template-columns:repeat(2,1fr) !important }
+    .city{ flex-direction:column; gap:4px; padding:10px }
+    .city .meta{ font-size:9px }
+
+    /* ── Numbers ── */
+    .numbers{ grid-template-columns:repeat(2,1fr) }
+    .num-cell{ border-right:0; border-bottom:.5px solid rgba(245,238,216,0.12) }
+
+    /* ── Startup / founders grid ── */
+    .startup-grid{ grid-template-columns:repeat(2,1fr) !important }
+    .startup{ aspect-ratio:auto; min-height:180px }
+
+    /* ── Cohort strip — keep as is (already horizontal scroll) ── */
+
+    /* ── Mentor marquee — reduce card gap on mobile ── */
+    .m-card{ gap:10px; padding:10px 14px }
+    .m-card .ph{ width:40px; height:40px }
+
+    /* ── Section headings ── */
+    .sec-head{ grid-template-columns:1fr; gap:10px }
+    .sec-head .aside{ text-align:left; max-width:100% }
+
+    /* ── Partners grid ── */
+    .pgrid, [style*="grid-template-columns:repeat(5,1fr)"],
+    [style*="grid-template-columns: repeat(5,1fr)"]{
+      grid-template-columns:repeat(2,1fr) !important }
+
+    /* ── Investors grid ── */
+    [style*="grid-template-columns:repeat(4,1fr)"],
+    [style*="grid-template-columns: repeat(4,1fr)"]{
+      grid-template-columns:repeat(2,1fr) !important }
+
+    /* ── pp-card & iv-card text ── */
+    .pp-nm{ font-size:14px }
+    .iv-nm{ font-size:15px }
+
+    /* ── Podcast cards ── */
+    .podcast-card{ flex:0 0 280px !important }
+    .podcast-thumb{ width:280px !important; height:157px !important }
+    .podcast-thumb img{ width:280px !important; height:157px !important }
+
+    /* ── Reel cards — slightly smaller ── */
+    .reel-card{ flex:0 0 160px !important }
+    .reel-thumb{ width:160px !important; height:280px !important }
+    .reel-thumb img{ width:160px !important; height:280px !important }
+
+    /* ── News cards — slightly smaller ── */
+    .news-card{ flex:0 0 220px !important }
+    .news-img-box{ width:220px !important; height:280px !important }
+    .news-img-box img{ width:220px !important; height:280px !important }
+
+    /* ── CTA ── */
+    .cta-block h2{ font-size:clamp(28px,9vw,52px) }
+    .cta-block .ctas{ flex-direction:column; align-items:center }
+
+    /* ── Footer ── */
+    footer .inner{ flex-direction:column; gap:24px }
+    footer nav{ flex-wrap:wrap; gap:12px }
+  }
+
+  @media (max-width: 480px){
+    .hero h1{ font-size:clamp(36px,12vw,64px) }
+    .startup-grid{ grid-template-columns:1fr !important }
+    .city-list{ grid-template-columns:1fr !important }
+    [style*="grid-template-columns:repeat(5,1fr)"],
+    [style*="grid-template-columns: repeat(5,1fr)"],
+    [style*="grid-template-columns:repeat(4,1fr)"]{
+      grid-template-columns:repeat(2,1fr) !important }
+    .numbers{ grid-template-columns:1fr }
+  }
 </style>
       <div ref={dragRef} className="twk-panel" data-noncommentable=""
            style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
@@ -2410,6 +2595,37 @@ Object.assign(window, {
   cards.forEach((card,i)=>{card.style.opacity='0';card.style.transform='translateY(28px)';card.style.transition=`opacity 0.55s ease ${(i%5)*0.08+Math.floor(i/5)*0.05}s, transform 0.55s ease ${(i%5)*0.08+Math.floor(i/5)*0.05}s`;});
   const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
   cards.forEach(c=>io.observe(c));
+})();
+</script>
+
+
+<script>
+(function(){
+  function applyMobileGrids(){
+    if(window.innerWidth <= 768){
+      // Partners grid
+      document.querySelectorAll('.pp-card').forEach(function(card){
+        var grid = card.parentElement;
+        if(grid) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+      });
+      // Investors grid
+      document.querySelectorAll('.iv-card').forEach(function(card){
+        var grid = card.parentElement;
+        if(grid) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+      });
+    } else {
+      document.querySelectorAll('.pp-card').forEach(function(card){
+        var grid = card.parentElement;
+        if(grid) grid.style.gridTemplateColumns = 'repeat(5,1fr)';
+      });
+      document.querySelectorAll('.iv-card').forEach(function(card){
+        var grid = card.parentElement;
+        if(grid) grid.style.gridTemplateColumns = 'repeat(4,1fr)';
+      });
+    }
+  }
+  applyMobileGrids();
+  window.addEventListener('resize', applyMobileGrids);
 })();
 </script>
 
