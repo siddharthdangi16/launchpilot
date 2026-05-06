@@ -281,7 +281,7 @@ section{padding:96px 0}
   filter:grayscale(10%);transition:filter .4s,transform .5s}
 .g-box:hover img{filter:grayscale(0%);transform:scale(1.04)}
 .g-box.tall{grid-row:span 2}
-.g-box.wide{grid-column:span 2}
+
 .g-lbl{position:absolute;bottom:12px;left:14px;
   font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
   color:rgba(245,238,216,0.55)}
@@ -425,46 +425,201 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 .aj-line.lit::after{transform:scaleX(1)}
 
 /* ── MOBILE ── */
+
+/* ── Hamburger ── */
 @media(max-width:768px){
-  .wrap,.nav-inner,footer{padding-left:20px;padding-right:20px}
-  .nav-ul{display:none}
-  .hero{min-height:auto;padding:100px 0 60px}
-  .hero h1{font-size:clamp(42px,12vw,80px)}
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero-nums{grid-template-columns:repeat(2,1fr)}
-  .hl-row{flex-direction:column}
-  .hl{border-right:0;border-bottom:.5px solid rgba(245,238,216,0.08)}
-  .stats-strip{grid-template-columns:repeat(3,1fr)}
-  .for-grid{grid-template-columns:1fr}
-  .mod-in{grid-template-columns:1fr}
-  .mod-hd{grid-template-columns:60px 1fr auto;padding:20px}
-  .mod-in{padding:4px 20px 24px}
-  .sig-grid{grid-template-columns:repeat(2,1fr)}
-  .ai-grid{grid-template-columns:repeat(2,1fr)}
-  .city-row{grid-template-columns:repeat(2,1fr)}
-  .launches{grid-template-columns:repeat(2,1fr)!important}
-  .lcard{aspect-ratio:auto;min-height:180px}
-  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}
-  .g-box.tall{grid-row:span 1}
-  .testi-grid{grid-template-columns:1fr}
-  .oc-grid{grid-template-columns:repeat(2,1fr)}
-  .accred-inner{flex-direction:column;gap:12px}
-  .ai-benefit-bar{flex-direction:column;gap:12px}
-  .labs-grid{grid-template-columns:1fr}
-  .journey-track{flex-wrap:wrap;gap:8px}
-  .j-arrow{display:none}
-  .j-step{min-width:calc(50% - 8px);flex:0 0 calc(50% - 8px)}
+  #hamburger{display:flex!important}
 }
 
-/* ── LAUNCHLABS TILES ── */
-.ll-tile{background:var(--ink);padding:36px 32px;display:flex;flex-direction:column;gap:12px;
-  transition:background .25s,transform .3s cubic-bezier(.2,.7,.2,1);cursor:default;position:relative}
-.ll-tile:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 8%);transform:translateY(-3px);z-index:1}
-.ll-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--fire);opacity:.7}
-.ll-icon{font-size:28px;line-height:1;margin:4px 0}
-.ll-name{font-family:"Instrument Serif",Georgia,serif;font-size:22px;font-style:italic;
+/* ═══════════════════════════════════════
+   LAPTOP (1100px and below)
+═══════════════════════════════════════ */
+@media(max-width:1100px){
+  .hl-row{flex-wrap:wrap}
+  .hl{min-width:calc(33.333% - 1px)}
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .hero h1{font-size:clamp(52px,7vw,96px)}
+  .ai-grid{grid-template-columns:repeat(2,1fr)}
+  .oc-grid{grid-template-columns:repeat(2,1fr)}
+  .ll-row{padding:22px 28px}
+  .ll-row-name{font-size:19px}
+  .ll-row-right{padding-left:24px}
+}
+
+/* ═══════════════════════════════════════
+   TABLET (900px and below)
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-nums{grid-template-columns:repeat(2,1fr)}
+  .mod-in{grid-template-columns:1fr}
+  .city-row{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .ll-row{grid-template-columns:1fr;gap:12px}
+  .ll-row-right{padding-left:0;border-left:0;border-top:.5px solid rgba(245,238,216,0.08);padding-top:12px}
+  .ll-row-left{padding-bottom:0}
+  section[style*="grid-template-columns:1fr 1fr"]{--fix:1}
+}
+
+/* ═══════════════════════════════════════
+   MOBILE (768px and below)
+═══════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── Global ── */
+  .wrap,.nav-inner,footer{padding-left:20px;padding-right:20px}
+  section{padding:64px 0}
+
+  /* ── Nav ── */
+  .nav-ul{display:none}
+  .nav-inner{padding-left:20px;padding-right:20px}
+
+  /* ── Hero ── */
+  .hero{min-height:auto;padding:96px 0 52px}
+  .hero h1{font-size:clamp(40px,11vw,72px)}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-nums{grid-template-columns:repeat(2,1fr)}
+  .hero-pills{gap:6px}
+  .pill{font-size:8px;padding:5px 10px}
+  .hero-ctas{flex-direction:column;align-items:flex-start;gap:10px}
+
+  /* ── Accreditation bar ── */
+  .accred-bar{padding:20px}
+  .accred-inner{flex-direction:column;gap:12px;align-items:flex-start}
+  .accred-logos{gap:16px;flex-wrap:wrap}
+
+  /* ── Highlights ── */
+  .hl-row{flex-direction:column}
+  .hl{border-right:0;border-bottom:.5px solid rgba(245,238,216,0.08)}
+
+  /* ── Stats strip ── */
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .ss-v{font-size:26px}
+
+  /* ── Curriculum ── */
+  .mod-hd{grid-template-columns:56px 1fr auto;padding:18px 20px;gap:12px}
+  .mod-in{grid-template-columns:1fr;padding:4px 20px 24px}
+  .mod-t{font-size:17px}
+  .sig-grid{grid-template-columns:1fr 1fr;gap:10px}
+
+  /* ── Mentors ── */
+  .m-strip{margin-top:32px}
+  .m-card{padding:12px 16px;gap:10px}
+  .m-ph{width:36px;height:36px}
+  .m-nm{font-size:14px}
+
+  /* ── 1:1 mentoring grid ── */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* ── City map ── */
+  .city-row{grid-template-columns:1fr 1fr}
+  .map-svg-wrap{padding-top:70%}
+  .city-tab{padding:16px 14px}
+  .city-nm{font-size:16px}
+  .city-code{font-size:8px}
+
+  /* ── AI tools ── */
+  .ai-benefit-bar{flex-direction:column;gap:12px;align-items:flex-start}
+  .ai-val{font-size:40px}
+  .ai-grid{grid-template-columns:1fr 1fr}
+
+  /* ── LaunchLabs ── */
+  .ll-row{grid-template-columns:1fr;gap:12px;padding:20px}
+  .ll-row-right{padding-left:0;border-left:0;
+    border-top:.5px solid rgba(245,238,216,0.08);padding-top:12px}
+  .ll-row-tag{display:none}
+  .ll-row-name{font-size:19px}
+  .ll-row-num{display:none}
+
+  /* ── Sunday sessions ── */
+  .sun-tab{padding:16px 6px}
+  .sun-tab-icon,#sun-tabs .sun-tab > div:first-child{font-size:18px}
+  #sun-detail{grid-template-columns:60px 1fr;padding:24px 20px}
+  #sun-num{font-size:52px}
+  #sun-title{font-size:22px}
+
+  /* ── Student launches ── */
+  .lcard{min-height:200px}
+
+  /* ── Animated journey ── */
+  #journey-steps{overflow-x:auto;gap:0;padding-bottom:8px}
+  .jx-step{min-width:100px}
+  #journey-detail{grid-template-columns:60px 1fr;padding:20px;gap:16px}
+  #jd-num{font-size:40px}
+  #jd-title{font-size:20px}
+  #journey-detail > div > div:last-child{font-size:13px}
+  [style*="position:relative;padding:0 48px"]{padding:0 20px!important}
+  [style*="top:28px;left:48px;right:48px"]{left:20px!important;right:20px!important}
+
+  /* ── Photo gallery ── */
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
+  .g-box.tall{grid-row:span 1}
+
+  /* ── Testimonials ── */
+  .testi-card{flex:0 0 290px}
+
+  /* ── Outcomes ── */
+  .oc-grid{grid-template-columns:1fr 1fr}
+  .oc-n{font-size:40px}
+
+  /* ── Accreditation degree ── */
+  .accred-bar .accred-inner{flex-direction:column}
+
+  /* ── Pricing ── */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* ── CTA ── */
+  .cta-sec h2{font-size:clamp(36px,10vw,72px)}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-facts{gap:16px}
+  .cf-div{display:none}
+
+  /* ── Footer ── */
+  footer{flex-direction:column;gap:16px;align-items:flex-start;padding:28px 20px}
+  .f-links{flex-wrap:wrap;gap:16px}
+}
+
+/* ═══════════════════════════════════════
+   SMALL MOBILE (480px and below)
+═══════════════════════════════════════ */
+@media(max-width:480px){
+  .hero h1{font-size:clamp(36px,12vw,56px)}
+  .hero-lede{font-size:17px}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .ai-grid{grid-template-columns:1fr}
+  .city-row{grid-template-columns:1fr}
+  .sig-grid{grid-template-columns:1fr}
+  .hl-row .hl-t{font-size:16px}
+  .sec-h{font-size:clamp(30px,9vw,48px)}
+  .oc-grid{grid-template-columns:1fr}
+  .testi-card{flex:0 0 260px}
+  .mod-t{font-size:15px}
+  .hero-nums{grid-template-columns:1fr 1fr}
+  .h-num-v{font-size:32px}
+}
+
+/* ── LAUNCHLABS ROWS ── */
+.ll-row{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  padding:28px 36px;border-bottom:.5px solid rgba(245,238,216,0.08);
+  transition:background .2s;align-items:center;position:relative}
+.ll-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--fire);opacity:0;transition:opacity .2s}
+.ll-row:hover{background:color-mix(in oklab,var(--ink) 88%,var(--fire) 5%)}
+.ll-row:hover::before{opacity:1}
+.ll-row-left{display:flex;align-items:center;gap:20px}
+.ll-row-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--fire);opacity:.6;flex-shrink:0;width:24px}
+.ll-row-icon{font-size:22px;line-height:1;flex-shrink:0}
+.ll-row-name{font-family:"Instrument Serif",Georgia,serif;font-size:22px;font-style:italic;
   letter-spacing:-0.005em;color:var(--paper);line-height:1.2}
+.ll-row-right{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-left:36px;border-left:.5px solid rgba(245,238,216,0.08)}
+.ll-row-desc{font-family:"Inter Tight",sans-serif;font-size:14px;line-height:1.7;
+  color:rgba(245,238,216,0.5);flex:1}
+.ll-row-tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fire);padding:6px 14px;border-radius:100px;
+  border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
+  white-space:nowrap;flex-shrink:0}
 
 
 .sun-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;
@@ -477,6 +632,23 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 .sun-tab-title{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;
   text-transform:uppercase;color:rgba(245,238,216,0.45);text-align:center;line-height:1.4}
 .sun-tab.active .sun-tab-title{color:var(--fire)}
+
+/* ── TESTIMONIALS STRIP ── */
+.testi-card{flex:0 0 360px;padding:32px;border-radius:14px;
+  background:color-mix(in oklab,var(--paper) 5%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;flex-direction:column;gap:20px;
+  transition:border-color .25s;flex-shrink:0}
+.testi-card:hover{border-color:color-mix(in oklab,var(--fire) 30%,transparent)}
+.testi-q-s{font-family:"Instrument Serif",Georgia,serif;font-size:18px;font-style:italic;
+  letter-spacing:-0.005em;line-height:1.55;color:var(--paper);flex:1;
+  position:relative;padding-top:12px}
+.testi-q-s::before{content:"\201C";position:absolute;top:-10px;left:-4px;
+  font-size:48px;line-height:1;color:var(--fire);opacity:.4;font-family:"Instrument Serif",Georgia,serif}
+.testi-foot{display:flex;align-items:center;gap:14px}
+.testi-av-s{width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;
+  flex-shrink:0;border:.5px solid rgba(245,238,216,0.15);
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px)}
 </style>
 </head>
 <body>
@@ -493,9 +665,26 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       <li><a href="#launches">Launches</a></li>
       <li><a href="#apply">Apply</a></li>
     </ul>
-    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="nav-apply">Apply Now ↗</a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="nav-apply">Apply Now ↗</a>
+      <button id="hamburger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;align-items:center;justify-content:center">
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:transform .25s,opacity .25s" id="hb1"></span>
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:opacity .25s" id="hb2"></span>
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:transform .25s,opacity .25s" id="hb3"></span>
+      </button>
+    </div>
   </div>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" style="display:none;position:fixed;inset:0;z-index:49;background:var(--ink);padding:96px 32px 40px;flex-direction:column;gap:0">
+  <a href="#curriculum" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Curriculum</a>
+  <a href="#mentors" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Faculty</a>
+  <a href="#cities" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Immersions</a>
+  <a href="#launches" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Launches</a>
+  <a href="#apply" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Apply</a>
+  <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);display:block">Apply Now ↗</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -792,6 +981,126 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   </div>
 </section>
 
+<!-- GLOBAL IMMERSIONS -->
+<section id="cities" class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Global Immersions</div>
+    <h2 class="sec-h">Learn where the<br><em>world is building.</em></h2>
+    <p class="sec-sub">6 week-long immersions across the world's most important startup cities — building your network, your deal flow, and your global perspective in person.</p>
+
+    <div class="map-box" style="margin-top:48px">
+      <!-- SVG World Map -->
+      <div class="map-svg-wrap">
+        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1000" height="500" fill="rgba(0,0,0,0)"/>
+          <!-- Grid -->
+          <g stroke="rgba(200,215,240,0.05)" stroke-width="0.5">
+            <line x1="0" y1="100" x2="1000" y2="100"/><line x1="0" y1="200" x2="1000" y2="200"/>
+            <line x1="0" y1="300" x2="1000" y2="300"/><line x1="0" y1="400" x2="1000" y2="400"/>
+            <line x1="200" y1="0" x2="200" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+            <line x1="600" y1="0" x2="600" y2="500"/><line x1="800" y1="0" x2="800" y2="500"/>
+          </g>
+          <!-- Land masses -->
+          <g fill="rgba(200,215,240,0.1)" stroke="rgba(200,215,240,0.06)" stroke-width="0.5">
+            <path d="M55 65 L95 58 L140 68 L165 85 L178 115 L175 155 L162 185 L148 215 L138 240 L125 265 L108 278 L90 262 L82 238 L78 210 L70 180 L62 148 L52 118 L50 90 Z"/>
+            <path d="M158 278 L185 268 L202 285 L207 315 L202 348 L190 378 L178 405 L164 422 L153 402 L148 372 L146 342 L148 312 L153 292 Z"/>
+            <path d="M422 52 L462 47 L492 60 L502 76 L490 92 L474 102 L458 97 L442 107 L428 102 L418 86 L414 68 Z"/>
+            <path d="M438 115 L475 104 L502 115 L512 142 L508 178 L496 218 L478 258 L458 288 L436 298 L416 282 L412 255 L418 225 L423 192 L428 160 L433 135 Z"/>
+            <path d="M510 108 L548 100 L568 115 L562 140 L540 150 L512 142 Z"/>
+            <path d="M612 132 L642 126 L658 148 L652 180 L636 205 L620 215 L606 200 L602 174 L605 150 Z"/>
+            <path d="M722 148 L758 142 L775 158 L768 180 L750 190 L730 184 L718 172 Z"/>
+            <path d="M720 82 L782 72 L825 80 L840 105 L828 132 L798 142 L768 140 L745 132 L728 118 L720 100 Z"/>
+            <path d="M498 22 L655 14 L805 24 L855 48 L825 64 L755 62 L680 58 L608 54 L548 52 L508 44 Z"/>
+            <path d="M762 298 L825 288 L865 305 L878 338 L866 368 L840 382 L805 376 L774 360 L756 332 L752 312 Z"/>
+          </g>
+          <!-- Arc routes -->
+          <g fill="none" stroke-dasharray="5 9">
+            <path d="M112 160 Q 450 10 740 188" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+            <path d="M740 188 Q 638 110 555 128" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+            <path d="M555 128 Q 592 138 628 182" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+            <path d="M740 188 Q 752 132 792 120" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+            <path d="M792 120 Q 768 154 750 212" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+            <path d="M740 188 Q 742 200 750 212" stroke="rgba(120,170,255,0.2)" stroke-width="1.5"/>
+          </g>
+          <!-- Particles -->
+          <circle id="p1" r="4.5" fill="white" opacity="0.85"/>
+          <circle id="p2" r="3.5" fill="rgba(120,170,255,0.9)" opacity="0.85"/>
+          <!-- City pins — San Francisco -->
+          <g transform="translate(112,160)" style="cursor:pointer" onclick="setCity(event,'sfo')">
+            <circle r="20" fill="none" stroke="rgba(240,100,40,0.5)" stroke-width="1"><animate attributeName="r" values="6;22" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"/></circle>
+            <circle r="6" fill="oklch(0.72 0.18 45)"/><circle r="2.5" fill="white"/>
+            <text x="10" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.8)" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">SF</text>
+          </g>
+          <!-- Dubai -->
+          <g transform="translate(555,128)" style="cursor:pointer" onclick="setCity(event,'dxb')">
+            <circle r="20" fill="none" stroke="rgba(240,100,40,0.5)" stroke-width="1"><animate attributeName="r" values="6;22" dur="2s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" begin="0.5s" repeatCount="indefinite"/></circle>
+            <circle r="6" fill="oklch(0.72 0.18 45)"/><circle r="2.5" fill="white"/>
+            <text x="10" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.8)" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">DXB</text>
+          </g>
+          <!-- Mumbai -->
+          <g transform="translate(628,182)" style="cursor:pointer" onclick="setCity(event,'bom')">
+            <circle r="20" fill="none" stroke="rgba(240,100,40,0.5)" stroke-width="1"><animate attributeName="r" values="6;22" dur="2s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" begin="1s" repeatCount="indefinite"/></circle>
+            <circle r="6" fill="oklch(0.72 0.18 45)"/><circle r="2.5" fill="white"/>
+            <text x="10" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.8)" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">BOM</text>
+          </g>
+          <!-- Shanghai -->
+          <g transform="translate(792,120)" style="cursor:pointer" onclick="setCity(event,'sha')">
+            <circle r="20" fill="none" stroke="rgba(240,100,40,0.5)" stroke-width="1"><animate attributeName="r" values="6;22" dur="2s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" begin="1.5s" repeatCount="indefinite"/></circle>
+            <circle r="6" fill="oklch(0.72 0.18 45)"/><circle r="2.5" fill="white"/>
+            <text x="10" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.8)" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">SHA</text>
+          </g>
+          <!-- Singapore (hub) -->
+          <g transform="translate(740,188)" style="cursor:pointer" onclick="setCity(event,'sg')">
+            <circle r="22" fill="none" stroke="rgba(240,100,40,0.65)" stroke-width="1.5"><animate attributeName="r" values="8;26" dur="2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2s" begin="0.3s" repeatCount="indefinite"/></circle>
+            <circle r="8" fill="white"/><circle r="3.5" fill="oklch(0.72 0.18 45)"/>
+            <text x="12" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.95)" font-weight="500" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">SG ★</text>
+          </g>
+          <!-- Bali -->
+          <g transform="translate(750,212)" style="cursor:pointer" onclick="setCity(event,'bal')">
+            <circle r="20" fill="none" stroke="rgba(240,100,40,0.5)" stroke-width="1"><animate attributeName="r" values="6;22" dur="2s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" begin="2s" repeatCount="indefinite"/></circle>
+            <circle r="6" fill="oklch(0.72 0.18 45)"/><circle r="2.5" fill="white"/>
+            <text x="10" y="-12" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(245,238,216,0.8)" style="paint-order:stroke;stroke:rgba(10,8,6,0.95);stroke-width:4">BAL</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- City tab cards — 3 per row x 2 rows -->
+      <div class="city-row">
+        <div class="city-tab active" id="tab-sg" onclick="setCity(event,'sg')">
+          <div class="city-code">SG · 1 Week · Demo Day</div>
+          <div class="city-nm">Singapore</div>
+          <div class="city-focus">Investor connects · VC visits · SEA market · Demo Day</div>
+        </div>
+        <div class="city-tab" id="tab-sfo" onclick="setCity(event,'sfo')">
+          <div class="city-code">SFO · 1 Week · Tech & AI</div>
+          <div class="city-nm">San Francisco</div>
+          <div class="city-focus">Silicon Valley · AI ecosystem · Founder sessions</div>
+        </div>
+        <div class="city-tab" id="tab-dxb" onclick="setCity(event,'dxb')">
+          <div class="city-code">DXB · 1 Week · Finance</div>
+          <div class="city-nm">Dubai</div>
+          <div class="city-focus">HNI networks · Middle East expansion · Investor meetings</div>
+        </div>
+        <div class="city-tab" id="tab-bom" onclick="setCity(event,'bom')">
+          <div class="city-code">BOM · 1 Week · Scale</div>
+          <div class="city-nm">Mumbai</div>
+          <div class="city-focus">India startup ecosystem · VCs · Media & distribution</div>
+        </div>
+        <div class="city-tab" id="tab-sha" onclick="setCity(event,'sha')">
+          <div class="city-code">SHA · 1 Week · Manufacturing</div>
+          <div class="city-nm">Shanghai</div>
+          <div class="city-focus">Manufacturing · Supply chain · Speed of execution</div>
+        </div>
+        <div class="city-tab" id="tab-bal" onclick="setCity(event,'bal')">
+          <div class="city-code">BAL · 1 Week · Leadership</div>
+          <div class="city-nm">Bali</div>
+          <div class="city-focus">Founder retreat · Deep work · Strategy & community</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AI TOOLS -->
 <section>
   <div class="wrap">
@@ -842,71 +1151,105 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 
 
 <!-- LAUNCHLABS -->
-<section class="dark-sec">
+<section>
   <div class="wrap">
 
     <!-- Header -->
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:48px;flex-wrap:wrap;margin-bottom:64px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin-bottom:16px">In-house Execution Engine</div>
-        <h2 style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:-0.022em;line-height:.95;color:var(--paper)">LaunchLabs</h2>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(20px,2.5vw,28px);font-style:italic;color:var(--fire);margin-top:8px;letter-spacing:-0.01em">We help you build. Not just learn.</div>
+        <h2 style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5.5vw,80px);font-weight:400;letter-spacing:-0.022em;line-height:.92;color:var(--paper)">LaunchLabs</h2>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(18px,2vw,24px);font-style:italic;color:var(--fire);margin-top:12px;letter-spacing:-0.01em">We build with you. Not just for you.</div>
       </div>
-      <div style="max-width:360px;padding-top:8px">
-        <div style="font-family:'Inter Tight',sans-serif;font-size:15px;line-height:1.75;color:rgba(245,238,216,0.55)">Whatever phase you're in — building, growing, raising, or stuck — LaunchLabs gives you real hands-on support to unblock you and keep moving.</div>
+      <div style="padding-bottom:4px">
+        <div style="font-family:'Inter Tight',sans-serif;font-size:16px;line-height:1.8;color:rgba(245,238,216,0.55)">When you're stuck — on the product, the pitch, the design, or the legal — LaunchLabs unblocks you. Real specialists, real execution, matched to your phase.</div>
       </div>
     </div>
 
-    <!-- 6 service tiles -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,238,216,0.08);border-radius:2px;overflow:hidden">
+    <!-- 6 horizontal stacked rows -->
+    <div style="display:flex;flex-direction:column;gap:0;border:.5px solid rgba(245,238,216,0.1);border-radius:12px;overflow:hidden">
 
-      <div class="ll-tile">
-        <div class="ll-num">01</div>
-        <div class="ll-icon">⚙️</div>
-        <div class="ll-name">Tech & Development</div>
+      <div class="ll-row">
+        <div class="ll-row-left">
+          <div class="ll-row-num">01</div>
+          <div class="ll-row-icon">⚙️</div>
+          <div class="ll-row-name">Tech & Development</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">No-code builds, AI integrations, and MVP support — so you ship without needing a CTO on your team.</div>
+          <div class="ll-row-tag">Build</div>
+        </div>
       </div>
 
-      <div class="ll-tile">
-        <div class="ll-num">02</div>
-        <div class="ll-icon">📣</div>
-        <div class="ll-name">Marketing & Growth</div>
+      <div class="ll-row">
+        <div class="ll-row-left">
+          <div class="ll-row-num">02</div>
+          <div class="ll-row-icon">📣</div>
+          <div class="ll-row-name">Marketing & Growth</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">GTM strategy, paid campaigns, SEO, and content systems — built and launched with you, not just advised.</div>
+          <div class="ll-row-tag">Grow</div>
+        </div>
       </div>
 
-      <div class="ll-tile">
-        <div class="ll-num">03</div>
-        <div class="ll-icon">💸</div>
-        <div class="ll-name">Fundraising</div>
+      <div class="ll-row">
+        <div class="ll-row-left">
+          <div class="ll-row-num">03</div>
+          <div class="ll-row-icon">💸</div>
+          <div class="ll-row-name">Fundraising</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">Pitch deck reviews, investor intros, data room setup, and term sheet guidance — exactly when you need it.</div>
+          <div class="ll-row-tag">Raise</div>
+        </div>
       </div>
 
-      <div class="ll-tile">
-        <div class="ll-num">04</div>
-        <div class="ll-icon">🎬</div>
-        <div class="ll-name">Content & Editing</div>
+      <div class="ll-row">
+        <div class="ll-row-left">
+          <div class="ll-row-num">04</div>
+          <div class="ll-row-icon">🎬</div>
+          <div class="ll-row-name">Content & Editing</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">Video editing, short-form content, brand storytelling, and social assets — built for the speed founders need.</div>
+          <div class="ll-row-tag">Create</div>
+        </div>
       </div>
 
-      <div class="ll-tile">
-        <div class="ll-num">05</div>
-        <div class="ll-icon">🖥️</div>
-        <div class="ll-name">UI / UX Design</div>
+      <div class="ll-row">
+        <div class="ll-row-left">
+          <div class="ll-row-num">05</div>
+          <div class="ll-row-icon">🖥️</div>
+          <div class="ll-row-name">UI / UX Design</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">Product design, wireframes, and landing pages that make your product look like it has a full design studio.</div>
+          <div class="ll-row-tag">Design</div>
+        </div>
       </div>
 
-      <div class="ll-tile">
-        <div class="ll-num">06</div>
-        <div class="ll-icon">⚖️</div>
-        <div class="ll-name">Legal & Compliance</div>
+      <div class="ll-row" style="border-bottom:0">
+        <div class="ll-row-left">
+          <div class="ll-row-num">06</div>
+          <div class="ll-row-icon">⚖️</div>
+          <div class="ll-row-name">Legal & Compliance</div>
+        </div>
+        <div class="ll-row-right">
+          <div class="ll-row-desc">Incorporation, founder agreements, IP protection, and investor contracts — without needing a full-time lawyer.</div>
+          <div class="ll-row-tag">Protect</div>
+        </div>
       </div>
 
     </div>
 
-    <!-- Bottom callout -->
-    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,238,216,0.08);overflow:hidden;border-radius:2px">
-      <div style="background:color-mix(in oklab,var(--fire) 7%,transparent);padding:28px 32px;display:flex;align-items:center;gap:20px">
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:44px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">6</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.55);line-height:1.7">Specialist teams<br>ready to execute with you</div>
-      </div>
-      <div style="background:var(--ink);padding:28px 32px;display:flex;align-items:center">
-        <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.52)">Not just advice. <strong style="color:var(--paper);font-weight:500">Hands-on execution</strong> — you're never stuck waiting for the next session to move.</div>
-      </div>
+    <!-- Bottom bar -->
+    <div style="margin-top:20px;padding:28px 36px;border-radius:12px;
+      background:color-mix(in oklab,var(--fire) 7%,transparent);
+      border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);
+      display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.4">Not just mentorship. Not just curriculum.<br><em style="color:var(--fire)">Real execution support, on demand.</em></div>
+      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;white-space:nowrap;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply Now ↗</a>
     </div>
 
   </div>
@@ -1012,6 +1355,31 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 </section>
 
 <!-- ANIMATED JOURNEY -->
+<section style="padding:80px 0;overflow:hidden;background:color-mix(in oklab,var(--paper) 2%,var(--ink));border-top:.5px solid rgba(245,238,216,0.06);border-bottom:.5px solid rgba(245,238,216,0.06)">
+  <div class="wrap" style="margin-bottom:40px">
+    <div class="sec-l">Your journey</div>
+    <h2 class="sec-h">From idea to<br><em>unstoppable.</em></h2>
+    <p class="sec-sub">Every stage of company-building is mapped, mentored, and executed inside the program.</p>
+  </div>
+  <div style="position:relative;padding:0 48px">
+    <div style="position:absolute;top:28px;left:48px;right:48px;height:2px;background:rgba(245,238,216,0.08);z-index:0">
+      <div id="progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--fire),oklch(0.72 0.18 45 / .3));transition:width 0.6s ease"></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:0;position:relative;z-index:1" id="journey-steps">
+      <div class="jx-step" data-idx="0" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">01</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Idea</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">Validate your<br>problem</div></div></div>
+      <div class="jx-step" data-idx="1" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">02</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Product</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">Build your MVP<br>AI-assisted</div></div></div>
+      <div class="jx-step" data-idx="2" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">03</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Marketing</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">GTM, brand<br>& content</div></div></div>
+      <div class="jx-step" data-idx="3" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">04</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Revenue</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">First customers<br>& sales</div></div></div>
+      <div class="jx-step" data-idx="4" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">05</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Fundraising</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">Pitch & investors</div></div></div>
+      <div class="jx-step" data-idx="5" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">06</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;color:var(--paper);margin-bottom:4px">Hiring</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">Your first team<br>& culture</div></div></div>
+      <div class="jx-step jx-final" data-idx="6" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer"><div class="jx-dot" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(245,238,216,0.2);background:var(--ink);transition:all .4s;flex-shrink:0;position:relative;z-index:2"></div><div style="text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px">07</div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-style:italic;color:var(--fire);margin-bottom:4px">Unstoppable</div><div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.35);line-height:1.7">Scale & grow</div></div></div>
+    </div>
+    <div id="journey-detail" style="margin-top:48px;padding:28px 36px;border-radius:12px;background:color-mix(in oklab,var(--fire) 6%,transparent);border:.5px solid color-mix(in oklab,var(--fire) 20%,transparent);display:flex;align-items:center;gap:24px;min-height:80px;transition:opacity .3s">
+      <div id="jd-num" style="font-family:'Instrument Serif',Georgia,serif;font-size:52px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">01</div>
+      <div><div id="jd-title" style="font-family:'Instrument Serif',Georgia,serif;font-size:24px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);margin-bottom:4px">Idea</div><div id="jd-desc" style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.65;color:rgba(245,238,216,0.6)">Validate your problem with real users. Find your ICP. Kill bad ideas fast.</div></div>
+    </div>
+  </div>
+</section>
 
 <!-- PHOTO GALLERY -->
 <section>
@@ -1022,7 +1390,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       <div class="g-box tall"><img src="../images/cohort/01.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Singapore · Demo Day</div></div>
       <div class="g-box"><img src="../images/cohort/02.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">San Francisco</div></div>
       <div class="g-box"><img src="../images/cohort/03.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Dubai</div></div>
-      <div class="g-box wide"><img src="../images/cohort/09.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Cohort Intensive</div></div>
+      <div class="g-box"><img src="../images/cohort/09.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Cohort Intensive</div></div>
       <div class="g-box"><img src="../images/cohort/07.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Bali Retreat</div></div>
     </div>
   </div>
@@ -1033,28 +1401,21 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   <div class="wrap">
     <div class="sec-l">Testimonials</div>
     <h2 class="sec-h">Hear it from<br><em>the founders.</em></h2>
-    <div class="testi-grid">
-      <div class="testi">
-        <div class="testi-q">LaunchPilot helped me go from idea to revenue in 12 weeks. The mentorship and execution focus is unmatched.</div>
-        <div class="testi-auth">
-          <div class="testi-av"><img src="../images/testimonials/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
-          <div><div class="testi-nm">Alex Hernandez</div><div class="testi-rl">Founder · Cohort'23</div></div>
-        </div>
-      </div>
-      <div class="testi">
-        <div class="testi-q">Loved LaunchPilot. Great for building. I dropped out of Babson College & Mesa, to be with LaunchPilot.</div>
-        <div class="testi-auth">
-          <div class="testi-av"><img src="../images/testimonials/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
-          <div><div class="testi-nm">Reyo Augustine</div><div class="testi-rl">Growth Lead · Cohort'25</div></div>
-        </div>
-      </div>
-      <div class="testi">
-        <div class="testi-q">The AI workflows alone gave me 10x execution speed. I shipped in weeks what used to take months.</div>
-        <div class="testi-auth">
-          <div class="testi-av"><img src="../images/testimonials/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
-          <div><div class="testi-nm">Swarit Bharadwaj</div><div class="testi-rl">Founder · Cohort'25</div></div>
-        </div>
-      </div>
+  </div>
+  <div style="position:relative;overflow:hidden;margin-top:48px;padding:8px 0 56px">
+    <div style="position:absolute;top:0;bottom:0;left:0;width:100px;z-index:2;background:linear-gradient(90deg,color-mix(in oklab,var(--paper) 2%,var(--ink)),transparent);pointer-events:none"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:100px;z-index:2;background:linear-gradient(270deg,color-mix(in oklab,var(--paper) 2%,var(--ink)),transparent);pointer-events:none"></div>
+    <div id="testi-track" style="display:flex;gap:20px;width:max-content;will-change:transform">
+      <div class="testi-card"><div class="testi-q-s">"LaunchPilot helped me go from idea to revenue in 12 weeks. The mentorship and execution focus is unmatched."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Alex Hernandez</div><div class="testi-rl">Founder @ CloudComm · Cohort 2</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"This is an insane experience. I've never learned faster in my life."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Sandhya Pradhan</div><div class="testi-rl"> Founder @ Mindler.ai· Cohort 1</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"I quit Babson College in the USA and Mesa, to be with LaunchPilot. I shipped in weeks what used to take months."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Reyo Augustine</div><div class="testi-rl">Founder @ Foliages · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"The Sunday Sessions were unlike anything I'd experienced — real pressure, real feedback, real growth every week."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/04.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Abhijith Jajio</div><div class="testi-rl">Founder @ ClaimBack· Cohort 2</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"I joined as an operator. I left as a founder. The program gave me the confidence and tools to take the leap."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/05.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Suraj Reddy</div><div class="testi-rl">Founder @ Cureeasy · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"LaunchPilot is the only MBA that actually teaches you to build. My pitch deck closed a $200K round before I graduated."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/06.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Devyansh Agarwal</div><div class="testi-rl">Founder @ Devananta · Cohort 1</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"The global immersions changed my perspective entirely. Meeting founders in Singapore and SF opened doors I didn't know existed."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/07.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Guliz</div><div class="testi-rl">Founder @ Sustainify · Cohort 4</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"LaunchLabs helped me ship a product I'd been stuck on for 6 months — in under 3 weeks. That's insane value."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/08.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Shivam Pal</div><div class="testi-rl">Founder @ Mvaak.ai · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"My mentor knew exactly what I needed at every stage. This isn't a random pairing — they genuinely matched us perfectly."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/09.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Manish Charhate</div><div class="testi-rl">Founder @ Cyclo Care · Cohort 4</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"Within the first 4 weeks I had validated my idea, found 3 paying customers, and completely changed my business model."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/10.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Swarit Bharadwaj</div><div class="testi-rl">Founder @ Reel Ninja · Cohort 2</div></div></div></div>
     </div>
   </div>
 </section>
@@ -1431,6 +1792,95 @@ function setCity(e, code){
   }
   tick();
 })();
+
+// ── Testimonials strip RAF scroller ───────────────────────────────────
+(function(){
+  var t=document.getElementById('testi-track');
+  if(!t)return;
+  Array.from(t.querySelectorAll('.testi-card')).forEach(function(c){t.appendChild(c.cloneNode(true));});
+  var pos=0,paused=false,last=null,halfW=0;
+  function measure(){halfW=t.scrollWidth/2;}
+  requestAnimationFrame(function(){measure();window.addEventListener('resize',measure);});
+  t.addEventListener('mouseenter',function(){paused=true;});
+  t.addEventListener('mouseleave',function(){paused=false;});
+  function tick(ts){
+    if(last&&!paused&&halfW){pos+=45*(ts-last)/1000;if(pos>=halfW)pos=0;t.style.transform='translateX(-'+pos.toFixed(1)+'px)';}
+    last=ts;requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+
+// ── Map arc particles ────────────────────────────────────────────────
+(function(){
+  var p1=document.getElementById('p1');var p2=document.getElementById('p2');
+  if(!p1||!p2)return;
+  var routes=[[112,160,450,10,740,188],[740,188,638,110,555,128],[555,128,592,138,628,182],[740,188,752,132,792,120],[792,120,768,154,750,212]];
+  var t1=0,r1=0,t2=0.5,r2=2;
+  function qp(t,ax,ay,cx,cy,bx,by){var u=1-t;return{x:u*u*ax+2*u*t*cx+t*t*bx,y:u*u*ay+2*u*t*cy+t*t*by};}
+  function tick(){
+    t1=(t1+0.003)%1;if(t1<0.003)r1=(r1+1)%routes.length;
+    var ro1=routes[r1];var pt1=qp(t1,ro1[0],ro1[1],ro1[2],ro1[3],ro1[4],ro1[5]);
+    p1.setAttribute('cx',pt1.x.toFixed(1));p1.setAttribute('cy',pt1.y.toFixed(1));
+    t2=(t2+0.002)%1;if(t2<0.002)r2=(r2+1)%routes.length;
+    var ro2=routes[r2];var pt2=qp(t2,ro2[0],ro2[1],ro2[2],ro2[3],ro2[4],ro2[5]);
+    p2.setAttribute('cx',pt2.x.toFixed(1));p2.setAttribute('cy',pt2.y.toFixed(1));
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+// City map interaction
+function setCity(e, code){
+  document.querySelectorAll('.city-tab').forEach(function(t){ t.classList.remove('active'); });
+  var tab = document.getElementById('tab-' + code);
+  if(tab) tab.classList.add('active');
+}
+
+
+
+// ── Hamburger menu ────────────────────────────────────────────────────
+var hbOpen = false;
+function closeMobileMenu(){
+  hbOpen = false;
+  document.getElementById('mobile-menu').style.display = 'none';
+  document.getElementById('hb1').style.transform = '';
+  document.getElementById('hb2').style.opacity = '1';
+  document.getElementById('hb3').style.transform = '';
+  document.body.style.overflow = '';
+}
+(function(){
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    hbOpen = !hbOpen;
+    menu.style.display = hbOpen ? 'flex' : 'none';
+    document.getElementById('hb1').style.transform = hbOpen ? 'translateY(6.5px) rotate(45deg)' : '';
+    document.getElementById('hb2').style.opacity = hbOpen ? '0' : '1';
+    document.getElementById('hb3').style.transform = hbOpen ? 'translateY(-6.5px) rotate(-45deg)' : '';
+    document.body.style.overflow = hbOpen ? 'hidden' : '';
+  });
+})();
+
+// ── Mobile inline grid fixer ──────────────────────────────────────────
+(function(){
+  function fixGrids(){
+    var isMobile = window.innerWidth <= 768;
+    // Mentors 1:1 section 2-col grids
+    document.querySelectorAll('[style*="grid-template-columns:1fr 1fr"]').forEach(function(el){
+      // Skip the hero-nums, pricing cards (handled separately)
+      if(el.classList.contains('hero-nums')) return;
+      el.style.gridTemplateColumns = isMobile ? '1fr' : '1fr 1fr';
+    });
+    // LaunchLabs header 2-col
+    var llHeader = document.querySelector('.wrap > [style*="grid-template-columns:1fr 1fr"]');
+    if(llHeader) llHeader.style.gridTemplateColumns = isMobile ? '1fr' : '1fr 1fr';
+  }
+  fixGrids();
+  window.addEventListener('resize', fixGrids);
+})();
+
 </script>
 </body>
 </html>
