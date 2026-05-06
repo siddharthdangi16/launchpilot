@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder MBA (AI-First) — LaunchPilot School of Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:oklch(0.16 0.012 60);
+  --ink-2:oklch(0.22 0.012 60);
+  --paper:oklch(0.965 0.012 80);
+  --fire:oklch(0.72 0.18 45);
+  --fire-2:oklch(0.62 0.20 38);
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --sans:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
+}
+html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+  font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.rule{height:.5px;background:rgba(245,238,216,0.08)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;
+  border-bottom:.5px solid rgba(245,238,216,0.1);
+  background:color-mix(in oklab,var(--ink) 88%,transparent);
+  backdrop-filter:blur(20px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 48px;max-width:1440px;margin:0 auto}
+.brand-w{font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.brand-w i{font-style:italic;font-weight:400}
+.nav-ul{display:flex;gap:28px;list-style:none;font-family:var(--mono);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.nav-ul a{opacity:.55;transition:opacity .2s,color .2s}
+.nav-ul a:hover{opacity:1;color:var(--fire)}
+.nav-apply{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 22px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-apply:hover{background:var(--fire-2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{padding:152px 0 80px;position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 72% 38%, oklch(0.25 0.07 45 / .16) 0%, transparent 52%),
+             radial-gradient(ellipse at 18% 82%, oklch(0.20 0.03 260 / .08) 0%, transparent 45%)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fire);padding:8px 16px;border-radius:100px;
+  border:.5px solid color-mix(in oklab,var(--fire) 28%,transparent);
+  background:color-mix(in oklab,var(--fire) 6%,transparent);margin-bottom:28px}
+.hero-badge span.dot{width:6px;height:6px;border-radius:50%;background:var(--fire);
+  animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,7.5vw,118px);
+  letter-spacing:-0.025em;line-height:.92;margin-bottom:0}
+.hero h1 em{font-style:italic;color:var(--fire)}
+.hero-divider{width:100%;height:.5px;background:rgba(245,238,216,0.1);margin:36px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.hero-lede{font-family:var(--serif);font-size:21px;line-height:1.4;
+  letter-spacing:-0.005em;color:rgba(245,238,216,0.88);max-width:40ch;margin-bottom:28px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 13px;border-radius:100px;border:.5px solid rgba(245,238,216,0.18);
+  color:rgba(245,238,216,0.55)}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-fire{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;display:inline-block}
+.btn-fire:hover{background:var(--fire-2);transform:translateY(-1px)}
+.btn-outline{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.2);
+  color:rgba(245,238,216,0.6);transition:border-color .2s,color .2s;display:inline-block}
+.btn-outline:hover{border-color:rgba(245,238,216,0.5);color:var(--paper)}
+.hero-nums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);border-radius:2px;overflow:hidden}
+.h-num{background:var(--ink);padding:28px 24px;display:flex;flex-direction:column;gap:6px}
+.h-num-v{font-family:var(--serif);font-size:40px;font-style:italic;
+  letter-spacing:-0.025em;line-height:1;color:var(--fire)}
+.h-num-l{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.4);line-height:1.5}
+
+/* ── ACCREDITATION ── */
+.accred-bar{border-top:.5px solid rgba(245,238,216,0.08);border-bottom:.5px solid rgba(245,238,216,0.08);
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));padding:22px 48px}
+.accred-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.accred-tag{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(245,238,216,0.3);white-space:nowrap;flex-shrink:0}
+.accred-sep{width:.5px;height:28px;background:rgba(245,238,216,0.1)}
+.accred-item{display:flex;flex-direction:column;gap:3px;align-items:center}
+.accred-name{font-family:var(--serif);font-size:16px;font-style:italic;
+  color:rgba(245,238,216,0.75);white-space:nowrap}
+.accred-sub{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(245,238,216,0.3);white-space:nowrap}
+
+/* ── HIGHLIGHTS ── */
+.hl-row{display:flex;align-items:stretch;border-bottom:.5px solid rgba(245,238,216,0.08)}
+.hl{flex:1;padding:32px 28px;border-right:.5px solid rgba(245,238,216,0.08);
+  display:flex;flex-direction:column;gap:10px;transition:background .25s}
+.hl:last-child{border-right:0}
+.hl:hover{background:color-mix(in oklab,var(--paper) 3%,var(--ink))}
+.hl-icon{font-size:20px;margin-bottom:2px}
+.hl-t{font-family:var(--serif);font-size:18px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper)}
+.hl-d{font-family:var(--sans);font-size:13px;line-height:1.65;color:rgba(245,238,216,0.48)}
+
+/* ── STATS STRIP ── */
+.stats-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;
+  background:rgba(245,238,216,0.08)}
+.ss{background:var(--ink);padding:32px 20px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.ss-v{font-family:var(--serif);font-size:36px;font-style:italic;
+  letter-spacing:-0.02em;line-height:1;color:var(--paper)}
+.ss-l{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.38);line-height:1.5}
+
+/* ── SHARED SECTION STYLES ── */
+section{padding:96px 0}
+.sec-l{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(245,238,216,0.38);display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.sec-l::after{content:"";flex:1;height:.5px;background:rgba(245,238,216,0.08)}
+.sec-h{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.5vw,64px);
+  letter-spacing:-0.022em;line-height:.97;margin-bottom:14px}
+.sec-h em{font-style:italic;color:var(--fire)}
+.sec-sub{font-family:var(--sans);font-size:15px;line-height:1.7;
+  color:rgba(245,238,216,0.52);max-width:54ch}
+.dark-sec{background:color-mix(in oklab,var(--paper) 2%,var(--ink));
+  border-top:.5px solid rgba(245,238,216,0.06);border-bottom:.5px solid rgba(245,238,216,0.06)}
+
+/* ── WHO IS IT FOR ── */
+.for-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden}
+.for-card{background:var(--ink);padding:40px;transition:background .25s}
+.for-card:hover{background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.for-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:14px}
+.for-t{font-family:var(--serif);font-size:24px;font-style:italic;
+  letter-spacing:-0.01em;color:var(--paper);margin-bottom:10px}
+.for-d{font-family:var(--sans);font-size:14px;line-height:1.7;color:rgba(245,238,216,0.52)}
+
+/* ── CURRICULUM ── */
+.cur-list{margin-top:48px;display:flex;flex-direction:column;gap:1px;
+  background:rgba(245,238,216,0.08)}
+.mod{background:var(--ink);overflow:hidden;transition:background .25s}
+.mod.open{background:color-mix(in oklab,var(--ink) 91%,var(--fire) 5%)}
+.mod-hd{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;
+  padding:26px 36px;cursor:pointer;user-select:none}
+.mod-n{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire)}
+.mod-t{font-family:var(--serif);font-size:21px;font-style:italic;letter-spacing:-0.005em;color:var(--paper)}
+.mod-a{font-size:11px;color:rgba(245,238,216,0.28);transition:transform .3s;flex-shrink:0}
+.mod.open .mod-a{transform:rotate(180deg)}
+.mod-bd{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.mod.open .mod-bd{max-height:900px}
+.mod-in{padding:4px 36px 36px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.mod-pts{display:flex;flex-direction:column;gap:10px}
+.mod-pt{font-family:var(--sans);font-size:14px;line-height:1.55;
+  color:rgba(245,238,216,0.65);display:flex;gap:12px;align-items:flex-start}
+.mod-pt::before{content:"→";color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px}
+.mod-boot{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.28);margin-top:16px;padding-top:16px;
+  border-top:.5px solid rgba(245,238,216,0.07)}
+.mod-proj{background:color-mix(in oklab,var(--fire) 7%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 20%,transparent);
+  border-radius:10px;padding:20px;align-self:start}
+.mod-pl{font-family:var(--mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:8px}
+.mod-pt2{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--paper);line-height:1.4}
+
+/* ── SIGNATURE ELEMENTS ── */
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.sig{padding:22px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);transition:border-color .25s}
+.sig:hover{border-color:color-mix(in oklab,var(--fire) 30%,transparent)}
+.sig-tag{font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:8px}
+.sig-text{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--paper);line-height:1.35}
+
+/* ── AI TOOLS ── */
+.ai-benefit-bar{margin-top:48px;padding:28px 32px;border-radius:12px;
+  background:color-mix(in oklab,var(--fire) 7%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);
+  display:flex;align-items:center;gap:24px}
+.ai-val{font-family:var(--serif);font-size:52px;font-style:italic;
+  letter-spacing:-0.025em;color:var(--fire);line-height:1;flex-shrink:0}
+.ai-text{font-family:var(--sans);font-size:15px;line-height:1.65;color:rgba(245,238,216,0.68)}
+.ai-text strong{color:var(--paper);font-weight:500}
+.ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.ai-cat{padding:22px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);transition:border-color .25s}
+.ai-cat:hover{border-color:color-mix(in oklab,var(--fire) 28%,transparent)}
+.ai-cat-t{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:12px}
+.ai-tool{font-family:var(--sans);font-size:13px;color:rgba(245,238,216,0.6);
+  padding:5px 0;border-bottom:.5px solid rgba(245,238,216,0.06);
+  display:flex;align-items:center;gap:8px}
+.ai-tool:last-child{border-bottom:0}
+.ai-tool::before{content:"⚡";font-size:10px;flex-shrink:0}
+
+/* ── MAP / IMMERSIONS ── */
+.map-box{background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border-radius:16px;overflow:hidden;margin-top:48px;
+  border:.5px solid rgba(245,238,216,0.08)}
+.map-svg-wrap{position:relative;width:100%;padding-top:50%}
+.map-svg-wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.city-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(245,238,216,0.08)}
+.city-tab{background:var(--ink);padding:24px 22px;cursor:pointer;transition:background .25s}
+.city-tab.active,.city-tab:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 9%)}
+.city-code{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:5px}
+.city-nm{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);margin-bottom:4px}
+.city-focus{font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.38)}
+
+/* ── MENTORS ── */
+.m-strip{position:relative;overflow:hidden;margin-top:48px}
+.m-fade-l,.m-fade-r{position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.m-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.m-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.m-track{display:flex;gap:16px;width:max-content;animation:m-scroll 40s linear infinite}
+.m-track:hover{animation-play-state:paused}
+@keyframes m-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.m-card{flex:0 0 auto;padding:14px 18px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 5%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;align-items:center;gap:14px;transition:border-color .25s}
+.m-card:hover{border-color:color-mix(in oklab,var(--fire) 38%,transparent)}
+.m-ph{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px);
+  border:.5px solid rgba(245,238,216,0.14)}
+.m-ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.m-nm{font-family:var(--serif);font-size:15px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);white-space:nowrap}
+.m-role{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,238,216,0.38);white-space:nowrap;max-width:200px;
+  overflow:hidden;text-overflow:ellipsis}
+
+/* ── STUDENT LAUNCHES ── */
+.launches{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden}
+.lcard{background:var(--ink);padding:24px;display:flex;flex-direction:column;
+  gap:12px;aspect-ratio:1/1;justify-content:space-between;
+  position:relative;overflow:hidden;transition:background .3s,transform .3s}
+.lcard:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 10%);
+  transform:translateY(-3px);z-index:1}
+.lcard::before{content:"";position:absolute;inset:0;opacity:0;
+  background:color-mix(in oklab,var(--fire) 5%,transparent);transition:opacity .3s}
+.lcard:hover::before{opacity:1}
+.lbadge{font-family:var(--mono);font-size:8px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fire)}
+.lph{width:52px;height:52px;border-radius:8px;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(45deg,rgba(245,238,216,0.08) 0 5px,rgba(245,238,216,0.03) 5px 10px);
+  border:.5px solid rgba(245,238,216,0.12)}
+.lph img{width:100%;height:100%;object-fit:cover}
+.lnm{font-family:var(--serif);font-size:18px;font-style:italic;
+  letter-spacing:-0.01em;line-height:1.15;color:var(--paper)}
+.lby{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,238,216,0.42)}
+.lraised{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(245,238,216,0.32);border-top:.5px solid rgba(245,238,216,0.08);
+  padding-top:10px;margin-top:auto}
+
+/* ── GALLERY ── */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;
+  gap:8px;margin-top:48px;border-radius:12px;overflow:hidden}
+.g-box{background:repeating-linear-gradient(135deg,
+  rgba(245,238,216,0.07) 0,rgba(245,238,216,0.07) 1.5px,
+  rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+  background-color:rgba(245,238,216,0.03);
+  border:.5px solid rgba(245,238,216,0.07);
+  overflow:hidden;position:relative}
+.g-box img{width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(10%);transition:filter .4s,transform .5s}
+.g-box:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.g-box.tall{grid-row:span 2}
+.g-box.wide{grid-column:span 2}
+.g-lbl{position:absolute;bottom:12px;left:14px;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.55)}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.testi{padding:36px;border-radius:14px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;flex-direction:column;gap:20px;transition:border-color .25s}
+.testi:hover{border-color:color-mix(in oklab,var(--fire) 28%,transparent)}
+.testi-q{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;line-height:1.5;color:var(--paper);flex:1;position:relative;padding-top:14px}
+.testi-q::before{content:"\201C";position:absolute;top:-10px;left:-4px;
+  font-size:52px;line-height:1;color:var(--fire);opacity:.45;font-family:var(--serif)}
+.testi-auth{display:flex;align-items:center;gap:14px}
+.testi-av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px);
+  border:.5px solid rgba(245,238,216,0.14)}
+.testi-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.testi-nm{font-family:var(--serif);font-size:16px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper)}
+.testi-rl{font-family:var(--mono);font-size:9px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(245,238,216,0.38)}
+
+/* ── OUTCOMES ── */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);overflow:hidden;margin-top:48px}
+.oc{background:var(--ink);padding:40px 32px;display:flex;flex-direction:column;gap:8px}
+.oc-n{font-family:var(--serif);font-size:52px;font-style:italic;
+  letter-spacing:-0.03em;line-height:1;color:var(--fire)}
+.oc-l{font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(245,238,216,0.42);line-height:1.6}
+
+/* ── CTA ── */
+.cta-sec{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%, oklch(0.22 0.06 45 / .09) 0%, transparent 58%)}
+.cta-sec h2{font-family:var(--serif);font-weight:400;
+  font-size:clamp(44px,6.5vw,96px);letter-spacing:-0.025em;line-height:.93;margin-bottom:24px}
+.cta-sec h2 em{font-style:italic;color:var(--fire)}
+.cta-sec p{font-family:var(--sans);font-size:17px;color:rgba(245,238,216,0.48);
+  max-width:46ch;margin:0 auto 40px;line-height:1.65}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.cta-facts{display:flex;align-items:center;justify-content:center;gap:32px;
+  margin-top:48px;flex-wrap:wrap}
+.cf{text-align:center}
+.cf-v{font-family:var(--serif);font-size:26px;font-style:italic;letter-spacing:-0.015em;color:var(--paper)}
+.cf-l{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.32);margin-top:4px}
+.cf-div{width:.5px;height:32px;background:rgba(245,238,216,0.1)}
+
+/* ── FOOTER ── */
+footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.f-brand{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--paper)}
+.f-brand em{color:var(--fire)}
+.f-links{display:flex;gap:24px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.35)}
+.f-links a:hover{color:var(--fire)}
+.f-copy{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(245,238,216,0.22)}
+
+/* ── JOURNEY ── */
+.journey-wrap{margin-top:48px}
+.journey-track{display:flex;align-items:stretch;overflow-x:auto;padding-bottom:4px}
+.j-step{flex:1;min-width:130px;display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:10px;padding:32px 14px 28px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  transition:border-color .25s,background .25s}
+.j-step:hover{border-color:color-mix(in oklab,var(--fire) 35%,transparent);
+  background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.j-step-last{background:color-mix(in oklab,var(--fire) 8%,transparent)!important;
+  border-color:color-mix(in oklab,var(--fire) 30%,transparent)!important}
+.j-arrow{flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  width:28px;color:var(--fire);opacity:.4;font-size:16px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border-top:.5px solid rgba(245,238,216,0.1);
+  border-bottom:.5px solid rgba(245,238,216,0.1)}
+.j-num{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire)}
+.j-icon{font-size:24px;line-height:1}
+.j-title{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:20px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.15}
+.j-desc{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,238,216,0.4);line-height:1.6}
+.j-bar{height:2px;background:rgba(245,238,216,0.06);margin-top:24px;overflow:hidden}
+.j-bar-fill{height:100%;width:100%;
+  background:linear-gradient(90deg,var(--fire) 0%,color-mix(in oklab,var(--fire) 20%,transparent) 100%)}
+.j-note{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:18px;font-style:italic;letter-spacing:-0.005em;
+  color:rgba(245,238,216,0.45);text-align:center;
+  margin-top:24px;max-width:58ch;margin-left:auto;margin-right:auto;line-height:1.55}
+
+/* ── LAUNCHLABS ── */
+.labs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.lab-card{padding:32px;border-radius:12px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.lab-card:hover{border-color:color-mix(in oklab,var(--fire) 40%,transparent);transform:translateY(-4px)}
+.lab-icon{font-size:24px;margin-bottom:16px;display:block;line-height:1}
+.lab-tag{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:8px}
+.lab-title{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:22px;font-style:italic;letter-spacing:-0.005em;
+  color:var(--paper);margin-bottom:10px;line-height:1.2}
+.lab-desc{font-family:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
+  font-size:14px;line-height:1.7;color:rgba(245,238,216,0.52)}
+
+/* ── ANIMATED JOURNEY ── */
+.anim-journey{overflow-x:auto;padding:48px 48px 56px;
+  background:color-mix(in oklab,var(--paper) 2%,var(--ink))}
+.aj-track{display:flex;align-items:flex-start;min-width:max-content;gap:0}
+.aj-step{display:flex;flex-direction:column;align-items:center;gap:14px;
+  opacity:.28;transition:opacity .5s ease,transform .5s ease;
+  transform:translateY(8px);flex-shrink:0;width:140px}
+.aj-step.active{opacity:1;transform:translateY(0)}
+.aj-step.done{opacity:.7;transform:translateY(0)}
+.aj-step.aj-final.active .aj-dot{background:var(--fire);box-shadow:0 0 0 4px color-mix(in oklab,var(--fire) 25%,transparent),0 0 24px color-mix(in oklab,var(--fire) 40%,transparent)}
+.aj-dot{width:20px;height:20px;border-radius:50%;
+  background:rgba(245,238,216,0.2);border:2px solid rgba(245,238,216,0.2);
+  flex-shrink:0;transition:background .5s,border-color .5s,box-shadow .5s;position:relative;z-index:1}
+.aj-step.done .aj-dot{background:var(--fire);border-color:var(--fire)}
+.aj-step.active .aj-dot{background:white;border-color:white;
+  box-shadow:0 0 0 4px rgba(255,255,255,0.15),0 0 20px rgba(255,255,255,0.2)}
+.aj-content{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.aj-num{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--fire)}
+.aj-title{font-family:"Instrument Serif",Georgia,serif;font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);line-height:1.1}
+.aj-desc{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(245,238,216,0.4);line-height:1.7}
+.aj-line{flex-shrink:0;width:60px;height:1px;background:rgba(245,238,216,0.1);
+  align-self:flex-start;margin-top:10px;position:relative;overflow:hidden}
+.aj-line::after{content:"";position:absolute;inset:0;
+  background:var(--fire);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s ease}
+.aj-line.lit::after{transform:scaleX(1)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .wrap,.nav-inner,footer{padding-left:20px;padding-right:20px}
+  .nav-ul{display:none}
+  .hero{min-height:auto;padding:100px 0 60px}
+  .hero h1{font-size:clamp(42px,12vw,80px)}
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-nums{grid-template-columns:repeat(2,1fr)}
+  .hl-row{flex-direction:column}
+  .hl{border-right:0;border-bottom:.5px solid rgba(245,238,216,0.08)}
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .for-grid{grid-template-columns:1fr}
+  .mod-in{grid-template-columns:1fr}
+  .mod-hd{grid-template-columns:60px 1fr auto;padding:20px}
+  .mod-in{padding:4px 20px 24px}
+  .sig-grid{grid-template-columns:repeat(2,1fr)}
+  .ai-grid{grid-template-columns:repeat(2,1fr)}
+  .city-row{grid-template-columns:repeat(2,1fr)}
+  .launches{grid-template-columns:repeat(2,1fr)!important}
+  .lcard{aspect-ratio:auto;min-height:180px}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}
+  .g-box.tall{grid-row:span 1}
+  .testi-grid{grid-template-columns:1fr}
+  .oc-grid{grid-template-columns:repeat(2,1fr)}
+  .accred-inner{flex-direction:column;gap:12px}
+  .ai-benefit-bar{flex-direction:column;gap:12px}
+  .labs-grid{grid-template-columns:1fr}
+  .journey-track{flex-wrap:wrap;gap:8px}
+  .j-arrow{display:none}
+  .j-step{min-width:calc(50% - 8px);flex:0 0 calc(50% - 8px)}
+}
+
+/* ── LAUNCHLABS TILES ── */
+.ll-tile{background:var(--ink);padding:36px 32px;display:flex;flex-direction:column;gap:12px;
+  transition:background .25s,transform .3s cubic-bezier(.2,.7,.2,1);cursor:default;position:relative}
+.ll-tile:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 8%);transform:translateY(-3px);z-index:1}
+.ll-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--fire);opacity:.7}
+.ll-icon{font-size:28px;line-height:1;margin:4px 0}
+.ll-name{font-family:"Instrument Serif",Georgia,serif;font-size:22px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);line-height:1.2}
+
+
+.sun-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:20px 8px;cursor:pointer;transition:background .25s;
+  border-right:.5px solid rgba(245,238,216,0.08)}
+.sun-tab:last-child{border-right:0}
+.sun-tab:hover{background:color-mix(in oklab,var(--paper) 5%,var(--ink))}
+.sun-tab.active{background:color-mix(in oklab,var(--ink) 88%,var(--fire) 8%)}
+.sun-tab-icon{font-size:22px;line-height:1}
+.sun-tab-title{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.45);text-align:center;line-height:1.4}
+.sun-tab.active .sun-tab-title{color:var(--fire)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center">
+      <span class="brand-w"><b>Launch</b><i>Pilot</i> <span style="font-weight:300;font-style:normal;font-size:13px;opacity:0.5">School of Business</span></span>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#mentors">Faculty</a></li>
+      <li><a href="#launches">Launches</a></li>
+      <li><a href="#apply">Apply</a></li>
+    </ul>
+    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="nav-apply">Apply Now ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-badge"><span class="dot"></span>Founder MBA · AI-First · Globally Accredited</div>
+    <h1>Earn an MBA.<br><em>Build a company.</em><br>Change your life.</h1>
+    <div class="hero-divider"></div>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-lede">A globally recognised MBA degree engineered like a startup accelerator. 12 months. 6 global cities. One real business built — powered by AI, world-class mentors, and a cohort of founders beside you.</p>
+        <div class="hero-pills">
+          <span class="pill">Part-time & Hybrid</span>
+          <span class="pill">Woolf University · EU Accredited</span>
+          <span class="pill">AI-First Curriculum</span>
+          <span class="pill">$1M+ Startup Benefits</span>
+          <span class="pill">6 Global Immersions</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-fire">Apply for Cohort '26 ↗</a>
+          <a href="https://brochure.mentogram.com/launchpilot-mba" target="_blank" class="btn-outline">Download Brochure</a>
+        </div>
+      </div>
+      <div class="hero-nums">
+        <div class="h-num"><span class="h-num-v">12</span><span class="h-num-l">Months duration</span></div>
+        <div class="h-num"><span class="h-num-v">2000+</span><span class="h-num-l">Contact hours</span></div>
+        <div class="h-num"><span class="h-num-v">40+</span><span class="h-num-l">Global mentors</span></div>
+        <div class="h-num"><span class="h-num-v">$1M+</span><span class="h-num-l">Startup benefits</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<div class="accred-bar">
+  <div class="accred-inner">
+    <span class="accred-tag">Degree & Partners</span>
+    <div class="accred-sep"></div>
+    <div class="accred-item"><div class="accred-name">Woolf University</div><div class="accred-sub">EU-Accredited MBA Degree</div></div>
+    <div class="accred-sep"></div>
+    <div class="accred-item"><div class="accred-name">IBM</div><div class="accred-sub">Technology Partner</div></div>
+    <div class="accred-sep"></div>
+    <div class="accred-item"><div class="accred-name">NUS Singapore</div><div class="accred-sub">Academic Partner</div></div>
+    <div class="accred-sep"></div>
+    <div class="accred-item"><div class="accred-name">IIT Bombay</div><div class="accred-sub">Academic Partner</div></div>
+    <div class="accred-sep"></div>
+    <div class="accred-item"><div class="accred-name">Startup India</div><div class="accred-sub">Government Recognition</div></div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="hl-row">
+  <div class="hl"><div class="hl-icon">🎓</div><div class="hl-t">Globally Recognised MBA Degree</div><div class="hl-d">Earn an EU-accredited MBA at 1/10th the cost of a traditional program through Woolf University.</div></div>
+  <div class="hl"><div class="hl-icon">🏗️</div><div class="hl-t">Build a Real Revenue-Generating Business</div><div class="hl-d">No cramming. No theory-first. You launch and grow a real company across all 6 modules — live.</div></div>
+  <div class="hl"><div class="hl-icon">🤖</div><div class="hl-t">AI-First Across Everything</div><div class="hl-d">AI tools and workflows are woven into every module — giving you 10x execution speed from day one.</div></div>
+  <div class="hl"><div class="hl-icon">🌍</div><div class="hl-t">Global Immersions in 6 Cities</div><div class="hl-d">Build your global network across Singapore, San Francisco, Dubai, Mumbai, Shanghai and Bali.</div></div>
+  <div class="hl"><div class="hl-icon">💰</div><div class="hl-t">$1M+ Startup Benefits</div><div class="hl-d">Access $1M+ in tech credits, discounts and offers across 500+ AI tools and digital platforms.</div></div>
+</div>
+
+<!-- STATS STRIP -->
+<div style="border-bottom:.5px solid rgba(245,238,216,0.08)">
+  <div style="max-width:1440px;margin:0 auto">
+    <div class="stats-strip">
+      <div class="ss"><div class="ss-v">12</div><div class="ss-l">Months</div></div>
+      <div class="ss"><div class="ss-v">2000+</div><div class="ss-l">Contact Hours</div></div>
+      <div class="ss"><div class="ss-v">40+</div><div class="ss-l">Startup Leaders</div></div>
+      <div class="ss"><div class="ss-v">50+</div><div class="ss-l">Bootcamps & Sessions</div></div>
+      <div class="ss"><div class="ss-v">6</div><div class="ss-l">Expert Modules</div></div>
+      <div class="ss"><div class="ss-v">500+</div><div class="ss-l">Startup Tool Deals</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CURRICULUM -->
+<section id="curriculum" class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Curriculum</div>
+    <h2 class="sec-h">6 modules.<br><em>One real startup.</em></h2>
+    <p class="sec-sub">Every module is 6 weeks. Every module ends with a real deliverable — not an exam. You graduate with a company, a financial model, and your first customers.</p>
+    <div class="cur-list">
+
+      <div class="mod open">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 01</span>
+          <span class="mod-t">Design Thinking & Problem Discovery</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">Customer obsession & first-principles thinking — understand your user at a cellular level</div>
+            <div class="mod-pt">Problem validation: Jobs-To-Be-Done, ICP mapping, full user journey design</div>
+            <div class="mod-pt">Market sizing — TAM, SAM, SOM with real data, not guesswork</div>
+            <div class="mod-pt">Rapid validation using AI: GPT workflows, user research automation</div>
+            <div class="mod-pt">Lean experimentation, hypothesis testing, and kill criteria</div>
+            <div class="mod-boot">Bootcamp: Design Thinking Onboarding — Deep empathy building, idea generation, prototype & iterate</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">Validate a startup problem with real user insights, market data, and a tested hypothesis</div></div>
+        </div></div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 02</span>
+          <span class="mod-t">Product & MVP Development</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">MVP thinking — speed over perfection, ship and learn in days not months</div>
+            <div class="mod-pt">No-code / low-code tools + AI-assisted product building (Bubble, Webflow, Glide)</div>
+            <div class="mod-pt">Agentic AI development — build AI agents and growth-on-autopilot systems</div>
+            <div class="mod-pt">Product roadmapping, RICE/ICE prioritization, backlog management</div>
+            <div class="mod-pt">UX/UI fundamentals for founders — what makes a product people love</div>
+            <div class="mod-pt">Building AI-enabled products: wrappers, automation tools, AI copilots</div>
+            <div class="mod-boot">Bootcamp: Agentic AI & No-Code Development — Build your MVP in a weekend</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">Launch your MVP — a live product or working prototype with your first 10 users</div></div>
+        </div></div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 03</span>
+          <span class="mod-t">Sales & Customer Acquisition</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">Founder-led sales — how to sell when you are the product</div>
+            <div class="mod-pt">B2B vs B2C strategies, pipeline building, and CRM systems</div>
+            <div class="mod-pt">Cold outreach mastery — email, LinkedIn, warm intros, follow-up systems</div>
+            <div class="mod-pt">Sales psychology — buying decisions, objection handling, closing without pressure</div>
+            <div class="mod-pt">AI for sales automation: lead generation, outreach sequencing, reporting</div>
+            <div class="mod-pt">Build repeatable revenue engines — from first 10 customers to 100+</div>
+            <div class="mod-boot">Bootcamp: Sales Psychology — Pitch to an Investor Like a Pro</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">Acquire your first paying customers — a documented, repeatable sales process</div></div>
+        </div></div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 04</span>
+          <span class="mod-t">Marketing, Brand & Growth</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">Growth loops & distribution strategy — find your unfair growth channel</div>
+            <div class="mod-pt">Personal branding & founder storytelling — Speak & Influence at scale</div>
+            <div class="mod-pt">Performance marketing: Meta Ads, Google Ads, SEO fundamentals</div>
+            <div class="mod-pt">Content engines — LinkedIn, Twitter/X, short-form video, newsletter flywheels</div>
+            <div class="mod-pt">AI-driven growth: content generation, audience targeting, analytics, experimentation</div>
+            <div class="mod-pt">Go-to-market strategy — positioning, messaging, launch playbooks</div>
+            <div class="mod-boot">Bootcamp: Speak & Influence — Craft compelling narratives that convert</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">A complete go-to-market strategy with measurable growth metrics and a live campaign</div></div>
+        </div></div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 05</span>
+          <span class="mod-t">Finance, Fundraising & Business Models</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">Capital & Financial Intelligence — accounting, core finance, corporate valuation</div>
+            <div class="mod-pt">Financial modelling and management decision-making frameworks</div>
+            <div class="mod-pt">Unit economics & pricing — CAC, LTV, payback periods, margins</div>
+            <div class="mod-pt">Fundraising strategy — VCs, angels, grants, and alternative funding</div>
+            <div class="mod-pt">Investor pitch deck construction and storytelling that converts</div>
+            <div class="mod-pt">Term sheets, cap tables, dilution — navigate deals confidently</div>
+            <div class="mod-boot">Bootcamp: Capital & Financial Intelligence — Model, pitch, and raise</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">Complete financial model + investor-ready pitch deck for Demo Day</div></div>
+        </div></div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-hd" onclick="toggleMod(this)">
+          <span class="mod-n">Module 06</span>
+          <span class="mod-t">Leadership, Scaling & Founder Mindset</span>
+          <span class="mod-a">▾</span>
+        </div>
+        <div class="mod-bd"><div class="mod-in">
+          <div class="mod-pts">
+            <div class="mod-pt">Founder psychology, resilience frameworks, and anti-burnout systems</div>
+            <div class="mod-pt">Hiring your first 5 people — what to look for, where to find them</div>
+            <div class="mod-pt">Culture & org design from day one — values, rituals, operating norms</div>
+            <div class="mod-pt">Decision-making under uncertainty — frameworks used by top operators</div>
+            <div class="mod-pt">Scaling operations & systems — from chaos to repeatable processes</div>
+            <div class="mod-pt">2 Capstone projects — your company roadmap for the next 18 months</div>
+            <div class="mod-boot">Capstone: 18-month roadmap + Live Demo Day with investors & ecosystem partners</div>
+          </div>
+          <div class="mod-proj"><div class="mod-pl">Module Deliverable</div><div class="mod-pt2">Hiring plan, org structure, 18-month roadmap + live investor Demo Day</div></div>
+        </div></div>
+      </div>
+
+    </div>
+
+    <div class="sig-grid">
+      <div class="sig"><div class="sig-tag">Every Sunday</div><div class="sig-text">Live Sunday Labs — case studies, simulations, peer reviews</div></div>
+      <div class="sig"><div class="sig-tag">Dedicated</div><div class="sig-text">1:1 Mentor Pairing with a founder or operator who knows your business</div></div>
+      <div class="sig"><div class="sig-tag">Integrated</div><div class="sig-text">AI-first workflows built into every module and deliverable</div></div>
+      <div class="sig"><div class="sig-tag">Finale</div><div class="sig-text">Demo Day with investors, VCs and ecosystem partners</div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 1:1 MENTORING + FACULTY -->
+<section id="mentors">
+  <div class="wrap">
+    <div class="sec-l">Faculty & 1:1 Mentoring</div>
+    <h2 class="sec-h">One mentor.<br><em>Just for you.</em></h2>
+    <p class="sec-sub">Every Founder MBA student is paired with a dedicated mentor — a founder, operator, or investor matched specifically to the stage and industry you're building in.</p>
+
+    <!-- How it works grid -->
+    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,238,216,0.08);overflow:hidden">
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:14px">How it works</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);margin-bottom:20px;line-height:1.25">Matched to your stage.<br>Not a random assignment.</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px;align-items:flex-start"><span style="color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px">→</span>You fill in your business stage, industry, and goals during onboarding</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px;align-items:flex-start"><span style="color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px">→</span>We match you with a mentor who has direct experience in your exact context</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px;align-items:flex-start"><span style="color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px">→</span>You get 20+ dedicated 1:1 sessions across the 12-month program</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px;align-items:flex-start"><span style="color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px">→</span>Your mentor stays with you — they know your business, your blockers, your goals</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px;align-items:flex-start"><span style="color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px">→</span>Plus access to the full network of 40+ mentors via Sunday Labs and group sessions</div>
+        </div>
+      </div>
+      <div style="background:color-mix(in oklab,var(--ink) 92%,var(--fire) 5%);padding:40px;display:flex;flex-direction:column;justify-content:center;gap:24px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="padding:20px;border-radius:10px;background:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.1)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-style:italic;color:var(--fire);line-height:1">20+</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-top:6px;line-height:1.5">1:1 sessions per student</div>
+          </div>
+          <div style="padding:20px;border-radius:10px;background:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.1)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-style:italic;color:var(--fire);line-height:1">100%</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-top:6px;line-height:1.5">Matched to your stage</div>
+          </div>
+          <div style="padding:20px;border-radius:10px;background:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.1)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-style:italic;color:var(--fire);line-height:1">40+</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-top:6px;line-height:1.5">Global mentor network</div>
+          </div>
+          <div style="padding:20px;border-radius:10px;background:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.1)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-style:italic;color:var(--fire);line-height:1">Top 1%</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-top:6px;line-height:1.5">Founders, VCs & operators</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mentor types -->
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,238,216,0.08);overflow:hidden">
+      <div style="background:var(--ink);padding:28px 24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:10px">Exited Founders</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:19px;font-style:italic;color:var(--paper);line-height:1.3;margin-bottom:8px">Built & sold companies</div>
+        <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.48);line-height:1.6">Founders who've done it — built, scaled, fundraised, and exited. They know every stage of the journey from the inside.</div>
+      </div>
+      <div style="background:var(--ink);padding:28px 24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:10px">VCs & Angel Investors</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:19px;font-style:italic;color:var(--paper);line-height:1.3;margin-bottom:8px">They fund what you're building</div>
+        <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.48);line-height:1.6">Partners at funds and active angel investors who give you the investor's perspective — what they look for, what kills a deal, how to win.</div>
+      </div>
+      <div style="background:var(--ink);padding:28px 24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:10px">Operators & CXOs</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:19px;font-style:italic;color:var(--paper);line-height:1.3;margin-bottom:8px">Scaled from 0 to $10M+</div>
+        <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.48);line-height:1.6">Heads of Growth, CPOs, CFOs, and operators from high-growth startups who help you build the systems, teams, and processes to scale.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mentor scrolling strip -->
+  <div style="margin-top:56px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.35);text-align:center;margin-bottom:20px">Some of your mentors</div>
+  <div class="m-strip" style="padding:8px 0">
+    <div class="m-fade-l"></div>
+    <div class="m-fade-r"></div>
+    <div class="m-track" id="m-track">
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/jason-kraus.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Jason Kraus</div><div class="m-role">Founder, Prepare4VC · Partner, EQx Fund</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/renuka-belwalkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Renuka Belwalkar</div><div class="m-role">Investor · Forbes Under 30 Scholar</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/yash-shah.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Yash Shah</div><div class="m-role">GenAI Head India & SEA · AWS</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/andrew-chow.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Andrew Chow</div><div class="m-role">Co-Founder, Asia Pro Ventures · NTU</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/justin-strackany.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Justin Strackany</div><div class="m-role">LP at GTMFund · 3 exits (SecureLink/Vista)</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/gaurav-thakkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Gaurav Thakkar</div><div class="m-role">Principal VC, Silicon Road · ex-Morgan Stanley</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/john-lim.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">John Lim</div><div class="m-role">Partner, Meet Ventures SG · ex-HOD $100M fund</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Sarvash Malani</div><div class="m-role">DeepTech VC, Temasek · Wharton Grad</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/daniel-ling.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Daniel Ling</div><div class="m-role">ex-VP Design, Lazada & DBS · NUS</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/shavin-goswami.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Shavin Goswami</div><div class="m-role">Global Risk Ops, Meta · ex-EY Consulting</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/rajesh-shetty.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Rajesh Setty</div><div class="m-role">19x Author · Mentor at Founder Institute</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/prantik-mazumdar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Prantik Mazumdar</div><div class="m-role">President, TiE Singapore · Exited Entrepreneur</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">AI Tools & Resources</div>
+    <h2 class="sec-h">500+ tools.<br><em>All yours.</em></h2>
+    <p class="sec-sub">Get the same tech stack as well-funded startups — from day one. Included with every enrollment.</p>
+    <div class="ai-benefit-bar">
+      <div class="ai-val">$1M+</div>
+      <div class="ai-text"><strong>Startup Benefits Package</strong> — included with every enrollment.<br>Access 500+ AI tools, software credits, platform discounts and exclusive startup deals that give you an unfair execution advantage from your first week.</div>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-cat">
+        <div class="ai-cat-t">Build & Ship</div>
+        <div class="ai-tool">ChatGPT / Claude / Gemini</div>
+        <div class="ai-tool">Cursor / GitHub Copilot</div>
+        <div class="ai-tool">Bubble / Webflow / Glide</div>
+        <div class="ai-tool">Zapier / Make / n8n</div>
+        <div class="ai-tool">Vercel / Supabase</div>
+      </div>
+      <div class="ai-cat">
+        <div class="ai-cat-t">Grow & Market</div>
+        <div class="ai-tool">HubSpot / Apollo.io</div>
+        <div class="ai-tool">Instantly / Lemlist</div>
+        <div class="ai-tool">Surfer SEO / Ahrefs</div>
+        <div class="ai-tool">Canva Pro / Adobe Express</div>
+        <div class="ai-tool">Notion AI / Coda</div>
+      </div>
+      <div class="ai-cat">
+        <div class="ai-cat-t">Raise & Finance</div>
+        <div class="ai-tool">Carta / Qonto</div>
+        <div class="ai-tool">Runway / Causal</div>
+        <div class="ai-tool">Docsend / PitchBook</div>
+        <div class="ai-tool">Stripe / Razorpay</div>
+        <div class="ai-tool">Mercury / Brex</div>
+      </div>
+      <div class="ai-cat">
+        <div class="ai-cat-t">Operate & Scale</div>
+        <div class="ai-tool">Slack / Linear / Loom</div>
+        <div class="ai-tool">AWS / GCP / Azure credits</div>
+        <div class="ai-tool">Mixpanel / Amplitude</div>
+        <div class="ai-tool">Figma / Framer</div>
+        <div class="ai-tool">Intercom / Freshdesk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- LAUNCHLABS -->
+<section class="dark-sec">
+  <div class="wrap">
+
+    <!-- Header -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:48px;flex-wrap:wrap;margin-bottom:64px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin-bottom:16px">In-house Execution Engine</div>
+        <h2 style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:-0.022em;line-height:.95;color:var(--paper)">LaunchLabs</h2>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(20px,2.5vw,28px);font-style:italic;color:var(--fire);margin-top:8px;letter-spacing:-0.01em">We build with you. Not for you.</div>
+      </div>
+      <div style="max-width:360px;padding-top:8px">
+        <div style="font-family:'Inter Tight',sans-serif;font-size:15px;line-height:1.75;color:rgba(245,238,216,0.55)">Whatever phase you're in — building, growing, raising, or stuck — LaunchLabs gives you real hands-on support to unblock you and keep moving.</div>
+      </div>
+    </div>
+
+    <!-- 6 service tiles -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,238,216,0.08);border-radius:2px;overflow:hidden">
+
+      <div class="ll-tile">
+        <div class="ll-num">01</div>
+        <div class="ll-icon">⚙️</div>
+        <div class="ll-name">Tech & Development</div>
+      </div>
+
+      <div class="ll-tile">
+        <div class="ll-num">02</div>
+        <div class="ll-icon">📣</div>
+        <div class="ll-name">Marketing & Growth</div>
+      </div>
+
+      <div class="ll-tile">
+        <div class="ll-num">03</div>
+        <div class="ll-icon">💸</div>
+        <div class="ll-name">Fundraising</div>
+      </div>
+
+      <div class="ll-tile">
+        <div class="ll-num">04</div>
+        <div class="ll-icon">🎬</div>
+        <div class="ll-name">Content & Editing</div>
+      </div>
+
+      <div class="ll-tile">
+        <div class="ll-num">05</div>
+        <div class="ll-icon">🖥️</div>
+        <div class="ll-name">UI / UX Design</div>
+      </div>
+
+      <div class="ll-tile">
+        <div class="ll-num">06</div>
+        <div class="ll-icon">⚖️</div>
+        <div class="ll-name">Legal & Compliance</div>
+      </div>
+
+    </div>
+
+    <!-- Bottom callout -->
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,238,216,0.08);overflow:hidden;border-radius:2px">
+      <div style="background:color-mix(in oklab,var(--fire) 7%,transparent);padding:28px 32px;display:flex;align-items:center;gap:20px">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:44px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">6</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.55);line-height:1.7">Specialist teams<br>ready to execute with you</div>
+      </div>
+      <div style="background:var(--ink);padding:28px 32px;display:flex;align-items:center">
+        <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.52)">Not just advice. <strong style="color:var(--paper);font-weight:500">Hands-on execution</strong> — you're never stuck waiting for the next session to move.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SUNDAY SESSIONS -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Sunday Sessions</div>
+    <h2 class="sec-h">Every Sunday.<br><em>You build something real.</em></h2>
+    <p class="sec-sub">Experiential learning sessions every week — Harvard-style.</p>
+
+    <div style="position:relative;margin-top:56px">
+      <!-- 3 tabs only -->
+      <div style="display:flex;border-radius:14px 14px 0 0;overflow:hidden;
+        background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+        border:.5px solid rgba(245,238,216,0.1);border-bottom:0">
+        <div class="sun-tab active" data-sun="0" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 8px;cursor:pointer;transition:background .25s;border-right:.5px solid rgba(245,238,216,0.08)">
+          <div style="font-size:26px">📚</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fire)">Case Studies</div>
+        </div>
+        <div class="sun-tab" data-sun="1" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 8px;cursor:pointer;transition:background .25s;border-right:.5px solid rgba(245,238,216,0.08)">
+          <div style="font-size:26px">⚡</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.42)">Challenges</div>
+        </div>
+        <div class="sun-tab" data-sun="2" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 8px;cursor:pointer;transition:background .25s">
+          <div style="font-size:26px">🤖</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.42)">AI Workshops</div>
+        </div>
+      </div>
+      <!-- Sliding fire bar -->
+      <div style="height:2px;background:rgba(245,238,216,0.06);position:relative;overflow:hidden">
+        <div id="sun-bar" style="position:absolute;top:0;height:100%;background:var(--fire);width:33.333%;left:0%;transition:left .45s cubic-bezier(.4,0,.2,1)"></div>
+      </div>
+      <!-- Detail panel -->
+      <div style="padding:44px;border-radius:0 0 14px 14px;
+        background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+        border:.5px solid rgba(245,238,216,0.1);border-top:0;
+        display:grid;grid-template-columns:100px 1fr;gap:28px;align-items:center;min-height:148px">
+        <div id="sun-num" style="font-family:'Instrument Serif',Georgia,serif;font-size:80px;font-style:italic;line-height:1;color:var(--fire);opacity:.14;transition:opacity .3s">01</div>
+        <div>
+          <div id="sun-title" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;letter-spacing:-0.01em;color:var(--paper);margin-bottom:10px;transition:opacity .3s">Harvard-Style Case Studies</div>
+          <div id="sun-desc" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.42);line-height:1.9;transition:opacity .3s">Real startup failures & wins · Step into the founder's shoes · Defend your decision to the room</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;padding:20px 32px;border-radius:10px;
+      background:color-mix(in oklab,var(--fire) 6%,transparent);
+      border:.5px solid color-mix(in oklab,var(--fire) 16%,transparent);
+      display:flex;align-items:center;gap:24px">
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:38px;font-style:italic;color:var(--fire);flex-shrink:0;line-height:1">50+</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.48);line-height:1.9">Sessions across the program · Every session recorded · Every session has a deliverable</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- STUDENT LAUNCHES -->
+<section id="launches" class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Companies Built</div>
+    <h2 class="sec-h">Our founders don't wait<br><em>to graduate.</em></h2>
+    <p class="sec-sub">10 real companies built by Founder MBA graduates — funded, revenue-generating, and scaling.</p>
+  </div>
+  <div style="position:relative;overflow:hidden;margin-top:48px;padding:8px 0 48px">
+    <div style="position:absolute;top:0;bottom:0;left:0;width:120px;z-index:2;background:linear-gradient(90deg,var(--ink),transparent);pointer-events:none"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:120px;z-index:2;background:linear-gradient(270deg,var(--ink),transparent);pointer-events:none"></div>
+    <div id="launches-track" style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:16px;width:max-content;will-change:transform">
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/salt-and-sun.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Foliages</div><div class="lby">Reyo Augustine · Bengaluru</div></div><div class="lraised">Bootstrapped · Profitable</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/forge-labs.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Devananta</div><div class="lby">Devyansh Agarwal · Mumbai</div></div><div class="lraised">$200K Seed · Govt Grants</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/maitri.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Mvaak.ai</div><div class="lby">Shivam Pal · Delhi</div></div><div class="lraised">$200K Pre-Seed</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/otra.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Jopana</div><div class="lby">Dr Ananth Srinivasan · Bengaluru</div></div><div class="lraised">Bootstrapped · Revenue</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"><img src="../images/founders/lumen.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Cyclo Care</div><div class="lby">Manish Charhate · Bengaluru</div></div><div class="lraised">10K+ Downloads</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/quill.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Reel Ninja Studios</div><div class="lby">Swarit Bharadwaj · Delhi</div></div><div class="lraised">$20K Grants · PMF</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"></div></div><div><div class="lnm">Aesthetic Essentials</div><div class="lby">Vishesh Arora · Delhi</div></div><div class="lraised">$2M ARR · 150+ SKUs</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"></div></div><div><div class="lnm">ClaimBack</div><div class="lby">Abhijith Jajio · Bengaluru</div></div><div class="lraised">6.5 Cr INR Managed</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"></div></div><div><div class="lnm">Sustainify</div><div class="lby">Guliz · Singapore</div></div><div class="lraised">ASEAN Startup Finalist</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"></div></div><div><div class="lnm">Flare.io</div><div class="lby">Praharsha G · Bengaluru</div></div><div class="lraised">400K+ Users · Revenue</div></div>
+    </div>
+  </div>
+  <!-- Row 2 — scrolls RIGHT (opposite direction) -->
+  <div style="position:relative;overflow:hidden;padding:0 0 48px">
+    <div style="position:absolute;top:0;bottom:0;left:0;width:120px;z-index:2;background:linear-gradient(90deg,var(--ink),transparent);pointer-events:none"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:120px;z-index:2;background:linear-gradient(270deg,var(--ink),transparent);pointer-events:none"></div>
+    <div id="launches-track-2" style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:16px;width:max-content;will-change:transform">
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s8.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">BlendYeh</div><div class="lby">Samrudh R · Chennai</div></div><div class="lraised">IIT Madras · Pilot Live</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s10.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">CloudComm.io</div><div class="lby">Alex · Spain</div></div><div class="lraised">$50K+ MRR</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/s11.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Vandan Group</div><div class="lby">Ayush Agarwal · Pune</div></div><div class="lraised">50+ Year Legacy · 100+ Team</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"><img src="../images/founders/s12.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Cureeasy.io</div><div class="lby">Suraj Reddy · Dubai</div></div><div class="lraised">Bootstrapped · Revenue</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s13.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Wordful</div><div class="lby">Charles Bohannan · San Francisco</div></div><div class="lraised">$200K Pre-Seed · Profitable</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/s14.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Ojiva.ai</div><div class="lby">Vinay Reddy · Hyderabad</div></div><div class="lraised">100,000+ Subscribers</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"><img src="../images/founders/s15.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Vakalo.ai</div><div class="lby">Sai Kiran · Hyderabad</div></div><div class="lraised">$100K+ In Grants</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"><img src="../images/founders/s18.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Mindler.AI</div><div class="lby">Sandhya Pradhan · Bengaluru</div></div><div class="lraised">Bootstrapped · PMF</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s19.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Ignoimagine</div><div class="lby">Sumana Mandal · Hyderabad</div></div><div class="lraised">Bootstrapped · 22+ Projects</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/s20.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Human Tag</div><div class="lby">Elsefity Mohammed · Dubai</div></div><div class="lraised">$950K Revenue · Series A</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATED JOURNEY -->
+
+<!-- PHOTO GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Life at LaunchPilot</div>
+    <h2 class="sec-h">Building across<br><em>six countries.</em></h2>
+    <div class="gallery">
+      <div class="g-box tall"><img src="../images/cohort/01.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Singapore · Demo Day</div></div>
+      <div class="g-box"><img src="../images/cohort/02.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">San Francisco</div></div>
+      <div class="g-box"><img src="../images/cohort/03.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Dubai</div></div>
+      <div class="g-box wide"><img src="../images/cohort/04.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Cohort Intensive</div></div>
+      <div class="g-box"><img src="../images/cohort/05.jpg" alt="" onerror="this.style.opacity='0'"><div class="g-lbl">Bali Retreat</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Testimonials</div>
+    <h2 class="sec-h">Hear it from<br><em>the founders.</em></h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-q">LaunchPilot helped me go from idea to revenue in 12 weeks. The mentorship and execution focus is unmatched.</div>
+        <div class="testi-auth">
+          <div class="testi-av"><img src="../images/testimonials/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
+          <div><div class="testi-nm">Rohan Mehta</div><div class="testi-rl">Founder · Cohort 2</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-q">This is not an MBA. It's a startup accelerator disguised as one. I've never learned faster in my life.</div>
+        <div class="testi-auth">
+          <div class="testi-av"><img src="../images/testimonials/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
+          <div><div class="testi-nm">Ananya Shah</div><div class="testi-rl">Growth Lead · Cohort 1</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-q">The AI workflows alone gave me 10x execution speed. I shipped in weeks what used to take months.</div>
+        <div class="testi-auth">
+          <div class="testi-av"><img src="../images/testimonials/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:44px;height:44px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div>
+          <div><div class="testi-nm">Arjun Verma</div><div class="testi-rl">Founder · Cohort 3</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS & PLACEMENTS -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Startup Jobs & Placements</div>
+    <h2 class="sec-h">We don't stop<br><em>when you graduate.</em></h2>
+    <p class="sec-sub">If your startup doesn't take off immediately — LaunchPilot places you in the best startup roles in the ecosystem through our AI-powered jobs platform.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px">
+      <div style="padding:36px;border-radius:14px;background:color-mix(in oklab,var(--fire) 7%,transparent);border:.5px solid color-mix(in oklab,var(--fire) 22%,transparent)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:14px">Our AI Platform</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:26px;font-style:italic;letter-spacing:-0.01em;color:var(--paper);line-height:1.2;margin-bottom:16px">Startup-focussed jobs,<br>matched by AI.</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>AI matches you to roles based on your skills, stage & goals</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Roles in product, growth, sales, ops & founding teams</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Warm intros — not cold applications</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>200+ hiring partners across India, SEA, Middle East & US</div>
+        </div>
+      </div>
+      <div style="padding:36px;border-radius:14px;background:color-mix(in oklab,var(--paper) 4%,var(--ink));border:.5px solid rgba(245,238,216,0.1)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-bottom:14px">Hiring Partners</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-style:italic;letter-spacing:-0.01em;color:var(--paper);line-height:1.2;margin-bottom:24px">200+ companies hiring<br>our graduates.</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+<div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/01.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/02.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/03.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/04.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/05.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/06.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/07.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/08.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/09.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div><div style="aspect-ratio:1;border-radius:8px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 9px);border:.5px solid rgba(245,238,216,0.12);overflow:hidden"><img src="../images/hiring/10.png" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block"></div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.25);margin-top:10px;text-align:center">Add logos to images/hiring/ — named 01.png to 10.png</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Program Outcomes</div>
+    <h2 class="sec-h">What you leave<br><em>with.</em></h2>
+    <div class="oc-grid">
+      <div class="oc"><div class="oc-n">100+</div><div class="oc-l">Startups launched by graduates</div></div>
+      <div class="oc"><div class="oc-n">70%</div><div class="oc-l">Founders reach MVP or revenue stage</div></div>
+      <div class="oc"><div class="oc-n">$8.4M</div><div class="oc-l">Revenue generated by alumni</div></div>
+      <div class="oc"><div class="oc-n">40+</div><div class="oc-l">World-class mentors in your corner</div></div>
+    </div>
+    <div style="margin-top:16px;padding:32px 36px;border-radius:12px;
+      background:color-mix(in oklab,var(--fire) 6%,transparent);
+      border:.5px solid color-mix(in oklab,var(--fire) 16%,transparent);
+      display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div style="font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.68);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">→</span>A real, launched startup</div>
+      <div style="font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.68);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">→</span>First customers or live revenue</div>
+      <div style="font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.68);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">→</span>Investor-ready pitch deck & financial model</div>
+      <div style="font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.68);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">→</span>Globally recognised MBA degree</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION DEGREE -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Degree & Accreditation</div>
+    <h2 class="sec-h">You graduate with<br><em>a real MBA degree.</em></h2>
+    <p class="sec-sub">LaunchPilot is the only startup school that gives you a globally recognised, EU-accredited MBA — at a fraction of the cost of traditional programs.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px">
+      <!-- Degree card -->
+      <div style="padding:40px;border-radius:14px;
+        background:color-mix(in oklab,var(--fire) 7%,transparent);
+        border:.5px solid color-mix(in oklab,var(--fire) 22%,transparent)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:16px">Your Degree</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;letter-spacing:-0.015em;color:var(--paper);line-height:1.1;margin-bottom:20px">MBA<br>in Entrepreneurship</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.5);margin-bottom:28px">Awarded by Woolf University · EU Accredited</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Internationally recognised MBA degree</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Accredited under EU higher education framework</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>1/10th the cost of a traditional MBA program</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Earn while you build — part-time and hybrid</div>
+        </div>
+      </div>
+      <!-- Woolf University card -->
+      <div style="padding:40px;border-radius:14px;
+        background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+        border:.5px solid rgba(245,238,216,0.1)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-bottom:16px">Accrediting Body</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;letter-spacing:-0.015em;color:var(--paper);line-height:1.1;margin-bottom:8px">Woolf University</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.4);margin-bottom:24px">Founded in Malta · EU Recognised</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>First blockchain-enabled university in the EU</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>Recognised under the European Credit Transfer system</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>Partner to LaunchPilot for the MBA degree</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">EU Accredited</div>
+          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">ECTS Framework</div>
+          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">Malta Licensed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner logos bar -->
+    <div style="margin-top:24px;padding:24px 32px;border-radius:12px;
+      background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+      border:.5px solid rgba(245,238,216,0.08);
+      display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,238,216,0.28);flex-shrink:0">Also accredited by</div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">IBM</div>
+        <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">NUS Singapore</div>
+        <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">IIT Bombay</div>
+        <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">Startup India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-l">Pricing & Programs</div>
+    <h2 class="sec-h">Choose your<br><em>track.</em></h2>
+    <p class="sec-sub">Two ways to join LaunchPilot. One gives you the full MBA degree. Both give you the skills, network, and execution support to build something real.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px">
+
+      <!-- PGP Track -->
+      <div style="padding:40px;border-radius:16px;
+        background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+        border:.5px solid rgba(245,238,216,0.12);
+        transition:border-color .25s">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-bottom:8px">6 Months</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:30px;font-style:italic;letter-spacing:-0.01em;color:var(--paper);margin-bottom:4px">Post Graduate<br>Program</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.35);margin-bottom:32px">Founder Track · No Degree</div>
+        <div style="margin-bottom:32px">
+          <div style="font-family:'Instrument Serif',Georgia,serif;font-size:48px;font-style:italic;letter-spacing:-0.02em;color:var(--paper);line-height:1">₹3,00,000</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.35);margin-top:4px">INR · All inclusive</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>6 core modules (3–4 weeks each)</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>1:1 dedicated mentor matching</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>LaunchLabs execution support</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>$1M+ startup benefits & AI tools</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Global immersions (optional add-on)</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Demo Day with investors</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.38);display:flex;gap:10px"><span style="color:rgba(245,238,216,0.2);flex-shrink:0">✗</span>MBA degree not included</div>
+        </div>
+        <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.22);color:rgba(245,238,216,0.7);transition:border-color .2s,color .2s" onmouseover="this.style.borderColor='rgba(245,238,216,0.5)';this.style.color='var(--paper)'" onmouseout="this.style.borderColor='rgba(245,238,216,0.22)';this.style.color='rgba(245,238,216,0.7)'">Apply for PGP Track →</a>
+      </div>
+
+      <!-- MBA Track -->
+      <div style="padding:40px;border-radius:16px;
+        background:color-mix(in oklab,var(--fire) 8%,transparent);
+        border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
+        position:relative;overflow:hidden">
+        <div style="position:absolute;top:20px;right:20px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500">Most Popular</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:8px">12 Months</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:30px;font-style:italic;letter-spacing:-0.01em;color:var(--paper);margin-bottom:4px">Founder MBA<br><em style="color:var(--fire)">AI-First</em></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45);margin-bottom:32px">Full MBA Degree · Woolf University</div>
+        <div style="margin-bottom:32px">
+          <div style="font-family:'Instrument Serif',Georgia,serif;font-size:48px;font-style:italic;letter-spacing:-0.02em;color:var(--paper);line-height:1">₹5,00,000</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.45);margin-top:4px">INR · All inclusive · Degree included</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Everything in PGP Track</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>EU-accredited MBA degree</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>12 months of full program access</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>2000+ contact hours</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>2 capstone projects + Demo Day</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Globally recognised degree certificate</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Priority mentor matching</div>
+        </div>
+        <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply for Founder MBA →</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.3);margin-top:24px">EMI options available · Talk to admissions for custom plans</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="apply" class="cta-sec">
+  <div class="wrap">
+    <h2>Stop waiting for<br><em>permission to build.</em></h2>
+    <p>Rolling admissions — seats are limited per cohort. Apply early to secure your place.</p>
+    <div class="cta-btns">
+      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-fire" style="font-size:12px;padding:16px 32px">Apply for Founder MBA ↗</a>
+      <a href="https://brochure.mentogram.com/launchpilot-mba" target="_blank" class="btn-outline" style="font-size:12px;padding:16px 32px">Download Brochure</a>
+    </div>
+    <div class="cta-facts">
+      <div class="cf"><div class="cf-v">12 months</div><div class="cf-l">Duration</div></div>
+      <div class="cf-div"></div>
+      <div class="cf"><div class="cf-v">Part-time & Hybrid</div><div class="cf-l">Format</div></div>
+      <div class="cf-div"></div>
+      <div class="cf"><div class="cf-v">July 2026</div><div class="cf-l">Next Cohort</div></div>
+      <div class="cf-div"></div>
+      <div class="cf"><div class="cf-v">Rolling Admissions</div><div class="cf-l">Apply Early</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">LaunchPilot <em>School of Business</em></div>
+  <div class="f-links">
+    <a href="/">Homepage</a>
+    <a href="/#programs">All Programs</a>
+    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank">Apply</a>
+  </div>
+  <div class="f-copy">© 2026 LaunchPilot · All rights reserved</div>
+</footer>
+
+<script>
+// Curriculum accordion
+function toggleMod(hd){
+  var mod = hd.parentElement;
+  var open = mod.classList.contains('open');
+  document.querySelectorAll('.mod').forEach(function(m){ m.classList.remove('open'); });
+  if(!open) mod.classList.add('open');
+}
+
+
+// ── Student launches RAF scroller ─────────────────────────────────────
+(function(){
+  var t=document.getElementById('launches-track');
+  if(!t)return;
+  Array.from(t.querySelectorAll('.lcard')).forEach(function(c){t.appendChild(c.cloneNode(true));});
+  var pos=0,paused=false,last=null,halfW=0;
+  function measure(){halfW=t.scrollWidth/2;}
+  requestAnimationFrame(function(){measure();window.addEventListener('resize',measure);});
+  t.addEventListener('mouseenter',function(){paused=true;});
+  t.addEventListener('mouseleave',function(){paused=false;});
+  function tick(ts){
+    if(last&&!paused&&halfW){pos+=60*(ts-last)/1000;if(pos>=halfW)pos=0;t.style.transform='translateX(-'+pos.toFixed(1)+'px)';}
+    last=ts;requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+// ── Sunday Sessions tabs ─────────────────────────────────────────────
+(function(){
+  var DATA=[
+    {num:'01',title:'Harvard-Style Case Studies',desc:'Real startup failures & wins · Step into the founder’s shoes · Defend your decision to the room'},
+    {num:'02',title:'Execution Sprints & Challenges',desc:'48-hour build challenges · Ship a landing page · Close a customer · Run a real experiment'},
+    {num:'03',title:'AI-Powered Workshops',desc:'Build with AI tools in real-time · No-code MVPs · AI agents · Automation workflows built live'},
+  ];
+  var tabs=Array.from(document.querySelectorAll('.sun-tab'));
+  var bar=document.getElementById('sun-bar');
+  var numEl=document.getElementById('sun-num');
+  var titEl=document.getElementById('sun-title');
+  var dscEl=document.getElementById('sun-desc');
+  var cur=0;
+  function activate(i){
+    cur=i;
+    if(bar) bar.style.left=(i*33.333)+'%';
+    tabs.forEach(function(t,j){
+      var lbl=t.querySelector('div:last-child');
+      if(lbl) lbl.style.color=j===i?'oklch(0.72 0.18 45)':'rgba(245,238,216,0.42)';
+      t.style.background=j===i?'color-mix(in oklab,var(--ink) 88%,oklch(0.72 0.18 45) 8%)':'';
+    });
+    if(numEl) numEl.style.opacity='0';
+    if(titEl) titEl.style.opacity='0';
+    if(dscEl) dscEl.style.opacity='0';
+    setTimeout(function(){
+      if(numEl){numEl.textContent=DATA[i].num;numEl.style.opacity='1';}
+      if(titEl){titEl.textContent=DATA[i].title;titEl.style.opacity='1';}
+      if(dscEl){dscEl.textContent=DATA[i].desc;dscEl.style.opacity='1';}
+    },200);
+  }
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){activate(i);clearInterval(timer);});});
+  activate(0);
+  var timer=setInterval(function(){activate((cur+1)%DATA.length);},2800);
+})();
+
+
+
+// ── Student launches strip row 2 (reverse) ────────────────────────────
+(function(){
+  var t=document.getElementById('launches-track-2');
+  if(!t)return;
+  Array.from(t.querySelectorAll('.lcard')).forEach(function(c){t.appendChild(c.cloneNode(true));});
+  var halfW=0, pos=0, paused=false, last=null;
+  function measure(){halfW=t.scrollWidth/2; if(!pos) pos=halfW*0.4;}
+  requestAnimationFrame(function(){measure(); window.addEventListener('resize',measure);});
+  t.addEventListener('mouseenter',function(){paused=true;});
+  t.addEventListener('mouseleave',function(){paused=false;});
+  function tick(ts){
+    if(last&&!paused&&halfW){
+      pos-=55*(ts-last)/1000; // negative = scroll right
+      if(pos<=0) pos=halfW;
+      t.style.transform='translateX(-'+pos.toFixed(1)+'px)';
+    }
+    last=ts; requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+// ── Animated journey ─────────────────────────────────────────────────
+(function(){
+  var DETAILS = [
+    {num:'01',title:'Idea',desc:'Validate your problem with real users. Find your ICP. Size your market. Kill bad ideas fast — before they waste your time and money.'},
+    {num:'02',title:'Product',desc:'Build your MVP in days, not months. No code required. AI-assisted product development means you ship faster than anyone without a technical co-founder.'},
+    {num:'03',title:'Marketing',desc:'Build your GTM from scratch. Master your distribution channel. Create content that attracts customers on autopilot.'},
+    {num:'04',title:'Revenue',desc:'Acquire your first 10, 50, then 100 paying customers. Build a repeatable sales engine. Hit your first real revenue milestone inside the program.'},
+    {num:'05',title:'Fundraising',desc:'Build your pitch deck, financial model, and investor narrative. Get warm intros to VCs and angels through your LaunchPilot network.'},
+    {num:'06',title:'Hiring',desc:'Hire your first 2-5 people the right way. Build a culture worth joining. Set up systems so the company runs beyond just you.'},
+    {num:'07',title:'Unstoppable',desc:'You\'ve built a real company — with revenue, a team, and a roadmap. Now scale, with the skills, network and MBA degree to back you up.'},
+  ];
+  var steps=document.querySelectorAll('.jx-step');
+  var bar=document.getElementById('progress-bar');
+  var jdNum=document.getElementById('jd-num');
+  var jdTitle=document.getElementById('jd-title');
+  var jdDesc=document.getElementById('jd-desc');
+  var detail=document.getElementById('journey-detail');
+  var current=0;
+  function activate(idx){
+    current=idx;
+    if(bar) bar.style.width=(idx/(steps.length-1)*100)+'%';
+    steps.forEach(function(s,i){
+      var dot=s.querySelector('.jx-dot');
+      if(i<idx){dot.style.background='oklch(0.72 0.18 45)';dot.style.borderColor='oklch(0.72 0.18 45)';dot.style.boxShadow='none';s.style.opacity='0.65';}
+      else if(i===idx){dot.style.background='white';dot.style.borderColor='white';dot.style.boxShadow='0 0 0 4px rgba(255,255,255,0.15),0 0 20px rgba(255,255,255,0.2)';s.style.opacity='1';}
+      else{dot.style.background='var(--ink)';dot.style.borderColor='rgba(245,238,216,0.2)';dot.style.boxShadow='none';s.style.opacity='0.3';}
+    });
+    var d=DETAILS[idx];
+    if(jdNum) jdNum.textContent=d.num;
+    if(jdTitle) jdTitle.textContent=d.title;
+    if(detail){detail.style.opacity='0';setTimeout(function(){if(jdDesc) jdDesc.textContent=d.desc;detail.style.opacity='1';},80);}
+  }
+  steps.forEach(function(s){s.addEventListener('click',function(){activate(parseInt(s.dataset.idx));clearInterval(timer);});});
+  activate(0);
+  var timer=setInterval(function(){activate((current+1)%steps.length);},2400);
+})();
+
+// City map interaction
+function setCity(e, code){
+  document.querySelectorAll('.city-tab').forEach(function(t){ t.classList.remove('active'); });
+  var tab = document.getElementById('tab-' + code);
+  if(tab) tab.classList.add('active');
+}
+
+// Mentor track — duplicate for loop
+(function(){
+  var t = document.getElementById('m-track');
+  if(!t) return;
+  Array.from(t.querySelectorAll('.m-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+})();
+
+// Animated arc particles
+(function(){
+  var p1 = document.getElementById('p1');
+  var p2 = document.getElementById('p2');
+  if(!p1||!p2) return;
+  var routes = [
+    [112,160, 450,10, 740,188],
+    [740,188, 638,110, 555,128],
+    [555,128, 592,138, 628,182],
+    [740,188, 752,132, 792,120],
+    [792,120, 768,154, 750,212],
+  ];
+  var t1=0, r1=0, t2=0.5, r2=2;
+  function qp(t,ax,ay,cx,cy,bx,by){
+    var u=1-t;
+    return{x:u*u*ax+2*u*t*cx+t*t*bx, y:u*u*ay+2*u*t*cy+t*t*by};
+  }
+  function tick(){
+    t1=(t1+0.003)%1; if(t1<0.003) r1=(r1+1)%routes.length;
+    var ro1=routes[r1]; var pt1=qp(t1,ro1[0],ro1[1],ro1[2],ro1[3],ro1[4],ro1[5]);
+    p1.setAttribute('cx',pt1.x.toFixed(1)); p1.setAttribute('cy',pt1.y.toFixed(1));
+    t2=(t2+0.002)%1; if(t2<0.002) r2=(r2+1)%routes.length;
+    var ro2=routes[r2]; var pt2=qp(t2,ro2[0],ro2[1],ro2[2],ro2[3],ro2[4],ro2[5]);
+    p2.setAttribute('cx',pt2.x.toFixed(1)); p2.setAttribute('cy',pt2.y.toFixed(1));
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
