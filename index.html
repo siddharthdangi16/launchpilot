@@ -124,7 +124,7 @@
 
   /* SECTION HEAD */
   .sec-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;
-    padding:96px 0 32px;border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+    padding:56px 0 24px;border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
   .sec-head .num{font-family:var(--mono);font-size:12px;letter-spacing:.2em;
     color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)}
   .sec-head h2{font-family:var(--serif);font-size:clamp(36px, 5vw, 64px);font-weight:400;
@@ -247,7 +247,7 @@
     color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%)}
 
   /* OUTCOMES strip */
-  .outcomes{padding:96px 0 32px}
+  .outcomes{padding:56px 0 24px}
   .outcomes h4{font-family:var(--serif);font-size:clamp(32px, 4vw, 52px);font-weight:400;
     letter-spacing:-0.02em;line-height:1;max-width:24ch;margin-bottom:36px}
   .outcomes h4 em{font-style:italic;color:var(--fire)}
@@ -275,7 +275,7 @@
     color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)}
 
   /* MENTOR marquee — 2 lines, opposite directions */
-  .mentor-marquee{margin-top:48px;display:flex;flex-direction:column;gap:18px;
+  .mentor-marquee{margin-top:28px;display:flex;flex-direction:column;gap:16px;
     --mask:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
     -webkit-mask-image:var(--mask);mask-image:var(--mask)}
   .m-row{overflow:hidden;position:relative}
@@ -286,14 +286,14 @@
   .m-row:nth-child(3) .m-track{animation-duration:100s}
   .m-row:hover .m-track{animation-play-state:paused}
   @keyframes m-scroll{ to { transform: translateX(-50%) } }
-  .m-card{flex:0 0 auto;display:flex;align-items:center;gap:14px;
-    padding:12px 18px 12px 12px;border-radius:999px;
+  .m-card{flex:0 0 auto;display:flex;align-items:center;gap:18px;
+    padding:16px 28px 16px 16px;border-radius:999px;
     border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
     background:color-mix(in oklab, var(--ink) 92%, var(--paper) 8%);
     transition:border-color .25s, background .25s}
   .m-card:hover{border-color:color-mix(in oklab, var(--fire) 50%, transparent);
     background:color-mix(in oklab, var(--ink) 80%, var(--fire) 6%)}
-  .m-card .ph{width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  .m-card .ph{width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;
     position:relative;
     background: repeating-linear-gradient(45deg,
       color-mix(in oklab, var(--paper) 14%, transparent) 0 6px,
@@ -303,9 +303,9 @@
     filter:grayscale(15%);transition:filter .35s}
   .m-card:hover .ph img{filter:grayscale(0%)}
   .m-card .info{display:flex;flex-direction:column;gap:1px;line-height:1.2}
-  .m-card .nm{font-family:var(--serif);font-size:18px;letter-spacing:-0.005em}
+  .m-card .nm{font-family:var(--serif);font-size:24px;letter-spacing:-0.01em}
   .m-card .nm i{font-style:italic}
-  .m-card .role{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  .m-card .role{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
     color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%)}
 
   /* STARTUPS — dense compact grid for 30+ */
@@ -345,7 +345,7 @@
     color:color-mix(in oklab, var(--paper) 78%, var(--ink) 22%);text-transform:uppercase}
 
   /* COHORT — horizontal scrolling marquee */
-  .cohort-sec{padding:80px 0 48px}
+  .cohort-sec{padding:48px 0 32px}
   .cohort-strip{position:relative;overflow:hidden;margin-top:48px;display:flex;flex-direction:column;gap:14px}
   .cohort-strip::before,.cohort-strip::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
   .cohort-strip::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
@@ -410,7 +410,7 @@
   .mentor .role b{font-weight:500;color:var(--paper)}
 
   /* legacy mentor portrait grid (no longer used) */
-  .partners{padding:80px 0}
+  .partners{padding:48px 0}
   .partners .label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;
     text-transform:uppercase;color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);
     margin-bottom:32px}
@@ -544,7 +544,7 @@
 
     /* ── General ── */
     .wrap,nav.top .inner{padding-left:20px;padding-right:20px}
-    .sec-head{grid-template-columns:1fr;gap:10px}
+    .sec-head{grid-template-columns:1fr;gap:8px;padding:32px 0 16px}
     .sec-head .aside{text-align:left;max-width:100%}
     .program{grid-template-columns:1fr;gap:12px;padding:24px 0}
     .programs{grid-template-columns:1fr}
@@ -991,7 +991,7 @@
 </section>
 
 <!-- ── IN THE NEWS ──────────────────────────────────────────────────── -->
-<section id="news" style="padding:80px 0 0">
+<section id="news" style="padding:48px 0 0">
   <div class="wrap">
     <div class="sec-head">
       <div class="num">— In the news</div>
@@ -1013,31 +1013,31 @@
 </section>
 
 <!-- ── STUDENT SHORT-FORM VIDEOS ─────────────────────────────────────── -->
-<section id="student-stories" style="padding:80px 0 0">
+<section id="student-stories" style="padding:48px 0 0">
   <div class="wrap">
     <div class="sec-head">
       <div class="num">— Student stories</div>
       <h4 style="font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);font-weight:400;letter-spacing:-0.02em;line-height:1">Hear it from the <em style="font-style:italic;color:var(--fire)">founders.</em></h4>
-      <div class="aside">Hover to pause &amp; play</div>
+      <div class="aside">Click to play</div>
     </div>
   </div>
-  <div class="reel-strip" style="margin-top:48px;overflow:hidden;width:100%">
-    <div class="reel-fade-l"></div>
-    <div class="reel-fade-r"></div>
-    <div class="reel-track" id="reel-track" style="display:flex;flex-direction:row;flex-wrap:nowrap;width:max-content">
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/01.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-01.mp4" poster="images/reels/01.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">01</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '25</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/02.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-02.mp4" poster="images/reels/02.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">02</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '24</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/03.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-03.mp4" poster="images/reels/03.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">03</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '25</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/04.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-04.mp4" poster="images/reels/04.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">04</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '23</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/05.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-05.mp4" poster="images/reels/05.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">05</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '24</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/06.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-06.mp4" poster="images/reels/06.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">06</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '25</div></div></div></div>
-      <div class="reel-card" style="flex:0 0 220px;flex-shrink:0"><div class="reel-thumb" style="width:220px;height:380px;overflow:hidden;position:relative;flex-shrink:0;border-radius:16px;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.08) 0px,rgba(245,238,216,0.08) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);background-color:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.12)"><img src="images/reels/07.jpg" alt="" onerror="this.style.display=\'none\'" style="position:absolute;top:0;left:0;width:220px;height:380px;object-fit:cover;object-position:top center;display:block;max-width:none"><video class="reel-video" src="videos/student-07.mp4" poster="images/reels/07.jpg" preload="none" loop muted playsinline></video><div class="reel-ph-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36" style="color:white;opacity:.18"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z"/></svg><span class="reel-ph-num">07</span></div><div class="reel-play-btn"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div><div class="reel-bottom"><div class="reel-name" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Student name</div><div class="reel-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.55)">Cohort '23</div></div></div></div>
+  <div class="reel-strip" style="position:relative;overflow:hidden;width:100%;padding:32px 0 48px">
+    <div class="reel-fade-l" style="position:absolute;top:0;bottom:0;left:0;width:120px;z-index:3;pointer-events:none;background:linear-gradient(90deg,var(--ink),transparent)"></div>
+    <div class="reel-fade-r" style="position:absolute;top:0;bottom:0;right:0;width:120px;z-index:3;pointer-events:none;background:linear-gradient(270deg,var(--ink),transparent)"></div>
+    <div id="reel-track" style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:20px;width:max-content">
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-01.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-02.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-03.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-04.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-05.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-06.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card" style="flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer"><div class="reel-thumb" style="position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12)"><video class="reel-video" src="videos/student-07.mp4" preload="auto" loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;z-index:1;transition:opacity .3s"></video><div class="reel-play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- ── PODCAST ────────────────────────────────────────────────────────── -->
-<section id="podcast" style="padding:80px 0 0">
+<section id="podcast" style="padding:48px 0 0">
   <div class="wrap">
     <div class="sec-head">
       <div class="num">— The LaunchPilot Podcast</div>
@@ -1075,16 +1075,16 @@
       <span style="flex:1;height:.5px;background:rgba(245,238,216,0.1)"></span>
     </div>
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/meet-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Meet Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/asia-pro-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0;max-width:56px;max-height:56px"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Asia Pro Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/transcend-accelerator.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Transcend Accelerator</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Accelerator</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/chiripal-group.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Chiripal Group</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Family Office</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/glean-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Glean Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/tins-studio.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">TINS Studio, Boston</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Venture Studio</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/nus.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">National University of Singapore</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/iit-bombay.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">IIT Bombay</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/woolf-university.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Woolf University</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
-      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.12) 0px,rgba(245,238,216,0.12) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/ibm.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">IBM</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Tech Partner</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/meet-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Meet Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/asia-pro-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0;max-width:56px;max-height:56px"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Asia Pro Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/transcend-accelerator.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Transcend Accelerator</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Accelerator</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/chiripal-group.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Chiripal Group</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Family Office</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/glean-ventures.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Glean Ventures</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">VC Fund</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/tins-studio.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">TINS Studio, Boston</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Venture Studio</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/nus.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">National University of Singapore</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/iit-bombay.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">IIT Bombay</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/woolf-university.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Woolf University</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">University</div></div>
+      <div class="pp-card"><div class="pp-ph" style="width:72px;height:72px;overflow:hidden;flex-shrink:0;border-radius:10px;position:relative;display:flex;align-items:center;justify-content:center;background:rgba(245,238,216,0.06);border:1px solid rgba(245,238,216,0.2)"><img src="images/partners/ibm.png" alt="" onerror="this.style.opacity='0'" style="width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0"></div><div class="pp-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">IBM</div><div class="pp-rl" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.5)">Tech Partner</div></div>
     </div>
 
     <!-- Investors -->
@@ -1092,15 +1092,17 @@
       <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.45)">Investors &amp; Founding Team</span>
       <span style="flex:1;height:.5px;background:rgba(245,238,216,0.1)"></span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Siddharth Dangi</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sarvesh Tusnial</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Vansh Chiripal</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/04.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sunil Kamath</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Hustle Ventures</div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/05.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Toyoyuki Ushioda</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">SVP at Maple Tree · Angel Investor </div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/06.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Edmund Tan</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">General Partner · Investor </div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/07.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">John Lim</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Meet Ventures</div></div>
-      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:repeating-linear-gradient(135deg,rgba(245,238,216,0.15) 0px,rgba(245,238,216,0.15) 1.5px,rgba(245,238,216,0.04) 1.5px,rgba(245,238,216,0.04) 9px);background-color:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/08.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Karan Khemka</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Angel Investor</div></div>
+    <div class="founders-grid" style="display:grid;grid-template-columns:repeat(3,1fr)!important;gap:24px;max-width:900px;margin:0 auto">
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Siddharth Dangi</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sarvesh Tusnial</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Vansh Chiripal</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+    </div>
+    <div class="investors-grid" style="display:grid;grid-template-columns:repeat(5,1fr)!important;gap:24px;margin-top:32px">
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/04.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sunil Kamath</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Hustle Ventures</div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/05.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Toyoyuki Ushioda</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">SVP at Maple Tree · Angel Investor </div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/06.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Edmund Tan</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">General Partner · Investor </div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/07.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">John Lim</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Meet Ventures</div></div>
+      <div class="iv-card"><div class="iv-ph" style="width:80px;height:80px;min-width:80px;min-height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22);display:flex;align-items:center;justify-content:center"><img src="images/investors/08.jpg" alt="" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Karan Khemka</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Angel Investor</div></div>
     </div>
 
   </div>
@@ -1437,7 +1439,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
     transform:translateY(-6px);
     box-shadow:0 20px 48px -12px color-mix(in oklab,var(--fire) 30%,transparent)}
   .reel-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    opacity:0;transition:opacity .35s;z-index:1}
+    opacity:0;transition:opacity .35s;z-index:1;object-position:center top}
   .reel-thumb img{position:absolute!important;inset:0!important;
     width:100%!important;height:100%!important;
     object-fit:cover!important;object-position:top center!important;
@@ -1450,11 +1452,11 @@ function TweaksPanel({ title = 'Tweaks', children }) {
   .reel-ph-num{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace!important;font-size:11px!important;letter-spacing:.24em;
     text-transform:uppercase;color:color-mix(in oklab,var(--paper) 18%,transparent)}
   .reel-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:56px;height:56px;border-radius:50%;
-    background:rgba(255,255,255,0.14);backdrop-filter:blur(10px);
-    border:1.5px solid rgba(255,255,255,0.28);
+    width:64px;height:64px;border-radius:50%;
+    background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);
+    border:1.5px solid rgba(255,255,255,0.35);
     display:flex;align-items:center;justify-content:center;
-    transition:background .25s,transform .25s;z-index:3}
+    transition:background .25s,transform .25s;z-index:10;cursor:pointer}
   .reel-card:hover .reel-play-btn{background:var(--fire);border-color:transparent;
     transform:translate(-50%,-50%) scale(1.1)}
   .reel-bottom{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:3}
@@ -1760,9 +1762,10 @@ function TweaksPanel({ title = 'Tweaks', children }) {
     .sec-head .aside{ text-align:left; max-width:100% }
 
     /* ── Partners grid ── */
-    .pgrid, [style*="grid-template-columns:repeat(5,1fr)"],
-    [style*="grid-template-columns: repeat(5,1fr)"]{
+    .pgrid{
       grid-template-columns:repeat(2,1fr) !important }
+    .founders-grid{ grid-template-columns:repeat(3,1fr) !important }
+    .investors-grid{ grid-template-columns:repeat(3,1fr) !important }
 
     /* ── Investors grid ── */
     [style*="grid-template-columns:repeat(4,1fr)"],
@@ -2548,23 +2551,61 @@ Object.assign(window, {
   const reels = makeScroller('reel-track', 55, 20, -1, 0.5);
   if(reels){
     reels.track.querySelectorAll('.reel-card').forEach(card=>{
-      Object.assign(card.style, {flex:'0 0 220px', flexShrink:'0'});
-      const video = card.querySelector('.reel-video');
-      const btn   = card.querySelector('.reel-play-btn');
-      card.addEventListener('mouseenter', ()=>{
+      Object.assign(card.style,{flex:'0 0 220px',width:'220px',flexShrink:'0'});
+    });
+
+    const strip = document.querySelector('.reel-strip');
+
+    // Draw first frame of each video onto a canvas as thumbnail
+    strip.querySelectorAll('.reel-card').forEach(card=>{
+      const v = card.querySelector('.reel-video');
+      const thumb = card.querySelector('.reel-thumb');
+      if(!v || !thumb) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = 220; canvas.height = 380;
+      canvas.style.cssText = 'position:absolute;inset:0;width:220px;height:380px;object-fit:cover;z-index:0;border-radius:16px;';
+      thumb.insertBefore(canvas, v);
+      const draw = ()=>{
+        v.currentTime = 0.01;
+        v.addEventListener('seeked', ()=>{
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(v, 0, 0, 220, 380);
+          v.currentTime = 0;
+        }, {once:true});
+      };
+      if(v.readyState >= 2) draw();
+      else v.addEventListener('loadeddata', draw, {once:true});
+    });
+
+    // Click play button
+    strip.addEventListener('click', e=>{
+      const btn = e.target.closest('.reel-play-btn');
+      if(btn){
+        const card = btn.closest('.reel-card');
+        const v = card && card.querySelector('.reel-video');
+        if(!v) return;
+        // Stop all others
+        strip.querySelectorAll('.reel-video').forEach(o=>{ o.pause(); o.style.opacity='0'; });
+        strip.querySelectorAll('.reel-play-btn').forEach(o=>{ o.style.display='flex'; });
         reels.pause();
-        if(video){ video.style.opacity='1'; video.play().catch(()=>{}); }
-        if(btn) btn.style.opacity='0';
-      });
-      card.addEventListener('mouseleave', ()=>{
+        v.style.opacity = '1';
+        v.currentTime = 0;
+        v.play().catch(()=>{});
+        btn.style.display = 'none';
+        return;
+      }
+      // Click video to stop
+      const v = e.target.closest('.reel-video');
+      if(v && !v.paused){
+        const card = v.closest('.reel-card');
+        v.pause(); v.currentTime=0; v.style.opacity='0';
         reels.resume();
-        if(video){ video.pause(); video.currentTime=0; video.style.opacity='0'; }
-        if(btn) btn.style.opacity='1';
-      });
+        const b = card && card.querySelector('.reel-play-btn');
+        if(b) b.style.display = 'flex';
+      }
     });
   }
 
-  // PODCAST — slowest, scrolls LEFT →, starts quarter-way through
   const pods = makeScroller('podcast-track', 35, 24, 1, 0.25);
   if(pods){
     pods.track.querySelectorAll('.podcast-card').forEach(card=>{
@@ -2603,12 +2644,10 @@ Object.assign(window, {
 (function(){
   function applyMobileGrids(){
     if(window.innerWidth <= 768){
-      // Partners grid
       document.querySelectorAll('.pp-card').forEach(function(card){
         var grid = card.parentElement;
         if(grid) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
       });
-      // Investors grid
       document.querySelectorAll('.iv-card').forEach(function(card){
         var grid = card.parentElement;
         if(grid) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
@@ -2618,10 +2657,10 @@ Object.assign(window, {
         var grid = card.parentElement;
         if(grid) grid.style.gridTemplateColumns = 'repeat(5,1fr)';
       });
-      document.querySelectorAll('.iv-card').forEach(function(card){
-        var grid = card.parentElement;
-        if(grid) grid.style.gridTemplateColumns = 'repeat(4,1fr)';
-      });
+      var foundersGrid = document.querySelector('.founders-grid');
+      var investorsGrid = document.querySelector('.investors-grid');
+      if(foundersGrid) foundersGrid.style.gridTemplateColumns = 'repeat(3,1fr)';
+      if(investorsGrid) investorsGrid.style.gridTemplateColumns = 'repeat(5,1fr)';
     }
   }
   applyMobileGrids();
