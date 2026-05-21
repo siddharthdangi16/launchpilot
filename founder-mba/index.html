@@ -20,7 +20,7 @@
   --sans:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
 }
 html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);
-  font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--fire);color:var(--ink)}
 a{color:inherit;text-decoration:none}
 img{display:block}
@@ -105,8 +105,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;flex-direction:column;gap:10px;transition:background .25s}
 .hl:last-child{border-right:0}
 .hl:hover{background:color-mix(in oklab,var(--paper) 3%,var(--ink))}
-.hl-icon{font-size:20px;margin-bottom:2px}
-.hl-t{font-family:var(--serif);font-size:18px;font-style:italic;
+.hl-num{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--fire);
+  opacity:.7;margin-bottom:10px}
+.hl-t{font-family:var(--serif);font-size:19px;font-style:italic;
   letter-spacing:-0.005em;color:var(--paper)}
 .hl-d{font-family:var(--sans);font-size:13px;line-height:1.65;color:rgba(245,238,216,0.48)}
 
@@ -132,6 +133,16 @@ section{padding:96px 0}
 .dark-sec{background:color-mix(in oklab,var(--paper) 2%,var(--ink));
   border-top:.5px solid rgba(245,238,216,0.06);border-bottom:.5px solid rgba(245,238,216,0.06)}
 
+    /* COHORT placeholder strip */
+  .cohort{display:grid;grid-template-columns:repeat(6, 1fr);gap:8px;margin-top:64px}
+  .cohort .ph{aspect-ratio:3/4;border-radius:6px;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    display:flex;align-items:flex-end;padding:10px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)}
+
 /* ── WHO IS IT FOR ── */
 .for-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
   background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden}
@@ -142,6 +153,71 @@ section{padding:96px 0}
 .for-t{font-family:var(--serif);font-size:24px;font-style:italic;
   letter-spacing:-0.01em;color:var(--paper);margin-bottom:10px}
 .for-d{font-family:var(--sans);font-size:14px;line-height:1.7;color:rgba(245,238,216,0.52)}
+
+ /* COHORT — horizontal scrolling marquee */
+  .cohort-sec{padding:48px 0 32px}
+  .cohort-strip{position:relative;overflow:hidden;margin-top:48px;display:flex;flex-direction:column;gap:14px}
+  .cohort-strip::before,.cohort-strip::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+  .cohort-strip::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+  .cohort-strip::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+  .cohort-track{display:flex;gap:14px;width:max-content}
+  .cohort-track.fwd{animation:cohort-fwd 42s linear infinite}
+  .cohort-track.rev{animation:cohort-rev 48s linear infinite}
+  .cohort-track:hover{animation-play-state:paused}
+  @keyframes cohort-fwd{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes cohort-rev{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  .cohort-card{flex:0 0 auto;width:480px;height:320px;border-radius:12px;overflow:hidden;
+    position:relative;cursor:pointer;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
+    transition:border-color .35s, transform .35s}
+  .cohort-card:hover{border-color:color-mix(in oklab, var(--fire) 60%, transparent);transform:scale(1.02)}
+  .cohort-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(12%);transition:filter .4s, transform .6s cubic-bezier(.2,.7,.2,1)}
+  .cohort-card:hover img{filter:grayscale(0%);transform:scale(1.04)}
+  .cohort-card::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.65));pointer-events:none}
+  .cohort-card .cap{position:absolute;left:18px;bottom:16px;z-index:1;
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .cohort-card .cap b{display:block;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;
+    font-weight:400;font-style:italic;text-transform:none;letter-spacing:-0.01em;margin-bottom:3px}
+  /* placeholder inner SVG */
+  .cohort-card .ph-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 35%, transparent)}
+  .mentor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+  .mentor{display:flex;flex-direction:column;gap:12px;cursor:pointer}
+  .mentor .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden;position:relative;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    border:.5px solid color-mix(in oklab, var(--paper) 12%, transparent);
+    transition:border-color .3s ease, transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s}
+  .mentor:hover .ph{
+    border-color:color-mix(in oklab, var(--fire) 55%, transparent);
+    transform:translateY(-6px);
+    box-shadow:0 20px 48px -12px color-mix(in oklab, var(--fire) 30%, transparent), 0 4px 16px rgba(0,0,0,.4)}
+  .mentor .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+    filter:grayscale(20%);transition:filter .4s ease, transform .5s cubic-bezier(.2,.7,.2,1)}
+  .mentor:hover .ph img{filter:grayscale(0%);transform:scale(1.05)}
+  .mentor .ph::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.55));
+    pointer-events:none;opacity:0;transition:opacity .35s}
+  .mentor:hover .ph::after{opacity:1}
+  .mentor .ph .ph-tag{position:absolute;left:10px;bottom:10px;font-family:var(--mono);
+    font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);pointer-events:none}
+  .mentor:has(img) .ph-tag{display:none}
+  .mentor .nm{font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;line-height:1.05;
+    transition:color .25s}
+  .mentor:hover .nm{color:var(--fire)}
+  .mentor .nm i{font-style:italic}
+  .mentor .role{font-size:12.5px;line-height:1.45;
+    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%)}
+  .mentor .role b{font-weight:500;color:var(--paper)}
 
 /* ── CURRICULUM ── */
 .cur-list{margin-top:48px;display:flex;flex-direction:column;gap:1px;
@@ -228,6 +304,7 @@ section{padding:96px 0}
 .m-track{display:flex;gap:16px;width:max-content;animation:m-scroll 40s linear infinite}
 .m-track:hover{animation-play-state:paused}
 @keyframes m-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes m-scroll-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 .m-card{flex:0 0 auto;padding:14px 18px;border-radius:10px;
   background:color-mix(in oklab,var(--paper) 5%,var(--ink));
   border:.5px solid rgba(245,238,216,0.1);
@@ -454,6 +531,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   .hero-nums{grid-template-columns:repeat(2,1fr)}
   .mod-in{grid-template-columns:1fr}
   .city-row{grid-template-columns:repeat(2,1fr)}
+  .immersion-grid{grid-template-columns:repeat(2,1fr)!important}
   .testi-grid{grid-template-columns:1fr}
   .ll-row{grid-template-columns:1fr;gap:12px}
   .ll-row-right{padding-left:0;border-left:0;border-top:.5px solid rgba(245,238,216,0.08);padding-top:12px}
@@ -555,6 +633,11 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   .gallery{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
   .g-box.tall{grid-row:span 1}
 
+  /* ── Immersion grid ── */
+  .immersion-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .immersion-grid > div{aspect-ratio:16/9!important}
+  .immersion-note{grid-template-columns:1fr!important}
+
   /* ── Testimonials ── */
   .testi-card{flex:0 0 290px}
 
@@ -621,6 +704,32 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
   white-space:nowrap;flex-shrink:0}
 
+/* ── LAUNCHLABS CARDS ── */
+.ll-card{background:var(--ink);padding:36px 28px;display:flex;flex-direction:column;gap:8px;
+  position:relative;transition:background .25s;min-height:160px}
+.ll-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--fire);opacity:0;transition:opacity .25s}
+.ll-card:hover{background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.ll-card:hover::before{opacity:1}
+.ll-card-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--fire);opacity:.45;margin-bottom:4px}
+.ll-card-title{font-family:"Instrument Serif",Georgia,serif;font-size:30px;font-style:italic;
+  letter-spacing:-0.02em;color:var(--paper);line-height:1}
+.ll-card-sub{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.07em;
+  text-transform:uppercase;color:rgba(245,238,216,0.32);line-height:1.7;margin-top:2px}
+.ll-card-tag{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--fire);opacity:.55;
+  margin-top:auto;padding-top:14px;border-top:.5px solid rgba(245,238,216,0.07)}
+
+@media(max-width:768px){
+  .ll-card-grid{grid-template-columns:1fr 1fr!important}
+  .ll-card{padding:24px 20px;min-height:120px}
+  .ll-card-title{font-size:22px}
+}
+@media(max-width:480px){
+  .ll-card-grid{grid-template-columns:1fr!important}
+}
+
 
 .sun-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;
   padding:20px 8px;cursor:pointer;transition:background .25s;
@@ -649,6 +758,25 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 .testi-av-s{width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;
   flex-shrink:0;border:.5px solid rgba(245,238,216,0.15);
   background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px)}
+/* ── FAQ ── */
+.faq-item{background:var(--ink);transition:background .2s}
+.faq-item.open{background:color-mix(in oklab,var(--ink) 92%,var(--fire) 5%)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:24px 28px;cursor:pointer;user-select:none}
+.faq-q span:first-child{font-family:'Instrument Serif',Georgia,serif;font-size:19px;
+  font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.3}
+.faq-icon{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--fire);
+  flex-shrink:0;transition:transform .3s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;
+  font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.75;
+  color:rgba(245,238,216,0.52);padding:0 28px}
+.faq-item.open .faq-a{max-height:300px;padding:0 28px 24px}
+
+/* ── Accreditation split mobile ── */
+@media(max-width:768px){
+  .accred-split{grid-template-columns:1fr!important;gap:32px!important}
+}
 </style>
 </head>
 <body>
@@ -735,11 +863,11 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 
 <!-- HIGHLIGHTS -->
 <div class="hl-row">
-  <div class="hl"><div class="hl-icon">🎓</div><div class="hl-t">Globally Recognised MBA Degree</div><div class="hl-d">Earn an EU-accredited MBA at 1/10th the cost of a traditional program through Woolf University.</div></div>
-  <div class="hl"><div class="hl-icon">🏗️</div><div class="hl-t">Build a Real Revenue-Generating Business</div><div class="hl-d">No cramming. No theory-first. You launch and grow a real company across all 6 modules — live.</div></div>
-  <div class="hl"><div class="hl-icon">🤖</div><div class="hl-t">AI-First Across Everything</div><div class="hl-d">AI tools and workflows are woven into every module — giving you 10x execution speed from day one.</div></div>
-  <div class="hl"><div class="hl-icon">🌍</div><div class="hl-t">Global Immersions in 6 Cities</div><div class="hl-d">Build your global network across Singapore, San Francisco, Dubai, Mumbai, Shanghai and Bali.</div></div>
-  <div class="hl"><div class="hl-icon">💰</div><div class="hl-t">$1M+ Startup Benefits</div><div class="hl-d">Access $1M+ in tech credits, discounts and offers across 500+ AI tools and digital platforms.</div></div>
+  <div class="hl"><div class="hl-num">01</div><div class="hl-t">Globally Recognised MBA Degree</div><div class="hl-d">Earn an EU-accredited MBA at 1/10th the cost of a traditional program through Woolf University.</div></div>
+  <div class="hl"><div class="hl-num">02</div><div class="hl-t">Build a Real Revenue-Generating Business</div><div class="hl-d">No cramming. No theory-first. You launch and grow a real company across all 6 modules — live.</div></div>
+  <div class="hl"><div class="hl-num">03</div><div class="hl-t">AI-First Across Everything</div><div class="hl-d">AI tools and workflows are woven into every module — giving you 10x execution speed from day one.</div></div>
+  <div class="hl"><div class="hl-num">04</div><div class="hl-t">Global Immersions in 6 Cities</div><div class="hl-d">Build your global network across Singapore, San Francisco, Dubai, Mumbai, Shanghai and Bali.</div></div>
+  <div class="hl"><div class="hl-num">05</div><div class="hl-t">$1M+ Startup Benefits</div><div class="hl-d">Access $1M+ in tech credits, discounts and offers across 500+ AI tools and digital platforms.</div></div>
 </div>
 
 <!-- STATS STRIP -->
@@ -894,13 +1022,76 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   </div>
 </section>
 
+<!-- COHORT GROUP PHOTOS — horizontal scrolling strip -->
+<section id="cohorts">
+  <div class="cohort-sec">
+    <div class="wrap">
+      <div class="sec-head" style="padding-top:32px">
+        <div class="num"> Past Cohorts</div>
+        <h4 style="font-family:var(--serif);font-size:clamp(36px, 5vw, 64px);font-weight:400;letter-spacing:-0.02em;line-height:1">A tribe to build, fail &amp; <em style="font-style:italic;color:var(--fire)">live</em> with</h4>
+        <div class="aside">Celebrating smiles and failures together! <code style="font-family:var(--mono);font-size:11px"></code></div>
+      </div>
+    </div>
+
+        <div class="cohort-strip">
+      <div class="cohort-track fwd" id="cohort-track-a"></div>
+      <div class="cohort-track rev" id="cohort-track-b"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const CARDS_A = [
+    { src:'../images/cohort/01.jpg', city:'', label:"Cohort '25", sub:'Singapore' },
+    { src:'../images/cohort/02.jpg', city:'', label:"Andrew Chow", sub:'AI God' },
+    { src:'../images/cohort/03.jpg', city:'', label:"Co-founder Smiles", sub:'United States of America' },
+    { src:'../images/cohort/04.jpg', city:'', label:"US Immersion", sub:'Hold and Cold' },
+    { src:'../images/cohort/05.jpg', city:'', label:"Cohort '24", sub:'Dubai' },
+    { src:'../images/cohort/06.jpg', city:'', label:"Our Student - Reyo", sub:'From Indian Airforce to Founder' },
+  ];
+  const CARDS_B = [
+    { src:'../images/cohort/07.jpg', city:'', label:"Cohort '25", sub:'IIT Bombay' },
+    { src:'../images/cohort/08.jpg', city:'', label:"With Daniel Ling", sub:'Our Design Thinking Guru' },
+    { src:'../images/cohort/09.jpg', city:'', label:"Cohort '23", sub:'AI at IIT Bombay' },
+    { src:'../images/cohort/10.jpg', city:'', label:"Cohort '23", sub:'China' },
+    { src:'../images/cohort/11.jpg', city:'', label:"Alex", sub:'In Snowy NYC' },
+    { src:'../images/cohort/12.jpg', city:'', label:"Cohort '24", sub:'After Demo Day' },
+  ];
+
+  function makeCard(c){
+    const div = document.createElement('div');
+    div.className = 'cohort-card';
+    const img = document.createElement('img');
+    img.src = c.src;
+    img.alt = c.label + ' · ' + c.city;
+    img.onerror = () => img.style.display = 'none';
+    const ph = document.createElement('div');
+    ph.className = 'ph-inner';
+    ph.textContent = c.city;
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.innerHTML = '<b>' + c.label + '</b>' + (c.city ? c.city + ' · ' : '') + c.sub;
+    div.appendChild(img);
+    div.appendChild(ph);
+    div.appendChild(cap);
+    return div;
+  }
+
+  const trackA = document.getElementById('cohort-track-a');
+  const trackB = document.getElementById('cohort-track-b');
+  if (trackA) [...CARDS_A, ...CARDS_A].forEach(c => trackA.appendChild(makeCard(c)));
+  if (trackB) [...CARDS_B, ...CARDS_B].forEach(c => trackB.appendChild(makeCard(c)));
+})();
+</script>
+
 
 
 <!-- 1:1 MENTORING + FACULTY -->
 <section id="mentors">
   <div class="wrap">
-    <div class="sec-l">Faculty & 1:1 Mentoring</div>
-    <h2 class="sec-h">One mentor.<br><em>Just for you.</em></h2>
+    <div class="sec-l">Faculty & Mentoring</div>
+    <h2 class="sec-h"> Personalised Mentoring.<br><em>Just for you.</em></h2>
     <p class="sec-sub">Every Founder MBA student is paired with a dedicated mentor — a founder, operator, or investor matched specifically to the stage and industry you're building in.</p>
 
     <!-- How it works grid -->
@@ -959,18 +1150,28 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 
   </div>
 
-  <!-- Mentor scrolling strip -->
+  <!-- Mentor scrolling strips — 2 rows -->
   <div style="margin-top:56px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.35);text-align:center;margin-bottom:20px">Some of your mentors</div>
-  <div class="m-strip" style="padding:8px 0">
+
+  <!-- Row 1 — scrolls left -->
+  <div class="m-strip" style="padding:8px 0 6px">
     <div class="m-fade-l"></div>
     <div class="m-fade-r"></div>
-    <div class="m-track" id="m-track">
+    <div class="m-track" id="m-track-1">
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/jason-kraus.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Jason Kraus</div><div class="m-role">Founder, Prepare4VC · Partner, EQx Fund</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/renuka-belwalkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Renuka Belwalkar</div><div class="m-role">Investor · Forbes Under 30 Scholar</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/yash-shah.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Yash Shah</div><div class="m-role">GenAI Head India & SEA · AWS</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/andrew-chow.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Andrew Chow</div><div class="m-role">Co-Founder, Asia Pro Ventures · NTU</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/justin-strackany.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Justin Strackany</div><div class="m-role">LP at GTMFund · 3 exits (SecureLink/Vista)</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/gaurav-thakkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Gaurav Thakkar</div><div class="m-role">Principal VC, Silicon Road · ex-Morgan Stanley</div></div></div>
+    </div>
+  </div>
+
+  <!-- Row 2 — scrolls right -->
+  <div class="m-strip" style="padding:6px 0 8px">
+    <div class="m-fade-l"></div>
+    <div class="m-fade-r"></div>
+    <div class="m-track" id="m-track-2" style="animation:m-scroll-r 44s linear infinite">
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/john-lim.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">John Lim</div><div class="m-role">Partner, Meet Ventures SG · ex-HOD $100M fund</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Sarvash Malani</div><div class="m-role">DeepTech VC, Temasek · Wharton Grad</div></div></div>
       <div class="m-card"><div class="m-ph"><img src="../images/mentors/daniel-ling.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Daniel Ling</div><div class="m-role">ex-VP Design, Lazada & DBS · NUS</div></div></div>
@@ -1098,6 +1299,140 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
         </div>
       </div>
     </div>
+
+    <!-- 6 Immersion photo placeholders -->
+    <div class="immersion-grid" style="margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+
+      <!-- Singapore -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/singapore-1.jpg" alt="Singapore" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">SG · Demo Day</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">Singapore</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:var(--ink);background:var(--fire);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Included in MBA</div>
+        </div>
+      </div>
+
+      <!-- San Francisco -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/sf-1.jpg" alt="San Francisco" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">SFO · Tech & AI</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">San Francisco</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:rgba(245,238,216,0.5);background:rgba(245,238,216,0.07);border:.5px solid rgba(245,238,216,0.15);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Add-on</div>
+        </div>
+      </div>
+
+      <!-- Dubai -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/dubai-1.jpg" alt="Dubai" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">DXB · Finance</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">Dubai</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:rgba(245,238,216,0.5);background:rgba(245,238,216,0.07);border:.5px solid rgba(245,238,216,0.15);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Add-on</div>
+        </div>
+      </div>
+
+      <!-- Mumbai -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/mumbai-1.jpg" alt="Mumbai" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">BOM · Scale</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">Mumbai</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:var(--ink);background:var(--fire);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Included in MBA</div>
+        </div>
+      </div>
+
+      <!-- Shanghai -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/shanghai-1.jpg" alt="Shanghai" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">SHA · Manufacturing</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">Shanghai</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:rgba(245,238,216,0.5);background:rgba(245,238,216,0.07);border:.5px solid rgba(245,238,216,0.15);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Add-on</div>
+        </div>
+      </div>
+
+      <!-- Bali -->
+      <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+        background:repeating-linear-gradient(135deg,rgba(245,238,216,0.06) 0,rgba(245,238,216,0.06) 1.5px,rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+        border:.5px solid rgba(245,238,216,0.1)">
+        <img src="../images/immersions/bali-1.jpg" alt="Bali" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(10%);transition:filter .4s,transform .5s">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.72) 0%,transparent 55%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">BAL · Leadership</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper)">Bali</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+            color:rgba(245,238,216,0.5);background:rgba(245,238,216,0.07);border:.5px solid rgba(245,238,216,0.15);
+            padding:5px 10px;border-radius:100px;white-space:nowrap">Add-on</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Singapore & Mumbai included note -->
+    <div class="immersion-note" style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="padding:14px 20px;border-radius:10px;
+        background:color-mix(in oklab,var(--fire) 7%,transparent);
+        border:.5px solid color-mix(in oklab,var(--fire) 22%,transparent);
+        display:flex;align-items:center;gap:12px">
+        <div style="width:7px;height:7px;border-radius:50%;background:var(--fire);flex-shrink:0;animation:blink 2s ease-in-out infinite"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;line-height:1.6;color:rgba(245,238,216,0.7)">
+          <span style="color:var(--fire)">Singapore &amp; Mumbai</span> are included in the MBA pricing — no add-on cost.
+        </div>
+      </div>
+      <div style="padding:14px 20px;border-radius:10px;
+        background:rgba(245,238,216,0.02);border:.5px solid rgba(245,238,216,0.08);
+        display:flex;align-items:center;gap:12px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;line-height:1.6;color:rgba(245,238,216,0.35)">
+          SF · Dubai · Shanghai · Bali are optional add-ons or available as part of bundled upgrades.
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1155,100 +1490,70 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   <div class="wrap">
 
     <!-- Header -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:48px">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin-bottom:16px">In-house Execution Engine</div>
         <h2 style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(48px,5.5vw,80px);font-weight:400;letter-spacing:-0.022em;line-height:.92;color:var(--paper)">LaunchLabs</h2>
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(18px,2vw,24px);font-style:italic;color:var(--fire);margin-top:12px;letter-spacing:-0.01em">We build with you. Not just for you.</div>
       </div>
       <div style="padding-bottom:4px">
-        <div style="font-family:'Inter Tight',sans-serif;font-size:16px;line-height:1.8;color:rgba(245,238,216,0.55)">When you're stuck — on the product, the pitch, the design, or the legal — LaunchLabs unblocks you. Real specialists, real execution, matched to your phase.</div>
+        <div style="font-family:'Inter Tight',sans-serif;font-size:16px;line-height:1.8;color:rgba(245,238,216,0.45)">When you're stuck, LaunchLabs unblocks you. Real specialists. Real execution.</div>
       </div>
     </div>
 
-    <!-- 6 horizontal stacked rows -->
-    <div style="display:flex;flex-direction:column;gap:0;border:.5px solid rgba(245,238,216,0.1);border-radius:12px;overflow:hidden">
+    <!-- 6 cards -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,238,216,0.08);border-radius:12px;overflow:hidden" class="ll-card-grid">
 
-      <div class="ll-row">
-        <div class="ll-row-left">
-          <div class="ll-row-num">01</div>
-          <div class="ll-row-icon">⚙️</div>
-          <div class="ll-row-name">Tech & Development</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">No-code builds, AI integrations, and MVP support — so you ship without needing a CTO on your team.</div>
-          <div class="ll-row-tag">Build</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">01</div>
+        <div class="ll-card-tag">Build</div>
+        <div class="ll-card-title">Tech &amp; Dev</div>
+        <div class="ll-card-sub">MVP · AI integrations · No-code</div>
       </div>
 
-      <div class="ll-row">
-        <div class="ll-row-left">
-          <div class="ll-row-num">02</div>
-          <div class="ll-row-icon">📣</div>
-          <div class="ll-row-name">Marketing & Growth</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">GTM strategy, paid campaigns, SEO, and content systems — built and launched with you, not just advised.</div>
-          <div class="ll-row-tag">Grow</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">02</div>
+        <div class="ll-card-tag">Grow</div>
+        <div class="ll-card-title">Marketing</div>
+        <div class="ll-card-sub">GTM · Paid · SEO · Content</div>
       </div>
 
-      <div class="ll-row">
-        <div class="ll-row-left">
-          <div class="ll-row-num">03</div>
-          <div class="ll-row-icon">💸</div>
-          <div class="ll-row-name">Fundraising</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">Pitch deck reviews, investor intros, data room setup, and term sheet guidance — exactly when you need it.</div>
-          <div class="ll-row-tag">Raise</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">03</div>
+        <div class="ll-card-tag">Raise</div>
+        <div class="ll-card-title">Fundraising</div>
+        <div class="ll-card-sub">Pitch deck · Intros · Data room</div>
       </div>
 
-      <div class="ll-row">
-        <div class="ll-row-left">
-          <div class="ll-row-num">04</div>
-          <div class="ll-row-icon">🎬</div>
-          <div class="ll-row-name">Content & Editing</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">Video editing, short-form content, brand storytelling, and social assets — built for the speed founders need.</div>
-          <div class="ll-row-tag">Create</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">04</div>
+        <div class="ll-card-tag">Create</div>
+        <div class="ll-card-title">Content</div>
+        <div class="ll-card-sub">Video · Short-form · Brand assets</div>
       </div>
 
-      <div class="ll-row">
-        <div class="ll-row-left">
-          <div class="ll-row-num">05</div>
-          <div class="ll-row-icon">🖥️</div>
-          <div class="ll-row-name">UI / UX Design</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">Product design, wireframes, and landing pages that make your product look like it has a full design studio.</div>
-          <div class="ll-row-tag">Design</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">05</div>
+        <div class="ll-card-tag">Design</div>
+        <div class="ll-card-title">UI / UX</div>
+        <div class="ll-card-sub">Product · Wireframes · Landing pages</div>
       </div>
 
-      <div class="ll-row" style="border-bottom:0">
-        <div class="ll-row-left">
-          <div class="ll-row-num">06</div>
-          <div class="ll-row-icon">⚖️</div>
-          <div class="ll-row-name">Legal & Compliance</div>
-        </div>
-        <div class="ll-row-right">
-          <div class="ll-row-desc">Incorporation, founder agreements, IP protection, and investor contracts — without needing a full-time lawyer.</div>
-          <div class="ll-row-tag">Protect</div>
-        </div>
+      <div class="ll-card">
+        <div class="ll-card-num">06</div>
+        <div class="ll-card-tag">Protect</div>
+        <div class="ll-card-title">Legal</div>
+        <div class="ll-card-sub">Incorporation · IP · Contracts</div>
       </div>
 
     </div>
 
     <!-- Bottom bar -->
-    <div style="margin-top:20px;padding:28px 36px;border-radius:12px;
+    <div style="margin-top:16px;padding:24px 32px;border-radius:12px;
       background:color-mix(in oklab,var(--fire) 7%,transparent);
       border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);
       display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
-      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.4">Not just mentorship. Not just curriculum.<br><em style="color:var(--fire)">Real execution support, on demand.</em></div>
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.4">Real execution support — <em style="color:var(--fire)">on demand.</em></div>
       <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;white-space:nowrap;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply Now ↗</a>
     </div>
 
@@ -1332,7 +1637,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s16.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Aesthetic Essentials</div><div class="lby">Vishesh Arora · Delhi</div></div><div class="lraised">$2M ARR · 150+ SKUs</div></div>
       <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '24</div><div class="lph"><img src="../images/founders/s7.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">ClaimBack</div><div class="lby">Abhijith Jajio · Bengaluru</div></div><div class="lraised">6.5 Cr INR Managed</div></div>
       <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '25</div><div class="lph"><img src="../images/founders/s9.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Sustainify</div><div class="lby">Guliz · Singapore</div></div><div class="lraised">ASEAN Startup Finalist</div></div>
-      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/s17.jpg" alt="" onerror="this.style.opacity='0'"><div class="lph"></div></div><div><div class="lnm">Flare.io</div><div class="lby">Praharsha G · Bengaluru</div></div><div class="lraised">400K+ Users · Revenue</div></div>
+      <div class="lcard" style="flex:0 0 280px;flex-shrink:0"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lbadge">Cohort '23</div><div class="lph"><img src="../images/founders/s17.jpg" alt="" onerror="this.style.opacity='0'"></div></div><div><div class="lnm">Flare.io</div><div class="lby">Praharsha G · Bengaluru</div></div><div class="lraised">400K+ Users · Revenue</div></div>
     </div>
   </div>
   <!-- Row 2 — scrolls RIGHT (opposite direction) -->
@@ -1477,58 +1782,97 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
 <section class="dark-sec">
   <div class="wrap">
     <div class="sec-l">Degree & Accreditation</div>
-    <h2 class="sec-h">You graduate with<br><em>a real MBA degree.</em></h2>
-    <p class="sec-sub">LaunchPilot is the only startup school that gives you a globally recognised, EU-accredited MBA — at a fraction of the cost of traditional programs.</p>
+    <h2 class="sec-h">An <em>EU-accredited</em> MBA,<br>recognised in 60+ countries.</h2>
+    <p class="sec-sub">Through our partnership with Woolf University, you graduate with a globally recognised MBA — at 1/10th the cost of a traditional program.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px">
-      <!-- Degree card -->
-      <div style="padding:40px;border-radius:14px;
-        background:color-mix(in oklab,var(--fire) 7%,transparent);
-        border:.5px solid color-mix(in oklab,var(--fire) 22%,transparent)">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:16px">Your Degree</div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;letter-spacing:-0.015em;color:var(--paper);line-height:1.1;margin-bottom:20px">MBA<br>in Entrepreneurship</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.5);margin-bottom:28px">Awarded by Woolf University · EU Accredited</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Internationally recognised MBA degree</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Accredited under EU higher education framework</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>1/10th the cost of a traditional MBA program</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.65);display:flex;gap:12px"><span style="color:var(--fire);flex-shrink:0">→</span>Earn while you build — part-time and hybrid</div>
+    <!-- Image left + bullet points right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px" class="accred-split">
+
+      <!-- Degree image -->
+      <div style="position:relative">
+        <div style="border-radius:16px;overflow:hidden;border:.5px solid rgba(245,238,216,0.12);
+          background:color-mix(in oklab,var(--paper) 6%,var(--ink));
+          aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+          position:relative">
+          <img src="../images/degree-certificate.jpg" alt="Mentogram x Woolf MBA Certificate"
+            onerror="this.style.display='none'"
+            style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:16px">
+          <!-- Placeholder shown when image missing -->
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;text-align:center">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.25);margin-bottom:8px">Mentogram × Woolf University</div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-style:italic;color:rgba(245,238,216,0.6);line-height:1.2">MBA in<br>Entrepreneurship</div>
+            <div style="width:48px;height:.5px;background:rgba(245,238,216,0.15)"></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,216,0.2)">Your name here</div>
+          </div>
         </div>
+        <!-- Floating badge -->
+        <div style="position:absolute;bottom:-16px;right:-16px;padding:12px 18px;border-radius:12px;
+          background:color-mix(in oklab,var(--fire) 10%,var(--ink));
+          border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
+          font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.16em;
+          text-transform:uppercase;color:var(--fire)">EU Accredited · ECTS</div>
       </div>
-      <!-- Woolf University card -->
-      <div style="padding:40px;border-radius:14px;
-        background:color-mix(in oklab,var(--paper) 4%,var(--ink));
-        border:.5px solid rgba(245,238,216,0.1)">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.38);margin-bottom:16px">Accrediting Body</div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;letter-spacing:-0.015em;color:var(--paper);line-height:1.1;margin-bottom:8px">Woolf University</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.4);margin-bottom:24px">Founded in Malta · EU Recognised</div>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>First blockchain-enabled university in the EU</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>Recognised under the European Credit Transfer system</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.7;color:rgba(245,238,216,0.62);display:flex;gap:12px"><span style="color:rgba(245,238,216,0.3);flex-shrink:0">→</span>Partner to LaunchPilot for the MBA degree</div>
+
+      <!-- Credential bullets -->
+      <div style="display:flex;flex-direction:column;gap:0;border:.5px solid rgba(245,238,216,0.08);border-radius:12px;overflow:hidden">
+
+        <div style="padding:24px 28px;border-bottom:.5px solid rgba(245,238,216,0.08);display:flex;gap:18px;align-items:flex-start;transition:background .2s" onmouseover="this.style.background='rgba(245,238,216,0.02)'" onmouseout="this.style.background='transparent'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fire);flex-shrink:0;margin-top:2px">→</div>
+          <div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:17px;font-style:italic;color:var(--paper);margin-bottom:4px">EU-accredited · ECTS framework</div>
+            <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6">The most widely recognised academic credit system in the world.</div>
+          </div>
         </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">EU Accredited</div>
-          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">ECTS Framework</div>
-          <div style="padding:8px 16px;border-radius:100px;border:.5px solid rgba(245,238,216,0.15);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.45)">Malta Licensed</div>
+
+        <div style="padding:24px 28px;border-bottom:.5px solid rgba(245,238,216,0.08);display:flex;gap:18px;align-items:flex-start;transition:background .2s" onmouseover="this.style.background='rgba(245,238,216,0.02)'" onmouseout="this.style.background='transparent'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fire);flex-shrink:0;margin-top:2px">→</div>
+          <div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:17px;font-style:italic;color:var(--paper);margin-bottom:4px">Recognised in 60+ countries</div>
+            <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6">Listed on the EU EUROPASS — transcripts that travel across borders.</div>
+          </div>
         </div>
+
+        <div style="padding:24px 28px;border-bottom:.5px solid rgba(245,238,216,0.08);display:flex;gap:18px;align-items:flex-start;transition:background .2s" onmouseover="this.style.background='rgba(245,238,216,0.02)'" onmouseout="this.style.background='transparent'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fire);flex-shrink:0;margin-top:2px">→</div>
+          <div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:17px;font-style:italic;color:var(--paper);margin-bottom:4px">EQF Level 7 — same as Oxford masters</div>
+            <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6">Placed at the same academic level as masters degrees from Oxford or INSEAD.</div>
+          </div>
+        </div>
+
+        <div style="padding:24px 28px;border-bottom:.5px solid rgba(245,238,216,0.08);display:flex;gap:18px;align-items:flex-start;transition:background .2s" onmouseover="this.style.background='rgba(245,238,216,0.02)'" onmouseout="this.style.background='transparent'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fire);flex-shrink:0;margin-top:2px">→</div>
+          <div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:17px;font-style:italic;color:var(--paper);margin-bottom:4px">World-class advisory council</div>
+            <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6">Includes founders of ISB, Minerva and Foundry College.</div>
+          </div>
+        </div>
+
+        <div style="padding:24px 28px;display:flex;gap:18px;align-items:flex-start;transition:background .2s" onmouseover="this.style.background='rgba(245,238,216,0.02)'" onmouseout="this.style.background='transparent'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fire);flex-shrink:0;margin-top:2px">→</div>
+          <div>
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:17px;font-style:italic;color:var(--paper);margin-bottom:4px">1/10th the cost — no compromise on quality</div>
+            <div style="font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6">Fully accredited MBA, earned part-time while you build your company.</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!-- Partner logos bar -->
-    <div style="margin-top:24px;padding:24px 32px;border-radius:12px;
+    <div style="margin-top:40px;padding:20px 32px;border-radius:12px;
       background:color-mix(in oklab,var(--paper) 3%,var(--ink));
       border:.5px solid rgba(245,238,216,0.08);
       display:flex;align-items:center;gap:32px;flex-wrap:wrap">
       <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,238,216,0.28);flex-shrink:0">Also certified by</div>
-      <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center">
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">IBM</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.5)">IBM</div>
         <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">NUS Singapore</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.5)">NUS Singapore</div>
         <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">IIT Bombay</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.5)">IIT Bombay</div>
         <div style="width:.5px;height:16px;background:rgba(245,238,216,0.1)"></div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.55)">Startup India</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:16px;font-style:italic;color:rgba(245,238,216,0.5)">Startup India</div>
       </div>
     </div>
   </div>
@@ -1584,9 +1928,9 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Everything in PGP Track</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>EU-accredited MBA degree</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>12 months of full program access</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>2000+ contact hours</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Access to Singapore and Bangalore Immersions</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>2 capstone projects + Demo Day</div>
-          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Globally recognised degree certificate</div>
+          <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Job and Career Support</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Priority mentor matching</div>
         </div>
         <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply for Founder MBA →</a>
@@ -1613,6 +1957,94 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       <div class="cf"><div class="cf-v">Online</div><div class="cf-l">with Immersions</div></div>
       <div class="cf-div"></div>
       <div class="cf"><div class="cf-v">Rolling Admissions</div><div class="cf-l">Apply Early</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:color-mix(in oklab,var(--paper) 2%,var(--ink));border-top:.5px solid rgba(245,238,216,0.06)">
+  <div class="wrap">
+    <div class="sec-l">FAQ</div>
+    <h2 class="sec-h">Questions we<br><em>always get asked.</em></h2>
+
+    <div style="margin-top:48px;display:flex;flex-direction:column;gap:1px;background:rgba(245,238,216,0.08);border-radius:12px;overflow:hidden" id="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Is this a real MBA degree or just a certificate?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">It's a real, accredited MBA degree — awarded by Woolf University, which is licensed and accredited in the EU under the Malta Further and Higher Education Authority (MFHEA). The degree is placed at EQF Level 7, the same academic level as masters degrees from Oxford or INSEAD. You receive a physical and digital certificate, and your transcript is listed on the EU EUROPASS — recognised in 60+ countries.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Who is this program for?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">The Founder MBA is for people who want to build a real company — not just learn about startups. It's designed for aspiring founders, early-stage entrepreneurs, career switchers, and professionals who want to build something on the side. If you want to sit in lectures and write essays, this is the wrong program. If you want to build, ship, and grow a real business with support — this is for you.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>How much time does it require per week?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Plan for 10–15 hours per week. This includes Sunday Labs (3–4 hours live), self-paced module work, mentor sessions, and time spent on your actual startup deliverables. The program is designed for people who have jobs, side projects, or businesses — not just full-time students. Most of our students are working while they build.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Do I need a business idea to apply?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">No — but you need a desire to build one. Module 1 is entirely about finding and validating a problem worth solving. Many of our best founders came in with nothing more than a vague interest in a space, and left with a live product and paying customers. That said, if you already have an idea or early traction, we accelerate that too.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>What is the difference between the PGP and MBA tracks?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">The PGP (Post Graduate Program) is the 6-month founder track — you get all the curriculum, mentors, LaunchLabs, and immersions, but without the formal MBA degree. It's the faster, lower-cost entry point. The MBA track is 12 months and includes the Woolf University EU-accredited degree on top of everything in the PGP. Both tracks get you the same cohort, network, and execution support.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Are the global immersions mandatory?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Singapore and Mumbai are included in the MBA pricing and strongly encouraged — they're where Demo Day and key investor connects happen. San Francisco, Dubai, Shanghai, and Bali are optional add-ons. You can do all 6 or just the two included ones. Each immersion is 1 week and designed around a specific theme: investor connects, AI ecosystem, manufacturing, leadership, and more.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>What happens if I don't have a startup at the end?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">You still walk away with a real MBA degree, a verified portfolio of deliverables, deep founder skills, and a network of 80+ mentors and fellow cohort members — which is more than most traditional MBA graduates can say. That said, the program is structured so that graduating without at least a live MVP and some early traction would be a deliberate choice to not do the work.</div>
+      </div>
+
+      <div class="faq-item" style="border-bottom:0">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Can I get a refund if it's not right for me?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes — we offer a 14-day refund window from your first Sunday Lab. If after two weeks you feel the program isn't the right fit, we'll issue a full refund, no questions asked. After that window, fees are non-refundable but can be deferred to the next cohort in cases of genuine hardship.</div>
+      </div>
+
+    </div>
+
+    <!-- Still have questions -->
+    <div style="margin-top:20px;padding:24px 32px;border-radius:12px;
+      background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+      border:.5px solid rgba(245,238,216,0.08);
+      display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-style:italic;color:var(--paper);margin-bottom:4px">Still have questions?</div>
+        <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.42)">Talk to someone who's been through the program.</div>
+      </div>
+      <a href="mailto:hello@launchpilot.com" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:100px;border:.5px solid rgba(245,238,216,0.2);color:rgba(245,238,216,0.65);white-space:nowrap;transition:border-color .2s,color .2s" onmouseover="this.style.borderColor='var(--fire)';this.style.color='var(--fire)'" onmouseout="this.style.borderColor='rgba(245,238,216,0.2)';this.style.color='rgba(245,238,216,0.65)'">Ask us anything →</a>
     </div>
   </div>
 </section>
@@ -1757,11 +2189,13 @@ function setCity(e, code){
   if(tab) tab.classList.add('active');
 }
 
-// Mentor track — duplicate for loop
+// Mentor tracks — duplicate each for seamless loop
 (function(){
-  var t = document.getElementById('m-track');
-  if(!t) return;
-  Array.from(t.querySelectorAll('.m-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+  ['m-track-1','m-track-2'].forEach(function(id){
+    var t = document.getElementById(id);
+    if(!t) return;
+    Array.from(t.querySelectorAll('.m-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+  });
 })();
 
 // Animated arc particles
@@ -1880,6 +2314,14 @@ function closeMobileMenu(){
   fixGrids();
   window.addEventListener('resize', fixGrids);
 })();
+
+// ── FAQ toggle ────────────────────────────────────────────────────
+function toggleFaq(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
 
 </script>
 </body>
