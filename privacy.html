@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — LaunchPilot School of Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ink:    oklch(0.16 0.012 60);
+    --ink-2:  oklch(0.22 0.012 60);
+    --paper:  oklch(0.965 0.012 80);
+    --paper-2:oklch(0.93 0.014 78);
+    --muted:  color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);
+    --fire:   oklch(0.72 0.18 45);
+    --fire-2: oklch(0.62 0.20 38);
+    --serif:  "Instrument Serif", "Times New Roman", Georgia, serif;
+    --sans:   "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --mono:   "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --rule:   color-mix(in oklab, var(--paper) 18%, transparent);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--ink); color: var(--paper); font-family: var(--sans);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+  ::selection { background: var(--fire); color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background: color-mix(in oklab, var(--ink) 60%, transparent);
+    border-bottom: .5px solid color-mix(in oklab, var(--paper) 12%, transparent); }
+  nav.top .inner { display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 48px; max-width: 1440px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand .mark { width: 22px; height: 22px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--fire) 0 30%, var(--fire-2) 35% 70%, oklch(0.32 0.12 35) 75% 100%);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--paper) 20%, transparent), 0 0 24px color-mix(in oklab, var(--fire) 40%, transparent); }
+  .brand .word { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .brand .word b { font-weight: 400; }
+  .brand .word i { font-style: italic; color: var(--fire); }
+  .btn-apply { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px;
+    background: var(--paper); color: var(--ink); font-weight: 500; font-size: 13.5px;
+    transition: transform .2s ease, background .2s ease; }
+  .btn-apply:hover { background: var(--fire); color: var(--ink); transform: translateY(-1px); }
+
+  /* LAYOUT */
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
+  .rule { height: .5px; background: var(--rule); }
+
+  /* HERO */
+  .page-hero { padding: 120px 0 64px; border-bottom: .5px solid var(--rule); }
+  .page-hero .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px; }
+  .page-hero .eyebrow::before { content: ''; display: block; width: 32px; height: .5px; background: var(--fire); }
+  .page-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 7vw, 96px);
+    letter-spacing: -0.025em; line-height: 0.95; }
+  .page-hero h1 em { font-style: italic; color: var(--fire); }
+  .page-hero .meta { display: flex; gap: 32px; margin-top: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); flex-wrap: wrap; }
+  .page-hero .meta span b { color: var(--paper); font-weight: 500; }
+
+  /* CONTENT */
+  .content { display: grid; grid-template-columns: 260px 1fr; gap: 80px;
+    padding: 64px 0 120px; align-items: start; }
+
+  /* SIDEBAR TOC */
+  .toc { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 0; }
+  .toc-label { font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .toc a { display: block; padding: 10px 0; border-bottom: .5px solid var(--rule);
+    font-size: 13px; color: color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);
+    transition: color .2s; }
+  .toc a:hover, .toc a.active { color: var(--fire); }
+  .toc-contact { margin-top: 24px; padding: 20px; border-radius: 8px;
+    background: color-mix(in oklab, var(--fire) 8%, transparent);
+    border: .5px solid color-mix(in oklab, var(--fire) 20%, transparent); }
+  .toc-contact p { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .toc-contact a { font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+    color: var(--fire); border-bottom: 0; padding: 0; }
+
+  /* SECTIONS */
+  .sections { display: flex; flex-direction: column; gap: 0; }
+  .section { padding: 48px 0; border-bottom: .5px solid var(--rule); }
+  .section:last-child { border-bottom: 0; }
+  .section-num { font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--fire); opacity: .6; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); font-weight: 400;
+    letter-spacing: -0.01em; font-style: italic; color: var(--paper); margin-bottom: 24px; line-height: 1.1; }
+  .section p { font-size: 15px; line-height: 1.8; color: color-mix(in oklab, var(--paper) 72%, var(--ink) 28%);
+    margin-bottom: 16px; max-width: 68ch; }
+  .section p:last-child { margin-bottom: 0; }
+  .section p a { color: var(--fire); border-bottom: .5px solid color-mix(in oklab, var(--fire) 40%, transparent);
+    transition: border-color .2s; }
+  .section p a:hover { border-color: var(--fire); }
+  .section ul { list-style: none; display: flex; flex-direction: column; gap: 0;
+    margin: 16px 0; max-width: 68ch; }
+  .section ul li { padding: 12px 0; border-bottom: .5px solid var(--rule);
+    font-size: 14px; line-height: 1.6;
+    color: color-mix(in oklab, var(--paper) 68%, var(--ink) 32%);
+    display: flex; gap: 12px; align-items: flex-start; }
+  .section ul li::before { content: '→'; color: var(--fire); flex-shrink: 0;
+    font-family: var(--mono); font-size: 11px; margin-top: 2px; }
+  .section ul li:last-child { border-bottom: 0; }
+
+  /* DATA TABLE */
+  .data-table { width: 100%; max-width: 68ch; border-collapse: collapse; margin: 20px 0; }
+  .data-table th { font-family: var(--mono); font-size: 9px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--muted); padding: 12px 16px;
+    border-bottom: .5px solid var(--rule); text-align: left; background: color-mix(in oklab, var(--paper) 4%, transparent); }
+  .data-table td { padding: 14px 16px; font-size: 13.5px; line-height: 1.6;
+    color: color-mix(in oklab, var(--paper) 68%, var(--ink) 32%);
+    border-bottom: .5px solid var(--rule); vertical-align: top; }
+  .data-table td:first-child { font-weight: 500; color: var(--paper); white-space: nowrap; }
+  .data-table tr:last-child td { border-bottom: 0; }
+
+  /* HIGHLIGHT BOX */
+  .highlight { padding: 20px 24px; border-radius: 8px; margin: 24px 0;
+    background: color-mix(in oklab, var(--fire) 7%, transparent);
+    border: .5px solid color-mix(in oklab, var(--fire) 22%, transparent);
+    font-size: 14px; line-height: 1.7; max-width: 68ch;
+    color: color-mix(in oklab, var(--paper) 75%, var(--ink) 25%); }
+  .highlight strong { color: var(--paper); }
+
+  /* FOOTER */
+  footer { border-top: .5px solid var(--rule); padding: 32px 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a:hover { color: var(--fire); }
+
+  /* MOBILE */
+  @media(max-width: 900px) {
+    .content { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 0;
+      border-bottom: .5px solid var(--rule); padding-bottom: 24px; }
+    .toc a { padding: 8px 12px; border-bottom: 0; font-size: 12px; }
+    .toc-contact { display: none; }
+    .toc-label { display: none; }
+  }
+  @media(max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    nav.top .inner { padding: 14px 20px; }
+    nav.top ul { display: none; }
+    .page-hero { padding: 96px 0 48px; }
+    .data-table { font-size: 12px; }
+    .data-table td, .data-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <a href="index.html" class="brand">
+      <div class="mark"></div>
+      <div class="word"><b>Launch</b><i>Pilot</i></div>
+    </a>
+    <ul style="display:flex;gap:28px;list-style:none;font-size:13.5px;color:color-mix(in oklab,var(--paper) 80%,var(--ink) 20%)">
+      <li><a href="index.html" style="opacity:.7;transition:opacity .2s" onmouseover="this.style.color='var(--fire)'" onmouseout="this.style.color=''">Home</a></li>
+      <li><a href="founder-mba/" style="opacity:.7;transition:opacity .2s" onmouseover="this.style.color='var(--fire)'" onmouseout="this.style.color=''">Programs</a></li>
+    </ul>
+    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-apply">Apply Now <span class="arr">↗</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+  <div class="page-hero">
+    <div class="eyebrow">Legal · Privacy Policy</div>
+    <h1>Your data.<br><em>Our responsibility.</em></h1>
+    <div class="meta">
+      <span>Effective: <b>1 January 2025</b></span>
+      <span>Last updated: <b>June 2025</b></span>
+      <span>Jurisdiction: <b>Singapore</b></span>
+      <span>Governed by: <b>PDPA 2012</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- CONTENT -->
+<div class="wrap">
+  <div class="content">
+
+    <!-- SIDEBAR -->
+    <aside class="toc">
+      <div class="toc-label">Contents</div>
+      <a href="#overview">Overview</a>
+      <a href="#collection">What we collect</a>
+      <a href="#use">How we use it</a>
+      <a href="#ads">Advertising & Meta</a>
+      <a href="#sharing">Who we share with</a>
+      <a href="#retention">How long we keep it</a>
+      <a href="#rights">Your rights</a>
+      <a href="#cookies">Cookies</a>
+      <a href="#transfers">International transfers</a>
+      <a href="#children">Children</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact us</a>
+      <div class="toc-contact">
+        <p>Questions about your data?</p>
+        <a href="mailto:privacy@launchpilotschool.com">privacy@launchpilotschool.com</a>
+      </div>
+    </aside>
+
+    <!-- SECTIONS -->
+    <div class="sections">
+
+      <div class="section" id="overview">
+        <div class="section-num">01</div>
+        <h2>Who we are and what this policy covers</h2>
+        <p>LaunchPilot School of Business Pte. Ltd. ("LaunchPilot", "we", "us", "our") is a private education institution registered in Singapore. We operate the website <a href="https://www.launchpilotschool.com">launchpilotschool.com</a> and associated program pages, and we offer MBA and founder programs online and in person.</p>
+        <p>This Privacy Policy explains how we collect, use, store, and share personal data when you visit our website, apply for a program, enrol as a student, or interact with us in any other way. It also explains your rights under the Singapore Personal Data Protection Act 2012 (PDPA) and, where applicable, the European Union General Data Protection Regulation (GDPR).</p>
+        <div class="highlight">
+          <strong>Plain English summary:</strong> We collect your data when you fill out forms, apply to our programs, or visit our website. We use it to manage your application and enrollment, send you program information, and improve our marketing. We do not sell your personal data to anyone. Ever.
+        </div>
+      </div>
+
+      <div class="section" id="collection">
+        <div class="section-num">02</div>
+        <h2>What personal data we collect</h2>
+        <p>We collect personal data that you provide directly to us, and data we collect automatically when you use our website.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Data collected</th><th>How we get it</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Identity</td><td>Full name, date of birth, nationality, LinkedIn profile URL</td><td>Application forms, Typeform</td></tr>
+            <tr><td>Contact</td><td>Email address, phone number, city, country</td><td>Application forms, website forms</td></tr>
+            <tr><td>Professional</td><td>Job title, employer, years of experience, industry</td><td>Application forms</td></tr>
+            <tr><td>Financial</td><td>Payment method type, transaction reference (not full card details)</td><td>Payment processors (Stripe)</td></tr>
+            <tr><td>Academic</td><td>Educational background, prior qualifications, program track</td><td>Application and onboarding</td></tr>
+            <tr><td>Usage</td><td>Pages visited, time on site, browser type, device, IP address, referral source</td><td>Cookies, analytics tools</td></tr>
+            <tr><td>Communications</td><td>Email opens, clicks, replies, WhatsApp messages</td><td>CRM, email platform</td></tr>
+            <tr><td>Marketing</td><td>Ad interaction data, click IDs, conversion events</td><td>Meta Pixel, Google Ads, LinkedIn Insight</td></tr>
+          </tbody>
+        </table>
+        <p>We do not knowingly collect sensitive personal data (such as health information, race, religion, or political views) unless you voluntarily provide it and we have a specific lawful basis for processing it.</p>
+      </div>
+
+      <div class="section" id="use">
+        <div class="section-num">03</div>
+        <h2>How we use your personal data</h2>
+        <p>We use your personal data for the following purposes:</p>
+        <ul>
+          <li>Processing your program application and communicating its outcome</li>
+          <li>Managing your enrollment, coursework, and student records</li>
+          <li>Processing tuition payments and issuing receipts</li>
+          <li>Sending you program updates, schedule changes, and learning materials</li>
+          <li>Providing access to our AI Learning System and online platform</li>
+          <li>Matching you with a mentor based on your profile and goals</li>
+          <li>Sending marketing communications about our programs (with your consent, or where we have a legitimate interest)</li>
+          <li>Running targeted advertising campaigns on Meta, Google, and LinkedIn</li>
+          <li>Analysing website traffic and improving our user experience</li>
+          <li>Complying with legal and regulatory obligations</li>
+          <li>Fraud prevention and platform security</li>
+        </ul>
+        <p>Our legal basis for processing under PDPA is generally consent (for marketing), contractual necessity (for enrollment and program delivery), and legitimate interests (for security and analytics). Where we rely on legitimate interests, we have assessed that they do not override your rights.</p>
+      </div>
+
+      <div class="section" id="ads">
+        <div class="section-num">04</div>
+        <h2>Advertising, Meta Pixel & remarketing</h2>
+        <p>We use advertising tools to promote our programs and to reach people who may be interested in founder education. This section explains exactly what that means for your data.</p>
+        <div class="highlight">
+          <strong>Note:</strong> Our Meta (Facebook/Instagram) advertising account has been subject to restrictions. This policy reflects our data practices including the advertising tools we use and your rights regarding them.
+        </div>
+        <p><strong style="color:var(--paper)">Meta Pixel (Facebook/Instagram)</strong></p>
+        <p>Our website uses the Meta Pixel — a small piece of code that tracks your activity on our site (pages viewed, forms started, applications submitted) and sends this data to Meta. We use this to:</p>
+        <ul>
+          <li>Measure the effectiveness of our Facebook and Instagram ads</li>
+          <li>Show retargeting ads to people who have visited our website</li>
+          <li>Build "lookalike audiences" of people similar to our applicants</li>
+          <li>Optimise ad delivery to people most likely to apply</li>
+        </ul>
+        <p>The data sent to Meta via the Pixel may include your IP address, browser information, and event data (e.g. "viewed pricing page", "started application"). This is processed under Meta's own privacy policy. You can opt out of Meta's use of this data for advertising via your <a href="https://www.facebook.com/settings?tab=ads" target="_blank">Facebook Ad Settings</a>.</p>
+        <p><strong style="color:var(--paper)">Google Ads & Analytics</strong></p>
+        <p>We use Google Ads to run search and display advertising, and Google Analytics 4 to understand how visitors use our website. Google may use cookies to serve personalised ads. You can opt out via <a href="https://myaccount.google.com/data-and-privacy" target="_blank">Google's ad settings</a> or by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics opt-out browser add-on</a>.</p>
+        <p><strong style="color:var(--paper)">LinkedIn Insight Tag</strong></p>
+        <p>We use the LinkedIn Insight Tag to track conversions from LinkedIn campaigns and to enable retargeting to LinkedIn members who visit our site. You can opt out via <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank">LinkedIn's opt-out page</a>.</p>
+        <p><strong style="color:var(--paper)">Conversion APIs</strong></p>
+        <p>In addition to browser-based pixels, we use server-side Conversion APIs (Meta CAPI, Google Enhanced Conversions) to send conversion data directly from our servers to the ad platforms. This improves measurement accuracy and reduces reliance on browser cookies. The data shared is hashed (encrypted) before transmission.</p>
+      </div>
+
+      <div class="section" id="sharing">
+        <div class="section-num">05</div>
+        <h2>Who we share your data with</h2>
+        <p>We do not sell your personal data. We share your data only with trusted third parties who help us operate our programs and marketing, all of whom are contractually required to protect your data.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Recipient</th><th>Purpose</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Typeform</td><td>Application form processing</td><td>EU / USA</td></tr>
+            <tr><td>Stripe</td><td>Payment processing</td><td>USA</td></tr>
+            <tr><td>Meta Platforms</td><td>Advertising (Pixel, CAPI)</td><td>USA</td></tr>
+            <tr><td>Google LLC</td><td>Analytics, Google Ads</td><td>USA</td></tr>
+            <tr><td>LinkedIn Corporation</td><td>Advertising (Insight Tag)</td><td>USA</td></tr>
+            <tr><td>Anthropic / Claude</td><td>AI Learning System (program delivery)</td><td>USA</td></tr>
+            <tr><td>Notion Labs</td><td>Student resources and CRM</td><td>USA</td></tr>
+            <tr><td>WhatsApp / Meta</td><td>Student and applicant communications</td><td>USA</td></tr>
+            <tr><td>Woolf University</td><td>Degree registration and accreditation</td><td>Malta / EU</td></tr>
+            <tr><td>Vercel Inc.</td><td>Website hosting</td><td>USA</td></tr>
+          </tbody>
+        </table>
+        <p>We may also disclose your data if required by law, court order, or regulatory authority in Singapore or any other jurisdiction where we operate.</p>
+      </div>
+
+      <div class="section" id="retention">
+        <div class="section-num">06</div>
+        <h2>How long we keep your data</h2>
+        <ul>
+          <li><strong style="color:var(--paper)">Applicants (not enrolled):</strong> 2 years from application date, then deleted or anonymised</li>
+          <li><strong style="color:var(--paper)">Enrolled students:</strong> 7 years from program completion for academic records; financial records retained as required by Singapore law</li>
+          <li><strong style="color:var(--paper)">Marketing contacts:</strong> Until you unsubscribe, or 3 years from last engagement (whichever is sooner)</li>
+          <li><strong style="color:var(--paper)">Website analytics:</strong> 26 months (Google Analytics default retention)</li>
+          <li><strong style="color:var(--paper)">Ad platform data:</strong> Subject to Meta, Google, and LinkedIn's own retention policies</li>
+          <li><strong style="color:var(--paper)">Payment data:</strong> As required by MAS and IRAS regulations (minimum 5 years)</li>
+        </ul>
+      </div>
+
+      <div class="section" id="rights">
+        <div class="section-num">07</div>
+        <h2>Your rights</h2>
+        <p>Under the PDPA (and GDPR where applicable), you have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong style="color:var(--paper)">Access:</strong> Request a copy of the personal data we hold about you</li>
+          <li><strong style="color:var(--paper)">Correction:</strong> Request that we correct inaccurate or incomplete data</li>
+          <li><strong style="color:var(--paper)">Withdrawal of consent:</strong> Withdraw consent for marketing at any time (this does not affect the lawfulness of processing before withdrawal)</li>
+          <li><strong style="color:var(--paper)">Erasure:</strong> Request deletion of your data where we have no legal obligation to retain it</li>
+          <li><strong style="color:var(--paper)">Portability:</strong> Request your data in a structured, machine-readable format (GDPR only)</li>
+          <li><strong style="color:var(--paper)">Objection:</strong> Object to processing based on legitimate interests</li>
+          <li><strong style="color:var(--paper)">Opt out of marketing:</strong> Unsubscribe from any email via the link in every email, or email us directly</li>
+        </ul>
+        <p>To exercise any of these rights, email <a href="mailto:privacy@launchpilotschool.com">privacy@launchpilotschool.com</a>. We will respond within 30 days. We may need to verify your identity before fulfilling a request.</p>
+        <p>If you are located in the EU/EEA and believe your rights have been violated, you have the right to lodge a complaint with your local data protection authority.</p>
+      </div>
+
+      <div class="section" id="cookies">
+        <div class="section-num">08</div>
+        <h2>Cookies & tracking technologies</h2>
+        <p>We use cookies and similar technologies on our website. Here's what we use and why:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Cookie type</th><th>Purpose</th><th>Can you opt out?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Strictly necessary</td><td>Website function, security, session management</td><td>No — required for the site to work</td></tr>
+            <tr><td>Analytics</td><td>Google Analytics 4 — understand traffic and user behaviour</td><td>Yes — via browser add-on or cookie settings</td></tr>
+            <tr><td>Advertising</td><td>Meta Pixel, LinkedIn Insight, Google Ads — ad measurement and retargeting</td><td>Yes — via each platform's ad settings</td></tr>
+            <tr><td>Functional</td><td>Remembering preferences, form progress</td><td>Yes — via browser settings</td></tr>
+          </tbody>
+        </table>
+        <p>You can manage or delete cookies at any time through your browser settings. Note that disabling cookies may affect some features of our website. For more information, visit <a href="https://www.aboutcookies.org" target="_blank">aboutcookies.org</a>.</p>
+      </div>
+
+      <div class="section" id="transfers">
+        <div class="section-num">09</div>
+        <h2>International data transfers</h2>
+        <p>LaunchPilot is headquartered in Singapore and serves students globally. Many of our third-party service providers (including Meta, Google, Anthropic, and Stripe) are based in the United States.</p>
+        <p>When we transfer data outside Singapore, we ensure appropriate safeguards are in place in accordance with the PDPA, including contractual clauses that require recipients to protect your data to a standard comparable to Singapore law.</p>
+        <p>For transfers from the EU/EEA, we rely on Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+      </div>
+
+      <div class="section" id="children">
+        <div class="section-num">10</div>
+        <h2>Children's privacy</h2>
+        <p>Our programs are designed for adults aged 18 and over. We do not knowingly collect personal data from anyone under the age of 18. If you believe we have inadvertently collected data from a minor, please contact us immediately at <a href="mailto:privacy@launchpilotschool.com">privacy@launchpilotschool.com</a> and we will delete it promptly.</p>
+      </div>
+
+      <div class="section" id="changes">
+        <div class="section-num">11</div>
+        <h2>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will notify you by email (if you are a registered student or applicant) and update the "Last updated" date at the top of this page.</p>
+        <p>We encourage you to review this policy periodically. Your continued use of our website or services after changes are posted constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div class="section" id="contact">
+        <div class="section-num">12</div>
+        <h2>Contact us & data protection officer</h2>
+        <p>If you have any questions about this Privacy Policy, want to exercise your rights, or have a concern about how we handle your personal data, please contact us:</p>
+        <ul>
+          <li><strong style="color:var(--paper)">Email:</strong> <a href="mailto:privacy@launchpilotschool.com">privacy@launchpilotschool.com</a></li>
+          <li><strong style="color:var(--paper)">Postal address:</strong> LaunchPilot School of Business Pte. Ltd., Singapore</li>
+          <li><strong style="color:var(--paper)">Response time:</strong> We aim to respond within 5 business days, and no later than 30 days</li>
+        </ul>
+        <p>For complaints regarding personal data protection in Singapore, you may also contact the Personal Data Protection Commission (PDPC) at <a href="https://www.pdpc.gov.sg" target="_blank">pdpc.gov.sg</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="rule"></div>
+<div class="wrap">
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="brand" style="font-family:var(--serif);font-size:18px;letter-spacing:-0.01em">
+        <div class="mark"></div>
+        <span><b>Launch</b><i style="font-style:italic;color:var(--fire)">Pilot</i></span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="founder-mba/">Programs</a>
+        <a href="privacy.html" style="color:var(--fire)">Privacy Policy</a>
+        <a href="mailto:hello@launchpilotschool.com">Contact</a>
+      </div>
+      <span>© 2025 LaunchPilot School of Business · Singapore</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Highlight active TOC item on scroll
+const sections = document.querySelectorAll('.section[id]');
+const tocLinks = document.querySelectorAll('.toc a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.toc a[href="#' + e.target.id + '"]');
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
