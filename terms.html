@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — LaunchPilot School of Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ink:    oklch(0.16 0.012 60);
+    --ink-2:  oklch(0.22 0.012 60);
+    --paper:  oklch(0.965 0.012 80);
+    --muted:  color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);
+    --fire:   oklch(0.72 0.18 45);
+    --fire-2: oklch(0.62 0.20 38);
+    --serif:  "Instrument Serif", "Times New Roman", Georgia, serif;
+    --sans:   "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --mono:   "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --rule:   color-mix(in oklab, var(--paper) 18%, transparent);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--ink); color: var(--paper); font-family: var(--sans);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+  ::selection { background: var(--fire); color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background: color-mix(in oklab, var(--ink) 60%, transparent);
+    border-bottom: .5px solid color-mix(in oklab, var(--paper) 12%, transparent); }
+  nav.top .inner { display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 48px; max-width: 1440px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand .mark { width: 22px; height: 22px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--fire) 0 30%, var(--fire-2) 35% 70%, oklch(0.32 0.12 35) 75% 100%);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--paper) 20%, transparent), 0 0 24px color-mix(in oklab, var(--fire) 40%, transparent); }
+  .brand .word { font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .brand .word b { font-weight: 400; }
+  .brand .word i { font-style: italic; color: var(--fire); }
+  .btn-apply { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px;
+    background: var(--paper); color: var(--ink); font-weight: 500; font-size: 13.5px;
+    transition: transform .2s ease, background .2s ease; }
+  .btn-apply:hover { background: var(--fire); color: var(--ink); transform: translateY(-1px); }
+
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
+  .rule { height: .5px; background: var(--rule); }
+
+  .page-hero { padding: 120px 0 64px; border-bottom: .5px solid var(--rule); }
+  .page-hero .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px; }
+  .page-hero .eyebrow::before { content: ''; display: block; width: 32px; height: .5px; background: var(--fire); }
+  .page-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 7vw, 96px);
+    letter-spacing: -0.025em; line-height: 0.95; }
+  .page-hero h1 em { font-style: italic; color: var(--fire); }
+  .page-hero .meta { display: flex; gap: 32px; margin-top: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); flex-wrap: wrap; }
+  .page-hero .meta span b { color: var(--paper); font-weight: 500; }
+
+  .content { display: grid; grid-template-columns: 260px 1fr; gap: 80px;
+    padding: 64px 0 120px; align-items: start; }
+
+  .toc { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 0; }
+  .toc-label { font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .toc a { display: block; padding: 10px 0; border-bottom: .5px solid var(--rule);
+    font-size: 13px; color: color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);
+    transition: color .2s; }
+  .toc a:hover, .toc a.active { color: var(--fire); }
+  .toc-contact { margin-top: 24px; padding: 20px; border-radius: 8px;
+    background: color-mix(in oklab, var(--fire) 8%, transparent);
+    border: .5px solid color-mix(in oklab, var(--fire) 20%, transparent); }
+  .toc-contact p { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .toc-contact a { font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+    color: var(--fire); border-bottom: 0; padding: 0; }
+
+  .sections { display: flex; flex-direction: column; gap: 0; }
+  .section { padding: 48px 0; border-bottom: .5px solid var(--rule); }
+  .section:last-child { border-bottom: 0; }
+  .section-num { font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--fire); opacity: .6; margin-bottom: 12px; }
+  .section h2 { font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); font-weight: 400;
+    letter-spacing: -0.01em; font-style: italic; color: var(--paper); margin-bottom: 24px; line-height: 1.1; }
+  .section p { font-size: 15px; line-height: 1.8; color: color-mix(in oklab, var(--paper) 72%, var(--ink) 28%);
+    margin-bottom: 16px; max-width: 68ch; }
+  .section p:last-child { margin-bottom: 0; }
+  .section p a { color: var(--fire); border-bottom: .5px solid color-mix(in oklab, var(--fire) 40%, transparent); transition: border-color .2s; }
+  .section p a:hover { border-color: var(--fire); }
+  .section ul { list-style: none; display: flex; flex-direction: column; gap: 0;
+    margin: 16px 0; max-width: 68ch; }
+  .section ul li { padding: 12px 0; border-bottom: .5px solid var(--rule);
+    font-size: 14px; line-height: 1.6;
+    color: color-mix(in oklab, var(--paper) 68%, var(--ink) 32%);
+    display: flex; gap: 12px; align-items: flex-start; }
+  .section ul li::before { content: '→'; color: var(--fire); flex-shrink: 0;
+    font-family: var(--mono); font-size: 11px; margin-top: 2px; }
+  .section ul li:last-child { border-bottom: 0; }
+  .highlight { padding: 20px 24px; border-radius: 8px; margin: 24px 0;
+    background: color-mix(in oklab, var(--fire) 7%, transparent);
+    border: .5px solid color-mix(in oklab, var(--fire) 22%, transparent);
+    font-size: 14px; line-height: 1.7; max-width: 68ch;
+    color: color-mix(in oklab, var(--paper) 75%, var(--ink) 25%); }
+  .highlight strong { color: var(--paper); }
+
+  footer { border-top: .5px solid var(--rule); padding: 32px 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a:hover { color: var(--fire); }
+
+  @media(max-width: 900px) {
+    .content { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 0;
+      border-bottom: .5px solid var(--rule); padding-bottom: 24px; }
+    .toc a { padding: 8px 12px; border-bottom: 0; font-size: 12px; }
+    .toc-contact, .toc-label { display: none; }
+  }
+  @media(max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    nav.top .inner { padding: 14px 20px; }
+    nav.top ul { display: none; }
+    .page-hero { padding: 96px 0 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="index.html" class="brand">
+      <div class="mark"></div>
+      <div class="word"><b>Launch</b><i>Pilot</i></div>
+    </a>
+    <ul style="display:flex;gap:28px;list-style:none;font-size:13.5px;color:color-mix(in oklab,var(--paper) 80%,var(--ink) 20%)">
+      <li><a href="index.html" onmouseover="this.style.color='var(--fire)'" onmouseout="this.style.color=''">Home</a></li>
+      <li><a href="founder-mba/" onmouseover="this.style.color='var(--fire)'" onmouseout="this.style.color=''">Programs</a></li>
+    </ul>
+    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-apply">Apply Now ↗</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-hero">
+    <div class="eyebrow">Legal · Terms & Conditions</div>
+    <h1>The rules of<br><em>engagement.</em></h1>
+    <div class="meta">
+      <span>Effective: <b>1 January 2025</b></span>
+      <span>Last updated: <b>June 2025</b></span>
+      <span>Jurisdiction: <b>Singapore</b></span>
+      <span>Entity: <b>LaunchPilot School of Business Pte. Ltd.</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap">
+  <div class="content">
+
+    <aside class="toc">
+      <div class="toc-label">Contents</div>
+      <a href="#overview">Overview</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#enrollment">Enrollment & payment</a>
+      <a href="#refunds">Refunds & cancellation</a>
+      <a href="#program">Program delivery</a>
+      <a href="#ai">AI Learning System</a>
+      <a href="#ip">Intellectual property</a>
+      <a href="#conduct">Student conduct</a>
+      <a href="#liability">Liability</a>
+      <a href="#termination">Termination</a>
+      <a href="#disputes">Disputes</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+      <div class="toc-contact">
+        <p>Legal queries?</p>
+        <a href="mailto:legal@launchpilotschool.com">legal@launchpilotschool.com</a>
+      </div>
+    </aside>
+
+    <div class="sections">
+
+      <div class="section" id="overview">
+        <div class="section-num">01</div>
+        <h2>Overview & acceptance</h2>
+        <p>These Terms and Conditions ("Terms") govern your relationship with LaunchPilot School of Business Pte. Ltd. ("LaunchPilot", "we", "us", "our"), a private limited company registered in Singapore, when you apply for, enrol in, or participate in any of our programs — including the Founder MBA, Borderless MBA, Executive MBA, Family Business MBA, and the PM Founder Program.</p>
+        <p>By submitting an application, making a payment, or accessing our platform or program materials, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, do not proceed with your application or enrollment.</p>
+        <div class="highlight">
+          <strong>Plain English summary:</strong> By applying or enrolling, you agree to these Terms. They cover payments, refunds, how we deliver the program, how you should behave, and what happens if things go wrong. Read them — they're written to be clear, not to trap you.
+        </div>
+      </div>
+
+      <div class="section" id="eligibility">
+        <div class="section-num">02</div>
+        <h2>Eligibility & admissions</h2>
+        <p>Our programs are open to adults aged 18 and over. Specific programs may have additional eligibility criteria, which are communicated during the application process. Admission is at LaunchPilot's sole discretion and is not guaranteed by payment of an application fee.</p>
+        <ul>
+          <li>You must be at least 18 years old at the time of enrollment</li>
+          <li>You must provide accurate and truthful information in your application</li>
+          <li>Misrepresentation of qualifications, experience, or identity may result in immediate removal from the program without refund</li>
+          <li>LaunchPilot reserves the right to decline any application without providing a reason</li>
+          <li>Acceptance into one program does not guarantee acceptance into other programs</li>
+        </ul>
+      </div>
+
+      <div class="section" id="enrollment">
+        <div class="section-num">03</div>
+        <h2>Enrollment, fees & payment</h2>
+        <p>Enrollment is confirmed only upon receipt of full payment (or the first instalment, where a payment plan has been agreed in writing). Prices are quoted in USD unless otherwise stated and are exclusive of any applicable local taxes.</p>
+        <ul>
+          <li>Program fees are clearly stated on our website and in your offer letter. These are the fees you will pay — no hidden charges</li>
+          <li>Payment is processed via Stripe. By making payment, you also agree to Stripe's terms of service</li>
+          <li>Where a payment plan is offered, all instalments must be paid on time. Missed payments may result in suspension of access to program materials</li>
+          <li>Fees do not include travel, accommodation, visa costs, or any third-party expenses associated with in-person immersions</li>
+          <li>LaunchPilot reserves the right to change program fees for future cohorts. Changes do not affect enrolled students</li>
+          <li>All transactions are in USD. Currency conversion fees are your responsibility</li>
+        </ul>
+      </div>
+
+      <div class="section" id="refunds">
+        <div class="section-num">04</div>
+        <h2>Refunds & cancellation policy</h2>
+        <p>We want you to be confident in your decision. Our refund policy is designed to be fair and transparent.</p>
+        <ul>
+          <li><strong style="color:var(--paper)">Before program start:</strong> Full refund if you cancel more than 14 days before your cohort's start date</li>
+          <li><strong style="color:var(--paper)">Within 14 days of first session:</strong> Full refund if requested within 14 days of attending your first live Sunday Session — no questions asked</li>
+          <li><strong style="color:var(--paper)">After 14-day window:</strong> No refund is available once you have attended more than 2 live sessions or accessed more than 20% of the program materials</li>
+          <li><strong style="color:var(--paper)">Deferral:</strong> You may defer to the next available cohort (same program) once at no charge, provided you notify us at least 7 days before your cohort starts</li>
+          <li><strong style="color:var(--paper)">Program cancellation by LaunchPilot:</strong> If we cancel a cohort, you will receive a full refund or the option to transfer to the next cohort</li>
+          <li><strong style="color:var(--paper)">Non-attendance:</strong> Failing to attend sessions does not constitute a request for refund. You must actively request a refund within the applicable window</li>
+        </ul>
+        <p>To request a refund or deferral, email <a href="mailto:admissions@launchpilotschool.com">admissions@launchpilotschool.com</a> with your full name, program, and cohort date.</p>
+      </div>
+
+      <div class="section" id="program">
+        <div class="section-num">05</div>
+        <h2>Program delivery & changes</h2>
+        <p>LaunchPilot reserves the right to make reasonable changes to program content, schedule, faculty, format, and delivery method. We will always endeavour to notify enrolled students of material changes with reasonable notice.</p>
+        <ul>
+          <li>Live sessions are scheduled in advance and communicated to enrolled students. All live sessions are recorded for students who cannot attend</li>
+          <li>Faculty, mentors, and guest speakers are subject to change. We do not guarantee the participation of any specific individual</li>
+          <li>In-person immersions (where included) are subject to visa restrictions, travel advisories, and force majeure events. We may substitute virtual alternatives where necessary</li>
+          <li>The startup benefits and tool credits included in the program are subject to the terms and availability set by the third-party providers. We do not guarantee their continued availability</li>
+          <li>Program certificates and any associated degree credentials are issued upon completion of all required deliverables, as defined in the program curriculum</li>
+          <li>Accreditation is provided through Woolf University (where applicable). LaunchPilot does not control Woolf's accreditation processes or policies</li>
+        </ul>
+      </div>
+
+      <div class="section" id="ai">
+        <div class="section-num">06</div>
+        <h2>AI Learning System</h2>
+        <p>Our programs include access to an AI Learning System powered by Anthropic's Claude API. By using this system, you agree to the following:</p>
+        <ul>
+          <li>The AI Learning System is an educational tool, not a substitute for professional legal, financial, medical, or business advice</li>
+          <li>Outputs from the AI system are generated responses and may contain errors, inaccuracies, or outdated information. You are responsible for verifying any information before acting on it</li>
+          <li>You must not use the AI system to generate content that is illegal, harmful, misleading, or in violation of any third party's rights</li>
+          <li>Conversations with the AI system may be used to improve the system and program quality, in accordance with our Privacy Policy</li>
+          <li>Access to the AI Learning System is personal and non-transferable. You must not share your login credentials with any third party</li>
+          <li>LaunchPilot is not liable for decisions made based on AI system outputs</li>
+        </ul>
+      </div>
+
+      <div class="section" id="ip">
+        <div class="section-num">07</div>
+        <h2>Intellectual property</h2>
+        <p>All program materials, content, frameworks, curricula, recordings, and tools created by LaunchPilot are the intellectual property of LaunchPilot School of Business Pte. Ltd. and are protected by copyright law.</p>
+        <ul>
+          <li>You are granted a personal, non-exclusive, non-transferable licence to access and use program materials for your own educational purposes during and after the program</li>
+          <li>You may not reproduce, distribute, sell, sublicense, or publicly share any program materials without our prior written consent</li>
+          <li>You may not record live sessions without the prior consent of all participants and LaunchPilot</li>
+          <li>Work you create as part of the program (your business, pitch deck, deliverables) remains your intellectual property. LaunchPilot claims no ownership over your work</li>
+          <li>You grant LaunchPilot a non-exclusive licence to use your name, photo, and business story for marketing purposes (with your consent, which you may withdraw at any time)</li>
+        </ul>
+      </div>
+
+      <div class="section" id="conduct">
+        <div class="section-num">08</div>
+        <h2>Student conduct</h2>
+        <p>LaunchPilot is a community of ambitious builders. We expect all students to uphold a standard of conduct that makes the program valuable for everyone.</p>
+        <ul>
+          <li>Treat fellow students, faculty, mentors, and staff with respect at all times — in sessions, on WhatsApp, and in any LaunchPilot community spaces</li>
+          <li>Do not share confidential information disclosed by fellow students or mentors outside the program without consent</li>
+          <li>Do not use the program or its network for unsolicited marketing, spam, or self-promotion in a manner that disrupts the community</li>
+          <li>Do not impersonate LaunchPilot, its faculty, or other students</li>
+          <li>Academic integrity: all work you submit as your own must be your own. Using AI tools to assist your work is permitted and encouraged — submitting entirely AI-generated work as your sole output is not</li>
+          <li>Violations of the conduct policy may result in suspension or permanent removal from the program without refund</li>
+        </ul>
+      </div>
+
+      <div class="section" id="liability">
+        <div class="section-num">09</div>
+        <h2>Limitation of liability</h2>
+        <p>LaunchPilot provides educational programs and tools. We do not guarantee any specific business, financial, career, or academic outcome as a result of completing our programs.</p>
+        <ul>
+          <li>LaunchPilot is not liable for any loss of business, revenue, profits, data, or goodwill arising from your participation in our programs</li>
+          <li>Our total liability to you in connection with your enrollment shall not exceed the total fees paid by you for the program</li>
+          <li>We are not liable for the actions, advice, or omissions of any mentor, guest speaker, or third-party partner</li>
+          <li>We are not liable for technical failures, platform downtime, or interruptions to the AI Learning System, provided we take reasonable steps to restore service</li>
+          <li>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, or for fraud or fraudulent misrepresentation</li>
+        </ul>
+        <p>These limitations apply to the fullest extent permitted by Singapore law.</p>
+      </div>
+
+      <div class="section" id="termination">
+        <div class="section-num">10</div>
+        <h2>Termination & suspension</h2>
+        <p>Either party may terminate the enrollment relationship subject to the conditions below.</p>
+        <ul>
+          <li><strong style="color:var(--paper)">By you:</strong> You may withdraw from the program at any time. Refunds are subject to the refund policy in Section 04</li>
+          <li><strong style="color:var(--paper)">By LaunchPilot — for cause:</strong> We may suspend or terminate your enrollment without refund if you breach these Terms, including for misconduct, misrepresentation, or non-payment</li>
+          <li><strong style="color:var(--paper)">By LaunchPilot — for commercial reasons:</strong> If we discontinue a program, we will offer enrolled students a full refund or transfer to an equivalent program</li>
+          <li><strong style="color:var(--paper)">Effect of termination:</strong> Upon termination, your access to program materials and the AI Learning System will be revoked. Sections on intellectual property, liability, and disputes survive termination</li>
+        </ul>
+      </div>
+
+      <div class="section" id="disputes">
+        <div class="section-num">11</div>
+        <h2>Governing law & disputes</h2>
+        <p>These Terms are governed by the laws of Singapore. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Singapore.</p>
+        <p>Before initiating formal legal proceedings, both parties agree to attempt to resolve any dispute through good-faith negotiation for a period of 30 days. If unresolved, either party may refer the matter to the Singapore Mediation Centre before pursuing litigation.</p>
+        <p>If you are a consumer and your local consumer protection laws provide rights that cannot be excluded, nothing in these Terms affects those rights.</p>
+      </div>
+
+      <div class="section" id="changes">
+        <div class="section-num">12</div>
+        <h2>Changes to these Terms</h2>
+        <p>We may update these Terms from time to time. When we make material changes, we will notify enrolled students by email and update the "Last updated" date at the top of this page. Your continued participation in the program after notification constitutes acceptance of the updated Terms.</p>
+        <p>We encourage you to review these Terms periodically. The version in effect at the time of your enrollment governs your relationship with us for that cohort, except where changes are required by law.</p>
+      </div>
+
+      <div class="section" id="contact">
+        <div class="section-num">13</div>
+        <h2>Contact & legal notices</h2>
+        <p>For any questions about these Terms, or to send a formal legal notice to LaunchPilot, please contact:</p>
+        <ul>
+          <li><strong style="color:var(--paper)">Email:</strong> <a href="mailto:legal@launchpilotschool.com">legal@launchpilotschool.com</a></li>
+          <li><strong style="color:var(--paper)">General enquiries:</strong> <a href="mailto:hello@launchpilotschool.com">hello@launchpilotschool.com</a></li>
+          <li><strong style="color:var(--paper)">Admissions & refunds:</strong> <a href="mailto:admissions@launchpilotschool.com">admissions@launchpilotschool.com</a></li>
+          <li><strong style="color:var(--paper)">Registered address:</strong> LaunchPilot School of Business Pte. Ltd., Singapore</li>
+        </ul>
+        <p>These Terms were last reviewed and updated in June 2025. The current version supersedes all previous versions.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+<div class="wrap">
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="brand" style="font-family:var(--serif);font-size:18px;letter-spacing:-0.01em">
+        <div class="mark"></div>
+        <span><b>Launch</b><i style="font-style:italic;color:var(--fire)">Pilot</i></span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="founder-mba/">Programs</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--fire)">Terms & Conditions</a>
+        <a href="mailto:hello@launchpilotschool.com">Contact</a>
+      </div>
+      <span>© 2025 LaunchPilot School of Business · Singapore</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section[id]');
+const tocLinks = document.querySelectorAll('.toc a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.toc a[href="#' + e.target.id + '"]');
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

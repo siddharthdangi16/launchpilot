@@ -496,6 +496,83 @@ footer{border-top:.5px solid rgba(255,255,255,0.08);padding:36px 56px;
   .for-grid,.outcomes-hero,.roi-paths,.pricing-grid{grid-template-columns:1fr}
   [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
 }
+
+/* ── AI COPILOT MOCKUP (family) ── */
+.fam-ai-mock{background:oklch(0.12 0.006 250);border:.5px solid rgba(255,255,255,0.1);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 .5px rgba(255,255,255,0.04)}
+.fam-ai-bar{background:oklch(0.15 0.007 250);padding:11px 16px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:.5px solid rgba(255,255,255,0.07)}
+.fam-ai-dots{display:flex;gap:5px}
+.fam-ai-dot{width:10px;height:10px;border-radius:50%}
+.fam-ai-title{font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.28);margin:0 auto}
+.fam-ai-status{display:flex;align-items:center;gap:5px;
+  font-family:var(--mono);font-size:9px;color:var(--bronze)}
+.fam-ai-status::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--bronze);animation:fam-pulse 2s ease-in-out infinite;display:block}
+@keyframes fam-pulse{50%{opacity:.3}}
+.fam-chat{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:320px}
+.fam-msg{display:flex;flex-direction:column;gap:3px;max-width:87%}
+.fam-msg.user{align-self:flex-end;align-items:flex-end}
+.fam-msg.bot{align-self:flex-start}
+.fam-msg .sender{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.22);padding:0 3px}
+.fam-msg.user .sender{text-align:right}
+.fam-msg .bubble{padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.55;font-family:var(--sans)}
+.fam-msg.user .bubble{background:color-mix(in oklab,var(--bronze) 16%,transparent);
+  border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);
+  border-bottom-right-radius:3px;color:rgba(255,255,255,0.85)}
+.fam-msg.bot .bubble{background:rgba(255,255,255,0.06);
+  border:.5px solid rgba(255,255,255,0.09);
+  border-bottom-left-radius:3px;color:rgba(255,255,255,0.80)}
+.fam-msg.bot .bubble strong{color:var(--bronze);font-weight:500}
+.fam-msg.bot .bubble ul{margin-top:7px;padding-left:14px;display:flex;flex-direction:column;gap:4px}
+.fam-msg.bot .bubble li{font-size:12px;color:rgba(255,255,255,0.65)}
+.fam-typing{display:flex;gap:4px;padding:3px 0;align-items:center}
+.fam-typing span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.28)}
+.fam-typing span:nth-child(1){animation:ftyp .9s .0s ease-in-out infinite}
+.fam-typing span:nth-child(2){animation:ftyp .9s .15s ease-in-out infinite}
+.fam-typing span:nth-child(3){animation:ftyp .9s .3s ease-in-out infinite}
+@keyframes ftyp{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px);background:var(--bronze)}}
+.fam-ai-input{padding:12px 16px;border-top:.5px solid rgba(255,255,255,0.07);
+  display:flex;gap:8px;align-items:center;background:oklch(0.14 0.006 250)}
+.fam-ai-field{flex:1;background:rgba(255,255,255,0.05);border:.5px solid rgba(255,255,255,0.1);
+  border-radius:6px;padding:8px 13px;font-size:12.5px;font-family:var(--sans);
+  color:rgba(255,255,255,0.35)}
+.fam-ai-send{width:30px;height:30px;border-radius:4px;background:var(--bronze);
+  display:flex;align-items:center;justify-content:center;border:none;
+  font-size:13px;color:var(--forest);cursor:pointer;flex-shrink:0}
+
+/* ── OUTCOMES GRID (family) ── */
+.outcomes-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(255,255,255,0.07);margin-top:48px;overflow:hidden;border-radius:2px}
+.outcome-card{background:var(--forest);padding:28px 22px;display:flex;flex-direction:column;
+  gap:10px;cursor:default;transition:background .25s;position:relative;overflow:hidden}
+.outcome-card:hover{background:color-mix(in oklab,var(--forest) 84%,var(--bronze) 8%)}
+.outcome-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--bronze);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.outcome-card:hover::after{transform:scaleX(1)}
+.outcome-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--bronze);opacity:.6}
+.outcome-icon{font-size:22px;margin:4px 0}
+.outcome-t{font-family:var(--serif);font-size:17px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--ivory);line-height:1.2}
+.outcome-d{font-family:var(--sans);font-size:12px;line-height:1.6;color:rgba(255,255,255,0.42)}
+.outcome-tag{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--bronze);opacity:.65;margin-top:auto;padding-top:10px;
+  border-top:.5px solid rgba(255,255,255,0.07)}
+
+@media(max-width:1100px){.outcomes-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:768px){
+  .outcomes-grid{grid-template-columns:1fr 1fr!important}
+  [style*="grid-template-columns:1fr 1fr;gap:48px"]{grid-template-columns:1fr!important;gap:32px!important}
+  .fam-chat{min-height:auto}
+}
+@media(max-width:480px){.outcomes-grid{grid-template-columns:1fr!important}}
+
 </style>
 </head>
 <body>
@@ -789,6 +866,180 @@ footer{border-top:.5px solid rgba(255,255,255,0.08);padding:36px 56px;
       <div class="ind-cell"><div class="ind-icon">📱</div><div class="ind-name">Technology & Media</div><div class="ind-desc">Software · Print · Broadcasting · EdTech</div></div>
       <div class="ind-cell"><div class="ind-icon">💎</div><div class="ind-name">Luxury & Jewellery</div><div class="ind-desc">Gems · Fashion · Lifestyle · Watches</div></div>
       <div class="ind-cell"><div class="ind-icon">🌾</div><div class="ind-name">Agriculture & Agritech</div><div class="ind-desc">Farming · Processing · Cold chain · Exports</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI COPILOT -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">AI Learning System</div>
+    <h2 class="sec-h">Your family business<br>finally has an <em>AI advisor.</em></h2>
+    <p class="sec-sub">Not generic MBA theory. An AI trained on family business dynamics — succession, governance, legacy, and growth — and personalised to your specific business, family structure, and goals from day one.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:56px">
+
+      <!-- Features -->
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 10%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:16px">🏛️</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ivory);margin-bottom:5px">Knows your family business context</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Onboard with your business type, generation, family structure, and goals. Every answer is specific to your situation — not a generic case study from Harvard.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 10%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:16px">🤝</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ivory);margin-bottom:5px">Navigates family dynamics</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Succession tensions. Founder-child conflicts. Non-family executives. The AI helps you think through the human dynamics that no standard MBA ever addresses.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 10%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:16px">📜</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ivory);margin-bottom:5px">Builds your governance documents</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Family constitution, board charter, succession roadmap, shareholder agreements — the AI drafts and refines every governance document with you across the program.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 10%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:16px">🚀</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ivory);margin-bottom:5px">Unlocks new revenue streams</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Identifies where AI, digital, and new business lines can add revenue alongside your core business — without disrupting what your family spent decades building.</div></div>
+        </div>
+        <div style="padding:26px 0;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 10%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:16px">⚡</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ivory);margin-bottom:5px">Available between every session</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Facing a tough board conversation next week? Working through a valuation? The AI is available 24/7 to help you prepare, think, and decide with confidence.</div></div>
+        </div>
+      </div>
+
+      <!-- Chat mockup: family business specific -->
+      <div class="fam-ai-mock">
+        <div class="fam-ai-bar">
+          <div class="fam-ai-dots">
+            <div class="fam-ai-dot" style="background:#ff5f57"></div>
+            <div class="fam-ai-dot" style="background:#ffbd2e"></div>
+            <div class="fam-ai-dot" style="background:#28c840"></div>
+          </div>
+          <div class="fam-ai-title">AI Learning System · Family Business MBA</div>
+          <div class="fam-ai-status">Active · Knows your business</div>
+        </div>
+        <div class="fam-chat">
+          <div class="fam-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble">Welcome back. Based on your onboarding, you run a 3rd-generation manufacturing business in India with your two siblings. Your main goal is succession planning and expanding into Southeast Asia. Where do you want to start today?</div>
+          </div>
+          <div class="fam-msg user">
+            <div class="sender">You</div>
+            <div class="bubble">My father is stepping back but doesn't want to fully let go. It's creating confusion with the team. How do I handle this?</div>
+          </div>
+          <div class="fam-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble">This is one of the most common — and painful — challenges in family business transitions. There are three things usually at play:<ul><li><strong>Identity loss</strong> — the business is part of who he is</li><li><strong>Trust gap</strong> — he hasn't yet seen you lead through a crisis</li><li><strong>Role ambiguity</strong> — no one has defined what "stepping back" actually means</li></ul>The fastest fix is to give him a <strong>defined role with real authority</strong> — Chairman, Patron, or Ambassador — so he's honoured, not sidelined. Want me to help you draft that conversation?</div>
+          </div>
+          <div class="fam-msg user">
+            <div class="sender">You</div>
+            <div class="bubble">Yes — and how do I frame this without hurting his pride?</div>
+          </div>
+          <div class="fam-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble"><div class="fam-typing"><span></span><span></span><span></span></div></div>
+          </div>
+        </div>
+        <div class="fam-ai-input">
+          <div class="fam-ai-field">Ask anything about your family business...</div>
+          <div class="fam-ai-send">→</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Program Outcomes</div>
+    <h2 class="sec-h">What you leave with.<br><em>All ten.</em></h2>
+    <p class="sec-sub">The Family Business MBA has one measure of success — that you graduate with real, implementable outcomes for your business. Here are the 10 things every graduate walks away with.</p>
+
+    <div class="outcomes-grid">
+
+      <div class="outcome-card">
+        <div class="outcome-n">01</div>
+        <div class="outcome-icon">📜</div>
+        <div class="outcome-t">Family Constitution</div>
+        <div class="outcome-d">A written, agreed-upon set of values, governance rules, and decision-making principles that every family member signs. The document that prevents the fights that destroy businesses.</div>
+        <div class="outcome-tag">Governance deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">02</div>
+        <div class="outcome-icon">🔑</div>
+        <div class="outcome-t">Succession Roadmap</div>
+        <div class="outcome-d">A clear, time-bound plan for leadership transition — who takes what role, when, how, and with what safeguards. Built with your family, stress-tested by mentors.</div>
+        <div class="outcome-tag">Succession deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">03</div>
+        <div class="outcome-icon">🏛️</div>
+        <div class="outcome-t">Professional Board Structure</div>
+        <div class="outcome-d">Design and implement a governance structure that separates family ownership from business management — including independent directors, board charters, and accountability frameworks.</div>
+        <div class="outcome-tag">Governance deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">04</div>
+        <div class="outcome-icon">🚀</div>
+        <div class="outcome-t">New Revenue Stream</div>
+        <div class="outcome-d">Launch at least one AI-powered or digital revenue stream alongside your core business — validated, scoped, and with a GTM plan your team can execute without you starting from scratch.</div>
+        <div class="outcome-tag">Growth deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">05</div>
+        <div class="outcome-icon">🌏</div>
+        <div class="outcome-t">International Expansion Plan</div>
+        <div class="outcome-d">A market-entry strategy for one new geography — Singapore, Dubai, or Southeast Asia — with partner identification, regulatory landscape, and a 12-month go-to-market plan.</div>
+        <div class="outcome-tag">Growth deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">06</div>
+        <div class="outcome-icon">🤖</div>
+        <div class="outcome-t">AI Integration Roadmap</div>
+        <div class="outcome-d">A function-by-function AI implementation plan for your business — which processes to automate, which AI tools to deploy, and how to upskill your existing team without disruption.</div>
+        <div class="outcome-tag">AI deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">07</div>
+        <div class="outcome-icon">💰</div>
+        <div class="outcome-t">Valuation & Capital Strategy</div>
+        <div class="outcome-d">Understand exactly what your business is worth, how to increase that valuation over 3 years, and which capital options (PE, strategic partners, family office) are available to you.</div>
+        <div class="outcome-tag">Financial deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">08</div>
+        <div class="outcome-icon">👥</div>
+        <div class="outcome-t">Non-Family Leadership Team</div>
+        <div class="outcome-d">A framework for hiring, onboarding, and retaining non-family executives — with clear authority, compensation, and accountability structures that protect both the business and the family.</div>
+        <div class="outcome-tag">People deliverable</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">09</div>
+        <div class="outcome-icon">🔗</div>
+        <div class="outcome-t">Global Family Business Network</div>
+        <div class="outcome-d">Deep relationships with 20+ family business leaders across India, Singapore, Dubai, and Southeast Asia — people who understand your world and will be your sounding board for decades.</div>
+        <div class="outcome-tag">Network outcome</div>
+      </div>
+
+      <div class="outcome-card">
+        <div class="outcome-n">10</div>
+        <div class="outcome-icon">🧠</div>
+        <div class="outcome-t">Next-Gen Leadership Identity</div>
+        <div class="outcome-d">Graduate with the confidence, language, and credibility to lead — not just inherit. Know who you are as a leader, separate from your family name, and what your legacy will be.</div>
+        <div class="outcome-tag">Leadership outcome</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:16px;padding:20px 32px;border-radius:6px;background:color-mix(in oklab,var(--bronze) 6%,transparent);border:.5px solid color-mix(in oklab,var(--bronze) 18%,transparent);display:flex;align-items:center;gap:24px">
+      <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--bronze);line-height:1;flex-shrink:0">10</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);line-height:1.9">Real deliverables across governance, growth, AI, finance & leadership · Each built with your mentor and AI system · You don't graduate without completing every one</div>
     </div>
   </div>
 </section>

@@ -530,6 +530,132 @@ footer{border-top:.5px solid rgba(255,255,255,0.08);padding:36px 56px;
   .price-amt{font-size:36px}
   .price-name{font-size:22px}
 }
+
+/* ── AI COPILOT MOCKUP (exec) ── */
+.ai-mock{background:oklch(0.12 0.03 260);border:.5px solid rgba(255,255,255,0.1);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 .5px rgba(255,255,255,0.04)}
+.ai-mock-bar{background:oklch(0.16 0.04 260);padding:12px 18px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:.5px solid rgba(255,255,255,0.07)}
+.ai-mock-dots{display:flex;gap:6px}
+.ai-mock-dot{width:10px;height:10px;border-radius:50%}
+.ai-mock-title{font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0 auto}
+.ai-mock-status{display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--gold)}
+.ai-mock-status::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--gold);animation:ai-pulse 2s ease-in-out infinite;display:block}
+@keyframes ai-pulse{50%{opacity:.3}}
+.ai-chat{padding:22px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+.ai-msg{display:flex;flex-direction:column;gap:4px;max-width:85%}
+.ai-msg.user{align-self:flex-end;align-items:flex-end}
+.ai-msg.bot{align-self:flex-start}
+.ai-msg .sender{font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.25);padding:0 4px}
+.ai-msg .bubble{padding:11px 16px;border-radius:14px;font-size:13px;
+  line-height:1.55;font-family:var(--sans)}
+.ai-msg.user .bubble{background:color-mix(in oklab,var(--gold) 15%,transparent);
+  border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);
+  border-bottom-right-radius:4px;color:rgba(255,255,255,0.88)}
+.ai-msg.bot .bubble{background:rgba(255,255,255,0.06);
+  border:.5px solid rgba(255,255,255,0.09);
+  border-bottom-left-radius:4px;color:rgba(255,255,255,0.82)}
+.ai-msg.bot .bubble strong{color:var(--gold);font-weight:500}
+.ai-msg .bubble ul{margin-top:8px;padding-left:16px;display:flex;flex-direction:column;gap:5px}
+.ai-msg .bubble li{font-size:12.5px;color:rgba(255,255,255,0.65)}
+.ai-typing{display:flex;gap:4px;padding:4px 0;align-items:center}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.28)}
+.ai-typing span:nth-child(1){animation:typ-e .9s .0s ease-in-out infinite}
+.ai-typing span:nth-child(2){animation:typ-e .9s .15s ease-in-out infinite}
+.ai-typing span:nth-child(3){animation:typ-e .9s .3s ease-in-out infinite}
+@keyframes typ-e{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px);background:var(--gold)}}
+.ai-input-bar{padding:13px 16px;border-top:.5px solid rgba(255,255,255,0.07);
+  display:flex;gap:10px;align-items:center;background:oklch(0.14 0.03 260)}
+.ai-input-field{flex:1;background:rgba(255,255,255,0.05);
+  border:.5px solid rgba(255,255,255,0.1);border-radius:6px;
+  padding:9px 14px;font-size:13px;font-family:var(--sans);color:rgba(255,255,255,0.38)}
+.ai-send-btn{width:32px;height:32px;border-radius:4px;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  border:none;flex-shrink:0;font-size:13px;color:var(--navy);cursor:pointer}
+
+/* ── EXEC TRACKS (expanded) ── */
+.tracks-expanded{display:flex;flex-direction:column;gap:1px;
+  background:rgba(255,255,255,0.07);margin-top:48px;overflow:hidden;border-radius:2px}
+.track-ex{background:var(--navy);padding:40px 36px;
+  display:grid;grid-template-columns:280px 1fr;gap:48px;
+  position:relative;overflow:hidden;transition:background .3s;align-items:start}
+.track-ex:hover{background:color-mix(in oklab,var(--navy) 88%,var(--gold) 6%)}
+.track-ex::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--gold);transform:scaleY(0);transform-origin:top;
+  transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.track-ex:hover::before{transform:scaleY(1)}
+.track-ex-left{display:flex;flex-direction:column;gap:10px;
+  padding-right:48px;border-right:.5px solid rgba(255,255,255,0.07)}
+.track-ex-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);opacity:.7}
+.track-ex-title{font-family:var(--serif);font-size:clamp(22px,2vw,30px);
+  font-style:italic;letter-spacing:-0.01em;color:var(--cream);line-height:1.15}
+.track-ex-for{font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.track-ex-desc{font-family:var(--sans);font-size:13.5px;line-height:1.7;
+  color:rgba(255,255,255,0.48)}
+.track-ex-outcome{padding-top:16px;margin-top:4px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);border-top:.5px solid rgba(255,255,255,0.08)}
+.track-ex-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,0.06);align-self:stretch}
+.track-ex-item{background:var(--navy);padding:20px 22px;
+  display:flex;flex-direction:column;gap:6px;
+  transition:background .2s}
+.track-ex:hover .track-ex-item{background:color-mix(in oklab,var(--navy) 90%,var(--gold) 4%)}
+.track-ex-item-title{font-family:var(--serif);font-size:15px;font-style:italic;
+  color:var(--cream);letter-spacing:-0.005em;line-height:1.2;
+  display:flex;align-items:flex-start;gap:8px}
+.track-ex-item-title::before{content:'→';font-family:var(--mono);font-size:10px;
+  color:var(--gold);flex-shrink:0;margin-top:3px;font-style:normal}
+.track-ex-item-desc{font-family:var(--sans);font-size:12px;line-height:1.6;
+  color:rgba(255,255,255,0.4);padding-left:18px}
+
+/* ── PATHWAYS (exec) ── */
+.pathway-grid-exec{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(255,255,255,0.07);margin-top:48px;overflow:hidden;border-radius:2px}
+.pathway-ex{background:var(--navy);padding:26px 20px;display:flex;flex-direction:column;
+  gap:8px;transition:background .25s;position:relative;overflow:hidden}
+.pathway-ex:hover{background:color-mix(in oklab,var(--navy) 85%,var(--gold) 8%)}
+.pathway-ex::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.pathway-ex:hover::after{transform:scaleX(1)}
+.pathway-ex-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);opacity:.55}
+.pathway-ex-icon{font-size:20px;margin:4px 0}
+.pathway-ex-t{font-family:var(--serif);font-size:16px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--cream);line-height:1.2}
+.pathway-ex-d{font-family:var(--sans);font-size:11.5px;line-height:1.6;
+  color:rgba(255,255,255,0.4)}
+.pathway-ex-out{font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);opacity:.65;margin-top:auto;
+  padding-top:10px;border-top:.5px solid rgba(255,255,255,0.07)}
+
+@media(max-width:1100px){
+  .track-ex{grid-template-columns:220px 1fr;gap:32px}
+  .track-ex-left{padding-right:32px}
+  .pathway-grid-exec{grid-template-columns:repeat(3,1fr)!important}
+  [style*="grid-template-columns:1fr 1fr;gap:48px"]{grid-template-columns:1fr!important;gap:32px!important}
+}
+@media(max-width:768px){
+  .track-ex{grid-template-columns:1fr!important;gap:24px!important}
+  .track-ex-left{padding-right:0!important;border-right:0!important;border-bottom:.5px solid rgba(255,255,255,0.07);padding-bottom:24px}
+  .track-ex-right{grid-template-columns:1fr!important}
+  [style*="grid-column:span 2"]{grid-column:span 1!important}
+  .pathway-grid-exec{grid-template-columns:1fr 1fr!important}
+  .ai-chat{min-height:auto}
+}
+@media(max-width:480px){
+  .pathway-grid-exec{grid-template-columns:1fr!important}
+}
+
 </style>
 </head>
 <body>
@@ -881,6 +1007,237 @@ footer{border-top:.5px solid rgba(255,255,255,0.08);padding:36px 56px;
         </div>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI COPILOT -->
+<section class="gold-sec">
+  <div class="wrap">
+    <div class="sec-l">AI Learning System</div>
+    <h2 class="sec-h">Your personal<br><em>AI executive coach.</em></h2>
+    <p class="sec-sub">Not a chatbot. An AI trained on everything we know about AI strategy, leadership, and business transformation — personalised to your organisation, your role, and your goals from day one.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:56px">
+
+      <!-- Features -->
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--gold) 10%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:15px">🏢</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--cream);margin-bottom:5px">Knows your organisation</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Onboard with your industry, org size, and current role. Every answer is calibrated to your specific executive context — not generic MBA theory.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--gold) 10%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:15px">⚡</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--cream);margin-bottom:5px">Available between sessions</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Preparing for a board presentation? Working through an AI transformation case? The AI digs in with you on demand — no waiting for the next module.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--gold) 10%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:15px">🎯</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--cream);margin-bottom:5px">Track-aware guidance</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Knows whether you're on Track A (Build) or Track B (AI Leadership) and surfaces content, case studies, and challenges relevant to your specific path.</div></div>
+        </div>
+        <div style="padding:26px 0;border-bottom:.5px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--gold) 10%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:15px">📋</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--cream);margin-bottom:5px">Prepares your capstone deliverables</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">AI transformation roadmaps, board-ready decks, financial models, org design documents — the AI drafts and critiques every capstone output alongside you.</div></div>
+        </div>
+        <div style="padding:26px 0;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start">
+          <div style="width:36px;height:36px;border-radius:6px;background:color-mix(in oklab,var(--gold) 10%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 28%,transparent);display:flex;align-items:center;justify-content:center;font-size:15px">🤖</div>
+          <div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--cream);margin-bottom:5px">Builds AI agents for your function</div><div style="font-family:var(--sans);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">Helps you build live AI automations for your own team — sales pipelines, reporting systems, onboarding flows — using Make, n8n, and Claude APIs.</div></div>
+        </div>
+      </div>
+
+      <!-- Chat mockup -->
+      <div class="ai-mock">
+        <div class="ai-mock-bar">
+          <div class="ai-mock-dots">
+            <div class="ai-mock-dot" style="background:#ff5f57"></div>
+            <div class="ai-mock-dot" style="background:#ffbd2e"></div>
+            <div class="ai-mock-dot" style="background:#28c840"></div>
+          </div>
+          <div class="ai-mock-title">AI Learning System</div>
+          <div class="ai-mock-status">Active · Knows your context</div>
+        </div>
+        <div class="ai-chat">
+          <div class="ai-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble">Welcome back. You're in Module 01 — AI Strategy. Your capstone this week is your AI transformation roadmap. Based on your org profile (enterprise fintech, 2,000 people), I'd suggest starting with 3 high-leverage AI use cases. Want to work through them?</div>
+          </div>
+          <div class="ai-msg user">
+            <div class="sender">You</div>
+            <div class="bubble">Yes — my board is also asking about AI risk and governance. How do I address that in my roadmap?</div>
+          </div>
+          <div class="ai-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble">Smart to address this upfront. Board-level AI governance typically needs three things:<ul><li><strong>Risk taxonomy</strong> — data privacy, model bias, regulatory exposure (PDPA/GDPR for fintech)</li><li><strong>Ownership model</strong> — who owns AI decisions: CTO, CDO, or new CAIO role</li><li><strong>Review cadence</strong> — how often AI systems are audited and by whom</li></ul>I can help you build a one-page governance framework for your roadmap. Should I start with your biggest regulatory exposure?</div>
+          </div>
+          <div class="ai-msg user">
+            <div class="sender">You</div>
+            <div class="bubble">Yes, start there</div>
+          </div>
+          <div class="ai-msg bot">
+            <div class="sender">AI System</div>
+            <div class="bubble"><div class="ai-typing"><span></span><span></span><span></span></div></div>
+          </div>
+        </div>
+        <div class="ai-input-bar">
+          <div class="ai-input-field">Ask anything about your transformation...</div>
+          <div class="ai-send-btn">→</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS EXPANDED -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Your Track — Choose on Day One</div>
+    <h2 class="sec-h">Two paths.<br><em>One outcome: irreplaceable.</em></h2>
+    <p class="sec-sub">Both tracks share the same rigorous AI-first core curriculum. The difference is your strategic focus — and every mentor match, capstone, and AI system response is calibrated to the track you choose.</p>
+
+    <div class="tracks-expanded">
+
+      <div class="track-ex">
+        <div class="track-ex-left">
+          <div class="track-ex-label">Track A · Build</div>
+          <div class="track-ex-title">Launch a Venture or Internal Innovation Engine</div>
+          <div class="track-ex-for">For executives who want to launch, not just lead</div>
+          <div class="track-ex-desc">You have the experience, the network, and the ideas. Track A gives you the founder operating system — idea validation to product to revenue — built for someone who has zero time to waste.</div>
+          <div class="track-ex-outcome">Outcome: live, revenue-generating business or funded venture</div>
+        </div>
+        <div class="track-ex-right">
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">High-ticket Consulting Practice</div>
+            <div class="track-ex-item-desc">Productise 20 years of expertise into a $20–50K/month advisory business with AI-powered delivery</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">B2B SaaS for Your Industry</div>
+            <div class="track-ex-item-desc">Build the tool for the problem you've lived for a decade — fintech, HR, supply chain — and own the niche</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">Corporate Spinout</div>
+            <div class="track-ex-item-desc">Take an internal idea, build it into a funded entity — employer as first customer, VC network for the raise</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">AI-Powered Agency</div>
+            <div class="track-ex-item-desc">Launch a boutique firm selling AI implementation — you already have the network, now have the product</div>
+          </div>
+          <div class="track-ex-item" style="grid-column:span 2">
+            <div class="track-ex-item-title">Marketplace or Platform Business</div>
+            <div class="track-ex-item-desc">Monetise the ecosystem you've spent years building — a talent platform, deals network, or knowledge marketplace at scale</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI COPILOT VISUAL — between tracks -->
+      <div style="background:color-mix(in oklab,var(--navy) 94%,var(--gold) 4%);padding:40px 36px;display:grid;grid-template-columns:1fr 260px 1fr;gap:16px;align-items:start;border-top:.5px solid rgba(255,255,255,0.06);border-bottom:.5px solid rgba(255,255,255,0.06)">
+
+        <!-- Chat: Track A -->
+        <div style="background:oklch(0.12 0.03 260);border:.5px solid rgba(255,255,255,0.1);border-radius:14px;overflow:hidden">
+          <div style="background:oklch(0.16 0.04 260);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:.5px solid rgba(255,255,255,0.07)">
+            <div style="display:flex;gap:4px"><div style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></div><div style="width:8px;height:8px;border-radius:50%;background:#ffbd2e"></div><div style="width:8px;height:8px;border-radius:50%;background:#28c840"></div></div>
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0 auto">AI System · Track A · Build</div>
+            <div style="display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:8px;color:var(--gold)"><div style="width:5px;height:5px;border-radius:50%;background:var(--gold)"></div>Active</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+            <div style="align-self:flex-end;max-width:85%">
+              <div style="font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:3px;text-align:right">You</div>
+              <div style="background:color-mix(in oklab,var(--gold) 14%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 25%,transparent);border-radius:10px;border-bottom-right-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.85)">I have 3 enterprise leads but no sales process. How do I close my first B2B deal?</div>
+            </div>
+            <div style="align-self:flex-start;max-width:92%">
+              <div style="font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:3px">AI System</div>
+              <div style="background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.08);border-radius:10px;border-bottom-left-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.78)">For a founder-led B2B sale, structure it as <span style="color:var(--gold);font-weight:500">Discovery → Fit → Paid Pilot → Close.</span> Based on your consulting background, lead with a paid pilot — not a free POC. Want me to draft your discovery script?</div>
+            </div>
+            <div style="align-self:flex-end;max-width:85%">
+              <div style="background:color-mix(in oklab,var(--gold) 14%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 25%,transparent);border-radius:10px;border-bottom-right-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.85)">Yes — and what should I charge for the pilot?</div>
+            </div>
+            <div style="align-self:flex-start;max-width:92%">
+              <div style="background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.08);border-radius:10px;border-bottom-left-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.78)"><span style="color:var(--gold);font-weight:500">$8–15K SGD for a 4-week scoped pilot</span> is normal for enterprise ops in SG and gets taken seriously. I'll help you build the proposal.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centre stats -->
+        <div style="display:flex;flex-direction:column;gap:8px;height:100%">
+          <div style="text-align:center;padding:6px 0;font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.3)">AI Learning System</div>
+          <div style="flex:1;background:color-mix(in oklab,var(--gold) 8%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 18%,transparent);border-radius:10px;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px">
+            <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--gold);line-height:1">24/7</div>
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.5">Always available</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.07);border-radius:10px;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px">
+            <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--gold);line-height:1">100%</div>
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.5">Personalised to your track</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.07);border-radius:10px;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px">
+            <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--gold);line-height:1">250+</div>
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.5">Frameworks & templates</div>
+          </div>
+        </div>
+
+        <!-- Chat: Track B -->
+        <div style="background:oklch(0.12 0.03 260);border:.5px solid rgba(255,255,255,0.1);border-radius:14px;overflow:hidden">
+          <div style="background:oklch(0.16 0.04 260);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:.5px solid rgba(255,255,255,0.07)">
+            <div style="display:flex;gap:4px"><div style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></div><div style="width:8px;height:8px;border-radius:50%;background:#ffbd2e"></div><div style="width:8px;height:8px;border-radius:50%;background:#28c840"></div></div>
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0 auto">AI System · Track B · Lead</div>
+            <div style="display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:8px;color:var(--gold)"><div style="width:5px;height:5px;border-radius:50%;background:var(--gold)"></div>Active</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+            <div style="align-self:flex-end;max-width:85%">
+              <div style="font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:3px;text-align:right">You</div>
+              <div style="background:color-mix(in oklab,var(--gold) 14%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 25%,transparent);border-radius:10px;border-bottom-right-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.85)">My board wants an AI governance framework. Where do I start for a regulated fintech?</div>
+            </div>
+            <div style="align-self:flex-start;max-width:92%">
+              <div style="font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:3px">AI System</div>
+              <div style="background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.08);border-radius:10px;border-bottom-left-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.78)">For MAS-regulated fintechs, structure it around 3 pillars: <span style="color:var(--gold);font-weight:500">Model risk, Data governance, Human oversight.</span> MAS TRM 2021 is your reference. What AI systems do you have live today?</div>
+            </div>
+            <div style="align-self:flex-end;max-width:85%">
+              <div style="background:color-mix(in oklab,var(--gold) 14%,transparent);border:.5px solid color-mix(in oklab,var(--gold) 25%,transparent);border-radius:10px;border-bottom-right-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.85)">A credit scoring model and a customer service bot</div>
+            </div>
+            <div style="align-self:flex-start;max-width:92%">
+              <div style="background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.08);border-radius:10px;border-bottom-left-radius:3px;padding:9px 12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.78)"><span style="color:var(--gold);font-weight:500">High risk + low risk</span> — perfect board case study. I'll build you a one-page governance matrix for both that satisfies MAS auditors.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="track-ex">
+        <div class="track-ex-left">
+          <div class="track-ex-label">Track B · Lead</div>
+          <div class="track-ex-title">Become the AI-First Leader Your Organisation Needs</div>
+          <div class="track-ex-for">For executives leading AI transformation at scale</div>
+          <div class="track-ex-desc">Track B makes you the most valuable person in any boardroom — the executive who can implement AI strategy, lead transformation, and build systems that make an organisation 10x more competitive.</div>
+          <div class="track-ex-outcome">Outcome: board-ready AI strategy + promotion-ready leadership profile</div>
+        </div>
+        <div class="track-ex-right">
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">Chief AI Officer</div>
+            <div class="track-ex-item-desc">Step into the fastest-growing C-suite role — own AI strategy end-to-end from governance to implementation</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">Lead a $10M+ AI Transformation</div>
+            <div class="track-ex-item-desc">Board-ready roadmap with ROI models and governance frameworks that get budget approved first time</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">AI-First Function Redesign</div>
+            <div class="track-ex-item-desc">Rebuild your department around AI-native workflows — cut costs, accelerate decisions, make your team irreplaceable</div>
+          </div>
+          <div class="track-ex-item">
+            <div class="track-ex-item-title">The Boardroom's AI Translator</div>
+            <div class="track-ex-item-desc">Bridge technical AI and business outcomes — the person every CEO and board chair needs on the agenda</div>
+          </div>
+          <div class="track-ex-item" style="grid-column:span 2">
+            <div class="track-ex-item-title">Executive Advisory Practice</div>
+            <div class="track-ex-item-desc">Step off the corporate ladder — advise 3–5 boards on AI strategy at $5–15K/month per engagement</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- What's the same -->
+    <div style="margin-top:16px;padding:24px 32px;border-radius:4px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.08);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center">
+      <div style="font-family:var(--serif);font-size:32px;font-style:italic;color:var(--gold);line-height:1;flex-shrink:0">=</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.42);line-height:1.9">Both tracks include · Same 6 core modules · Same mentor network · Same AI Learning System · Same Sunday Sessions · Same $1M+ startup benefits · Same degree (MBA track) · Different capstones and strategic focus</div>
     </div>
   </div>
 </section>
