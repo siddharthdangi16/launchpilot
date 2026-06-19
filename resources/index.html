@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Primary SEO -->
+<title>Resources for Founders & Working Professionals | LaunchPilot</title>
+<meta name="description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed — written for real founders, not theory.">
+<link rel="canonical" href="https://www.launchpilotschool.com/resources/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaunchPilot School of Business">
+<meta property="og:title" content="Resources for Founders & Working Professionals">
+<meta property="og:description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed.">
+<meta property="og:url" content="https://www.launchpilotschool.com/resources/">
+<meta property="og:image" content="https://www.launchpilotschool.com/favicon.svg">
+<meta property="og:locale" content="en_SG">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Resources for Founders & Working Professionals">
+<meta name="twitter:description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed.">
+
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="https://www.launchpilotschool.com/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --ink: oklch(0.16 0.012 60);
+    --paper: oklch(0.965 0.012 80);
+    --fire: oklch(0.72 0.18 45);
+    --fire-2: oklch(0.62 0.20 38);
+    --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+    --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-size:16px;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--fire);color:var(--ink)}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter: blur(14px) saturate(140%);
+    background: color-mix(in oklab, var(--ink) 60%, transparent);
+    border-bottom:.5px solid color-mix(in oklab, var(--paper) 12%, transparent)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;
+    padding:14px 48px;max-width:1440px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600}
+  .brand .word{font-family:var(--serif);font-size:22px;letter-spacing:-0.01em}
+  .brand .word i{font-style:italic;color:var(--fire)}
+  .back-link{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%)}
+  .back-link:hover{color:var(--fire)}
+
+  header.hero{padding:140px 0 60px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--fire);margin-bottom:20px;display:block}
+  h1{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1.05;
+    font-size:clamp(40px, 7vw, 76px);margin-bottom:20px}
+  h1 em{font-style:italic;color:var(--fire)}
+  .hero-sub{font-family:var(--serif);font-size:21px;line-height:1.4;letter-spacing:-0.005em;
+    max-width:50ch;color:color-mix(in oklab, var(--paper) 85%, var(--ink) 15%)}
+
+  .filter-row{display:flex;gap:10px;margin:48px 0 8px;flex-wrap:wrap}
+  .filter-pill{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    padding:9px 16px;border-radius:999px;border:.5px solid color-mix(in oklab, var(--paper) 20%, transparent);
+    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%);cursor:pointer;transition:all .2s}
+  .filter-pill.active{background:var(--fire);color:var(--ink);border-color:var(--fire)}
+  .filter-pill:hover{border-color:color-mix(in oklab, var(--fire) 60%, transparent)}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:32px;
+    background:color-mix(in oklab, var(--paper) 14%, transparent);
+    border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .card{background:var(--ink);padding:36px;display:flex;flex-direction:column;gap:16px;
+    min-height:220px;justify-content:space-between;transition:background .3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 0%,
+    color-mix(in oklab, var(--fire) 18%, transparent), transparent 55%);
+    opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .card:hover::before{opacity:1}
+  .card.disabled{opacity:.4;cursor:default}
+  .card.disabled:hover::before{opacity:0}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:1}
+  .card-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);padding:5px 10px;border-radius:999px;
+    border:.5px solid color-mix(in oklab, var(--paper) 22%, transparent)}
+  .card-tag.soon{color:var(--fire);border-color:color-mix(in oklab, var(--fire) 50%, transparent)}
+  .card h3{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.15;
+    position:relative;z-index:1;transition:color .3s}
+  .card:hover h3{color:var(--fire)}
+  .card p{font-size:14px;line-height:1.5;color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);
+    position:relative;z-index:1}
+  .card .cta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 75%, var(--ink) 25%);display:flex;align-items:center;gap:8px;
+    position:relative;z-index:1}
+  .card:hover .cta{color:var(--fire)}
+
+  footer{padding:60px 0;border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
+    text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%);margin-top:60px}
+
+  @media (max-width: 700px){
+    .grid{grid-template-columns:1fr}
+    nav.top .inner{padding:14px 20px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="/" class="brand">
+      <span class="word">Launch<i>Pilot</i></span>
+    </a>
+    <a href="/" class="back-link">← Back to Home</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">§ Resources</span>
+    <h1>Built for builders, <em>not theorists.</em></h1>
+    <p class="hero-sub">
+      Practical guides on starting a company, choosing the right path, and building while you still have a job — written by people who've actually done it.
+    </p>
+
+    <div class="filter-row">
+      <span class="filter-pill active">All</span>
+      <span class="filter-pill">Working Professionals</span>
+      <span class="filter-pill">Early-Stage Founders</span>
+      <span class="filter-pill">Recent Grads</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <a href="/resources/start-startup-while-working-full-time/" class="card">
+        <div class="card-top">
+          <span class="card-tag">Working Professionals</span>
+        </div>
+        <h3>How to Start a Startup While Working a Full-Time Job</h3>
+        <p>A structured way to validate, build, and know when to go all-in — without quitting blindly.</p>
+        <span class="cta">Read article →</span>
+      </a>
+
+      <a href="/resources/founder-mba-vs-traditional-mba/" class="card">
+        <div class="card-top">
+          <span class="card-tag">Working Professionals</span>
+        </div>
+        <h3>Founder MBA vs Traditional MBA: What's Actually Different</h3>
+        <p>A direct comparison of what you'll learn, who you'll meet, and what you'll build.</p>
+        <span class="cta">Read article →</span>
+      </a>
+
+      <a href="/resources/best-mba-for-working-professionals/" class="card">
+        <div class="card-top">
+          <span class="card-tag">Working Professionals</span>
+        </div>
+        <h3>Best MBA Programs for Working Professionals Who Want to Start a Business</h3>
+        <p>An honest look at the options — including where LaunchPilot fits and where it doesn't.</p>
+        <span class="cta">Read article →</span>
+      </a>
+
+      <div class="card disabled">
+        <div class="card-top">
+          <span class="card-tag soon">Coming soon</span>
+        </div>
+        <h3>Should I Quit My Job to Start a Startup?</h3>
+        <p>A practical decision framework — not motivational fluff.</p>
+        <span class="cta">Coming soon</span>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 LaunchPilot School of Business
+</footer>
+
+</body>
+</html>
