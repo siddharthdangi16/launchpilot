@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Cursor: The AI Code Editor for Founders Who Can Read Code | LaunchPilot</title>
+<meta name="description" content="A practical guide to Cursor — the AI-powered code editor that helps technical and semi-technical founders build and ship faster, with a quick how-to to get started.">
+<link rel="canonical" href="https://www.launchpilotschool.com/resources/cursor-ai-guide/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="LaunchPilot School of Business">
+<meta property="og:title" content="Cursor: The AI Code Editor for Founders Who Can Read Code">
+<meta property="og:description" content="A practical guide to Cursor and how to use it to build faster.">
+<meta property="og:url" content="https://www.launchpilotschool.com/resources/cursor-ai-guide/">
+<meta property="og:image" content="https://www.launchpilotschool.com/favicon.svg">
+<meta property="og:locale" content="en_SG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cursor: AI Code Editor Guide">
+<meta name="twitter:description" content="A practical how-to for founders who can read code.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="https://www.launchpilotschool.com/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cursor: The AI Code Editor for Founders Who Can Read Code",
+  "description": "A practical guide to Cursor — the AI-powered code editor that helps technical and semi-technical founders build and ship faster.",
+  "author": { "@type": "Organization", "name": "LaunchPilot School of Business" },
+  "publisher": {
+    "@type": "Organization", "name": "LaunchPilot School of Business",
+    "logo": { "@type": "ImageObject", "url": "https://www.launchpilotschool.com/favicon.svg" }
+  },
+  "mainEntityOfPage": "https://www.launchpilotschool.com/resources/cursor-ai-guide/",
+  "datePublished": "2026-06-19"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --ink: oklch(0.16 0.012 60); --paper: oklch(0.965 0.012 80);
+    --fire: oklch(0.72 0.18 45); --fire-2: oklch(0.62 0.20 38);
+    --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+    --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-size:16px;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--fire);color:var(--ink)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter: blur(14px) saturate(140%);
+    background: color-mix(in oklab, var(--ink) 60%, transparent);border-bottom:.5px solid color-mix(in oklab, var(--paper) 12%, transparent)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 48px;max-width:1440px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600}
+  .brand .word{font-family:var(--serif);font-size:22px;letter-spacing:-0.01em}
+  .brand .word i{font-style:italic;color:var(--fire)}
+  .back-link{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);display:flex;align-items:center;gap:8px}
+  .back-link:hover{color:var(--fire)}
+  article{padding:140px 0 80px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:20px;display:block}
+  h1{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1.05;font-size:clamp(32px, 5.5vw, 50px);margin-bottom:24px}
+  h1 em{font-style:italic;color:var(--fire)}
+  .meta-row{display:flex;gap:20px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);padding-bottom:32px;margin-bottom:32px;
+    border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .tool-box{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-bottom:36px;border-radius:12px;overflow:hidden;
+    background:color-mix(in oklab, var(--paper) 14%, transparent);border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .tool-cell{background:var(--ink);padding:18px;display:flex;flex-direction:column;gap:4px}
+  .tool-cell .v{font-family:var(--serif);font-size:19px;color:var(--fire);letter-spacing:-0.005em}
+  .tool-cell .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%)}
+  .lede{font-family:var(--serif);font-size:22px;line-height:1.4;letter-spacing:-0.005em;color:color-mix(in oklab, var(--paper) 92%, var(--ink) 8%);margin-bottom:40px}
+  .lede em{font-style:italic;color:var(--fire)}
+  article h2{font-family:var(--serif);font-size:clamp(26px, 3.5vw, 34px);font-weight:400;letter-spacing:-0.015em;line-height:1.15;margin:48px 0 16px}
+  article h2 em{font-style:italic;color:var(--fire)}
+  article p{font-size:16.5px;line-height:1.7;color:color-mix(in oklab, var(--paper) 85%, var(--ink) 15%);margin-bottom:20px}
+  article p strong{color:var(--paper);font-weight:600}
+  article p em{font-style:italic;color:var(--fire)}
+  article ul, article ol{margin:0 0 20px 0;padding-left:22px;color:color-mix(in oklab, var(--paper) 85%, var(--ink) 15%)}
+  article li{font-size:16.5px;line-height:1.7;margin-bottom:10px}
+  article li strong{color:var(--paper)}
+  .step-box{margin:24px 0;padding:24px 28px;border-radius:12px;
+    border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);background:color-mix(in oklab, var(--ink) 95%, var(--paper) 5%)}
+  .step-box .step-num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);margin-bottom:8px;display:block}
+  .step-box h4{font-family:var(--serif);font-size:21px;font-weight:400;letter-spacing:-0.01em;margin-bottom:8px;line-height:1.2}
+  .step-box h4 em{font-style:italic;color:var(--fire)}
+  .step-box p{font-size:15px;margin-bottom:0}
+  code{font-family:var(--mono);font-size:0.88em;background:color-mix(in oklab, var(--fire) 14%, transparent);
+    padding:2px 6px;border-radius:4px;color:var(--fire)}
+  .lesson-box{margin:56px 0;padding:36px;border-radius:16px;background:color-mix(in oklab, var(--ink) 88%, var(--fire) 12%);
+    border:.5px solid color-mix(in oklab, var(--fire) 35%, transparent)}
+  .lesson-box .tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:14px;display:block}
+  .lesson-box h3{font-family:var(--serif);font-size:28px;font-weight:400;letter-spacing:-0.01em;margin-bottom:12px;line-height:1.15}
+  .lesson-box h3 em{font-style:italic;color:var(--fire)}
+  .lesson-box p{font-size:15px;margin-bottom:20px;color:color-mix(in oklab, var(--paper) 80%, var(--ink) 20%)}
+  .lesson-box .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .lesson-box .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;
+    background:var(--fire);color:var(--ink);font-weight:500;font-size:14.5px;transition:transform .2s ease}
+  .lesson-box .btn:hover{transform:translateY(-2px)}
+  .lesson-box .btn.ghost{background:transparent;border:.5px solid color-mix(in oklab, var(--paper) 30%, transparent);color:var(--paper)}
+  .lesson-box .btn.ghost:hover{border-color:var(--fire);color:var(--fire)}
+  .related{margin-top:64px;padding-top:40px;border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .related .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);margin-bottom:20px;display:block}
+  .related a{display:block;font-family:var(--serif);font-size:19px;font-style:italic;color:var(--paper);padding:14px 0;
+    border-bottom:.5px solid color-mix(in oklab, var(--paper) 10%, transparent);transition:color .2s}
+  .related a:hover{color:var(--fire)}
+  footer{padding:40px 0;border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);text-align:center;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%)}
+  @media (max-width: 600px){
+    nav.top .inner{padding:14px 20px} article{padding:100px 0 60px} .meta-row{flex-wrap:wrap;gap:12px}
+    .tool-box{grid-template-columns:1fr 1fr} .lesson-box .btn-row{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="/" class="brand"><span class="word">Launch<i>Pilot</i></span></a>
+    <a href="/resources/" class="back-link">← All Resources</a>
+  </div>
+</nav>
+
+<article>
+  <div class="wrap">
+    <span class="eyebrow">§ AI Tool Guide — Tech</span>
+    <h1>Cursor: The AI Code Editor for Founders Who Can <em>Read Code</em></h1>
+
+    <div class="meta-row">
+      <span>LaunchPilot Resources</span>
+      <span>6 min read</span>
+      <span>Updated June 2026</span>
+    </div>
+
+    <div class="tool-box">
+      <div class="tool-cell"><span class="v">Best for</span><span class="l">Technical/semi-technical founders</span></div>
+      <div class="tool-cell"><span class="v">Free tier</span><span class="l">Yes, limited usage</span></div>
+      <div class="tool-cell"><span class="v">Paid plans</span><span class="l">From ~$20/month</span></div>
+    </div>
+
+    <p class="lede">
+      If you can read code, even slowly, Cursor is the tool that turns "I sort of know what this should
+      do" into a working feature — without waiting on a developer's calendar.
+    </p>
+
+    <p>
+      Cursor is an AI-powered code editor built on top of the same foundation as VS Code, with AI woven
+      directly into the editing experience rather than bolted on as a separate chat window. It can read
+      your entire codebase for context, write and edit code directly in your files, and explain unfamiliar
+      code in plain language — making it a genuinely useful tool for a founder who has some technical
+      background but isn't a full-time engineer.
+    </p>
+
+    <h2>Who this is actually for</h2>
+    <p>
+      Cursor isn't the right starting point if you've never written a line of code — for that, a no-code
+      tool like Lovable will get you further, faster (we cover that separately). Cursor earns its place
+      once you have <em>some</em> comfort reading code: maybe you did a bootcamp, studied CS years ago, or
+      you're comfortable enough to understand what a function does even if you couldn't write it from
+      scratch. At that level, Cursor compounds your existing knowledge dramatically.
+    </p>
+
+    <h2>Quick how-to: getting your first result</h2>
+
+    <div class="step-box">
+      <span class="step-num">Step 1</span>
+      <h4>Install and open <em>your</em> project</h4>
+      <p>
+        Download Cursor and open it the same way you would VS Code — point it at an existing project
+        folder, or start a new one. If you're starting completely from scratch, ask Cursor's chat panel
+        to scaffold a basic project structure for the type of app you're building (e.g. "set up a basic
+        Next.js project with Tailwind").
+      </p>
+    </div>
+
+    <div class="step-box">
+      <span class="step-num">Step 2</span>
+      <h4>Use <em>Chat</em> for anything you don't understand</h4>
+      <p>
+        Highlight any block of code and ask Cursor's chat panel to explain it in plain English. This is
+        often more valuable early on than asking it to write new code — understanding what you already
+        have prevents you from generating a feature on top of code you don't actually understand, which is
+        where most AI-assisted bugs come from.
+      </p>
+    </div>
+
+    <div class="step-box">
+      <span class="step-num">Step 3</span>
+      <h4>Use <em>inline edits</em> for small, specific changes</h4>
+      <p>
+        Select a section of code and describe the change directly (e.g. "make this button red and add a
+        loading spinner"). Cursor edits in place, and you can review the change before accepting it —
+        review every change rather than blindly accepting, especially early on while you're still learning
+        what good output looks like.
+      </p>
+    </div>
+
+    <div class="step-box">
+      <span class="step-num">Step 4</span>
+      <h4>Use <em>Agent mode</em> for bigger, multi-file tasks</h4>
+      <p>
+        For a feature that touches several files — say, adding a new page with its own route, component,
+        and database query — Agent mode can plan and execute across multiple files at once. Start with a
+        clear, specific instruction rather than a vague one; "add user authentication using email and
+        password, store sessions in the existing database" works far better than "add login."
+      </p>
+    </div>
+
+    <h2>The trap to avoid</h2>
+    <p>
+      The most common failure mode isn't bad output from the AI — it's a founder accepting suggested code
+      they don't understand, layering more AI-generated code on top of it, and ending up with a codebase
+      nobody (including the founder) can actually debug when something breaks. Treat Cursor as a fast,
+      patient pair programmer that explains its reasoning — not a black box you blindly trust.
+    </p>
+
+    <div class="lesson-box">
+      <span class="tag">Build the technical skills, not just the tool fluency</span>
+      <h3>Learn to build <em>and</em> understand what you're building.</h3>
+      <p>
+        LaunchPilot's Founder MBA covers the practical building blocks of shipping a real product —
+        including how and when to use tools like Cursor without losing track of what your own product does.
+      </p>
+      <div class="btn-row">
+        <a href="/founder-mba/index.html" class="btn">Explore the Founder MBA →</a>
+        <a href="/" class="btn ghost">Visit LaunchPilot Home</a>
+      </div>
+    </div>
+
+    <div class="related">
+      <span class="lbl">Keep reading</span>
+      <a href="/resources/lovable-ai-guide/">Lovable: build a full product with zero code</a>
+      <a href="/resources/gumloop-ai-guide/">Gumloop: no-code AI agents for your business</a>
+    </div>
+  </div>
+</article>
+
+<footer><a href="/">© 2026 LaunchPilot School of Business</a></footer>
+
+</body>
+</html>

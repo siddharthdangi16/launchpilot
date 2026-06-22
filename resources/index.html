@@ -6,21 +6,21 @@
 
 <!-- Primary SEO -->
 <title>Resources for Founders & Working Professionals | LaunchPilot</title>
-<meta name="description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed — written for real founders, not theory.">
+<meta name="description" content="Practical guides on starting a startup, real alumni case studies, startup case studies, and AI tool guides — written for founders, not theory.">
 <link rel="canonical" href="https://www.launchpilotschool.com/resources/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LaunchPilot School of Business">
 <meta property="og:title" content="Resources for Founders & Working Professionals">
-<meta property="og:description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed.">
+<meta property="og:description" content="Practical guides, real alumni case studies, startup case studies, and AI tool guides.">
 <meta property="og:url" content="https://www.launchpilotschool.com/resources/">
 <meta property="og:image" content="https://www.launchpilotschool.com/favicon.svg">
 <meta property="og:locale" content="en_SG">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Resources for Founders & Working Professionals">
-<meta name="twitter:description" content="Practical guides on starting a startup, choosing the right MBA, and building a company while employed.">
+<meta name="twitter:description" content="Practical guides, real alumni case studies, and AI tool guides.">
 
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="https://www.launchpilotschool.com/favicon.svg">
@@ -46,7 +46,7 @@
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--fire);color:var(--ink)}
 
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 
   nav.top{position:fixed;top:0;left:0;right:0;z-index:50;
     backdrop-filter: blur(14px) saturate(140%);
@@ -61,55 +61,78 @@
     color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%)}
   .back-link:hover{color:var(--fire)}
 
-  header.hero{padding:140px 0 60px}
+  header.hero{padding:140px 0 56px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
     color:var(--fire);margin-bottom:20px;display:block}
   h1{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1.05;
-    font-size:clamp(40px, 7vw, 76px);margin-bottom:20px}
+    font-size:clamp(40px, 7vw, 74px);margin-bottom:20px}
   h1 em{font-style:italic;color:var(--fire)}
-  .hero-sub{font-family:var(--serif);font-size:21px;line-height:1.4;letter-spacing:-0.005em;
-    max-width:50ch;color:color-mix(in oklab, var(--paper) 85%, var(--ink) 15%)}
+  .hero-sub{font-family:var(--serif);font-size:20px;line-height:1.4;letter-spacing:-0.005em;
+    max-width:54ch;color:color-mix(in oklab, var(--paper) 85%, var(--ink) 15%);margin-bottom:32px}
 
-  .filter-row{display:flex;gap:10px;margin:48px 0 8px;flex-wrap:wrap}
-  .filter-pill{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    padding:9px 16px;border-radius:999px;border:.5px solid color-mix(in oklab, var(--paper) 20%, transparent);
-    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%);cursor:pointer;transition:all .2s}
-  .filter-pill.active{background:var(--fire);color:var(--ink);border-color:var(--fire)}
-  .filter-pill:hover{border-color:color-mix(in oklab, var(--fire) 60%, transparent)}
+  .cat-strip{display:flex;gap:12px;flex-wrap:wrap;padding-top:28px;
+    border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    padding:9px 16px;border-radius:999px;
+    border:.5px solid color-mix(in oklab, var(--paper) 20%, transparent);
+    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%)}
 
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:32px;
-    background:color-mix(in oklab, var(--paper) 14%, transparent);
+  .sec-block{margin-top:80px}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+    padding-bottom:24px;margin-bottom:8px;
+    border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);flex-wrap:wrap}
+  .sec-head .num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%);margin-bottom:8px;display:block}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(28px, 4vw, 42px);font-weight:400;
+    letter-spacing:-0.015em;line-height:1.1}
+  .sec-head h2 em{font-style:italic;color:var(--fire)}
+  .sec-head .sub{font-size:14px;color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);
+    max-width:36ch;text-align:right}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+  .grid.tight{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--ink);padding:32px;display:flex;flex-direction:column;gap:14px;
+    min-height:200px;justify-content:space-between;transition:background .3s, border-color .3s;
+    position:relative;overflow:hidden;border-radius:14px;
     border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
-  .card{background:var(--ink);padding:36px;display:flex;flex-direction:column;gap:16px;
-    min-height:220px;justify-content:space-between;transition:background .3s;position:relative;overflow:hidden}
+  .card:hover{border-color:color-mix(in oklab, var(--fire) 40%, transparent)}
   .card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 0%,
     color-mix(in oklab, var(--fire) 18%, transparent), transparent 55%);
     opacity:0;transition:opacity .4s ease;pointer-events:none}
   .card:hover::before{opacity:1}
-  .card.disabled{opacity:.4;cursor:default}
-  .card.disabled:hover::before{opacity:0}
-  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:1}
-  .card-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;position:relative;z-index:1}
+  .card-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
     color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);padding:5px 10px;border-radius:999px;
-    border:.5px solid color-mix(in oklab, var(--paper) 22%, transparent)}
-  .card-tag.soon{color:var(--fire);border-color:color-mix(in oklab, var(--fire) 50%, transparent)}
-  .card h3{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:-0.015em;line-height:1.15;
+    border:.5px solid color-mix(in oklab, var(--paper) 22%, transparent);white-space:nowrap}
+  .card-tag.case{color:var(--fire);border-color:color-mix(in oklab, var(--fire) 50%, transparent)}
+  .card h3{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.01em;line-height:1.18;
     position:relative;z-index:1;transition:color .3s}
   .card:hover h3{color:var(--fire)}
-  .card p{font-size:14px;line-height:1.5;color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);
+  .card p{font-size:13.5px;line-height:1.5;color:color-mix(in oklab, var(--paper) 62%, var(--ink) 38%);
     position:relative;z-index:1}
-  .card .cta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    color:color-mix(in oklab, var(--paper) 75%, var(--ink) 25%);display:flex;align-items:center;gap:8px;
+  .card .cta{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%);display:flex;align-items:center;gap:8px;
     position:relative;z-index:1}
   .card:hover .cta{color:var(--fire)}
 
+  .card.tool h3{font-size:21px}
+  .tool-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--fire);position:relative;z-index:1}
+
   footer{padding:60px 0;border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
     text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%);margin-top:60px}
+    color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%);margin-top:80px}
 
-  @media (max-width: 700px){
+  @media (max-width: 900px){
     .grid{grid-template-columns:1fr}
+    .grid.tight{grid-template-columns:1fr}
+    .sec-head{flex-direction:column}
+    .sec-head .sub{text-align:left}
+  }
+  @media (max-width: 700px){
     nav.top .inner{padding:14px 20px}
+    header.hero{padding:110px 0 40px}
+    .cat-strip{gap:8px}
   }
 </style>
 </head>
@@ -129,59 +152,231 @@
     <span class="eyebrow">§ Resources</span>
     <h1>Built for builders, <em>not theorists.</em></h1>
     <p class="hero-sub">
-      Practical guides on starting a company, choosing the right path, and building while you still have a job — written by people who've actually done it.
+      Practical guides on starting a company, real stories from LaunchPilot alumni, startup case studies
+      tied to real MBA concepts, and a working AI toolkit — written by people who've actually done it.
     </p>
 
-    <div class="filter-row">
-      <span class="filter-pill active">All</span>
-      <span class="filter-pill">Working Professionals</span>
-      <span class="filter-pill">Early-Stage Founders</span>
-      <span class="filter-pill">Recent Grads</span>
+    <div class="cat-strip">
+      <span class="cat">Founder Articles</span>
+      <span class="cat">Alumni Case Studies</span>
+      <span class="cat">Startup Case Studies</span>
+      <span class="cat">AI Tool Guides</span>
     </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <div class="grid">
 
-      <a href="/resources/start-startup-while-working-full-time/" class="card">
-        <div class="card-top">
-          <span class="card-tag">Working Professionals</span>
+    <div class="sec-block">
+      <div class="sec-head">
+        <div>
+          <span class="num">§ 01 / For Founders &amp; Working Professionals</span>
+          <h2>Start here, <em>before you build.</em></h2>
         </div>
-        <h3>How to Start a Startup While Working a Full-Time Job</h3>
-        <p>A structured way to validate, build, and know when to go all-in — without quitting blindly.</p>
-        <span class="cta">Read article →</span>
-      </a>
-
-      <a href="/resources/founder-mba-vs-traditional-mba/" class="card">
-        <div class="card-top">
-          <span class="card-tag">Working Professionals</span>
-        </div>
-        <h3>Founder MBA vs Traditional MBA: What's Actually Different</h3>
-        <p>A direct comparison of what you'll learn, who you'll meet, and what you'll build.</p>
-        <span class="cta">Read article →</span>
-      </a>
-
-      <a href="/resources/best-mba-for-working-professionals/" class="card">
-        <div class="card-top">
-          <span class="card-tag">Working Professionals</span>
-        </div>
-        <h3>Best MBA Programs for Working Professionals Who Want to Start a Business</h3>
-        <p>An honest look at the options — including where LaunchPilot fits and where it doesn't.</p>
-        <span class="cta">Read article →</span>
-      </a>
-
-      <div class="card disabled">
-        <div class="card-top">
-          <span class="card-tag soon">Coming soon</span>
-        </div>
-        <h3>Should I Quit My Job to Start a Startup?</h3>
-        <p>A practical decision framework — not motivational fluff.</p>
-        <span class="cta">Coming soon</span>
+        <p class="sub">The decisions every aspiring founder faces, with real frameworks instead of generic checklists.</p>
       </div>
 
+      <div class="grid tight">
+        <a href="/resources/start-startup-while-working-full-time/" class="card">
+          <div class="card-top"><span class="card-tag">Working Professionals</span></div>
+          <h3>How to Start a Startup While Working a Full-Time Job</h3>
+          <p>A structured way to validate, build, and know when to go all-in — without quitting blindly.</p>
+          <span class="cta">Read article →</span>
+        </a>
+
+        <a href="/resources/should-i-quit-my-job-to-start-a-startup/" class="card">
+          <div class="card-top"><span class="card-tag">Working Professionals</span></div>
+          <h3>Should I Quit My Job to Start a Startup?</h3>
+          <p>A practical decision framework — not motivational fluff.</p>
+          <span class="cta">Read article →</span>
+        </a>
+
+        <a href="/resources/how-to-validate-a-startup-idea/" class="card">
+          <div class="card-top"><span class="card-tag">Working Professionals</span></div>
+          <h3>How to Validate a Startup Idea Before You Quit</h3>
+          <p>Validation is an attempt to kill your idea cheaply — before it costs you your savings.</p>
+          <span class="cta">Read article →</span>
+        </a>
+
+        <a href="/resources/founder-mba-vs-traditional-mba/" class="card">
+          <div class="card-top"><span class="card-tag">Working Professionals</span></div>
+          <h3>Founder MBA vs Traditional MBA: What's Actually Different</h3>
+          <p>A direct comparison of curriculum, network, and outcomes for both paths.</p>
+          <span class="cta">Read article →</span>
+        </a>
+
+        <a href="/resources/best-mba-for-working-professionals/" class="card">
+          <div class="card-top"><span class="card-tag">Working Professionals</span></div>
+          <h3>Best MBA Programs for Working Professionals Who Want to Start a Business</h3>
+          <p>An honest look at the real options — including where LaunchPilot fits and where it doesn't.</p>
+          <span class="cta">Read article →</span>
+        </a>
+      </div>
     </div>
+
+    <div class="sec-block">
+      <div class="sec-head">
+        <div>
+          <span class="num">§ 02 / Alumni Case Studies</span>
+          <h2>Built by <em>real founders.</em></h2>
+        </div>
+        <p class="sub">Real companies, built by LaunchPilot alumni — not hypotheticals.</p>
+      </div>
+
+      <div class="grid tight">
+        <a href="/resources/foliages/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '24 · Bengaluru</span></div>
+          <h3>Foliages: From the Air Force to India's Favourite Plant Brand</h3>
+          <p>Reyo Augustine left the Air Force, turned down Babson, and built a bootstrapped D2C brand with his wife instead.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/devananta/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '23 · Mumbai</span></div>
+          <h3>Devananta: Building the Future of Battery Sustainability</h3>
+          <p>A deep-tech founder who raised $200K through government grants instead of VC.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/claimback/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '24 · Bengaluru</span></div>
+          <h3>ClaimBack: The Lawyer Who Quit Law to Recover India's Unclaimed Assets</h3>
+          <p>Abhijith Jajio left a law career to build an AI platform that's recovered ₹6.5 Cr in unclaimed assets.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/blendyeh/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '24 · Chennai</span></div>
+          <h3>BlendYeh: India's First Autonomous Cooking Kiosk, Built at 20</h3>
+          <p>An IIT Madras student deployed a hardware startup at IISc and raised ₹50L+ in grants.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/aesthetic-essentials/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '24 · Delhi</span></div>
+          <h3>Aesthetic Essentials: A Family Business Rebuilt as a ₹10Cr+ D2C Brand</h3>
+          <p>Vishesh Arora modernized a 10-year family legacy business into a thriving D2C brand.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/cyclocare/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '25 · Bengaluru</span></div>
+          <h3>Cyclo Care: A Period Tracking App Built for Rural India</h3>
+          <p>Manish Charhate built a bootstrapped app reaching 1,00,000+ downloads in underserved markets.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/mindler-ai/" class="card">
+          <div class="card-top"><span class="card-tag case">Cohort '25 · Bengaluru</span></div>
+          <h3>Mindler.AI: The Working Mom Who Left IBM to Build an AI Assistant</h3>
+          <p>Sandhya Pradhan left a comfortable corporate career and reached product-market fit, bootstrapped.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sec-block">
+      <div class="sec-head">
+        <div>
+          <span class="num">§ 03 / Startup Case Studies</span>
+          <h2>Lessons from companies <em>you already know.</em></h2>
+        </div>
+        <p class="sub">Real startups, real MBA concepts — written for founders, not classroom discussion.</p>
+      </div>
+
+      <div class="grid tight">
+        <a href="/resources/airbnb-lean-startup-case-study/" class="card tool">
+          <span class="tool-meta">Lean Startup</span>
+          <h3>Airbnb's Lean Startup Playbook</h3>
+          <p>Why the founders did things that didn't scale — and why that was the right call.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/stripe-niche-go-to-market-case-study/" class="card tool">
+          <span class="tool-meta">Go-to-Market Strategy</span>
+          <h3>Stripe's Go-to-Market Lesson</h3>
+          <p>How Stripe won developers completely before ever competing with PayPal head-on.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/netflix-business-model-pivot-case-study/" class="card tool">
+          <span class="tool-meta">Self-Disruption</span>
+          <h3>Netflix's Business Model Pivot</h3>
+          <p>From DVDs to streaming to original content — three business models, one company.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/patagonia-mission-driven-branding-case-study/" class="card tool">
+          <span class="tool-meta">Mission-Driven Branding</span>
+          <h3>Patagonia's "Don't Buy This Jacket" Ad</h3>
+          <p>Why telling customers not to buy made the brand stronger, not weaker.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+
+        <a href="/resources/slack-product-led-growth-case-study/" class="card tool">
+          <span class="tool-meta">Product-Led Growth</span>
+          <h3>Slack's Pivot From a Failed Game Studio</h3>
+          <p>How an internal tool became the real business, and the game never shipped.</p>
+          <span class="cta">Read case study →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sec-block">
+      <div class="sec-head">
+        <div>
+          <span class="num">§ 04 / AI Resource Library</span>
+          <h2>Tools to build <em>faster.</em></h2>
+        </div>
+        <p class="sub">Practical how-to guides for the AI tools founders actually use — tech, MVP, GTM, content, decks, and agents.</p>
+      </div>
+
+      <div class="grid tight">
+        <a href="/resources/cursor-ai-guide/" class="card tool">
+          <span class="tool-meta">Tech</span>
+          <h3>Cursor: The AI Code Editor for Founders Who Can Read Code</h3>
+          <p>A quick how-to for technical and semi-technical founders building faster.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+
+        <a href="/resources/lovable-ai-guide/" class="card tool">
+          <span class="tool-meta">MVP / No-Code</span>
+          <h3>Lovable: Build a Real Product With Zero Code</h3>
+          <p>Turn a plain-English description into a working full-stack app.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+
+        <a href="/resources/perplexity-ai-guide/" class="card tool">
+          <span class="tool-meta">GTM / Marketing</span>
+          <h3>Perplexity: Validate Your Market Before You Build</h3>
+          <p>Market research and competitor analysis with cited, current sources.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+
+        <a href="/resources/canva-ai-guide/" class="card tool">
+          <span class="tool-meta">Content Creation</span>
+          <h3>Canva: AI Content Creation for Founders Who Aren't Designers</h3>
+          <p>Branded social posts and marketing assets without hiring a designer.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+
+        <a href="/resources/gamma-ai-guide/" class="card tool">
+          <span class="tool-meta">Pitch Decks</span>
+          <h3>Gamma: Build an Investor-Ready Pitch Deck in an Afternoon</h3>
+          <p>A structured first draft in minutes, with engagement analytics built in.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+
+        <a href="/resources/gumloop-ai-guide/" class="card tool">
+          <span class="tool-meta">Agents / Automation</span>
+          <h3>Gumloop: No-Code AI Agents for Founders Without an Ops Team</h3>
+          <p>Automate lead enrichment, reporting, and repetitive work — no code required.</p>
+          <span class="cta">Read guide →</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </main>
 
