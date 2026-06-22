@@ -13,7 +13,7 @@
 <meta property="og:title" content="Cyclo Care: A Period Tracking App Built for Rural India">
 <meta property="og:description" content="A bootstrapped app reaching 1,00,000+ downloads among women in rural and Tier 3 India.">
 <meta property="og:url" content="https://www.launchpilotschool.com/resources/cyclocare/">
-<meta property="og:image" content="https://www.launchpilotschool.com/favicon.svg">
+<meta property="og:image" content="https://www.launchpilotschool.com/images/founders/lumen.jpg">
 <meta property="og:locale" content="en_SG">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cyclo Care: Built During LaunchPilot's Founder MBA">
@@ -66,6 +66,14 @@
   .back-link:hover{color:var(--fire)}
   article{padding:140px 0 80px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:20px;display:block}
+  .head-row{display:grid;grid-template-columns:1fr 120px;gap:32px;align-items:start;margin-bottom:24px}
+  .founder-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;
+    border:2px solid color-mix(in oklab, var(--fire) 45%, transparent);
+    background:repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px)}
+  .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+    filter:grayscale(8%)}
   h1{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1.05;font-size:clamp(32px, 5.5vw, 52px);margin-bottom:24px}
   h1 em{font-style:italic;color:var(--fire)}
   .meta-row{display:flex;gap:20px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
@@ -109,7 +117,9 @@
     font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%)}
   @media (max-width: 600px){
     nav.top .inner{padding:14px 20px} article{padding:100px 0 60px} .meta-row{flex-wrap:wrap;gap:12px}
-    .fact-strip{grid-template-columns:repeat(2,1fr)} .lesson-box .btn-row{flex-direction:column}
+    .fact-strip{grid-template-columns:repeat(2,1fr)}
+    .head-row{grid-template-columns:1fr;gap:20px}
+    .founder-photo{width:84px;height:84px} .lesson-box .btn-row{flex-direction:column}
   }
 </style>
 </head>
@@ -125,7 +135,12 @@
 <article>
   <div class="wrap">
     <span class="eyebrow">§ Alumni Case Study — Cohort '25</span>
+    <div class="head-row">
     <h1>Cyclo Care: A Period Tracking App Built for <em>Rural India</em></h1>
+      <div class="founder-photo">
+        <img src="/images/founders/lumen.jpg" alt="Manish Charhate, founder of Cyclo Care" onerror="this.parentElement.style.opacity='0.3'">
+      </div>
+    </div>
 
     <div class="meta-row">
       <span>Bengaluru, India</span>
@@ -212,6 +227,7 @@
       <a href="/resources/aesthetic-essentials/">Aesthetic Essentials: a family business rebuilt as a ₹10Cr+ D2C brand</a>
       <a href="/resources/blendyeh/">BlendYeh: India's first autonomous cooking kiosk, built at 20</a>
       <a href="/resources/mindler-ai/">Mindler.AI: the working mom who left IBM to build an AI assistant</a>
+      <a href="/resources/jopana/">Jopana: the doctor who built a healthcare marketplace</a>
     </div>
   </div>
 </article>
