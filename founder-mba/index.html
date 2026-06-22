@@ -923,7 +923,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       <li><a href="#apply">Apply</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:12px">
-      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="nav-apply">Apply Now ↗</a>
+      <a href="#" onclick="openApplyModal();return false;" class="nav-apply">Apply Now ↗</a>
       <button id="hamburger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;align-items:center;justify-content:center">
         <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:transform .25s,opacity .25s" id="hb1"></span>
         <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:opacity .25s" id="hb2"></span>
@@ -940,7 +940,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   <a href="#cities" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Immersions</a>
   <a href="#launches" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Launches</a>
   <a href="#apply" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Apply</a>
-  <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);display:block">Apply Now ↗</a>
+  <a href="#" onclick="closeMobileMenu();openApplyModal();return false;" style="margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);display:block">Apply Now ↗</a>
 </div>
 
 <!-- HERO -->
@@ -960,7 +960,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
           <span class="pill">6 Global Immersions</span>
         </div>
         <div class="hero-ctas">
-          <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-fire">Apply for Cohort '26 ↗</a>
+          <a href="#" onclick="openApplyModal();return false;" class="btn-fire">Apply for Cohort '26 ↗</a>
         </div>
       </div>
       <div class="hero-nums">
@@ -1784,7 +1784,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
       border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);
       display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
       <div style="font-family:'Instrument Serif',Georgia,serif;font-size:18px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.4">Real execution support — <em style="color:var(--fire)">on demand.</em></div>
-      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;white-space:nowrap;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply Now ↗</a>
+      <a href="#" onclick="openApplyModal();return false;" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;white-space:nowrap;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply Now ↗</a>
     </div>
 
   </div>
@@ -2138,7 +2138,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.62);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Demo Day with investors</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.58);display:flex;gap:10px"><span style="color:rgba(245,238,216,0.2);flex-shrink:0">✗</span>MBA degree not included</div>
         </div>
-        <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.22);color:rgba(245,238,216,0.7);transition:border-color .2s,color .2s" onmouseover="this.style.borderColor='rgba(245,238,216,0.5)';this.style.color='var(--paper)'" onmouseout="this.style.borderColor='rgba(245,238,216,0.22)';this.style.color='rgba(245,238,216,0.7)'">Apply for PGP Track →</a>
+        <a href="#" onclick="openApplyModal('Founder MBA');return false;" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.22);color:rgba(245,238,216,0.7);transition:border-color .2s,color .2s" onmouseover="this.style.borderColor='rgba(245,238,216,0.5)';this.style.color='var(--paper)'" onmouseout="this.style.borderColor='rgba(245,238,216,0.22)';this.style.color='rgba(245,238,216,0.7)'">Apply for PGP Track →</a>
       </div>
 
       <!-- MBA Track -->
@@ -2163,7 +2163,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Job and Career Support</div>
           <div style="font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(245,238,216,0.75);display:flex;gap:10px"><span style="color:var(--fire);flex-shrink:0">✓</span>Priority mentor matching</div>
         </div>
-        <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply for Founder MBA →</a>
+        <a href="#" onclick="openApplyModal('Founder MBA');return false;" style="display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);font-weight:500;transition:background .2s" onmouseover="this.style.background='oklch(0.62 0.20 38)'" onmouseout="this.style.background='var(--fire)'">Apply for Founder MBA →</a>
       </div>
 
     </div>
@@ -2274,7 +2274,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
     <h2>Stop waiting for<br><em>permission to build.</em></h2>
     <p>Rolling admissions — seats are limited per cohort. Apply early to secure your place.</p>
     <div class="cta-btns">
-      <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank" class="btn-fire" style="font-size:12px;padding:16px 32px">Apply for Founder MBA ↗</a>
+      <a href="#" onclick="openApplyModal();return false;" class="btn-fire" style="font-size:12px;padding:16px 32px">Apply for Founder MBA ↗</a>
     </div>
     <div class="cta-facts">
       <div class="cf"><div class="cf-v">6-12 months</div><div class="cf-l">Duration</div></div>
@@ -2382,7 +2382,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   <div class="f-links">
     <a href="/">Homepage</a>
     <a href="/#programs">All Programs</a>
-    <a href="https://form.typeform.com/to/uVqFIMwS" target="_blank">Apply</a>
+    <a href="#" onclick="openApplyModal();return false;">Apply</a>
   </div>
   <div class="f-copy">© 2026 LaunchPilot · All rights reserved</div>
 </footer>
@@ -2651,5 +2651,186 @@ function toggleFaq(el){
 }
 
 </script>
+<!-- APPLICATION MODAL -->
+<style>
+  .apply-modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(8,6,4,0.82);
+    backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px;
+    opacity:0;transition:opacity .25s ease}
+  .apply-modal-overlay.open{display:flex;opacity:1}
+  .apply-modal{position:relative;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+    background:var(--ink);border:.5px solid rgba(245,238,216,0.14);border-radius:18px;
+    padding:44px;transform:translateY(16px) scale(.98);transition:transform .25s ease;
+    box-shadow:0 40px 90px rgba(0,0,0,.6)}
+  .apply-modal-overlay.open .apply-modal{transform:translateY(0) scale(1)}
+  .apply-modal-close{position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;
+    border:.5px solid rgba(245,238,216,0.16);background:transparent;color:rgba(245,238,216,0.6);
+    font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s,color .2s}
+  .apply-modal-close:hover{border-color:var(--fire);color:var(--fire)}
+  .apply-modal h3{font-family:var(--serif);font-size:30px;font-style:italic;letter-spacing:-0.01em;
+    color:var(--paper);margin-bottom:8px;line-height:1.1}
+  .apply-modal .am-sub{font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.55);
+    margin-bottom:28px;line-height:1.5}
+  .am-field{margin-bottom:18px}
+  .am-field label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(245,238,216,0.5);margin-bottom:8px}
+  .am-field input,.am-field textarea,.am-field select{width:100%;background:rgba(245,238,216,0.05);
+    border:.5px solid rgba(245,238,216,0.14);border-radius:8px;padding:13px 14px;
+    font-family:var(--sans);font-size:14.5px;color:var(--paper);outline:none;
+    transition:border-color .2s;resize:vertical}
+  .am-field input:focus,.am-field textarea:focus,.am-field select:focus{border-color:var(--fire)}
+  .am-field textarea{min-height:74px}
+  .am-field select{appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='rgba(245,238,216,0.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center}
+  .am-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .am-submit{width:100%;margin-top:8px;padding:15px;border-radius:100px;background:var(--fire);
+    color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    font-weight:500;border:none;cursor:pointer;transition:background .2s,transform .15s}
+  .am-submit:hover{background:var(--fire-2);transform:translateY(-1px)}
+  .am-submit:disabled{opacity:.6;cursor:default;transform:none}
+  .am-status{margin-top:14px;font-family:var(--sans);font-size:13.5px;text-align:center;
+    line-height:1.5;display:none}
+  .am-status.show{display:block}
+  .am-status.success{color:var(--fire)}
+  .am-status.error{color:#ff6b6b}
+  @media(max-width:600px){
+    .apply-modal{padding:32px 24px}
+    .am-row2{grid-template-columns:1fr}
+  }
+</style>
+
+<div class="apply-modal-overlay" id="apply-modal-overlay">
+  <div class="apply-modal">
+    <button class="apply-modal-close" onclick="closeApplyModal()" aria-label="Close">✕</button>
+    <h3>Apply to <em style="color:var(--fire);font-style:italic">LaunchPilot</em></h3>
+    <p class="am-sub">Tell us a bit about you and what you want to build. We'll be in touch within 48 hours.</p>
+
+    <form id="apply-form">
+      <div class="am-row2">
+        <div class="am-field">
+          <label for="am-name">Full Name</label>
+          <input type="text" id="am-name" required>
+        </div>
+        <div class="am-field">
+          <label for="am-email">Email</label>
+          <input type="email" id="am-email" required>
+        </div>
+      </div>
+
+      <div class="am-row2">
+        <div class="am-field">
+          <label for="am-whatsapp">WhatsApp Number</label>
+          <input type="tel" id="am-whatsapp" placeholder="+65 XXXX XXXX" required>
+        </div>
+        <div class="am-field">
+          <label for="am-linkedin">LinkedIn Profile</label>
+          <input type="text" id="am-linkedin" placeholder="linkedin.com/in/...">
+        </div>
+      </div>
+
+      <div class="am-field">
+        <label for="am-track">Which program are you applying for?</label>
+        <select id="am-track">
+          <option value="" disabled selected>Select a program</option>
+          <option value="Founder MBA">Founder MBA</option>
+          <option value="Borderless MBA">Borderless MBA</option>
+          <option value="Executive MBA">Executive MBA</option>
+          <option value="Family Business MBA">Family Business MBA</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="am-field">
+        <label for="am-what">What do you want to build?</label>
+        <textarea id="am-what" placeholder="A short description of your idea or area of interest"></textarea>
+      </div>
+
+      <div class="am-field">
+        <label for="am-why">Why do you want to build it?</label>
+        <textarea id="am-why" placeholder="What's driving you to do this now?"></textarea>
+      </div>
+
+      <button type="submit" class="am-submit" id="am-submit-btn">Submit Application →</button>
+      <div class="am-status" id="am-status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwUisrzmLWEt-RA5nLOwrn55IbQZiMQcZ5JJVe4K4qOGiztyvQ5IJCMr0TC0dxsV9U1/exec";
+
+  var overlay = document.getElementById('apply-modal-overlay');
+  var form = document.getElementById('apply-form');
+  var statusEl = document.getElementById('am-status');
+  var submitBtn = document.getElementById('am-submit-btn');
+  var trackSelect = document.getElementById('am-track');
+
+  window.openApplyModal = function(presetTrack){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (presetTrack) {
+      trackSelect.value = presetTrack;
+    }
+  };
+
+  window.closeApplyModal = function(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeApplyModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeApplyModal();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var payload = {
+      name: document.getElementById('am-name').value,
+      email: document.getElementById('am-email').value,
+      whatsapp: document.getElementById('am-whatsapp').value,
+      linkedin: document.getElementById('am-linkedin').value,
+      track: trackSelect.value,
+      whatToBuild: document.getElementById('am-what').value,
+      whyBuild: document.getElementById('am-why').value
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    statusEl.className = 'am-status';
+
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(){
+      statusEl.textContent = "Application received. We'll be in touch within 48 hours.";
+      statusEl.className = 'am-status show success';
+      submitBtn.textContent = "Submitted ✓";
+      form.reset();
+      setTimeout(function(){
+        closeApplyModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Application →";
+        statusEl.className = 'am-status';
+      }, 2200);
+    })
+    .catch(function(){
+      statusEl.textContent = "Something went wrong. Please try again or email hello@launchpilotschool.com.";
+      statusEl.className = 'am-status show error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Application →";
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
