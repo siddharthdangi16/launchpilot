@@ -140,18 +140,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;
   padding:6px 12px;border:.5px solid color-mix(in oklab,var(--fire) 35%,transparent);
   color:var(--fire);background:color-mix(in oklab,var(--fire) 7%,transparent)}
 
-/* ── STUDENT PHOTO ── */
-.sc-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:0;
-  border-bottom:.5px solid rgba(245,238,216,0.08);position:relative;background:var(--ink-2)}
-.sc-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;
-  display:block;filter:grayscale(20%);transition:filter .3s}
-.sc:hover .sc-photo img{filter:grayscale(0%)}
-.sc-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:10px;
+/* ── STUDENT AVATAR ── */
+.sc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.sc-avatar{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:var(--ink-2);border:.5px solid rgba(245,238,216,0.16);position:relative}
+.sc-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  display:block;filter:grayscale(35%);transition:filter .3s}
+.sc:hover .sc-avatar img{filter:grayscale(0%)}
+.sc-avatar-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--fire);
   background:linear-gradient(135deg,oklch(0.16 0.013 55) 0%,oklch(0.20 0.015 55) 100%)}
-.sc-photo-placeholder svg{opacity:.18}
-.sc-photo-placeholder span{font-family:var(--mono);font-size:9px;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(245,238,216,0.25)}
 
 /* ── CTA ── */
 .cta-section{padding:100px 0;border-top:.5px solid rgba(245,238,216,0.08);text-align:center}
@@ -201,7 +199,7 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
     <div class="hero-divider"></div>
     <div class="hero-grid">
       <div>
-        <p class="hero-lede">We help you launch a high-growth business. If the startup doesn't work out, we connect you to Director-level roles at fast-growing companies across India, Singapore, UAE & USA.</p>
+        <p class="hero-lede">We help you launch a high-growth business. If the startup doesn't work out, we connect you to high growth roles at fast-growing companies across India, Singapore, UAE & USA.</p>
         <div class="hero-ctas">
           <a href="https://www.launchpilotschool.com/founder-mba/" class="btn-fire">Apply for Cohort '26 →</a>
           <a href="#students" class="btn-outline">Meet alumni</a>
@@ -406,11 +404,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
     <div class="students-grid">
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/nishant.jpg" alt="Nishant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/nishant.jpg" alt="Nishant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">N</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Nishant</div>
         <div class="sc-role">Placed as <strong>Associate Director — NTT Data</strong></div>
         <div class="sc-divider"></div>
@@ -425,11 +425,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/rakesh.jpg" alt="Rakesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/rakesh.jpg" alt="Rakesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">R</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Rakesh</div>
         <div class="sc-role">Placed as <strong>Director — Ascendion</strong></div>
         <div class="sc-divider"></div>
@@ -444,11 +446,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/shweta.jpg" alt="Shweta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/shweta.jpg" alt="Shweta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Shweta</div>
         <div class="sc-role">Placed as <strong>Product Lead — NeuIQ</strong></div>
         <div class="sc-divider"></div>
@@ -462,11 +466,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/manikanta.jpg" alt="Manikanta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/manikanta.jpg" alt="Manikanta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">M</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Manikanta</div>
         <div class="sc-role">Placed as <strong>Data Science Lead — Meesho</strong></div>
         <div class="sc-divider"></div>
@@ -480,11 +486,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/sai-kiran.jpg" alt="Sai Kiran" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/sai-kiran.jpg" alt="Sai Kiran" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Sai Kiran</div>
         <div class="sc-role">Placed as <strong>SWE — Synapx, London</strong></div>
         <div class="sc-divider"></div>
@@ -497,11 +505,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/guliz.jpg" alt="Guliz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/guliz.jpg" alt="Guliz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">G</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Guliz</div>
         <div class="sc-role">Placed as <strong>Growth Associate — Kavak</strong></div>
         <div class="sc-divider"></div>
@@ -514,11 +524,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/rahul.jpg" alt="Rahul" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/rahul.jpg" alt="Rahul" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">R</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Rahul</div>
         <div class="sc-role">Placed as <strong>SWE — TikTok</strong></div>
         <div class="sc-divider"></div>
@@ -531,11 +543,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/nishant-nahata.jpg" alt="Nishant Nahata" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/nishant-nahata.jpg" alt="Nishant Nahata" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">N</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Nishant Nahata</div>
         <div class="sc-role">Placed as <strong>Finance — FuturesFirst</strong></div>
         <div class="sc-divider"></div>
@@ -546,11 +560,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/yash-baldawa.jpg" alt="Yash Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/yash-baldawa.jpg" alt="Yash Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">Y</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Yash Baldawa</div>
         <div class="sc-role">Promoted to <strong>SWE — Okta, NYC</strong></div>
         <div class="sc-divider"></div>
@@ -561,11 +577,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/shishir-bhatia.jpg" alt="Shishir Bhatia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/shishir-bhatia.jpg" alt="Shishir Bhatia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Shishir Bhatia</div>
         <div class="sc-role">Placed as <strong>Associate — IMF, Malaysia</strong></div>
         <div class="sc-divider"></div>
@@ -578,11 +596,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/tanush-sheshadri.jpg" alt="Tanush Sheshadri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/tanush-sheshadri.jpg" alt="Tanush Sheshadri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">T</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Tanush Sheshadri</div>
         <div class="sc-role">Promoted to <strong>SW Engineer — Micron</strong></div>
         <div class="sc-divider"></div>
@@ -593,11 +613,13 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
       </div>
 
       <div class="sc">
-        <div class="sc-photo">
-          <img src="../images/puja-baldawa.jpg" alt="Puja Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="sc-photo-placeholder" style="display:none"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="white" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="1.5"/></svg><span>Add photo</span></div>
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/puja-baldawa.jpg" alt="Puja Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">P</div>
+          </div>
         </div>
-        <div class="sc-tag" style="margin-top:24px">Student Feature</div>
         <div class="sc-name">Puja Baldawa</div>
         <div class="sc-role">Placed as <strong>Growth Manager — myGate</strong></div>
         <div class="sc-divider"></div>
