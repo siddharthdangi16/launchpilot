@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Placement Report 2025 — Mentogram School of Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:oklch(0.12 0.013 55);
+  --ink-2:oklch(0.18 0.013 55);
+  --paper:oklch(0.97 0.01 75);
+  --fire:oklch(0.74 0.19 250);
+  --fire-2:oklch(0.66 0.21 250);
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --sans:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
+}
+html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+  font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;
+  border-bottom:.5px solid rgba(245,238,216,0.12);
+  background:color-mix(in oklab,oklch(0.07 0.012 55) 90%,transparent);
+  backdrop-filter:blur(20px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 48px;max-width:1440px;margin:0 auto}
+.brand-w{font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.brand-w i{font-style:italic;font-weight:400}
+.nav-apply{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 22px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;cursor:pointer;border:none}
+.nav-apply:hover{background:var(--fire-2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{padding:152px 0 80px;position:relative;overflow:hidden;min-height:88vh;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 72% 38%, oklch(0.25 0.07 45 / .14) 0%, transparent 52%),
+             radial-gradient(ellipse at 18% 82%, oklch(0.20 0.03 260 / .06) 0%, transparent 45%)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fire);padding:8px 16px;border-radius:100px;
+  border:.5px solid color-mix(in oklab,var(--fire) 28%,transparent);
+  background:color-mix(in oklab,var(--fire) 6%,transparent);margin-bottom:28px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--fire);
+  animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(50px,7vw,110px);
+  letter-spacing:-0.025em;line-height:.92;margin-bottom:0}
+.hero h1 em{font-style:italic;color:var(--fire)}
+.hero-divider{width:100%;height:.5px;background:rgba(245,238,216,0.1);margin:36px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.hero-lede{font-family:var(--serif);font-size:20px;line-height:1.45;
+  letter-spacing:-0.005em;color:rgba(245,238,216,0.85);max-width:42ch;margin-bottom:28px}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-fire{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;display:inline-block;cursor:pointer;border:none}
+.btn-fire:hover{background:var(--fire-2);transform:translateY(-1px)}
+.btn-outline{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.2);
+  color:rgba(245,238,216,0.74);transition:border-color .2s,color .2s;display:inline-block}
+.btn-outline:hover{border-color:rgba(245,238,216,0.7);color:var(--paper)}
+.hero-nums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);overflow:hidden}
+.h-num{background:var(--ink);padding:28px 24px;display:flex;flex-direction:column;gap:6px}
+.h-num-v{font-family:var(--serif);font-size:40px;font-style:italic;
+  letter-spacing:-0.025em;line-height:1;color:var(--fire)}
+.h-num-l{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.65);line-height:1.5}
+
+/* ── SECTION BASE ── */
+.section{padding:88px 0;border-top:.5px solid rgba(245,238,216,0.08)}
+.section-tag{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:16px;opacity:.85}
+.section-h{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,56px);
+  letter-spacing:-0.02em;line-height:1.05;margin-bottom:0}
+.section-h em{font-style:italic;color:var(--fire)}
+
+/* ── STATS ── */
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);margin-top:52px}
+.stat{background:var(--ink);padding:36px 28px;display:flex;flex-direction:column;gap:8px;
+  transition:background .2s}
+.stat:hover{background:var(--ink-2)}
+.stat-v{font-family:var(--serif);font-size:clamp(36px,4vw,54px);font-style:italic;
+  letter-spacing:-0.025em;line-height:1;color:var(--fire)}
+.stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.65);line-height:1.5}
+.stat-sub{font-family:var(--sans);font-size:12px;color:rgba(245,238,216,0.4);margin-top:2px}
+
+/* ── ROLES ── */
+.roles-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:56px}
+.pie-wrap{position:relative;width:280px;height:280px;margin:0 auto}
+.roles-list{display:flex;flex-direction:column;gap:0;border:.5px solid rgba(245,238,216,0.08)}
+.role-row{display:flex;align-items:center;gap:16px;padding:18px 20px;
+  border-bottom:.5px solid rgba(245,238,216,0.08);transition:background .2s}
+.role-row:last-child{border-bottom:none}
+.role-row:hover{background:var(--ink-2)}
+.role-swatch{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.role-name{font-family:var(--sans);font-size:14px;font-weight:500;flex:1;
+  color:rgba(245,238,216,0.85)}
+.role-pct{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--fire)}
+
+/* ── COMPANIES ── */
+.co-intro{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-style:italic;
+  color:rgba(245,238,216,0.7);margin-top:8px;letter-spacing:-0.01em}
+.co-intro strong{color:var(--paper);font-style:normal;font-weight:400}
+
+/* ── STUDENTS ── */
+.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:1px;background:rgba(245,238,216,0.08);margin-top:52px}
+.sc{background:var(--ink);padding:32px 28px;display:flex;flex-direction:column;gap:0;
+  transition:background .2s}
+.sc:hover{background:var(--ink-2)}
+.sc-tag{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);opacity:.75;margin-bottom:14px}
+.sc-name{font-family:var(--serif);font-weight:400;font-size:52px;font-style:italic;
+  letter-spacing:-0.025em;line-height:.9;color:var(--paper);margin-bottom:10px}
+.sc-role{font-family:var(--sans);font-size:13px;font-weight:500;
+  color:rgba(245,238,216,0.6);margin-bottom:20px}
+.sc-role strong{color:rgba(245,238,216,0.9);font-weight:600}
+.sc-divider{height:.5px;background:rgba(245,238,216,0.08);margin-bottom:18px}
+.sc-bio{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;
+  color:rgba(245,238,216,0.7);margin-bottom:24px;flex:1}
+.sc-logos{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sc-chip{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 12px;border:.5px solid rgba(245,238,216,0.14);
+  color:rgba(245,238,216,0.5);background:transparent}
+.sc-arrow{font-family:var(--mono);font-size:13px;color:var(--fire);opacity:.7}
+.sc-chip-fire{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 12px;border:.5px solid color-mix(in oklab,var(--fire) 35%,transparent);
+  color:var(--fire);background:color-mix(in oklab,var(--fire) 7%,transparent)}
+
+/* ── STUDENT AVATAR ── */
+.sc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.sc-avatar{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:var(--ink-2);border:.5px solid rgba(245,238,216,0.16);position:relative}
+.sc-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  display:block;filter:grayscale(35%);transition:filter .3s}
+.sc:hover .sc-avatar img{filter:grayscale(0%)}
+.sc-avatar-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--fire);
+  background:linear-gradient(135deg,oklch(0.16 0.013 55) 0%,oklch(0.20 0.015 55) 100%)}
+
+/* ── CTA ── */
+.cta-section{padding:100px 0;border-top:.5px solid rgba(245,238,216,0.08);text-align:center}
+.cta-section .section-tag{justify-content:center;display:block;text-align:center}
+.cta-h{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5.5vw,72px);
+  letter-spacing:-0.025em;line-height:1.0;margin:16px 0 24px}
+.cta-h em{font-style:italic;color:var(--fire)}
+.cta-sub{font-family:var(--serif);font-size:19px;font-style:italic;
+  color:rgba(245,238,216,0.6);max-width:48ch;margin:0 auto 40px;line-height:1.5}
+
+/* ── FOOTER ── */
+footer{border-top:.5px solid rgba(245,238,216,0.08);padding:28px 48px;
+  display:flex;align-items:center;justify-content:space-between}
+.foot-brand{font-family:var(--sans);font-weight:700;font-size:14px}
+.foot-brand i{font-style:italic;font-weight:400}
+.foot-copy{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.25)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .wrap{padding:0 24px}
+  .nav-inner{padding:14px 24px}
+  .hero-grid{grid-template-columns:1fr}
+  .roles-layout{grid-template-columns:1fr;gap:36px}
+  .pie-wrap{width:220px;height:220px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .students-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand-w">Mento<i>gram</i></div>
+    <a href="https://www.launchpilotschool.com/mentogram-school-of-finance/" class="nav-apply">Apply to School of Finance</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-badge"><span class="dot"></span>Placement Report · 2025</div>
+    <h1>Crack roles at the world's best companies.<br/>We back you <em>all the way.</em></h1>
+    <div class="hero-divider"></div>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-lede">We train you for high-growth careers in finance, and connect you to high-impact roles at leading companies across India, Singapore, UAE & USA.</p>
+        <div class="hero-ctas">
+          <a href="https://www.launchpilotschool.com/mentogram-school-of-finance/" class="btn-fire">Apply to School of Finance →</a>
+          <a href="#students" class="btn-outline">Meet alumni</a>
+        </div>
+      </div>
+      <div class="hero-nums">
+        <div class="h-num">
+          <div class="h-num-v">20+</div>
+          <div class="h-num-l">Students placed<br/>Cohorts 2023–25</div>
+        </div>
+        <div class="h-num">
+          <div class="h-num-v">₹48L</div>
+          <div class="h-num-l">Highest salary<br/>placed to date</div>
+        </div>
+        <div class="h-num">
+          <div class="h-num-v">4</div>
+          <div class="h-num-l">Countries<br/>IN · SG · AE · US</div>
+        </div>
+        <div class="h-num">
+          <div class="h-num-v">92%</div>
+          <div class="h-num-l">Placement rate<br/>opt-in students</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-tag">By the numbers</div>
+    <h2 class="section-h">What our alumni <em>earn</em></h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-v">₹28L</div>
+        <div class="stat-l">Average salary</div>
+        <div class="stat-sub">Across all placed roles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">₹48L</div>
+        <div class="stat-l">Highest salary</div>
+        <div class="stat-sub">Associate Director, NTT Data</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">20+</div>
+        <div class="stat-l">Placed students</div>
+        <div class="stat-sub">Cohorts 2023–2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">4</div>
+        <div class="stat-l">Countries</div>
+        <div class="stat-sub">India · Singapore · UAE · USA</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">92%</div>
+        <div class="stat-l">Placement rate</div>
+        <div class="stat-sub">Of opt-in students</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-tag">Where alumni land</div>
+    <h2 class="section-h">Most common <em>roles placed</em></h2>
+    <div class="roles-layout">
+      <div class="pie-wrap"><canvas id="pieChart"></canvas></div>
+      <div>
+        <div class="roles-list">
+          <div class="role-row">
+            <div class="role-swatch" style="background:var(--fire)"></div>
+            <div class="role-name">Product Management</div>
+            <div class="role-pct">32%</div>
+          </div>
+          <div class="role-row">
+            <div class="role-swatch" style="background:oklch(0.55 0.1 200)"></div>
+            <div class="role-name">Strategy & Consulting</div>
+            <div class="role-pct">24%</div>
+          </div>
+          <div class="role-row">
+            <div class="role-swatch" style="background:oklch(0.62 0.12 280)"></div>
+            <div class="role-name">Growth & Business Development</div>
+            <div class="role-pct">20%</div>
+          </div>
+          <div class="role-row">
+            <div class="role-swatch" style="background:oklch(0.65 0.14 155)"></div>
+            <div class="role-name">Data & Analytics</div>
+            <div class="role-pct">14%</div>
+          </div>
+          <div class="role-row">
+            <div class="role-swatch" style="background:oklch(0.78 0.14 75)"></div>
+            <div class="role-name">Engineering Leadership</div>
+            <div class="role-pct">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-tag">Hiring partners</div>
+    <div class="co-intro">Get to work with <strong>companies like these</strong></div>
+  </div>
+
+  <div class="co-strip">
+    <div class="co-fade-l"></div>
+    <div class="co-fade-r"></div>
+    <div id="co-track-1" class="co-track" style="animation:co-scroll 34s linear infinite">
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/01.png" alt="Ascendion" onerror="this.style.opacity='0'"></div><div class="co-nm">Ascendion</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/02.png" alt="Grab" onerror="this.style.opacity='0'"></div><div class="co-nm">Grab</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/03.png" alt="Meesho" onerror="this.style.opacity='0'"></div><div class="co-nm">Meesho</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/04.png" alt="Zepto" onerror="this.style.opacity='0'"></div><div class="co-nm">Zepto</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/05.png" alt="Gray Matter Solutions" onerror="this.style.opacity='0'"></div><div class="co-nm">Gray Matter Solutions</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/06.png" alt="Kavak" onerror="this.style.opacity='0'"></div><div class="co-nm">Kavak</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/07.png" alt="Lazada" onerror="this.style.opacity='0'"></div><div class="co-nm">Lazada</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/08.png" alt="Shopee" onerror="this.style.opacity='0'"></div><div class="co-nm">Shopee</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/09.png" alt="Facebook" onerror="this.style.opacity='0'"></div><div class="co-nm">Facebook</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/10.png" alt="Google" onerror="this.style.opacity='0'"></div><div class="co-nm">Google</div></div>
+    </div>
+  </div>
+
+  <div class="co-strip" style="margin-top:14px">
+    <div class="co-fade-l"></div>
+    <div class="co-fade-r"></div>
+    <div id="co-track-2" class="co-track" style="animation:co-scroll-rev 38s linear infinite">
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/11.png" alt="NTT Data" onerror="this.style.opacity='0'"></div><div class="co-nm">NTT Data</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/12.png" alt="NeuIQ" onerror="this.style.opacity='0'"></div><div class="co-nm">NeuIQ</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/13.png" alt="Synapx" onerror="this.style.opacity='0'"></div><div class="co-nm">Synapx</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/14.png" alt="TikTok" onerror="this.style.opacity='0'"></div><div class="co-nm">TikTok</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/15.png" alt="FuturesFirst" onerror="this.style.opacity='0'"></div><div class="co-nm">FuturesFirst</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/16.png" alt="Okta" onerror="this.style.opacity='0'"></div><div class="co-nm">Okta</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/17.png" alt="IMF" onerror="this.style.opacity='0'"></div><div class="co-nm">IMF</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/18.png" alt="Micron" onerror="this.style.opacity='0'"></div><div class="co-nm">Micron</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/19.png" alt="myGate" onerror="this.style.opacity='0'"></div><div class="co-nm">myGate</div></div>
+    </div>
+  </div>
+
+  <div class="co-strip" style="margin-top:14px">
+    <div class="co-fade-l"></div>
+    <div class="co-fade-r"></div>
+    <div id="co-track-3" class="co-track" style="animation:co-scroll 42s linear infinite">
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/20.png" alt="Amazon" onerror="this.style.opacity='0'"></div><div class="co-nm">Amazon</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/21.png" alt="Microsoft" onerror="this.style.opacity='0'"></div><div class="co-nm">Microsoft</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/22.png" alt="Flipkart" onerror="this.style.opacity='0'"></div><div class="co-nm">Flipkart</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/23.png" alt="Grab Financial Group" onerror="this.style.opacity='0'"></div><div class="co-nm">PayPal</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/24.png" alt="Swiggy" onerror="this.style.opacity='0'"></div><div class="co-nm">Swiggy</div></div>
+      <div class="co-card"><div class="co-ph"><img src="../images/hiring/25.png" alt="Sea Group" onerror="this.style.opacity='0'"></div><div class="co-nm">Sea Group</div></div>
+    </div>
+  </div>
+
+</section>
+<style>
+  .co-strip{position:relative;overflow:hidden;margin-top:40px;padding:8px 0}
+  .co-fade-l,.co-fade-r{position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+  .co-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+  .co-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+  .co-track{display:flex;gap:16px;width:max-content;padding:0 48px}
+  .co-track:hover{animation-play-state:paused}
+  @keyframes co-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @keyframes co-scroll-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+  .co-card{display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:20px 16px;border-radius:12px;text-align:center;
+    width:150px;flex-shrink:0;
+    background:color-mix(in oklab,var(--ink) 94%,var(--paper) 6%);
+    border:.5px solid rgba(245,238,216,0.12);
+    transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+  .co-card:hover{border-color:rgba(96,176,255,0.5);transform:translateY(-3px)}
+  .co-ph{width:64px;height:64px;min-width:64px;border-radius:10px;flex-shrink:0;
+    overflow:hidden;display:flex;align-items:center;justify-content:center;
+    background:rgba(245,238,216,0.06);
+    border:1px solid rgba(245,238,216,0.18)}
+  .co-ph img{width:100%;height:100%;object-fit:contain;display:block;padding:8px;
+    filter:grayscale(20%);transition:filter .3s}
+  .co-card:hover .co-ph img{filter:grayscale(0%)}
+  .co-nm{font-family:'Instrument Serif',Georgia,serif;font-style:italic;
+    font-size:13px;letter-spacing:-0.005em;color:var(--paper);line-height:1.3}
+</style>
+<script>
+(function(){
+  ['co-track-1','co-track-2','co-track-3'].forEach(function(id){
+    var t = document.getElementById(id);
+    if(!t) return;
+    Array.from(t.querySelectorAll('.co-card')).forEach(function(c){
+      t.appendChild(c.cloneNode(true));
+    });
+    t.addEventListener('mouseenter', function(){ t.style.animationPlayState='paused'; });
+    t.addEventListener('mouseleave', function(){ t.style.animationPlayState='running'; });
+  });
+})();
+</script>
+
+<!-- STUDENTS -->
+<section class="section" id="students">
+  <div class="wrap">
+    <div class="section-tag">Student spotlights</div>
+    <h2 class="section-h">Real people, <em>real outcomes</em></h2>
+    <div class="students-grid">
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/nishant.jpg" alt="Nishant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">N</div>
+          </div>
+        </div>
+        <div class="sc-name">Nishant</div>
+        <div class="sc-role">Placed as <strong>Associate Director — NTT Data</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Ex-EY Singapore Assistant Director, passionate about technology and high-growth startups.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">EY</div>
+          <div class="sc-chip">ANZ</div>
+          <div class="sc-chip">SMU</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">NTT Data</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/rakesh.jpg" alt="Rakesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">R</div>
+          </div>
+        </div>
+        <div class="sc-name">Rakesh</div>
+        <div class="sc-role">Placed as <strong>Director — Ascendion</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Ex-IBM, IIM Ahmedabad — goal to break into high-growing lean companies in tech roles.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">IBM</div>
+          <div class="sc-chip">IIMA</div>
+          <div class="sc-chip">Zeta</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">Ascendion</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/shweta.jpg" alt="Shweta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
+        </div>
+        <div class="sc-name">Shweta</div>
+        <div class="sc-role">Placed as <strong>Product Lead — NeuIQ</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Ex-JPMorgan Chase & DBS. Built a D2C fashion brand, then pivoted to Product Lead at a fast-growing tech company.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">JPMorgan</div>
+          <div class="sc-chip">DBS</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">NeuIQ</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/manikanta.jpg" alt="Manikanta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">M</div>
+          </div>
+        </div>
+        <div class="sc-name">Manikanta</div>
+        <div class="sc-role">Placed as <strong>Data Science Lead — Meesho</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Started at TCS, pursued a Master's at Northwestern. Deeply passionate about leveraging data to drive real business impact.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">TCS</div>
+          <div class="sc-chip">Northwestern</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">Meesho</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/sai-kiran.jpg" alt="Sai Kiran" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
+        </div>
+        <div class="sc-name">Sai Kiran</div>
+        <div class="sc-role">Placed as <strong>SWE — Synapx, London</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Built Voxen.ai, a vernacular language AI platform, before landing a Software Engineer role at London-based startup Synapx.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">Voxen.ai</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">Synapx</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/guliz.jpg" alt="Guliz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">G</div>
+          </div>
+        </div>
+        <div class="sc-name">Guliz</div>
+        <div class="sc-role">Placed as <strong>Growth Associate — Kavak</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Part of our NUS Singapore cohort. Building her career at the intersection of strategy and execution.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">NUS</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">Kavak</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/rahul.jpg" alt="Rahul" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">R</div>
+          </div>
+        </div>
+        <div class="sc-name">Rahul</div>
+        <div class="sc-role">Placed as <strong>SWE — TikTok</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Tech geek passionate about software engineering — built Kwip with us before moving into a software engineering role at TikTok.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">Kwip</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">TikTok</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/nishant-nahata.jpg" alt="Nishant Nahata" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">N</div>
+          </div>
+        </div>
+        <div class="sc-name">Nishant Nahata</div>
+        <div class="sc-role">Placed as <strong>Finance — FuturesFirst</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Finance enthusiast who spent time investing and day trading before moving into a finance role at FuturesFirst.</div>
+        <div class="sc-logos">
+          <div class="sc-chip-fire">FuturesFirst</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/yash-baldawa.jpg" alt="Yash Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">Y</div>
+          </div>
+        </div>
+        <div class="sc-name">Yash Baldawa</div>
+        <div class="sc-role">Promoted to <strong>SWE — Okta, NYC</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Already building at Okta when he joined the program — used it to drive his promotion into a Software Engineer role in NYC.</div>
+        <div class="sc-logos">
+          <div class="sc-chip-fire">Okta</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/shishir-bhatia.jpg" alt="Shishir Bhatia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">S</div>
+          </div>
+        </div>
+        <div class="sc-name">Shishir Bhatia</div>
+        <div class="sc-role">Placed as <strong>Associate — IMF, Malaysia</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Ex-PwC consultant who moved from Dubai to Singapore to Malaysia, landing as an Associate at the IMF.</div>
+        <div class="sc-logos">
+          <div class="sc-chip">PwC</div>
+          <div class="sc-arrow">→</div>
+          <div class="sc-chip-fire">IMF</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/tanush-sheshadri.jpg" alt="Tanush Sheshadri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">T</div>
+          </div>
+        </div>
+        <div class="sc-name">Tanush Sheshadri</div>
+        <div class="sc-role">Promoted to <strong>SW Engineer — Micron</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Already building at Micron when he joined the program — used it to drive his promotion to Software Engineer.</div>
+        <div class="sc-logos">
+          <div class="sc-chip-fire">Micron</div>
+        </div>
+      </div>
+
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-tag">Student Feature</div>
+          <div class="sc-avatar">
+            <img src="../images/puja-baldawa.jpg" alt="Puja Baldawa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="sc-avatar-placeholder" style="display:none">P</div>
+          </div>
+        </div>
+        <div class="sc-name">Puja Baldawa</div>
+        <div class="sc-role">Placed as <strong>Growth Manager — myGate</strong></div>
+        <div class="sc-divider"></div>
+        <div class="sc-bio">Fresh graduate who upskilled with us, started as an intern at myGate, and was promoted to Growth Manager in under a year.</div>
+        <div class="sc-logos">
+          <div class="sc-chip-fire">myGate</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAREER SUPPORT -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-tag">Career support</div>
+    <h2 class="section-h">We don't stop <em>at the curriculum</em></h2>
+    <div class="cs-grid">
+
+      <div class="cs-card">
+        <div class="cs-num">01</div>
+        <div class="cs-icon">🤖</div>
+        <div class="cs-title">AI application agent</div>
+        <div class="cs-desc">An AI agent personalises and submits applications on your behalf — working even while you're not. Every application tailored to the role, sent at scale.</div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-num">02</div>
+        <div class="cs-icon">🤝</div>
+        <div class="cs-title">Personal job seeker buddy</div>
+        <div class="cs-desc">A dedicated person paired with you throughout your search — keeping you accountable, unblocking you, and checking in until you're placed.</div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-num">03</div>
+        <div class="cs-icon">📄</div>
+        <div class="cs-title">Resume &amp; interview prep</div>
+        <div class="cs-desc">Hands-on resume reviews and mock interviews with real feedback — so you walk into every conversation prepared, not guessing.</div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-num">04</div>
+        <div class="cs-icon">🔥</div>
+        <div class="cs-title">Warm referrals &amp; guaranteed interviews</div>
+        <div class="cs-desc">Skip the cold application pile. Warm introductions through our hiring partners, with guaranteed interviews built into the network.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden;
+    border-radius:14px}
+  .cs-card{background:var(--ink);padding:36px;display:flex;flex-direction:column;
+    gap:6px;transition:background .25s}
+  .cs-card:hover{background:color-mix(in oklab,var(--ink) 88%,var(--fire) 6%)}
+  .cs-num{font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--fire);opacity:.65;margin-bottom:4px}
+  .cs-icon{font-size:28px;margin-bottom:6px;line-height:1}
+  .cs-title{font-family:'Instrument Serif',Georgia,serif;font-style:italic;
+    font-size:22px;letter-spacing:-0.005em;color:var(--paper);margin-bottom:8px}
+  .cs-desc{font-family:var(--sans);font-size:14.5px;
+    line-height:1.65;color:rgba(245,238,216,0.78)}
+  @media(max-width:768px){
+    .cs-grid{grid-template-columns:1fr}
+  }
+</style>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="section-tag">Ready to start?</div>
+    <h2 class="cta-h">Master the fundamentals.<br/>Land your <em>dream role.</em><br/>Either way, you win.</h2>
+    <p class="cta-sub">Applications for Cohort '26 are open. Join 20+ professionals who chose to back themselves — with a safety net.</p>
+    <a href="https://www.launchpilotschool.com/mentogram-school-of-finance/" class="btn-fire">Apply Now →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand">Mento<i>gram</i></div>
+  <div class="foot-copy">© 2025 Mentogram School of Finance</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+const ctx = document.getElementById('pieChart').getContext('2d');
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Product Management','Strategy & Consulting','Growth & BD','Data & Analytics','Engineering Leadership'],
+    datasets: [{
+      data: [32,24,20,14,10],
+      backgroundColor: [
+        'oklch(0.74 0.19 250)',
+        'oklch(0.55 0.1 200)',
+        'oklch(0.62 0.12 280)',
+        'oklch(0.65 0.14 155)',
+        'oklch(0.78 0.14 75)'
+      ],
+      borderColor: 'oklch(0.12 0.013 55)',
+      borderWidth: 3,
+      hoverOffset: 6
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: { label: c => ` ${c.label}: ${c.raw}%` },
+        backgroundColor: 'oklch(0.18 0.013 55)',
+        padding: 12,
+        titleFont: { family: 'Inter Tight', size: 13 },
+        bodyFont: { family: 'JetBrains Mono', size: 11 }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
