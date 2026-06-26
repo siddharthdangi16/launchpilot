@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Student Stories: Real Founders, Real Companies | LaunchPilot</title>
+<meta name="description" content="Real students who built real companies through LaunchPilot — their backgrounds, what they're building, and the traction they've found along the way.">
+<link rel="canonical" href="https://www.launchpilotschool.com/student-stories/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaunchPilot School of Business">
+<meta property="og:title" content="Student Stories: Real Founders, Real Companies">
+<meta property="og:description" content="Real students who built real companies through LaunchPilot — their backgrounds, what they're building, and the traction they've found.">
+<meta property="og:url" content="https://www.launchpilotschool.com/student-stories/">
+<meta property="og:image" content="https://www.launchpilotschool.com/images/og-image.png">
+<meta property="og:locale" content="en_SG">
+
+<link rel="icon" type="image/svg+xml" href="https://www.launchpilotschool.com/favicon.svg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Student Stories: Real Founders, Real Companies">
+<meta name="twitter:description" content="Real students who built real companies through LaunchPilot.">
+
+<!-- Indexing -->
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:oklch(0.12 0.013 55);
+  --ink-2:oklch(0.18 0.013 55);
+  --paper:oklch(0.97 0.01 75);
+  --fire:oklch(0.74 0.19 42);
+  --fire-2:oklch(0.66 0.21 35);
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --sans:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
+}
+html,body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+  font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.rule{height:.5px;background:rgba(245,238,216,0.08)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;
+  border-bottom:.5px solid rgba(245,238,216,0.12);
+  background:color-mix(in oklab,oklch(0.07 0.012 55) 90%,transparent);
+  backdrop-filter:blur(20px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 48px;max-width:1440px;margin:0 auto}
+.brand-w{font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.brand-w i{font-style:italic;font-weight:400}
+.nav-ul{display:flex;gap:28px;list-style:none;font-family:var(--mono);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.nav-ul a{opacity:.55;transition:opacity .2s,color .2s}
+.nav-ul a:hover{opacity:1;color:var(--fire)}
+.nav-apply{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 22px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-apply:hover{background:var(--fire-2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{padding:152px 0 80px;position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 72% 38%, oklch(0.25 0.07 45 / .16) 0%, transparent 52%),
+             radial-gradient(ellipse at 18% 82%, oklch(0.20 0.03 260 / .08) 0%, transparent 45%)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fire);padding:8px 16px;border-radius:100px;
+  border:.5px solid color-mix(in oklab,var(--fire) 28%,transparent);
+  background:color-mix(in oklab,var(--fire) 6%,transparent);margin-bottom:28px}
+.hero-badge span.dot{width:6px;height:6px;border-radius:50%;background:var(--fire);
+  animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,7.5vw,118px);
+  letter-spacing:-0.025em;line-height:.92;margin-bottom:0}
+.hero h1 em{font-style:italic;color:var(--fire)}
+.hero-divider{width:100%;height:.5px;background:rgba(245,238,216,0.1);margin:36px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.hero-lede{font-family:var(--serif);font-size:21px;line-height:1.4;
+  letter-spacing:-0.005em;color:rgba(245,238,216,0.88);max-width:40ch;margin-bottom:28px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 14px;border-radius:100px;border:.5px solid rgba(245,238,216,0.28);
+  color:rgba(245,238,216,0.82);background:rgba(245,238,216,0.04)}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-fire{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;background:var(--fire);color:var(--ink);
+  font-weight:500;transition:background .2s,transform .15s;display:inline-block}
+.btn-fire:hover{background:var(--fire-2);transform:translateY(-1px)}
+.btn-outline{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 28px;border-radius:100px;border:.5px solid rgba(245,238,216,0.2);
+  color:rgba(245,238,216,0.74);transition:border-color .2s,color .2s;display:inline-block}
+.btn-outline:hover{border-color:rgba(245,238,216,0.70);color:var(--paper)}
+.hero-nums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);border-radius:2px;overflow:hidden}
+.h-num{background:var(--ink);padding:28px 24px;display:flex;flex-direction:column;gap:6px}
+.h-num-v{font-family:var(--serif);font-size:40px;font-style:italic;
+  letter-spacing:-0.025em;line-height:1;color:var(--fire)}
+.h-num-l{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.70);line-height:1.5}
+
+/* ── ACCREDITATION ── */
+.accred-bar{border-top:.5px solid rgba(245,238,216,0.08);border-bottom:.5px solid rgba(245,238,216,0.08);
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));padding:22px 48px}
+.accred-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.accred-tag{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(245,238,216,0.78);white-space:nowrap;flex-shrink:0}
+.accred-sep{width:.5px;height:28px;background:rgba(245,238,216,0.1)}
+.accred-item{display:flex;flex-direction:column;gap:3px;align-items:center}
+.accred-name{font-family:var(--serif);font-size:16px;font-style:italic;
+  color:rgba(245,238,216,0.75);white-space:nowrap}
+.accred-sub{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(245,238,216,0.78);white-space:nowrap}
+
+/* ── HIGHLIGHTS ── */
+.hl-row{display:flex;align-items:stretch;border-bottom:.5px solid rgba(245,238,216,0.08)}
+.hl{flex:1;padding:32px 28px;border-right:.5px solid rgba(245,238,216,0.08);
+  display:flex;flex-direction:column;gap:10px;transition:background .25s}
+.hl:last-child{border-right:0}
+.hl:hover{background:color-mix(in oklab,var(--paper) 3%,var(--ink))}
+.hl-num{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--fire);
+  opacity:.7;margin-bottom:10px}
+.hl-t{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper)}
+.hl-d{font-family:var(--sans);font-size:14px;line-height:1.65;color:rgba(245,238,216,0.78)}
+
+/* ── STATS STRIP ── */
+.stats-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;
+  background:rgba(245,238,216,0.08)}
+.ss{background:var(--ink);padding:32px 20px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.ss-v{font-family:var(--serif);font-size:36px;font-style:italic;
+  letter-spacing:-0.02em;line-height:1;color:var(--paper)}
+.ss-l{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.74);line-height:1.5}
+
+/* ── SHARED SECTION STYLES ── */
+section{padding:96px 0}
+.sec-l{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(245,238,216,0.74);display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.sec-l::after{content:"";flex:1;height:.5px;background:rgba(245,238,216,0.08)}
+.sec-h{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.5vw,64px);
+  letter-spacing:-0.022em;line-height:.97;margin-bottom:14px}
+.sec-h em{font-style:italic;color:var(--fire)}
+.sec-sub{font-family:var(--sans);font-size:15px;line-height:1.7;
+  color:rgba(245,238,216,0.72);max-width:54ch}
+.dark-sec{background:color-mix(in oklab,var(--paper) 2%,var(--ink));
+  border-top:.5px solid rgba(245,238,216,0.06);border-bottom:.5px solid rgba(245,238,216,0.06)}
+
+    /* COHORT placeholder strip */
+  .cohort{display:grid;grid-template-columns:repeat(6, 1fr);gap:8px;margin-top:64px}
+  .cohort .ph{aspect-ratio:3/4;border-radius:6px;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    display:flex;align-items:flex-end;padding:10px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)}
+
+/* ── WHO IS IT FOR ── */
+.for-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden}
+.for-card{background:var(--ink);padding:40px;transition:background .25s}
+.for-card:hover{background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.for-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:14px}
+.for-t{font-family:var(--serif);font-size:24px;font-style:italic;
+  letter-spacing:-0.01em;color:var(--paper);margin-bottom:10px}
+.for-d{font-family:var(--sans);font-size:14.5px;line-height:1.7;color:rgba(245,238,216,0.7)}
+
+ /* COHORT — horizontal scrolling marquee */
+  .cohort-sec{padding:48px 0 32px}
+  .cohort-strip{position:relative;overflow:hidden;margin-top:48px;display:flex;flex-direction:column;gap:14px}
+  .cohort-strip::before,.cohort-strip::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+  .cohort-strip::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+  .cohort-strip::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+  .cohort-track{display:flex;gap:14px;width:max-content}
+  .cohort-track.fwd{animation:cohort-fwd 42s linear infinite}
+  .cohort-track.rev{animation:cohort-rev 48s linear infinite}
+  .cohort-track:hover{animation-play-state:paused}
+  @keyframes cohort-fwd{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes cohort-rev{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  .cohort-card{flex:0 0 auto;width:480px;height:320px;border-radius:12px;overflow:hidden;
+    position:relative;cursor:pointer;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
+    transition:border-color .35s, transform .35s}
+  .cohort-card:hover{border-color:color-mix(in oklab, var(--fire) 60%, transparent);transform:scale(1.02)}
+  .cohort-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(12%);transition:filter .4s, transform .6s cubic-bezier(.2,.7,.2,1)}
+  .cohort-card:hover img{filter:grayscale(0%);transform:scale(1.04)}
+  .cohort-card::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.65));pointer-events:none}
+  .cohort-card .cap{position:absolute;left:18px;bottom:16px;z-index:1;
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .cohort-card .cap b{display:block;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;
+    font-weight:400;font-style:italic;text-transform:none;letter-spacing:-0.01em;margin-bottom:3px}
+  /* placeholder inner SVG */
+  .cohort-card .ph-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 35%, transparent)}
+  .mentor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+  .mentor{display:flex;flex-direction:column;gap:12px;cursor:pointer}
+  .mentor .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden;position:relative;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+    border:.5px solid color-mix(in oklab, var(--paper) 12%, transparent);
+    transition:border-color .3s ease, transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s}
+  .mentor:hover .ph{
+    border-color:color-mix(in oklab, var(--fire) 55%, transparent);
+    transform:translateY(-6px);
+    box-shadow:0 20px 48px -12px color-mix(in oklab, var(--fire) 30%, transparent), 0 4px 16px rgba(0,0,0,.4)}
+  .mentor .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+    filter:grayscale(20%);transition:filter .4s ease, transform .5s cubic-bezier(.2,.7,.2,1)}
+  .mentor:hover .ph img{filter:grayscale(0%);transform:scale(1.05)}
+  .mentor .ph::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.55));
+    pointer-events:none;opacity:0;transition:opacity .35s}
+  .mentor:hover .ph::after{opacity:1}
+  .mentor .ph .ph-tag{position:absolute;left:10px;bottom:10px;font-family:var(--mono);
+    font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 60%, var(--ink) 40%);pointer-events:none}
+  .mentor:has(img) .ph-tag{display:none}
+  .mentor .nm{font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;line-height:1.05;
+    transition:color .25s}
+  .mentor:hover .nm{color:var(--fire)}
+  .mentor .nm i{font-style:italic}
+  .mentor .role{font-size:12.5px;line-height:1.45;
+    color:color-mix(in oklab, var(--paper) 70%, var(--ink) 30%)}
+  .mentor .role b{font-weight:500;color:var(--paper)}
+
+/* ── CURRICULUM ── */
+.cur-list{margin-top:48px;display:flex;flex-direction:column;gap:1px;
+  background:rgba(245,238,216,0.08)}
+.mod{background:var(--ink);overflow:hidden;transition:background .25s}
+.mod.open{background:color-mix(in oklab,var(--ink) 91%,var(--fire) 5%)}
+.mod-hd{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;
+  padding:26px 36px;cursor:pointer;user-select:none}
+.mod-n{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire)}
+.mod-t{font-family:var(--serif);font-size:21px;font-style:italic;letter-spacing:-0.005em;color:var(--paper)}
+.mod-a{font-size:11px;color:rgba(245,238,216,0.70);transition:transform .3s;flex-shrink:0}
+.mod.open .mod-a{transform:rotate(180deg)}
+.mod-bd{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.mod.open .mod-bd{max-height:900px}
+.mod-in{padding:4px 36px 36px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.mod-pts{display:flex;flex-direction:column;gap:10px}
+.mod-pt{font-family:var(--sans);font-size:15px;line-height:1.6;
+  color:rgba(245,238,216,0.8);display:flex;gap:12px;align-items:flex-start}
+.mod-pt::before{content:"→";color:var(--fire);flex-shrink:0;font-size:11px;margin-top:3px}
+.mod-boot{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.70);margin-top:16px;padding-top:16px;
+  border-top:.5px solid rgba(245,238,216,0.07)}
+.mod-proj{background:color-mix(in oklab,var(--fire) 7%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 20%,transparent);
+  border-radius:10px;padding:20px;align-self:start}
+.mod-pl{font-family:var(--mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:8px}
+.mod-pt2{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--paper);line-height:1.4}
+
+/* ── SIGNATURE ELEMENTS ── */
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.sig{padding:22px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);transition:border-color .25s}
+.sig:hover{border-color:color-mix(in oklab,var(--fire) 30%,transparent)}
+.sig-tag{font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:8px}
+.sig-text{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--paper);line-height:1.35}
+
+/* ── AI TOOLS ── */
+.ai-benefit-bar{margin-top:48px;padding:28px 32px;border-radius:12px;
+  background:color-mix(in oklab,var(--fire) 7%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);
+  display:flex;align-items:center;gap:24px}
+.ai-val{font-family:var(--serif);font-size:52px;font-style:italic;
+  letter-spacing:-0.025em;color:var(--fire);line-height:1;flex-shrink:0}
+.ai-text{font-family:var(--sans);font-size:15px;line-height:1.65;color:rgba(245,238,216,0.78)}
+.ai-text strong{color:var(--paper);font-weight:500}
+.ai-cat{padding:22px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);transition:border-color .25s}
+.ai-cat:hover{border-color:color-mix(in oklab,var(--fire) 28%,transparent)}
+.ai-cat-t{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:12px}
+.ai-tool{font-family:var(--sans);font-size:14px;color:rgba(245,238,216,0.72);
+  padding:5px 0;border-bottom:.5px solid rgba(245,238,216,0.06);
+  display:flex;align-items:center;gap:8px}
+.ai-tool:last-child{border-bottom:0}
+.ai-tool::before{content:"⚡";font-size:10px;flex-shrink:0}
+
+/* ── MAP / IMMERSIONS ── */
+.map-box{background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border-radius:16px;overflow:hidden;margin-top:48px;
+  border:.5px solid rgba(245,238,216,0.08)}
+.map-svg-wrap{position:relative;width:100%;padding-top:50%}
+.map-svg-wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.city-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(245,238,216,0.08)}
+.city-tab{background:var(--ink);padding:24px 22px;cursor:pointer;transition:background .25s}
+.city-tab.active,.city-tab:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 9%)}
+.city-code{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:5px}
+.city-nm{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);margin-bottom:4px}
+.city-focus{font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.74)}
+
+/* ── MENTORS ── */
+.m-strip{position:relative;overflow:hidden;margin-top:48px}
+.m-fade-l,.m-fade-r{position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.m-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.m-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.m-track{display:flex;gap:16px;width:max-content;animation:m-scroll 40s linear infinite}
+.m-track:hover{animation-play-state:paused}
+@keyframes m-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes m-scroll-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.m-card{flex:0 0 auto;padding:14px 18px;border-radius:10px;
+  background:color-mix(in oklab,var(--paper) 5%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;align-items:center;gap:14px;transition:border-color .25s}
+.m-card:hover{border-color:color-mix(in oklab,var(--fire) 38%,transparent)}
+.m-ph{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px);
+  border:.5px solid rgba(245,238,216,0.14)}
+.m-ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.m-nm{font-family:var(--serif);font-size:18px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);white-space:nowrap}
+.m-role{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(245,238,216,0.75);white-space:nowrap;max-width:240px;
+  overflow:hidden;text-overflow:ellipsis}
+
+/* ── STUDENT LAUNCHES ── */
+.launches{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);margin-top:48px;overflow:hidden}
+.lcard{background:var(--ink);padding:24px;display:flex;flex-direction:column;
+  gap:12px;aspect-ratio:1/1;justify-content:space-between;
+  position:relative;overflow:hidden;transition:background .3s,transform .3s}
+.lcard:hover{background:color-mix(in oklab,var(--ink) 84%,var(--fire) 10%);
+  transform:translateY(-3px);z-index:1}
+.lcard::before{content:"";position:absolute;inset:0;opacity:0;
+  background:color-mix(in oklab,var(--fire) 5%,transparent);transition:opacity .3s}
+.lcard:hover::before{opacity:1}
+.lbadge{font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--fire)}
+.lph{width:52px;height:52px;border-radius:8px;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(45deg,rgba(245,238,216,0.08) 0 5px,rgba(245,238,216,0.03) 5px 10px);
+  border:.5px solid rgba(245,238,216,0.12)}
+.lph img{width:100%;height:100%;object-fit:cover}
+.lnm{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.01em;line-height:1.15;color:var(--paper)}
+.lby{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(245,238,216,0.78)}
+.lraised{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(245,238,216,0.74);border-top:.5px solid rgba(245,238,216,0.08);
+  padding-top:10px;margin-top:auto}
+
+/* ── GALLERY ── */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;
+  gap:8px;margin-top:48px;border-radius:12px;overflow:hidden}
+.g-box{background:repeating-linear-gradient(135deg,
+  rgba(245,238,216,0.07) 0,rgba(245,238,216,0.07) 1.5px,
+  rgba(245,238,216,0.02) 1.5px,rgba(245,238,216,0.02) 10px);
+  background-color:rgba(245,238,216,0.65);
+  border:.5px solid rgba(245,238,216,0.07);
+  overflow:hidden;position:relative}
+.g-box img{width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(10%);transition:filter .4s,transform .5s}
+.g-box:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.g-box.tall{grid-row:span 2}
+
+.g-lbl{position:absolute;bottom:12px;left:14px;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.74)}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.testi{padding:36px;border-radius:14px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;flex-direction:column;gap:20px;transition:border-color .25s}
+.testi:hover{border-color:color-mix(in oklab,var(--fire) 28%,transparent)}
+.testi-q{font-family:var(--serif);font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;line-height:1.5;color:var(--paper);flex:1;position:relative;padding-top:14px}
+.testi-q::before{content:"\201C";position:absolute;top:-10px;left:-4px;
+  font-size:52px;line-height:1;color:var(--fire);opacity:.45;font-family:var(--serif)}
+.testi-auth{display:flex;align-items:center;gap:14px}
+.testi-av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px);
+  border:.5px solid rgba(245,238,216,0.14)}
+.testi-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.testi-nm{font-family:var(--serif);font-size:16px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper)}
+.testi-rl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(245,238,216,0.75)}
+
+/* ── OUTCOMES ── */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(245,238,216,0.08);overflow:hidden;margin-top:48px}
+.oc{background:var(--ink);padding:40px 32px;display:flex;flex-direction:column;gap:8px}
+.oc-n{font-family:var(--serif);font-size:52px;font-style:italic;
+  letter-spacing:-0.03em;line-height:1;color:var(--fire)}
+.oc-l{font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(245,238,216,0.78);line-height:1.6}
+
+/* ── CTA ── */
+.cta-sec{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%, oklch(0.22 0.06 45 / .09) 0%, transparent 58%)}
+.cta-sec h2{font-family:var(--serif);font-weight:400;
+  font-size:clamp(44px,6.5vw,96px);letter-spacing:-0.025em;line-height:.93;margin-bottom:24px}
+.cta-sec h2 em{font-style:italic;color:var(--fire)}
+.cta-sec p{font-family:var(--sans);font-size:17px;color:rgba(245,238,216,0.7);
+  max-width:46ch;margin:0 auto 40px;line-height:1.65}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.cta-facts{display:flex;align-items:center;justify-content:center;gap:32px;
+  margin-top:48px;flex-wrap:wrap}
+.cf{text-align:center}
+.cf-v{font-family:var(--serif);font-size:26px;font-style:italic;letter-spacing:-0.015em;color:var(--paper)}
+.cf-l{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(245,238,216,0.74);margin-top:4px}
+.cf-div{width:.5px;height:32px;background:rgba(245,238,216,0.1)}
+
+/* ── FOOTER ── */
+footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.f-brand{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--paper)}
+.f-brand em{color:var(--fire)}
+.f-links{display:flex;gap:24px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.74)}
+.f-links a:hover{color:var(--fire)}
+.f-copy{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(245,238,216,0.70)}
+
+/* ── JOURNEY ── */
+.journey-wrap{margin-top:48px}
+.journey-track{display:flex;align-items:stretch;overflow-x:auto;padding-bottom:4px}
+.j-step{flex:1;min-width:130px;display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:10px;padding:32px 14px 28px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  transition:border-color .25s,background .25s}
+.j-step:hover{border-color:color-mix(in oklab,var(--fire) 35%,transparent);
+  background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.j-step-last{background:color-mix(in oklab,var(--fire) 8%,transparent)!important;
+  border-color:color-mix(in oklab,var(--fire) 30%,transparent)!important}
+.j-arrow{flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  width:28px;color:var(--fire);opacity:.4;font-size:16px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border-top:.5px solid rgba(245,238,216,0.1);
+  border-bottom:.5px solid rgba(245,238,216,0.1)}
+.j-num{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire)}
+.j-icon{font-size:24px;line-height:1}
+.j-title{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:20px;font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.15}
+.j-desc{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,238,216,0.70);line-height:1.6}
+.j-bar{height:2px;background:rgba(245,238,216,0.06);margin-top:24px;overflow:hidden}
+.j-bar-fill{height:100%;width:100%;
+  background:linear-gradient(90deg,var(--fire) 0%,color-mix(in oklab,var(--fire) 20%,transparent) 100%)}
+.j-note{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:18px;font-style:italic;letter-spacing:-0.005em;
+  color:rgba(245,238,216,0.70);text-align:center;
+  margin-top:24px;max-width:58ch;margin-left:auto;margin-right:auto;line-height:1.55}
+
+/* ── LAUNCHLABS ── */
+.labs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.lab-card{padding:32px;border-radius:12px;
+  background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.lab-card:hover{border-color:color-mix(in oklab,var(--fire) 40%,transparent);transform:translateY(-4px)}
+.lab-icon{font-size:24px;margin-bottom:16px;display:block;line-height:1}
+.lab-tag{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:8px}
+.lab-title{font-family:"Instrument Serif","Times New Roman",Georgia,serif;
+  font-size:22px;font-style:italic;letter-spacing:-0.005em;
+  color:var(--paper);margin-bottom:10px;line-height:1.2}
+.lab-desc{font-family:"Inter Tight",ui-sans-serif,system-ui,sans-serif;
+  font-size:14px;line-height:1.7;color:rgba(245,238,216,0.74)}
+
+/* ── ANIMATED JOURNEY ── */
+.anim-journey{overflow-x:auto;padding:48px 48px 56px;
+  background:color-mix(in oklab,var(--paper) 2%,var(--ink))}
+.aj-track{display:flex;align-items:flex-start;min-width:max-content;gap:0}
+.aj-step{display:flex;flex-direction:column;align-items:center;gap:14px;
+  opacity:.28;transition:opacity .5s ease,transform .5s ease;
+  transform:translateY(8px);flex-shrink:0;width:140px}
+.aj-step.active{opacity:1;transform:translateY(0)}
+.aj-step.done{opacity:.7;transform:translateY(0)}
+.aj-step.aj-final.active .aj-dot{background:var(--fire);box-shadow:0 0 0 4px color-mix(in oklab,var(--fire) 25%,transparent),0 0 24px color-mix(in oklab,var(--fire) 40%,transparent)}
+.aj-dot{width:20px;height:20px;border-radius:50%;
+  background:rgba(245,238,216,0.2);border:2px solid rgba(245,238,216,0.2);
+  flex-shrink:0;transition:background .5s,border-color .5s,box-shadow .5s;position:relative;z-index:1}
+.aj-step.done .aj-dot{background:var(--fire);border-color:var(--fire)}
+.aj-step.active .aj-dot{background:white;border-color:white;
+  box-shadow:0 0 0 4px rgba(255,255,255,0.15),0 0 20px rgba(255,255,255,0.2)}
+.aj-content{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.aj-num{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--fire)}
+.aj-title{font-family:"Instrument Serif",Georgia,serif;font-size:19px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);line-height:1.1}
+.aj-desc{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(245,238,216,0.70);line-height:1.7}
+.aj-line{flex-shrink:0;width:60px;height:1px;background:rgba(245,238,216,0.1);
+  align-self:flex-start;margin-top:10px;position:relative;overflow:hidden}
+.aj-line::after{content:"";position:absolute;inset:0;
+  background:var(--fire);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s ease}
+.aj-line.lit::after{transform:scaleX(1)}
+
+/* ── MOBILE ── */
+
+/* ── Hamburger ── */
+@media(max-width:768px){
+  #hamburger{display:flex!important}
+}
+
+/* ═══════════════════════════════════════
+   LAPTOP (1100px and below)
+═══════════════════════════════════════ */
+@media(max-width:1100px){
+  .hl-row{flex-wrap:wrap}
+  .hl{min-width:calc(33.333% - 1px)}
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .hero h1{font-size:clamp(52px,7vw,96px)}
+  .ai-grid{grid-template-columns:repeat(2,1fr)}
+  .oc-grid{grid-template-columns:repeat(2,1fr)}
+  .ll-row{padding:22px 28px}
+  .ll-row-name{font-size:19px}
+  .ll-row-right{padding-left:24px}
+}
+
+/* ═══════════════════════════════════════
+   TABLET (900px and below)
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-nums{grid-template-columns:repeat(2,1fr)}
+  .mod-in{grid-template-columns:1fr}
+  .city-row{grid-template-columns:repeat(2,1fr)}
+  .immersion-grid{grid-template-columns:repeat(2,1fr)!important}
+  .testi-grid{grid-template-columns:1fr}
+  .ll-row{grid-template-columns:1fr;gap:12px}
+  .ll-row-right{padding-left:0;border-left:0;border-top:.5px solid rgba(245,238,216,0.08);padding-top:12px}
+  .ll-row-left{padding-bottom:0}
+  section[style*="grid-template-columns:1fr 1fr"]{--fix:1}
+}
+
+/* ═══════════════════════════════════════
+   MOBILE (768px and below)
+═══════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── Global ── */
+  .wrap,.nav-inner,footer{padding-left:20px;padding-right:20px}
+  section{padding:64px 0}
+
+  /* ── Nav ── */
+  .nav-ul{display:none}
+  .nav-inner{padding-left:20px;padding-right:20px}
+
+  /* ── Hero ── */
+  .hero{min-height:auto;padding:96px 0 52px}
+  .hero h1{font-size:clamp(40px,11vw,72px)}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-nums{grid-template-columns:repeat(2,1fr)}
+  .hero-pills{gap:6px}
+  .pill{font-size:8px;padding:5px 10px}
+  .hero-ctas{flex-direction:column;align-items:flex-start;gap:10px}
+  .founders-split{grid-template-columns:1fr!important}
+
+  /* ── Accreditation bar ── */
+  .accred-bar{padding:20px}
+  .accred-inner{flex-direction:column;gap:12px;align-items:flex-start}
+  .accred-logos{gap:16px;flex-wrap:wrap}
+
+  /* ── Highlights ── */
+  .hl-row{flex-direction:column}
+  .hl{border-right:0;border-bottom:.5px solid rgba(245,238,216,0.08)}
+
+  /* ── Stats strip ── */
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .ss-v{font-size:26px}
+
+  /* ── Curriculum ── */
+  .mod-hd{grid-template-columns:56px 1fr auto;padding:18px 20px;gap:12px}
+  .mod-in{grid-template-columns:1fr;padding:4px 20px 24px}
+  .mod-t{font-size:17px}
+  .sig-grid{grid-template-columns:1fr 1fr;gap:10px}
+
+  /* ── Mentors ── */
+  .m-strip{margin-top:32px}
+  .m-card{padding:12px 16px;gap:10px}
+  .m-ph{width:36px;height:36px}
+  .m-nm{font-size:14px}
+
+  /* ── 1:1 mentoring grid ── */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* ── City map ── */
+  .city-row{grid-template-columns:1fr 1fr}
+  .map-svg-wrap{padding-top:70%}
+  .city-tab{padding:16px 14px}
+  .city-nm{font-size:16px}
+  .city-code{font-size:8px}
+
+  /* ── AI tools ── */
+  .ai-benefit-bar{flex-direction:column;gap:12px;align-items:flex-start}
+  .ai-val{font-size:40px}
+  .ai-grid{grid-template-columns:1fr 1fr}
+
+  /* ── LaunchLabs ── */
+  .ll-row{grid-template-columns:1fr;gap:12px;padding:20px}
+  .ll-row-right{padding-left:0;border-left:0;
+    border-top:.5px solid rgba(245,238,216,0.08);padding-top:12px}
+  .ll-row-tag{display:none}
+  .ll-row-name{font-size:19px}
+  .ll-row-num{display:none}
+
+  /* ── Sunday sessions ── */
+  .sun-tab{padding:16px 6px}
+  .sun-tab-icon,#sun-tabs .sun-tab > div:first-child{font-size:18px}
+  #sun-detail{grid-template-columns:60px 1fr;padding:24px 20px}
+  #sun-num{font-size:52px}
+  #sun-title{font-size:22px}
+
+  /* ── Student launches ── */
+  .lcard{min-height:200px}
+
+  /* ── Animated journey ── */
+  #journey-steps{overflow-x:auto;gap:0;padding-bottom:8px}
+  .jx-step{min-width:100px}
+  #journey-detail{grid-template-columns:60px 1fr;padding:20px;gap:16px}
+  #jd-num{font-size:40px}
+  #jd-title{font-size:20px}
+  #journey-detail > div > div:last-child{font-size:13px}
+  [style*="position:relative;padding:0 48px"]{padding:0 20px!important}
+  [style*="top:28px;left:48px;right:48px"]{left:20px!important;right:20px!important}
+
+  /* ── Photo gallery ── */
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
+  .g-box.tall{grid-row:span 1}
+
+  /* ── Immersion grid ── */
+  .immersion-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .immersion-grid > div{aspect-ratio:16/9!important}
+  .immersion-note{grid-template-columns:1fr!important}
+
+  /* ── Testimonials ── */
+  .testi-card{flex:0 0 290px}
+
+  /* ── Outcomes ── */
+  .oc-grid{grid-template-columns:1fr 1fr}
+  .oc-n{font-size:40px}
+
+  /* ── Accreditation degree ── */
+  .accred-bar .accred-inner{flex-direction:column}
+
+  /* ── Pricing ── */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* ── CTA ── */
+  .cta-sec h2{font-size:clamp(36px,10vw,72px)}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-facts{gap:16px}
+  .cf-div{display:none}
+
+  /* ── Footer ── */
+  footer{flex-direction:column;gap:16px;align-items:flex-start;padding:28px 20px}
+  .f-links{flex-wrap:wrap;gap:16px}
+}
+
+/* ═══════════════════════════════════════
+   SMALL MOBILE (480px and below)
+═══════════════════════════════════════ */
+@media(max-width:480px){
+  .hero h1{font-size:clamp(36px,12vw,56px)}
+  .hero-lede{font-size:17px}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .ai-grid{grid-template-columns:1fr}
+  .city-row{grid-template-columns:1fr}
+  .sig-grid{grid-template-columns:1fr}
+  .hl-row .hl-t{font-size:16px}
+  .sec-h{font-size:clamp(30px,9vw,48px)}
+  .oc-grid{grid-template-columns:1fr}
+  .testi-card{flex:0 0 260px}
+  .mod-t{font-size:15px}
+  .hero-nums{grid-template-columns:1fr 1fr}
+  .h-num-v{font-size:32px}
+}
+
+/* ── LAUNCHLABS ROWS ── */
+.ll-row{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  padding:28px 36px;border-bottom:.5px solid rgba(245,238,216,0.08);
+  transition:background .2s;align-items:center;position:relative}
+.ll-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--fire);opacity:0;transition:opacity .2s}
+.ll-row:hover{background:color-mix(in oklab,var(--ink) 88%,var(--fire) 5%)}
+.ll-row:hover::before{opacity:1}
+.ll-row-left{display:flex;align-items:center;gap:20px}
+.ll-row-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--fire);opacity:.6;flex-shrink:0;width:24px}
+.ll-row-icon{font-size:22px;line-height:1;flex-shrink:0}
+.ll-row-name{font-family:"Instrument Serif",Georgia,serif;font-size:22px;font-style:italic;
+  letter-spacing:-0.005em;color:var(--paper);line-height:1.2}
+.ll-row-right{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-left:36px;border-left:.5px solid rgba(245,238,216,0.08)}
+.ll-row-desc{font-family:"Inter Tight",sans-serif;font-size:14px;line-height:1.7;
+  color:rgba(245,238,216,0.70);flex:1}
+.ll-row-tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fire);padding:6px 14px;border-radius:100px;
+  border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
+  white-space:nowrap;flex-shrink:0}
+
+/* ── LAUNCHLABS CARDS ── */
+.ll-card{background:var(--ink);padding:36px 28px;display:flex;flex-direction:column;gap:8px;
+  position:relative;transition:background .25s;min-height:160px}
+.ll-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--fire);opacity:0;transition:opacity .25s}
+.ll-card:hover{background:color-mix(in oklab,var(--ink) 86%,var(--fire) 6%)}
+.ll-card:hover::before{opacity:1}
+.ll-card-num{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--fire);opacity:.45;margin-bottom:4px}
+.ll-card-title{font-family:"Instrument Serif",Georgia,serif;font-size:30px;font-style:italic;
+  letter-spacing:-0.02em;color:var(--paper);line-height:1}
+.ll-card-sub{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.07em;
+  text-transform:uppercase;color:rgba(245,238,216,0.74);line-height:1.7;margin-top:2px}
+.ll-card-tag{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--fire);opacity:.55;
+  margin-top:auto;padding-top:14px;border-top:.5px solid rgba(245,238,216,0.07)}
+
+@media(max-width:768px){
+  .ll-card-grid{grid-template-columns:1fr 1fr!important}
+  .ll-card{padding:24px 20px;min-height:120px}
+  .ll-card-title{font-size:22px}
+}
+@media(max-width:480px){
+  .ll-card-grid{grid-template-columns:1fr!important}
+}
+
+
+.sun-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:20px 8px;cursor:pointer;transition:background .25s;
+  border-right:.5px solid rgba(245,238,216,0.08)}
+.sun-tab:last-child{border-right:0}
+.sun-tab:hover{background:color-mix(in oklab,var(--paper) 5%,var(--ink))}
+.sun-tab.active{background:color-mix(in oklab,var(--ink) 88%,var(--fire) 8%)}
+.sun-tab-icon{font-size:22px;line-height:1}
+.sun-tab-title{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.70);text-align:center;line-height:1.4}
+.sun-tab.active .sun-tab-title{color:var(--fire)}
+
+/* ── TESTIMONIALS STRIP ── */
+.testi-card{flex:0 0 360px;padding:32px;border-radius:14px;
+  background:color-mix(in oklab,var(--paper) 5%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;flex-direction:column;gap:20px;
+  transition:border-color .25s;flex-shrink:0}
+.testi-card:hover{border-color:color-mix(in oklab,var(--fire) 30%,transparent)}
+.testi-q-s{font-family:"Instrument Serif",Georgia,serif;font-size:18px;font-style:italic;
+  letter-spacing:-0.005em;line-height:1.55;color:var(--paper);flex:1;
+  position:relative;padding-top:12px}
+.testi-q-s::before{content:"\201C";position:absolute;top:-10px;left:-4px;
+  font-size:48px;line-height:1;color:var(--fire);opacity:.4;font-family:"Instrument Serif",Georgia,serif}
+.testi-foot{display:flex;align-items:center;gap:14px}
+.testi-av-s{width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;
+  flex-shrink:0;border:.5px solid rgba(245,238,216,0.15);
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px)}
+/* ── FAQ ── */
+.faq-item{background:var(--ink);transition:background .2s}
+.faq-item.open{background:color-mix(in oklab,var(--ink) 92%,var(--fire) 5%)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:24px 28px;cursor:pointer;user-select:none}
+.faq-q span:first-child{font-family:'Instrument Serif',Georgia,serif;font-size:19px;
+  font-style:italic;letter-spacing:-0.005em;color:var(--paper);line-height:1.3}
+.faq-icon{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--fire);
+  flex-shrink:0;transition:transform .3s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;
+  font-family:'Inter Tight',sans-serif;font-size:14px;line-height:1.75;
+  color:rgba(245,238,216,0.74);padding:0 28px}
+.faq-item.open .faq-a{max-height:300px;padding:0 28px 24px}
+
+/* ── Accreditation split mobile ── */
+@media(max-width:768px){
+  .accred-split{grid-template-columns:1fr!important;gap:32px!important}
+}
+
+/* ── AI COPILOT MOCKUP ── */
+.ai-mock{background:oklch(0.13 0.008 60);border:.5px solid rgba(245,238,216,0.12);
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 .5px rgba(245,238,216,0.04)}
+.ai-mock-bar{background:oklch(0.18 0.01 60);padding:12px 18px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:.5px solid rgba(245,238,216,0.08)}
+.ai-mock-dots{display:flex;gap:6px}
+.ai-mock-dot{width:10px;height:10px;border-radius:50%}
+.ai-mock-title{font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.74);margin:0 auto}
+.ai-mock-status{display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--fire)}
+.ai-mock-status::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--fire);animation:blink 2s ease-in-out infinite;display:block}
+.ai-chat{padding:24px;display:flex;flex-direction:column;gap:14px;min-height:360px}
+.ai-msg{display:flex;flex-direction:column;gap:4px;max-width:85%}
+.ai-msg.user{align-self:flex-end;align-items:flex-end}
+.ai-msg.bot{align-self:flex-start}
+.ai-msg .sender{font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.70);padding:0 4px}
+.ai-msg .bubble{padding:11px 16px;border-radius:14px;font-size:13.5px;
+  line-height:1.55;font-family:var(--sans)}
+.ai-msg.user .bubble{background:color-mix(in oklab,var(--fire) 18%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 30%,transparent);
+  border-bottom-right-radius:4px}
+.ai-msg.bot .bubble{background:rgba(245,238,216,0.07);
+  border:.5px solid rgba(245,238,216,0.1);
+  border-bottom-left-radius:4px;color:rgba(245,238,216,0.88)}
+.ai-msg.bot .bubble strong{color:var(--fire);font-weight:500}
+.ai-msg .bubble ul{margin-top:8px;padding-left:16px;display:flex;flex-direction:column;gap:5px}
+.ai-msg .bubble li{font-size:14px;color:rgba(245,238,216,0.8)}
+.ai-typing{display:flex;gap:4px;padding:4px 0;align-items:center}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:rgba(245,238,216,0.3)}
+.ai-typing span:nth-child(1){animation:typ .9s .0s ease-in-out infinite}
+.ai-typing span:nth-child(2){animation:typ .9s .15s ease-in-out infinite}
+.ai-typing span:nth-child(3){animation:typ .9s .3s ease-in-out infinite}
+@keyframes typ{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px);background:var(--fire)}}
+.ai-input-bar{padding:14px 18px;border-top:.5px solid rgba(245,238,216,0.08);
+  display:flex;gap:10px;align-items:center;background:oklch(0.15 0.008 60)}
+.ai-input-field{flex:1;background:rgba(245,238,216,0.05);
+  border:.5px solid rgba(245,238,216,0.12);border-radius:999px;
+  padding:9px 16px;font-size:14px;font-family:var(--sans);color:rgba(245,238,216,0.74)}
+.ai-send{width:32px;height:32px;border-radius:50%;background:var(--fire);
+  display:flex;align-items:center;justify-content:center;
+  border:none;flex-shrink:0;font-size:14px;color:var(--ink)}
+
+@media(max-width:768px){
+  [style*="grid-template-columns:1fr 1fr;gap:48px;align-items:start"]{grid-template-columns:1fr!important;gap:32px!important}
+  .ai-mock{margin-top:8px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center">
+      <img src="data:image/png;base64,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" alt="LaunchPilot" style="height:34px;width:auto;display:block;object-fit:contain">
+    </a>
+    <ul class="nav-ul">
+      <li><a href="/founder-mba/#curriculum">Curriculum</a></li>
+      <li><a href="/founder-mba/#mentors">Faculty</a></li>
+      <li><a href="/founder-mba/#launches">Launches</a></li>
+      <li><a href="/founder-mba/#apply">Apply</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="#" onclick="openApplyModal();return false;" class="nav-apply">Apply Now ↗</a>
+      <button id="hamburger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;align-items:center;justify-content:center">
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:transform .25s,opacity .25s" id="hb1"></span>
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:opacity .25s" id="hb2"></span>
+        <span style="display:block;width:22px;height:1.5px;background:var(--paper);transition:transform .25s,opacity .25s" id="hb3"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" style="display:none;position:fixed;inset:0;z-index:49;background:var(--ink);padding:96px 32px 40px;flex-direction:column;gap:0">
+  <a href="/founder-mba/#curriculum" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Curriculum</a>
+  <a href="/founder-mba/#mentors" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Faculty</a>
+  <a href="/founder-mba/#cities" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Immersions</a>
+  <a href="/founder-mba/#launches" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Launches</a>
+  <a href="/founder-mba/#apply" style="font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-style:italic;color:var(--paper);padding:18px 0;border-bottom:.5px solid rgba(245,238,216,0.1);display:block" onclick="closeMobileMenu()">Apply</a>
+  <a href="#" onclick="closeMobileMenu();openApplyModal();return false;" style="margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);display:block">Apply Now ↗</a>
+</div>
+
+<style>
+/* Stories page — additional CSS, scoped to this page only */
+.story-hero{padding:140px 0 60px;text-align:center}
+.story-stat-bar{display:flex;justify-content:center;gap:0;margin-top:40px;flex-wrap:wrap}
+.story-stat{padding:0 40px;text-align:center;border-right:.5px solid rgba(245,238,216,0.1)}
+.story-stat:last-child{border-right:none}
+.story-stat-v{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--fire);line-height:1}
+.story-stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.55);margin-top:8px}
+
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px}
+.story-card{background:color-mix(in oklab,var(--paper) 3%,var(--ink));border:.5px solid rgba(245,238,216,0.1);
+  border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.story-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:24px 24px 0}
+.story-ph{width:120px;height:120px;border-radius:10px;overflow:hidden;flex-shrink:0;position:relative;
+  background:repeating-linear-gradient(45deg,
+    color-mix(in oklab, var(--paper) 12%, transparent) 0 6px,
+    color-mix(in oklab, var(--paper) 6%, transparent) 6px 12px);
+  border:.5px solid color-mix(in oklab, var(--paper) 18%, transparent)}
+.story-ph img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.story-ph-cap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  font-family:var(--mono);font-size:6.5px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 8px;
+  color:color-mix(in oklab, var(--paper) 50%, var(--ink) 50%)}
+.story-top-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.story-cohort{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--fire);background:rgba(232,109,55,0.08);
+  border:.5px solid rgba(232,109,55,0.25);border-radius:100px;padding:5px 11px;white-space:nowrap}
+.story-num{font-family:var(--serif);font-style:italic;font-size:13px;
+  color:color-mix(in oklab,var(--paper) 60%,transparent)}
+.story-card-body{padding:20px 28px 30px;display:flex;flex-direction:column;flex:1}
+.story-meta{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,238,216,0.5);margin-bottom:10px}
+.story-name{font-family:var(--serif);font-weight:400;font-size:28px;letter-spacing:-0.01em;
+  line-height:1.1;margin-bottom:8px}
+.story-building{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--fire);line-height:1.4;margin-bottom:16px}
+.story-highlight{display:flex;align-items:baseline;gap:10px;margin-bottom:18px;padding-bottom:18px;
+  border-bottom:.5px solid rgba(245,238,216,0.08)}
+.story-highlight-v{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--fire);line-height:1}
+.story-highlight-l{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,238,216,0.55)}
+.story-p{font-family:var(--sans);font-size:14px;line-height:1.75;color:rgba(245,238,216,0.78);margin-bottom:14px}
+.story-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px}
+.story-tag{font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;
+  padding:6px 11px;border-radius:100px;border:.5px solid rgba(232,109,55,0.3);
+  background:rgba(232,109,55,0.07);color:var(--paper)}
+
+@media(max-width:900px){
+  .story-grid{grid-template-columns:1fr}
+}
+</style>
+
+<!-- HERO -->
+<section class="story-hero">
+  <div class="wrap">
+    <div class="sec-l">Student Stories</div>
+    <h1 class="sec-h" style="font-size:clamp(36px,5vw,52px)">Meet Our Students.</h1>
+    <div class="story-stat-bar">
+      <div class="story-stat"><div class="story-stat-v">400+</div><div class="story-stat-l">Students</div></div>
+      <div class="story-stat"><div class="story-stat-v">4</div><div class="story-stat-l">Countries</div></div>
+      <div class="story-stat"><div class="story-stat-v">72%</div><div class="story-stat-l">Reach Revenue or Funding</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="dark-sec" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="story-grid">
+    <!-- 01 — Reyo Augustine -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/salt-and-sun.jpg" alt="Reyo Augustine, founder of Foliages" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/salt-and-sun.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">01</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Reyo Augustine</h2>
+        <div class="story-building">Building Foliages — India's favourite e-commerce brand for premium plants</div>
+        <div class="story-highlight"><span class="story-highlight-v">Profitable</span><span class="story-highlight-l">Bootstrapped & Profitable</span></div>
+        <p class="story-p">Reyo spent years flying for the Indian Air Force before he ever thought seriously about plants. The discipline of mission planning, he says, translates almost directly to running a supply chain for something as fragile as a live plant shipped across the country.</p>
+        <p class="story-p">At LaunchPilot, Reyo used the Sprints to decide what Foliages would actually sell first. His mentor pushed him toward a narrow, premium-plant catalogue instead of a broad nursery — that focus is why Foliages is bootstrapped and already profitable.</p>
+        <div class="story-tags">
+          <span class="story-tag">Bootstrapped</span>
+          <span class="story-tag">Profitable</span>
+          <span class="story-tag">Ex-Indian Air Force</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 — Devyansh Agarwal -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/forge-labs.jpg" alt="Devyansh Agarwal, founder of Devananta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/forge-labs.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">02</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Mumbai, India</div>
+        <h2 class="story-name">Devyansh Agarwal</h2>
+        <div class="story-building">Building Devananta — The future of battery sustainability</div>
+        <div class="story-highlight"><span class="story-highlight-v">$200K</span><span class="story-highlight-l">Seed + Govt Grants</span></div>
+        <p class="story-p">Devyansh built Devananta around a problem most founders walk past: what happens to a battery after its first life ends. The opportunity in battery sustainability is enormous and almost entirely unbuilt — which is exactly why it's hard to raise for.</p>
+        <p class="story-p">The Finance, Fundraising & Business Models sprint is where Devananta's pitch came together, turning a complex sustainability thesis into something investors and grant bodies could say yes to. Devananta has since closed a $200K seed round plus government grants.</p>
+        <div class="story-tags">
+          <span class="story-tag">$200K Seed</span>
+          <span class="story-tag">Govt Grants</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 — Shivam Pal -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/maitri.jpg" alt="Shivam Pal, founder of Mvaak.ai" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/maitri.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">03</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Delhi, India</div>
+        <h2 class="story-name">Shivam Pal</h2>
+        <div class="story-building">Building Mvaak.ai — Audio AI solutions for enterprises</div>
+        <div class="story-highlight"><span class="story-highlight-v">$200K</span><span class="story-highlight-l">Pre-Seed Raised</span></div>
+        <p class="story-p">Shivam was deep in the data science trenches at Uola, building models for other people's products, when he started sketching out Mvaak.ai on the side — audio AI tools enterprises could actually deploy, not just demo.</p>
+        <p class="story-p">The AI Agent Building sessions gave Shivam a room full of mentors who'd actually shipped AI products, not just trained them. That feedback loop is part of why Mvaak.ai went on to close a $200K pre-seed round.</p>
+        <div class="story-tags">
+          <span class="story-tag">$200K Pre-Seed</span>
+          <span class="story-tag">Ex-Data Scientist, Uola</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 — Dr Ananth Srinivasan -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/otra.jpg" alt="Dr Ananth Srinivasan, founder of Jopana" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/otra.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">04</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Dr Ananth Srinivasan</h2>
+        <div class="story-building">Building Jopana — A marketplace for healthcare domestic workers</div>
+        <div class="story-highlight"><span class="story-highlight-v">Revenue Live</span><span class="story-highlight-l">Bootstrapped & Generating</span></div>
+        <p class="story-p">Ananth was already a Managing Director at Hathar Services when he enrolled. He wasn't looking for a career change — he was looking for structure to finally build Jopana, a real marketplace for healthcare domestic workers.</p>
+        <p class="story-p">The 6-week sprints forced him to treat Jopana like a real company on a deadline, not a side project. That cadence is a big part of why it's bootstrapped and already revenue-generating today.</p>
+        <div class="story-tags">
+          <span class="story-tag">Bootstrapped</span>
+          <span class="story-tag">Revenue Generating</span>
+          <span class="story-tag">Ex-MD, Hathar Services</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 — Manish Charhate -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/lumen.jpg" alt="Manish Charhate, founder of Cyclo Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/lumen.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '25</div>
+          <div class="story-num">05</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Manish Charhate</h2>
+        <div class="story-building">Building Cyclo Care — Period tracking app for women in Tier 3 cities</div>
+        <div class="story-highlight"><span class="story-highlight-v">10,000+</span><span class="story-highlight-l">Downloads, Bootstrapped</span></div>
+        <p class="story-p">Cyclo Care exists because Manish noticed a gap most health-tech founders miss: period tracking apps are built for Tier 1 cities, in English, assuming a level of access that doesn't hold up in Tier 3 India.</p>
+        <p class="story-p">The Content Marketing and Growth Hacking sessions shaped how Cyclo Care found its first users, through trust-based, community-first channels rather than paid acquisition. The app has since crossed 10,000+ downloads, fully bootstrapped.</p>
+        <div class="story-tags">
+          <span class="story-tag">10,000+ Downloads</span>
+          <span class="story-tag">Bootstrapped</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 — Swarit Bharadwaj -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/quill.jpg" alt="Swarit Bharadwaj, founder of Reel Ninja Studios" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/quill.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">06</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Delhi, India</div>
+        <h2 class="story-name">Swarit Bharadwaj</h2>
+        <div class="story-building">Building Reel Ninja Studios — An AI content creation platform for SMEs and enterprises</div>
+        <div class="story-highlight"><span class="story-highlight-v">$20K</span><span class="story-highlight-l">Grants, PMF Reached</span></div>
+        <p class="story-p">Swarit was still an undergraduate when he built Reel Ninja Studios, an AI content creation platform for SMEs and enterprises without an in-house creative team.</p>
+        <p class="story-p">As one of the youngest founders in his cohort, Swarit leaned heavily on his mentor for pricing, positioning, and who to sell to first. Reel Ninja Studios has since secured $20K in grants and reached product-market fit.</p>
+        <div class="story-tags">
+          <span class="story-tag">$20K Grants</span>
+          <span class="story-tag">Product Market Fit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 — Abhijith Jajio -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s7.jpg" alt="Abhijith Jajio, founder of ClaimBack" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s7.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">07</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Abhijith Jajio</h2>
+        <div class="story-building">Building ClaimBack — An AI-powered platform for asset recollection</div>
+        <div class="story-highlight"><span class="story-highlight-v">6.5 Cr</span><span class="story-highlight-l">INR Assets Managed</span></div>
+        <p class="story-p">Abhijith was practising law when he noticed unclaimed assets sitting in limbo in client cases, with no clean way to track them down. ClaimBack started as a side project to solve his own clients' problem.</p>
+        <p class="story-p">LaunchPilot's AI-first curriculum let Abhijith build the actual product himself, using no-code and agentic AI tools to ship fast. ClaimBack has since helped manage 6.5 Cr INR in assets.</p>
+        <div class="story-tags">
+          <span class="story-tag">6.5 Cr INR Managed</span>
+          <span class="story-tag">Ex-Lawyer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 — Samrudh R -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s8.jpg" alt="Samrudh R, founder of BlendYeh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s8.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">08</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Chennai, India</div>
+        <h2 class="story-name">Samrudh R</h2>
+        <div class="story-building">Building BlendYeh — Automated kiosks for smoothies, milkshakes and juices</div>
+        <div class="story-highlight"><span class="story-highlight-v">Pilot Live</span><span class="story-highlight-l">IIT Madras Dropout</span></div>
+        <p class="story-p">Samrudh dropped out of IIT Madras to build BlendYeh, automated kiosks serving smoothies, milkshakes and juices without a barista in sight.</p>
+        <p class="story-p">The Product & MVP sprint is where BlendYeh went from concept to a working pilot. His mentor pushed him to get a physical kiosk live and tested with real customers within weeks — that pilot is now running.</p>
+        <div class="story-tags">
+          <span class="story-tag">Pilot Live</span>
+          <span class="story-tag">IIT Madras Dropout</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 — Guliz -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s9.jpg" alt="Guliz, founder of Sustainify" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s9.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '25</div>
+          <div class="story-num">09</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Singapore</div>
+        <h2 class="story-name">Guliz</h2>
+        <div class="story-building">Building Sustainify — A carbon credit marketplace for Asian manufacturers</div>
+        <div class="story-highlight"><span class="story-highlight-v">ASEAN</span><span class="story-highlight-l">Startup Comp. Semi-Finalist</span></div>
+        <p class="story-p">Guliz was still a student at NUS Singapore when she started building Sustainify, a carbon credit marketplace for Asian manufacturers navigating an increasingly complex regulatory landscape.</p>
+        <p class="story-p">Through Global Immersions and Mentor-Guided Missions, Guliz got direct access to operators who actually work in carbon markets. Sustainify went on to become a semi-finalist at the World ASEAN Startup Competition.</p>
+        <div class="story-tags">
+          <span class="story-tag">World ASEAN Semi-Finalist</span>
+          <span class="story-tag">Ex-Student, NUS Singapore</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 — Alex -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s10.jpg" alt="Alex, founder of CloudComm.io" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s10.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">10</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Spain</div>
+        <h2 class="story-name">Alex</h2>
+        <div class="story-building">Building CloudComm.io — E-commerce automated infrastructure for Southeast Asia</div>
+        <div class="story-highlight"><span class="story-highlight-v">$50K+</span><span class="story-highlight-l">Monthly Recurring Revenue</span></div>
+        <p class="story-p">Alex was working as a product manager when he noticed how much manual operational work was still baked into e-commerce in Southeast Asia, a region growing faster than its supporting infrastructure.</p>
+        <p class="story-p">The Agency & Freelance and AI SaaS pathways gave Alex a working model for packaging infrastructure as a recurring product rather than a one-off service. CloudComm.io now runs at $50K+ in monthly recurring revenue.</p>
+        <div class="story-tags">
+          <span class="story-tag">$50K+ MRR</span>
+          <span class="story-tag">Ex-Product Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 — Ayush Agarwal -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s11.jpg" alt="Ayush Agarwal, founder of Vandan Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s11.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">11</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Pune, India</div>
+        <h2 class="story-name">Ayush Agarwal</h2>
+        <div class="story-building">Building Vandan Group — Scaling a family business across real estate, construction and F&B</div>
+        <div class="story-highlight"><span class="story-highlight-v">100+</span><span class="story-highlight-l">Team, 50+ Years Legacy</span></div>
+        <p class="story-p">Ayush didn't come to LaunchPilot to start something from zero. Vandan Group carries more than 50 years of family legacy across real estate, construction and F&B, and Ayush's job was to take it into its next chapter.</p>
+        <p class="story-p">The Leadership, Scaling & Founder Mindset sprint was built almost exactly for what Ayush needed: leading a 100+ person organisation that predates you, without losing what made it work. Vandan Group continues to scale under his leadership.</p>
+        <div class="story-tags">
+          <span class="story-tag">100+ Team</span>
+          <span class="story-tag">50+ Years Legacy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 — Suraj Reddy -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s12.jpg" alt="Suraj Reddy, founder of Cureeasy.io" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s12.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '25</div>
+          <div class="story-num">12</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Dubai, UAE</div>
+        <h2 class="story-name">Suraj Reddy</h2>
+        <div class="story-building">Building Cureeasy.io — Dubai's home recovery and preventive care solution</div>
+        <div class="story-highlight"><span class="story-highlight-v">Revenue Live</span><span class="story-highlight-l">Bootstrapped & Generating</span></div>
+        <p class="story-p">Suraj was a student at NYU Stern when he started building Cureeasy.io, a home recovery and preventive care platform for Dubai, where premium healthcare exists but rarely comes to your door.</p>
+        <p class="story-p">The Sales Psychology & Negotiation mission gave Suraj the muscle to close his first home-care partnerships directly, without a sales team behind him. Cureeasy.io is bootstrapped and already revenue-generating.</p>
+        <div class="story-tags">
+          <span class="story-tag">Bootstrapped</span>
+          <span class="story-tag">Revenue Generating</span>
+          <span class="story-tag">Ex-Student, NYU Stern</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 — Charles Bohannan -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s13.jpg" alt="Charles Bohannan, founder of Wordful" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s13.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">13</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">San Francisco, USA</div>
+        <h2 class="story-name">Charles Bohannan</h2>
+        <div class="story-building">Building Wordful — An AI marketing platform for founders</div>
+        <div class="story-highlight"><span class="story-highlight-v">$200K</span><span class="story-highlight-l">Pre-Seed, Profitable</span></div>
+        <p class="story-p">Charles was running marketing for someone else's company when he decided the tools founders actually needed didn't exist yet. Wordful, an AI marketing platform built for founders, is his answer.</p>
+        <p class="story-p">The Marketing, Brand & Growth sprint became Wordful's first real customer discovery process — Charles tested the product on his own cohort first. Wordful went on to raise a $200K pre-seed round and is already profitable.</p>
+        <div class="story-tags">
+          <span class="story-tag">$200K Pre-Seed</span>
+          <span class="story-tag">Profitable</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 — Vinay Reddy -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s14.jpg" alt="Vinay Reddy, founder of Ojiva.ai" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s14.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">14</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Hyderabad, India</div>
+        <h2 class="story-name">Vinay Reddy</h2>
+        <div class="story-building">Building Ojiva.ai — A vernacular YouTube channel for kids, focused on health</div>
+        <div class="story-highlight"><span class="story-highlight-v">100,000+</span><span class="story-highlight-l">Subscribers</span></div>
+        <p class="story-p">Vinay built Ojiva.ai around a language gap, not a technology gap: health content for kids that actually exists in vernacular Indian languages, not just English.</p>
+        <p class="story-p">The Content Marketing mission is where Ojiva.ai's growth loop got designed — what to post, how often, and how to keep a young audience and their parents coming back. The channel has since crossed 100,000+ subscribers.</p>
+        <div class="story-tags">
+          <span class="story-tag">100,000+ Subscribers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 — Sai Kiran -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s15.jpg" alt="Sai Kiran, founder of Vakalo.ai" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s15.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '25</div>
+          <div class="story-num">15</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Hyderabad, India</div>
+        <h2 class="story-name">Sai Kiran</h2>
+        <div class="story-building">Building Vakalo.ai — Audio AI solutions for Indian enterprises</div>
+        <div class="story-highlight"><span class="story-highlight-v">$100K+</span><span class="story-highlight-l">In Grants</span></div>
+        <p class="story-p">Sai Kiran saw the same gap Mvaak.ai's Shivam saw a cohort earlier — audio AI for enterprise use — but built Vakalo.ai specifically for India's languages and compliance needs.</p>
+        <p class="story-p">The Capital & Financial Intelligence mission gave Sai Kiran the modelling and pitch discipline to approach grant bodies with a real financial story, not just a product demo. Vakalo.ai has since secured $100K+ in grant funding.</p>
+        <div class="story-tags">
+          <span class="story-tag">$100K+ Grants</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 — Vishesh Arora -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s16.jpg" alt="Vishesh Arora, founder of Aesthetic Essentials" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s16.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">16</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Delhi, India</div>
+        <h2 class="story-name">Vishesh Arora</h2>
+        <div class="story-building">Building Aesthetic Essentials — A D2C brand for copper utensils</div>
+        <div class="story-highlight"><span class="story-highlight-v">$2M</span><span class="story-highlight-l">ARR, 150+ SKUs</span></div>
+        <p class="story-p">Vishesh built Aesthetic Essentials around a category most D2C founders overlook: copper utensils, with deep cultural roots in India and almost no modern brand built around it.</p>
+        <p class="story-p">The D2C & E-commerce pathway gave Vishesh the operational playbook — sourcing, SKU expansion, retention — to grow from a single product to a full catalogue. The brand now runs at $2M ARR across 150+ SKUs.</p>
+        <div class="story-tags">
+          <span class="story-tag">$2M ARR</span>
+          <span class="story-tag">150+ SKUs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 — Praharsha G -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s17.jpg" alt="Praharsha G, founder of Flare.io" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s17.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">17</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Praharsha G</h2>
+        <div class="story-building">Building Flare.io — A conversion recovery layer for Shopify and D2C brands</div>
+        <div class="story-highlight"><span class="story-highlight-v">400,000+</span><span class="story-highlight-l">Users, Revenue Generating</span></div>
+        <p class="story-p">Praharsha built Flare.io to solve a problem every D2C brand quietly bleeds money on: shoppers who add to cart and never come back.</p>
+        <p class="story-p">The Performance Ads and Growth Hacking missions shaped Flare.io's own growth loop, using the same recovery mechanics it sells to acquire its first merchant customers. Flare.io is revenue-generating with 400,000+ users on the platform.</p>
+        <div class="story-tags">
+          <span class="story-tag">400,000+ Users</span>
+          <span class="story-tag">Revenue Generating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18 — Sandhya Pradhan -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s18.jpg" alt="Sandhya Pradhan, founder of Mindler.AI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s18.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '25</div>
+          <div class="story-num">18</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Bengaluru, India</div>
+        <h2 class="story-name">Sandhya Pradhan</h2>
+        <div class="story-building">Building Mindler.AI — A personal AI assistant</div>
+        <div class="story-highlight"><span class="story-highlight-v">PMF</span><span class="story-highlight-l">Reached, Bootstrapped</span></div>
+        <p class="story-p">Sandhya spent years as a team lead across IBM and Infosys, shipping enterprise software for other companies, before setting out to build her own: Mindler.AI, a personal AI assistant.</p>
+        <p class="story-p">The AI Copilot and Agentic AI sessions gave Sandhya hands-on practice with the same class of tools she'd later use inside Mindler.AI itself. She bootstrapped the company to product-market fit without raising outside capital.</p>
+        <div class="story-tags">
+          <span class="story-tag">Bootstrapped</span>
+          <span class="story-tag">Product Market Fit</span>
+          <span class="story-tag">Ex-IBM, Infosys</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19 — Sumana Mandal -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s19.jpg" alt="Sumana Mandal, founder of Ignoimagine" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s19.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '24</div>
+          <div class="story-num">19</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Hyderabad, India</div>
+        <h2 class="story-name">Sumana Mandal</h2>
+        <div class="story-building">Building Ignoimagine — AI-powered multitasking mobile robots</div>
+        <div class="story-highlight"><span class="story-highlight-v">22+</span><span class="story-highlight-l">Projects Shipped</span></div>
+        <p class="story-p">Sumana was a software engineer writing code for other people's roadmaps when she decided to build her own: Ignoimagine, AI-powered multitasking mobile robots.</p>
+        <p class="story-p">The hardware-meets-software nature of Ignoimagine doesn't fit a typical curriculum, so Sumana leaned hardest on Mentor-Guided Missions, pulling in faculty with robotics backgrounds. Ignoimagine is bootstrapped and has shipped 22+ projects.</p>
+        <div class="story-tags">
+          <span class="story-tag">Bootstrapped</span>
+          <span class="story-tag">22+ Projects Shipped</span>
+          <span class="story-tag">Ex-Software Engineer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20 — Mohammed Elsifiwy -->
+    <div class="story-card">
+      <div class="story-card-top">
+        <div class="story-ph">
+          <img src="../images/founders/s20.jpg" alt="Mohammed Elsifiwy, founder of Human Tag" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="story-ph-cap" style="display:none">Add photo<br>../images/founders/s20.jpg</div>
+        </div>
+        <div class="story-top-right">
+          <div class="story-cohort">Cohort '23</div>
+          <div class="story-num">20</div>
+        </div>
+      </div>
+      <div class="story-card-body">
+        <div class="story-meta">Dubai, UAE</div>
+        <h2 class="story-name">Mohammed Elsifiwy</h2>
+        <div class="story-building">Building Human Tag — An executive education platform for the UAE</div>
+        <div class="story-highlight"><span class="story-highlight-v">$950K</span><span class="story-highlight-l">Revenue, Series A Pipeline</span></div>
+        <p class="story-p">Mohammed was working as a finance analyst when he started Human Tag, an executive education platform built for the UAE, a region with capital but a real gap in localised executive learning.</p>
+        <p class="story-p">The VC Pitching and Investor Networking missions are what eventually got Human Tag in front of the right rooms. The company now does $950K in revenue and is in conversation with Series A investors.</p>
+        <div class="story-tags">
+          <span class="story-tag">$950K Revenue</span>
+          <span class="story-tag">Series A Pipeline</span>
+          <span class="story-tag">Ex-Finance Analyst</span>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+<style>
+/* Cohort Group Photos — horizontal scrolling strip (from homepage) */
+.cohort-sec{padding:0 0 32px}
+.cohort-strip{position:relative;overflow:hidden;margin-top:48px;display:flex;flex-direction:column;gap:14px}
+.cohort-strip::before,.cohort-strip::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+.cohort-strip::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.cohort-strip::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.cohort-track{display:flex;gap:14px;width:max-content}
+.cohort-track.fwd{animation:cohort-fwd 42s linear infinite}
+.cohort-track.rev{animation:cohort-rev 48s linear infinite}
+.cohort-track:hover{animation-play-state:paused}
+@keyframes cohort-fwd{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes cohort-rev{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
+.cohort-card{flex:0 0 auto;width:480px;height:320px;border-radius:12px;overflow:hidden;
+  position:relative;cursor:pointer;
+  background: repeating-linear-gradient(45deg,
+    color-mix(in oklab, var(--paper) 12%, transparent) 0 8px,
+    color-mix(in oklab, var(--paper) 6%, transparent) 8px 16px);
+  border:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
+  transition:border-color .35s, transform .35s}
+.cohort-card:hover{border-color:color-mix(in oklab, var(--fire) 60%, transparent);transform:scale(1.02)}
+.cohort-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(12%);transition:filter .4s, transform .6s cubic-bezier(.2,.7,.2,1)}
+.cohort-card:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.cohort-card::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.65));pointer-events:none}
+.cohort-card .cap{position:absolute;left:18px;bottom:16px;z-index:1;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.cohort-card .cap b{display:block;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;
+  font-weight:400;font-style:italic;text-transform:none;margin-bottom:3px}
+.cohort-card .ph-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:color-mix(in oklab, var(--paper) 35%, transparent)}
+
+@media(max-width:768px){ .cohort-card{width:320px;height:220px} }
+
+/* Program Partners marquee (from homepage) */
+.pp-card{display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:20px 16px;border-radius:12px;text-align:center;
+  width:150px;flex-shrink:0;
+  background:color-mix(in oklab,var(--ink) 94%,var(--paper) 6%);
+  border:.5px solid rgba(245,238,216,0.12);
+  transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.pp-card:hover{border-color:rgba(224,122,58,0.5);transform:translateY(-3px)}
+.pp-ph{width:64px;height:64px;min-width:64px;border-radius:10px;flex-shrink:0;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  background:rgba(245,238,216,0.06);
+  border:1px solid rgba(245,238,216,0.18)}
+.pp-ph img{width:100%;height:100%;object-fit:contain;display:block;padding:8px;
+  filter:grayscale(20%);transition:filter .3s}
+.pp-card:hover .pp-ph img{filter:grayscale(0%)}
+.pp-nm{font-family:'Instrument Serif',Georgia,serif;font-style:italic;
+  font-size:13px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.3}
+.pp-rl{font-family:'JetBrains Mono',monospace;font-size:8px;
+  letter-spacing:.12em;text-transform:uppercase;color:rgba(245,238,216,0.42)}
+@keyframes pp-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Investors & Founding Team (from homepage) */
+.iv-card{display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding:24px 16px;border-radius:12px;text-align:center;
+  background:color-mix(in oklab,var(--ink) 94%,var(--paper) 6%);
+  border:.5px solid rgba(245,238,216,0.1);
+  transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.iv-card:hover{border-color:rgba(224,122,58,0.45);transform:translateY(-4px)}
+.iv-ph{width:80px;height:80px;border-radius:50%;flex-shrink:0;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  background:rgba(245,238,216,0.08);border:1px solid rgba(245,238,216,0.22)}
+.founders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+.investors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:32px}
+@media(max-width:768px){
+  .founders-grid,.investors-grid{grid-template-columns:repeat(3,1fr)!important}
+}
+@media(max-width:480px){
+  .founders-grid,.investors-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+</style>
+
+<!-- COHORT GROUP PHOTOS — the real moving pictures section, from the homepage -->
+<section class="cohort-sec">
+  <div class="wrap">
+    <div class="sec-l">Life at LaunchPilot</div>
+    <h2 class="sec-h">A tribe to build, fail<br><em>&amp; live with.</em></h2>
+  </div>
+  <div class="cohort-strip">
+    <div class="cohort-track fwd" id="cohort-track-a"></div>
+    <div class="cohort-track rev" id="cohort-track-b"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const CARDS_A = [
+    { src:'../images/cohort/01.jpg', label:"Cohort '25", sub:'Singapore' },
+    { src:'../images/cohort/02.jpg', label:"Andrew Chow", sub:'AI God' },
+    { src:'../images/cohort/03.jpg', label:"Co-founder Smiles", sub:'United States of America' },
+    { src:'../images/cohort/04.jpg', label:"US Immersion", sub:'Hold and Cold' },
+    { src:'../images/cohort/05.jpg', label:"Cohort '24", sub:'Dubai' },
+    { src:'../images/cohort/06.jpg', label:"Our Student - Reyo", sub:'From Indian Airforce to Founder' },
+  ];
+  const CARDS_B = [
+    { src:'../images/cohort/07.jpg', label:"Cohort '25", sub:'IIT Bombay' },
+    { src:'../images/cohort/08.jpg', label:"With Daniel Ling", sub:'Our Design Thinking Guru' },
+    { src:'../images/cohort/09.jpg', label:"Cohort '23", sub:'AI at IIT Bombay' },
+    { src:'../images/cohort/10.jpg', label:"Cohort '23", sub:'China' },
+    { src:'../images/cohort/11.jpg', label:"Alex", sub:'In Snowy NYC' },
+    { src:'../images/cohort/12.jpg', label:"Cohort '24", sub:'After Demo Day' },
+  ];
+  function makeCard(c){
+    const div = document.createElement('div');
+    div.className = 'cohort-card';
+    const img = document.createElement('img');
+    img.src = c.src;
+    img.alt = c.label;
+    img.onerror = () => img.style.display = 'none';
+    const ph = document.createElement('div');
+    ph.className = 'ph-inner';
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.innerHTML = '<b>' + c.label + '</b>' + c.sub;
+    div.appendChild(img);
+    div.appendChild(ph);
+    div.appendChild(cap);
+    return div;
+  }
+  const trackA = document.getElementById('cohort-track-a');
+  const trackB = document.getElementById('cohort-track-b');
+  if (trackA) [...CARDS_A, ...CARDS_A].forEach(c => trackA.appendChild(makeCard(c)));
+  if (trackB) [...CARDS_B, ...CARDS_B].forEach(c => trackB.appendChild(makeCard(c)));
+})();
+</script>
+
+<style>
+/* Hear It From Our Founders — video reel strip (from homepage) */
+.reel-fade-l,.reel-fade-r{position:absolute;top:0;bottom:0;width:120px;z-index:3;pointer-events:none}
+.reel-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.reel-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.reel-card{flex:0 0 220px;width:220px;flex-shrink:0;cursor:pointer}
+.reel-thumb{position:relative;width:220px;height:380px;border-radius:16px;overflow:hidden;
+  background:#1a1a1a;border:.5px solid rgba(245,238,216,0.12);transition:border-color .3s}
+.reel-card:hover .reel-thumb{border-color:color-mix(in oklab,var(--fire) 60%,transparent)}
+.reel-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.reel-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;
+  border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);
+  border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;
+  z-index:10;cursor:pointer;transition:background .25s,border-color .25s}
+.reel-card:hover .reel-play-btn{background:var(--fire);border-color:transparent}
+@media(max-width:768px){ .reel-card{flex:0 0 160px}.reel-thumb{width:160px;height:280px} }
+
+/* Testimonials strip (from founder-mba page) */
+.testi-card{flex:0 0 360px;padding:32px;border-radius:14px;
+  background:color-mix(in oklab,var(--paper) 5%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);
+  display:flex;flex-direction:column;gap:20px;
+  transition:border-color .25s;flex-shrink:0}
+.testi-card:hover{border-color:color-mix(in oklab,var(--fire) 30%,transparent)}
+.testi-q-s{font-family:"Instrument Serif",Georgia,serif;font-size:18px;font-style:italic;
+  letter-spacing:-0.005em;line-height:1.55;color:var(--paper);flex:1;
+  position:relative;padding-top:12px}
+.testi-q-s::before{content:"\201C";position:absolute;top:-10px;left:-4px;
+  font-size:48px;line-height:1;color:var(--fire);opacity:.4;font-family:"Instrument Serif",Georgia,serif}
+.testi-foot{display:flex;align-items:center;gap:14px}
+.testi-av-s{width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;
+  flex-shrink:0;border:.5px solid rgba(245,238,216,0.15);
+  background:repeating-linear-gradient(135deg,rgba(245,238,216,0.1) 0,rgba(245,238,216,0.1) 1.5px,transparent 1.5px,transparent 9px)}
+.testi-nm{font-family:var(--serif);font-size:16px;font-style:italic;letter-spacing:-0.005em;color:var(--paper)}
+.testi-rl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,238,216,0.75)}
+</style>
+
+<!-- HEAR IT FROM OUR FOUNDERS — video reels, from the homepage -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Student Stories</div>
+    <h2 class="sec-h">Hear it from the<br><em>founders.</em></h2>
+  </div>
+  <div style="position:relative;overflow:hidden;width:100%;padding:32px 0 48px">
+    <div class="reel-fade-l"></div>
+    <div class="reel-fade-r"></div>
+    <div id="reel-track" style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:20px;width:max-content">
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-01.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-02.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-03.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-04.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-05.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-06.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+      <div class="reel-card"><div class="reel-thumb"><video class="reel-video" src="../videos/student-07.mp4" preload="none" loop playsinline controls></video><div class="reel-play-btn" onclick="this.previousElementSibling.play();this.style.display='none'"><svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var track = document.getElementById('reel-track');
+  if(!track) return;
+  var pos = 0, paused = false, last = null, halfW = 0;
+  function measure(){ halfW = track.scrollWidth / 2; }
+  requestAnimationFrame(function(){ measure(); window.addEventListener('resize', measure); });
+  track.addEventListener('mouseenter', function(){ paused = true; });
+  track.addEventListener('mouseleave', function(){ paused = false; });
+  function tick(ts){
+    if(last && !paused && halfW){
+      pos += 55 * (ts - last) / 1000;
+      if(pos >= halfW) pos = 0;
+      track.style.transform = 'translateX(-' + pos.toFixed(1) + 'px)';
+    }
+    last = ts;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
+<!-- TESTIMONIALS — from the founder-mba page -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Testimonials</div>
+    <h2 class="sec-h">In their<br><em>own words.</em></h2>
+  </div>
+  <div style="position:relative;overflow:hidden;margin-top:48px;padding:8px 0 56px">
+    <div style="position:absolute;top:0;bottom:0;left:0;width:100px;z-index:2;background:linear-gradient(90deg,color-mix(in oklab,var(--paper) 2%,var(--ink)),transparent);pointer-events:none"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:100px;z-index:2;background:linear-gradient(270deg,color-mix(in oklab,var(--paper) 2%,var(--ink)),transparent);pointer-events:none"></div>
+    <div id="testi-track" style="display:flex;gap:20px;width:max-content;will-change:transform">
+      <div class="testi-card"><div class="testi-q-s">"LaunchPilot helped me go from idea to revenue in 12 weeks. The mentorship and execution focus is unmatched."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/01.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Alex Hernandez</div><div class="testi-rl">Founder @ CloudComm · Cohort 2</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"This is an insane experience. I've never learned faster in my life."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Sandhya Pradhan</div><div class="testi-rl">Founder @ Mindler.ai · Cohort 1</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"I quit Babson College in the USA and Mesa, to be with LaunchPilot. I shipped in weeks what used to take months."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/03.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Reyo Augustine</div><div class="testi-rl">Founder @ Foliages · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"The Sunday Sessions were unlike anything I'd experienced — real pressure, real feedback, real growth every week."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/04.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Abhijith Jajio</div><div class="testi-rl">Founder @ ClaimBack · Cohort 2</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"I joined as an operator. I left as a founder. The program gave me the confidence and tools to take the leap."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/05.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Suraj Reddy</div><div class="testi-rl">Founder @ Cureeasy · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"LaunchPilot is the only MBA that actually teaches you to build. My pitch deck closed a $200K round before I graduated."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/06.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Devyansh Agarwal</div><div class="testi-rl">Founder @ Devananta · Cohort 1</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"The global immersions changed my perspective entirely. Meeting founders in Singapore and SF opened doors I didn't know existed."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/07.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Guliz</div><div class="testi-rl">Founder @ Sustainify · Cohort 4</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"LaunchLabs helped me ship a product I'd been stuck on for 6 months — in under 3 weeks. That's insane value."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/08.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Shivam Pal</div><div class="testi-rl">Founder @ Mvaak.ai · Cohort 3</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"My mentor knew exactly what I needed at every stage. This isn't a random pairing — they genuinely matched us perfectly."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/09.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Manish Charhate</div><div class="testi-rl">Founder @ Cyclo Care · Cohort 4</div></div></div></div>
+      <div class="testi-card"><div class="testi-q-s">"Within the first 4 weeks I had validated my idea, found 3 paying customers, and completely changed my business model."</div><div class="testi-foot"><div class="testi-av-s"><img src="../images/testimonials/10.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div><div class="testi-nm">Swarit Bharadwaj</div><div class="testi-rl">Founder @ Reel Ninja · Cohort 2</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var t = document.getElementById('testi-track');
+  if(!t) return;
+  Array.from(t.querySelectorAll('.testi-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+  var pos = 0, paused = false, last = null, halfW = 0;
+  function measure(){ halfW = t.scrollWidth / 2; }
+  requestAnimationFrame(function(){ measure(); window.addEventListener('resize', measure); });
+  t.addEventListener('mouseenter', function(){ paused = true; });
+  t.addEventListener('mouseleave', function(){ paused = false; });
+  function tick(ts){
+    if(last && !paused && halfW){
+      pos += 45 * (ts - last) / 1000;
+      if(pos >= halfW) pos = 0;
+      t.style.transform = 'translateX(-' + pos.toFixed(1) + 'px)';
+    }
+    last = ts;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
+<!-- PARTNERS & INVESTORS — real data, from the homepage -->
+<section class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Program Partners &amp; Investors</div>
+    <h2 class="sec-h">The network<br><em>behind you.</em></h2>
+
+    <div style="margin-top:48px;margin-bottom:20px;display:flex;align-items:center;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.45)">Program Partners</span>
+      <span style="flex:1;height:.5px;background:rgba(245,238,216,0.1)"></span>
+    </div>
+    <div style="position:relative;overflow:hidden;padding:8px 0">
+      <div style="position:absolute;top:0;left:0;bottom:0;width:80px;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--ink),transparent)"></div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:80px;z-index:2;pointer-events:none;background:linear-gradient(270deg,var(--ink),transparent)"></div>
+      <div id="pp-track" style="display:flex;gap:16px;width:max-content;animation:pp-scroll 40s linear infinite">
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/meet-ventures.png" alt="Meet Ventures — VC Fund" onerror="this.style.opacity='0'"></div><div class="pp-nm">Meet Ventures</div><div class="pp-rl">VC Fund</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/asia-pro-ventures.png" alt="Asia Pro Ventures — VC Fund" onerror="this.style.opacity='0'"></div><div class="pp-nm">Asia Pro Ventures</div><div class="pp-rl">VC Fund</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/transcend-accelerator.png" alt="Transcend Accelerator — Accelerator" onerror="this.style.opacity='0'"></div><div class="pp-nm">Transcend Accelerator</div><div class="pp-rl">Accelerator</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/chiripal-group.png" alt="Chiripal Group — Family Office" onerror="this.style.opacity='0'"></div><div class="pp-nm">Chiripal Group</div><div class="pp-rl">Family Office</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/glean-ventures.png" alt="Glean Ventures — VC Fund" onerror="this.style.opacity='0'"></div><div class="pp-nm">Glean Ventures</div><div class="pp-rl">VC Fund</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/tins-studio.png" alt="TINS Studio, Boston — Venture Studio" onerror="this.style.opacity='0'"></div><div class="pp-nm">TINS Studio, Boston</div><div class="pp-rl">Venture Studio</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/nus.png" alt="National University of Singapore — University" onerror="this.style.opacity='0'"></div><div class="pp-nm">National University of Singapore</div><div class="pp-rl">University</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/iit-bombay.png" alt="IIT Bombay — University" onerror="this.style.opacity='0'"></div><div class="pp-nm">IIT Bombay</div><div class="pp-rl">University</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/woolf-university.png" alt="Woolf University — University" onerror="this.style.opacity='0'"></div><div class="pp-nm">Woolf University</div><div class="pp-rl">University</div></div>
+        <div class="pp-card"><div class="pp-ph"><img src="../images/partners/ibm.png" alt="IBM — Tech Partner" onerror="this.style.opacity='0'"></div><div class="pp-nm">IBM</div><div class="pp-rl">Tech Partner</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;margin-bottom:24px;display:flex;align-items:center;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,238,216,0.45)">Investors &amp; Founding Team</span>
+      <span style="flex:1;height:.5px;background:rgba(245,238,216,0.1)"></span>
+    </div>
+    <div class="founders-grid">
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/01.jpg" alt="Siddharth Dangi — Co-founder" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Siddharth Dangi</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/02.jpg" alt="Sarvesh Tusnial — Co-founder" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sarvesh Tusnial</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/03.jpg" alt="Vansh Chiripal — Co-founder" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Vansh Chiripal</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Co-founder</div></div>
+    </div>
+    <div class="investors-grid">
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/04.jpg" alt="Sunil Kamath — Partner at Hustle Ventures" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Sunil Kamath</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Hustle Ventures</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/05.jpg" alt="Toyoyuki Ushioda — SVP at Maple Tree · Angel Investor" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Toyoyuki Ushioda</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">SVP at Maple Tree · Angel Investor</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/06.jpg" alt="Edmund Tan — General Partner · Investor" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Edmund Tan</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">General Partner · Investor</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/07.jpg" alt="John Lim — Partner at Meet Ventures" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">John Lim</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Partner at Meet Ventures</div></div>
+      <div class="iv-card"><div class="iv-ph"><img src="../images/investors/08.jpg" alt="Karan Khemka — Angel Investor" onerror="this.style.opacity='0'" style="width:80px;height:80px;object-fit:cover;object-position:top;display:block;border-radius:50%"></div><div class="iv-nm" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:18px;letter-spacing:-0.005em;color:#f5eed8;line-height:1.2">Karan Khemka</div><div class="iv-rl" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,238,216,0.5);line-height:1.4">Angel Investor</div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var t = document.getElementById('pp-track');
+  if(!t) return;
+  Array.from(t.querySelectorAll('.pp-card')).forEach(function(c){
+    t.appendChild(c.cloneNode(true));
+  });
+  t.addEventListener('mouseenter', function(){ t.style.animationPlayState='paused'; });
+  t.addEventListener('mouseleave', function(){ t.style.animationPlayState='running'; });
+})();
+</script>
+
+<footer>
+  <div class="f-brand">LaunchPilot <em>School of Business</em></div>
+  <div class="f-links">
+    <a href="/">Homepage</a>
+    <a href="/#programs">All Programs</a>
+    <a href="#" onclick="openApplyModal();return false;">Apply</a>
+  </div>
+  <div class="f-copy">© 2026 LaunchPilot · All rights reserved</div>
+</footer>
+</body>
+</html>

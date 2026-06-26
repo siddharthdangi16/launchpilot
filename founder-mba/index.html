@@ -1029,6 +1029,379 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   </div>
 </div>
 
+<!-- OUR UNIQUE LEARNING EXPERIENCE -->
+<style>
+.ule-sec{padding:96px 0}
+.ule-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,238,216,0.08);
+  margin-top:56px;border-radius:14px;overflow:hidden}
+.ule-card{background:var(--ink);padding:44px;display:flex;flex-direction:column}
+.ule-card-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:16px}
+.ule-card-h{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:-0.012em;line-height:1.05;margin-bottom:14px}
+.ule-card-d{font-family:var(--sans);font-size:14.5px;line-height:1.7;color:rgba(245,238,216,0.72);margin-bottom:28px}
+.ule-list{display:flex;flex-direction:column;margin-top:24px}
+.ule-item{display:flex;gap:14px;padding:13px 0;border-top:.5px solid rgba(245,238,216,0.08)}
+.ule-item:first-child{border-top:none}
+.ule-item-n{font-family:var(--mono);font-size:10px;color:var(--fire);flex-shrink:0;width:20px;padding-top:2px}
+.ule-item-t{font-family:var(--sans);font-weight:600;font-size:13.5px;color:var(--paper);line-height:1.3}
+.ule-item-s{font-family:var(--sans);font-size:11.5px;color:rgba(245,238,216,0.55);line-height:1.3;margin-top:2px}
+
+/* Copilot mockup */
+.ule-mock{background:color-mix(in oklab,var(--paper) 4%,var(--ink));border:.5px solid rgba(245,238,216,0.1);
+  border-radius:10px;overflow:hidden;margin-top:24px}
+.ule-mock-bar{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:.5px solid rgba(245,238,216,0.08)}
+.ule-mock-dot{width:8px;height:8px;border-radius:50%;opacity:.5}
+.ule-mock-title{flex:1;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,238,216,0.4)}
+.ule-mock-live{display:flex;align-items:center;gap:5px}
+.ule-mock-pulse{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:ulePulse 2s infinite}
+@keyframes ulePulse{0%,100%{opacity:1}50%{opacity:.3}}
+.ule-mock-body{padding:22px 20px;display:flex;flex-direction:column;gap:14px}
+.ule-mock-row{display:flex;gap:10px;align-items:flex-start}
+.ule-mock-av{width:26px;height:26px;border-radius:50%;background:rgba(232,109,55,0.16);
+  border:.5px solid rgba(232,109,55,0.35);display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:12px;color:var(--fire);flex-shrink:0}
+.ule-mock-bub{background:rgba(245,238,216,0.04);border:.5px solid rgba(245,238,216,0.07);
+  border-radius:4px 12px 12px 12px;padding:10px 14px;max-width:88%}
+.ule-mock-bub p{font-family:var(--sans);font-size:12.5px;line-height:1.55;color:rgba(245,238,216,0.88);margin:0}
+.ule-mock-tag{margin-top:7px;display:inline-flex;gap:6px;align-items:center;background:rgba(232,109,55,0.1);
+  border:.5px solid rgba(232,109,55,0.18);border-radius:6px;padding:5px 10px}
+.ule-mock-tag span{font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--fire)}
+.ule-mock-user{justify-content:flex-end}
+.ule-mock-user .ule-mock-bub{background:rgba(232,109,55,0.1);border-color:rgba(232,109,55,0.18);
+  border-radius:12px 4px 12px 12px}
+
+/* Sprints — vertical timeline */
+.ule-tl{position:relative;margin-top:24px;padding-left:2px}
+.ule-tl::before{content:"";position:absolute;left:13.5px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(to bottom, rgba(232,109,55,0.55), rgba(232,109,55,0.04))}
+.ule-tl-item{position:relative;display:flex;gap:16px;padding:11px 0;align-items:center}
+.ule-tl-dot{position:relative;z-index:1;width:27px;height:27px;border-radius:50%;flex-shrink:0;
+  background:var(--ink);border:1.5px solid rgba(232,109,55,0.5);display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:9px;color:var(--fire)}
+.ule-tl-item:last-child .ule-tl-dot{background:var(--fire);border-color:var(--fire);color:var(--ink);font-weight:700}
+.ule-tl-glow{box-shadow:0 0 0 0 rgba(232,109,55,0.4);animation:uleTlPulse 2.8s infinite}
+@keyframes uleTlPulse{
+  0%{box-shadow:0 0 0 0 rgba(232,109,55,0.35)}
+  70%{box-shadow:0 0 0 7px rgba(232,109,55,0)}
+  100%{box-shadow:0 0 0 0 rgba(232,109,55,0)}
+}
+.ule-tl-t{font-family:var(--sans);font-weight:600;font-size:13.5px;color:var(--paper);line-height:1.3}
+.ule-tl-w{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;color:rgba(232,109,55,0.65);margin-top:2px}
+
+/* Missions — static premium session tiles */
+.ule-mtile-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.ule-mtile{background:color-mix(in oklab,var(--paper) 3%,var(--ink));
+  border:.5px solid rgba(245,238,216,0.1);border-left:2px solid var(--fire);
+  border-radius:0 8px 8px 0;padding:18px 18px;transition:all .25s ease}
+.ule-mtile:hover{background:color-mix(in oklab,var(--paper) 7%,var(--ink));
+  border-left-color:#fff;transform:translateX(3px)}
+.ule-mtile-n{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(232,109,55,0.75);margin-bottom:9px}
+.ule-mtile-t{font-family:var(--serif);font-style:italic;font-size:17px;letter-spacing:-0.01em;
+  color:var(--paper);line-height:1.22}
+
+/* Immersions — globe */
+.ule-globe-wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;padding:8px 0 0}
+.ule-globe{width:100%;max-width:420px;height:auto}
+
+@media(max-width:900px){
+  .ule-grid{grid-template-columns:1fr}
+}
+</style>
+<section class="dark-sec ule-sec">
+  <div class="wrap">
+    <div class="sec-l">Our Unique Learning Experience</div>
+    <h2 class="sec-h">Our Unique<br><em>Learning Experience.</em></h2>
+    <p class="sec-sub">Every concept you learn at Launchpilot runs through these four threads, woven together across all 6 sprints.</p>
+
+    <div class="ule-grid">
+
+      <!-- AI Copilot -->
+      <div class="ule-card">
+        <div class="ule-card-n">01 · Always On</div>
+        <h3 class="ule-card-h">AI Copilot</h3>
+        <p class="ule-card-d">AI tools and workflows are woven into every sprint, not bolted on as an afterthought. Your AI Copilot is available 24/7, running GPT workflows, automating research, and giving you 10x execution speed from day one.</p>
+        <div class="ule-mock">
+          <div class="ule-mock-bar">
+            <div class="ule-mock-dot" style="background:#FB7066"></div>
+            <div class="ule-mock-dot" style="background:#F2B84B"></div>
+            <div class="ule-mock-dot" style="background:#4ADE80"></div>
+            <div class="ule-mock-title">Launchpilot · Copilot</div>
+            <div class="ule-mock-live"><div class="ule-mock-pulse"></div><span style="font-family:var(--mono);font-size:8px;color:#4ADE80">Online</span></div>
+          </div>
+          <div class="ule-mock-body">
+            <div class="ule-mock-row">
+              <div class="ule-mock-av">C</div>
+              <div>
+                <div class="ule-mock-bub"><p>Your TAM math assumes 100% category capture. Who else is already fighting for this customer?</p></div>
+                <div class="ule-mock-tag"><span>Sprint 01 — Market Sizing</span></div>
+              </div>
+            </div>
+            <div class="ule-mock-row ule-mock-user">
+              <div class="ule-mock-bub"><p>Three regional players. None of them are AI-first though.</p></div>
+            </div>
+            <div class="ule-mock-row">
+              <div class="ule-mock-av">C</div>
+              <div class="ule-mock-bub"><p>That's your wedge then. Rebuild your SOM around the AI-first gap, not raw category size.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sprints -->
+      <div class="ule-card">
+        <div class="ule-card-n">02 · Structured</div>
+        <h3 class="ule-card-h">Sprints</h3>
+        <p class="ule-card-d">Six fast-paced, 6-week sprints — each one ends with a real deliverable, not an exam. You leave with a company, a financial model, and your first customers, not just a transcript.</p>
+        <div class="ule-tl">
+          <div class="ule-tl-item"><div class="ule-tl-dot ule-tl-glow">01</div><div><div class="ule-tl-t">Design Thinking &amp; Problem Discovery</div></div></div>
+          <div class="ule-tl-item"><div class="ule-tl-dot ule-tl-glow">02</div><div><div class="ule-tl-t">Product &amp; MVP Development</div></div></div>
+          <div class="ule-tl-item"><div class="ule-tl-dot ule-tl-glow">03</div><div><div class="ule-tl-t">Sales &amp; Customer Acquisition</div></div></div>
+          <div class="ule-tl-item"><div class="ule-tl-dot ule-tl-glow">04</div><div><div class="ule-tl-t">Marketing, Brand &amp; Growth</div></div></div>
+          <div class="ule-tl-item"><div class="ule-tl-dot ule-tl-glow">05</div><div><div class="ule-tl-t">Finance, Fundraising &amp; Business Models</div></div></div>
+          <div class="ule-tl-item"><div class="ule-tl-dot">06</div><div><div class="ule-tl-t">Leadership, Scaling &amp; Founder Mindset</div></div></div>
+        </div>
+      </div>
+
+      <!-- Mentor-Guided Missions -->
+      <div class="ule-card">
+        <div class="ule-card-n">03 · Mentor-Led</div>
+        <h3 class="ule-card-h">Mentor-Guided Missions</h3>
+        <p class="ule-card-d">Live experiential sessions run by the 80+ startup leaders on faculty — not lectures. You're in the room, doing the thing.</p>
+        <div class="ule-mtile-grid">
+          <div class="ule-mtile"><div class="ule-mtile-n">Fundraising</div><div class="ule-mtile-t">VC Pitching</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Product</div><div class="ule-mtile-t">AI Agent Building</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Growth</div><div class="ule-mtile-t">Content Marketing</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Growth</div><div class="ule-mtile-t">Growth Hacking</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Sales</div><div class="ule-mtile-t">Cold Outbound</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Brand</div><div class="ule-mtile-t">Personal Branding</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Fundraising</div><div class="ule-mtile-t">Fundraising Negotiation</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Product</div><div class="ule-mtile-t">No-Code Builds</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Growth</div><div class="ule-mtile-t">Performance Ads</div></div>
+          <div class="ule-mtile"><div class="ule-mtile-n">Fundraising</div><div class="ule-mtile-t">Investor Networking</div></div>
+        </div>
+      </div>
+
+      <!-- Global Immersions -->
+      <div class="ule-card">
+        <div class="ule-card-n">04 · In-Person</div>
+        <h3 class="ule-card-h">Global Immersions</h3>
+        <p class="ule-card-d">Build your global network in person, not just on a call. Travel across 6 cities to meet founders, investors and operators inside the rooms where deals actually happen.</p>
+        <div class="ule-globe-wrap">
+          <svg viewBox="0 0 400 400" class="ule-globe">
+            <defs>
+              <radialGradient id="uleGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E86D37" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#E86D37" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="uleFill" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#1a140e"/>
+                <stop offset="100%" stop-color="#0d0a07"/>
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="190" fill="url(#uleGlow)"/>
+            <circle cx="200" cy="200" r="150" fill="url(#uleFill)" stroke="rgba(232,109,55,0.25)" stroke-width="1"/>
+            <ellipse cx="200" cy="200" rx="150" ry="42" fill="none" stroke="rgba(232,109,55,0.14)" stroke-width="1"/>
+            <ellipse cx="200" cy="200" rx="112" ry="150" fill="none" stroke="rgba(232,109,55,0.1)" stroke-width="1"/>
+            <ellipse cx="200" cy="200" rx="56" ry="150" fill="none" stroke="rgba(232,109,55,0.1)" stroke-width="1"/>
+            <line x1="50" y1="200" x2="350" y2="200" stroke="rgba(232,109,55,0.14)" stroke-width="1"/>
+
+            <!-- San Francisco -->
+            <circle cx="118" cy="148" r="5" fill="#E86D37"/>
+            <circle cx="118" cy="148" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="98" y="134" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">SF</text>
+
+            <!-- Dubai -->
+            <circle cx="148" cy="222" r="5" fill="#E86D37"/>
+            <circle cx="148" cy="222" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="3.6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="3.6s" repeatCount="indefinite"/>
+            </circle>
+            <text x="105" y="226" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">DXB</text>
+
+            <!-- Mumbai -->
+            <circle cx="206" cy="178" r="5" fill="#E86D37"/>
+            <circle cx="206" cy="178" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="4.1s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="4.1s" repeatCount="indefinite"/>
+            </circle>
+            <text x="214" y="172" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">BOM</text>
+
+            <!-- Shanghai -->
+            <circle cx="266" cy="150" r="5" fill="#E86D37"/>
+            <circle cx="266" cy="150" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="3.3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="3.3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="274" y="144" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">SHA</text>
+
+            <!-- Singapore -->
+            <circle cx="258" cy="226" r="5" fill="#E86D37"/>
+            <circle cx="258" cy="226" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="3.9s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="3.9s" repeatCount="indefinite"/>
+            </circle>
+            <text x="266" y="230" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">SG</text>
+
+            <!-- Bali -->
+            <circle cx="222" cy="262" r="5" fill="#E86D37"/>
+            <circle cx="222" cy="262" r="5" fill="none" stroke="#E86D37" stroke-width="1" opacity="0.6">
+              <animate attributeName="r" values="5;20;5" dur="4.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0;0.6" dur="4.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="230" y="266" fill="#F2B084" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700">DPS</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES (copied exactly from homepage) -->
+<section id="launches" class="dark-sec">
+  <div class="wrap">
+    <div class="sec-l">Companies Built</div>
+    <h2 class="sec-h">Companies built <em>with us.</em></h2>
+    <p class="sec-sub">30+ ventures shipped by alumni across six geographies.</p>
+    <div class="startup-grid" id="startup-grid" style="margin-top:32px">
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/salt-and-sun.jpg" alt="Foliages — startup founded by Reyo Augustine · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Foliages</div><div class="by">REYO AUGUSTINE · BENGALURU</div><div class="desc" style="margin-top:8px">India's favourite e-commerce brand for premium plants</div></div><div class="raised">BOOTSTRAPPED · PROFITABLE</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/forge-labs.jpg" alt="Devananta — startup founded by Devyansh Agarwal · Mumbai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Devananta</div><div class="by">DEVYANSH AGARWAL · MUMBAI</div><div class="desc" style="margin-top:8px">Future of Battery Sustainability</div></div><div class="raised">$200K SEED · GOVT GRANTS</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/maitri.jpg" alt="Mvaak.ai — startup founded by Shivam Pal · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Mvaak.ai</div><div class="by">SHIVAM PAL · DELHI</div><div class="desc" style="margin-top:8px">Audio AI Solutions for Enterprises</div></div><div class="raised">$200K PRE-SEED</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/otra.jpg" alt="Jopana — startup founded by Dr Ananth Srinivasan · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Jopana</div><div class="by">DR ANANTH SRINIVASAN · BENGALURU</div><div class="desc" style="margin-top:8px">Marketplace for healthcare domestic workers</div></div><div class="raised">BOOTSTRAPPED · REVENUE GENERATING</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/lumen.jpg" alt="Cyclo Care — startup founded by Manish Charhate · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Cyclo Care</div><div class="by">MANISH CHARHATE · BENGALURU</div><div class="desc" style="margin-top:8px">Period Tracking App for Women in Tier 3 Cities</div></div><div class="raised">10,000+ DOWNLOADS · BOOTSTRAPPED</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/quill.jpg" alt="Reel Ninja Studios — startup founded by Swarit Bharadwaj · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Reel Ninja Studios</div><div class="by">SWARIT BHARADWAJ · DELHI</div><div class="desc" style="margin-top:8px">AI content creation platform for SMEs and Enterprises</div></div><div class="raised">$20K GRANTS · PRODUCT MARKET FIT</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s7.jpg" alt="ClaimBack — startup founded by Abhijith Jajio · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">ClaimBack</div><div class="by">ABHIJITH JAJIO · BENGALURU</div><div class="desc" style="margin-top:8px">AI-powered platform for asset recollection</div></div><div class="raised">6.5 CR INR ASSETS MANAGED</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s8.jpg" alt="BlendYeh — startup founded by Samrudh R · Chennai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">BlendYeh</div><div class="by">SAMRUDH R · CHENNAI</div><div class="desc" style="margin-top:8px">Automated food kiosks for smoothies, milkshakes and juices</div></div><div class="raised">IIT MADRAS DROPOUT · PILOT LIVE</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s9.jpg" alt="Sustainify — startup founded by Guliz · Singapore" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Sustainify</div><div class="by">GULIZ · SINGAPORE</div><div class="desc" style="margin-top:8px">Carbon credit marketplace for Asian manufacturers</div></div><div class="raised">SEMI-FINALIST · WORLD ASEAN STARTUP COMPETITION</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s10.jpg" alt="CloudComm.io — startup founded by Alex · Spain" onerror="this.style.opacity='0'"></div></div><div><div class="nm">CloudComm.io</div><div class="by">ALEX · SPAIN</div><div class="desc" style="margin-top:8px">E-commerce automated infrastructure for Southeast Asia</div></div><div class="raised">$50K+ MRR</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s11.jpg" alt="Vandan Group — startup founded by Ayush Agarwal · Pune" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Vandan Group</div><div class="by">AYUSH AGARWAL · PUNE</div><div class="desc" style="margin-top:8px">Scaling family business across real estate, construction and F&amp;B</div></div><div class="raised">50+ YEARS LEGACY · 100+ TEAM</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s12.jpg" alt="Cureeasy.io — startup founded by Suraj Reddy · Dubai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Cureeasy.io</div><div class="by">SURAJ REDDY · DUBAI</div><div class="desc" style="margin-top:8px">Dubai's Home Recovery and Preventive Care Solution</div></div><div class="raised">BOOTSTRAPPED · REVENUE GENERATING</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s13.jpg" alt="Wordful — startup founded by Charles Bohannan · San Francisco" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Wordful</div><div class="by">CHARLES BOHANNAN · SAN FRANCISCO</div><div class="desc" style="margin-top:8px">AI Marketing Platform for Founders</div></div><div class="raised">$200K PRE-SEED · PROFITABLE</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s14.jpg" alt="Ojiva.ai — startup founded by Vinay Reddy · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Ojiva.ai</div><div class="by">VINAY REDDY · HYDERABAD</div><div class="desc" style="margin-top:8px">Vernacular Youtube Channel for Kids related to Health</div></div><div class="raised">100,000+ SUBSCRIBERS</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s15.jpg" alt="Vakalo.ai — startup founded by Sai Kiran · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Vakalo.ai</div><div class="by">SAI KIRAN · HYDERABAD</div><div class="desc" style="margin-top:8px">Audio AI Solution for Enterprises for India</div></div><div class="raised">$100K+ IN GRANTS</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s16.jpg" alt="Aesthetic Essentials — startup founded by Vishesh Arora · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Aesthetic Essentials</div><div class="by">VISHESH ARORA · DELHI</div><div class="desc" style="margin-top:8px">D2C Brand for Copper Utensils</div></div><div class="raised">$2M ARR · 150+ SKU's</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s17.jpg" alt="Flare.io — startup founded by Praharsha G · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Flare.io</div><div class="by">PRAHARSHA G · BENGALURU</div><div class="desc" style="margin-top:8px">A conversion recovery layer designed for Shopify and D2C brands</div></div><div class="raised">REVENUE GENERATING · 400,000+ USERS</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s18.jpg" alt="Mindler.AI — startup founded by Sandhya Pradhan · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Mindler.AI</div><div class="by">SANDHYA PRADHAN · BENGALURU</div><div class="desc" style="margin-top:8px">Personal AI Assistant</div></div><div class="raised">BOOTSTRAPPED · PRODUCT MARKET FIT</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s19.jpg" alt="Ignoimagine — startup founded by Sumana Mandal · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Ignoimagine</div><div class="by">SUMANA MANDAL · HYDERABAD</div><div class="desc" style="margin-top:8px">AI-powered multitasking mobile robots</div></div><div class="raised">BOOTSTRAPPED · 22+ PROJECTS</div></div>
+      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s20.jpg" alt="Human Tag — startup founded by Elsefity Mohammed · Dubai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Human Tag</div><div class="by">ELSEFITY MOHAMMED · DUBAI</div><div class="desc" style="margin-top:8px">Executive Education Platform for UAE</div></div><div class="raised">$950K REVENUE · SERIES A PIPELINE</div></div>
+
+      <div style="margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)">
+        Showing 20 of 30+ · <a href="#" style="color:var(--fire)">View all ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .startup-grid{display:grid;grid-template-columns:repeat(5, 1fr);gap:1px;
+    background:color-mix(in oklab, var(--paper) 14%, transparent);
+    border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
+    border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
+  .startup{background:var(--ink);padding:24px;display:flex;flex-direction:column;gap:14px;
+    aspect-ratio:1/1;justify-content:space-between;position:relative;overflow:hidden;
+    transition:background .35s, transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s}
+  .startup::before{content:"";position:absolute;inset:0;border:.5px solid transparent;
+    pointer-events:none;transition:border-color .35s;z-index:1}
+  .startup:hover{background:color-mix(in oklab, var(--ink) 84%, var(--fire) 16%);
+    transform:translateY(-5px) scale(1.015);
+    box-shadow:0 24px 64px -16px color-mix(in oklab, var(--fire) 40%, transparent), 0 4px 20px rgba(0,0,0,.4);
+    z-index:2}
+  .startup:hover::before{border-color:color-mix(in oklab, var(--fire) 45%, transparent)}
+  .startup .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .startup .ph{width:88px;height:88px;border-radius:10px;overflow:hidden;flex-shrink:0;
+    background: repeating-linear-gradient(45deg,
+      color-mix(in oklab, var(--paper) 12%, transparent) 0 6px,
+      color-mix(in oklab, var(--paper) 6%, transparent) 6px 12px);
+    border:.5px solid color-mix(in oklab, var(--paper) 18%, transparent);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1), border-color .35s}
+  .startup:hover .ph{transform:scale(1.08);border-color:color-mix(in oklab, var(--fire) 60%, transparent)}
+  .startup .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+    filter:grayscale(20%);transition:filter .4s}
+  .startup:hover .ph img{filter:grayscale(0%)}
+  .startup .badge{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--fire);padding:4px 10px;border-radius:999px;
+    border:.5px solid color-mix(in oklab, var(--fire) 60%, transparent);align-self:flex-start}
+  .startup .nm{font-family:var(--serif);font-size:26px;letter-spacing:-0.01em;line-height:1.05}
+  .startup .by{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);margin-top:2px}
+  .startup .desc{font-size:12.5px;color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);line-height:1.45}
+  .startup .raised{font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+    color:color-mix(in oklab, var(--paper) 78%, var(--ink) 22%);text-transform:uppercase}
+  @media(max-width:1100px){.startup-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){
+    .startup-grid{grid-template-columns:1fr}
+    .startup .nm{font-size:20px}
+  }
+</style>
+
+<!-- 10 PATHWAYS -->
+<section>
+  <div class="wrap">
+    <div class="sec-l">Your Pathway</div>
+    <h2 class="sec-h">Pick your path.<br><em>We build around it.</em></h2>
+    <p class="sec-sub">On day one you choose your pathway. Your mentor, AI system, and curriculum are all tailored to it.</p>
+  </div>
+
+  <div class="pw-strip">
+    <div class="pw-fade-l"></div>
+    <div class="pw-fade-r"></div>
+    <div class="pw-track" id="pw-track">
+      <div class="pw-card"><div class="pw-n">P01</div><div class="pw-icon">🤖</div><div class="pw-t">AI SaaS</div><div class="pw-outcome">$5K–50K MRR in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P02</div><div class="pw-icon">🏪</div><div class="pw-t">Marketplace</div><div class="pw-outcome">100+ transactions in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P03</div><div class="pw-icon">🎓</div><div class="pw-t">EdTech</div><div class="pw-outcome">$3K–20K MRR in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P04</div><div class="pw-icon">🍔</div><div class="pw-t">Food &amp; Beverage</div><div class="pw-outcome">MVP + first 50 customers in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P05</div><div class="pw-icon">🧑‍💼</div><div class="pw-t">Consulting &amp; Services</div><div class="pw-outcome">$8K–15K MRR in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P06</div><div class="pw-icon">📦</div><div class="pw-t">D2C &amp; E-commerce</div><div class="pw-outcome">$2M ARR potential in 18 months</div></div>
+      <div class="pw-card"><div class="pw-n">P07</div><div class="pw-icon">✍️</div><div class="pw-t">Content &amp; Media</div><div class="pw-outcome">10K subscribers + revenue</div></div>
+      <div class="pw-card"><div class="pw-n">P08</div><div class="pw-icon">💄</div><div class="pw-t">Beauty &amp; Cosmetics</div><div class="pw-outcome">$5K–30K MRR in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P09</div><div class="pw-icon">🌐</div><div class="pw-t">Agency &amp; Freelance</div><div class="pw-outcome">$15K–25K MRR in 6 months</div></div>
+      <div class="pw-card"><div class="pw-n">P10</div><div class="pw-icon">🏥</div><div class="pw-t">Health, Climate &amp; Deep Tech</div><div class="pw-outcome">Pre-seed raise in 12 months</div></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div style="margin-top:16px;padding:20px 32px;border-radius:10px;background:color-mix(in oklab,var(--fire) 6%,transparent);border:.5px solid color-mix(in oklab,var(--fire) 16%,transparent);display:flex;align-items:center;gap:24px">
+      <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">10</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.70);line-height:1.9">Dedicated pathways · Each with a custom roadmap, AI-powered support, and a mentor matched to your industry · You pick your path on day one</div>
+    </div>
+  </div>
+</section>
+<style>
+  .pw-strip{position:relative;overflow:hidden;margin-top:40px;padding:8px 0}
+  .pw-fade-l,.pw-fade-r{position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+  .pw-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+  .pw-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+  .pw-track{display:flex;gap:14px;width:max-content;padding:0 48px;animation:pw-scroll 38s linear infinite}
+  .pw-track:hover{animation-play-state:paused}
+  @keyframes pw-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .pw-card{flex:0 0 auto;width:172px;padding:24px 20px;border-radius:14px;text-align:center;
+    background:color-mix(in oklab,var(--paper) 4%,var(--ink));
+    border:.5px solid rgba(245,238,216,0.12);
+    transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
+  .pw-card:hover{border-color:color-mix(in oklab,var(--fire) 55%,transparent);transform:translateY(-4px)}
+  .pw-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--fire);opacity:.65;margin-bottom:10px}
+  .pw-icon{font-size:30px;margin-bottom:10px;line-height:1}
+  .pw-t{font-family:var(--serif);font-size:18px;font-style:italic;letter-spacing:-0.005em;
+    color:var(--paper);line-height:1.2;margin-bottom:14px;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .pw-outcome{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(245,238,216,0.62);line-height:1.5;padding-top:12px;border-top:.5px solid rgba(245,238,216,0.08)}
+  @media(max-width:600px){
+    .pw-card{width:148px;padding:20px 16px}
+    .pw-fade-l,.pw-fade-r{width:40px}
+  }
+</style>
+<script>
+(function(){
+  var t = document.getElementById('pw-track');
+  if(!t) return;
+  Array.from(t.querySelectorAll('.pw-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+})();
+</script>
+
 <!-- CURRICULUM -->
 <section id="curriculum" class="dark-sec">
   <div class="wrap">
@@ -1658,70 +2031,6 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   </div>
 </section>
 
-<!-- 10 PATHWAYS -->
-<section>
-  <div class="wrap">
-    <div class="sec-l">Your Business Pathway</div>
-    <h2 class="sec-h">Pick your path.<br><em>We build around it.</em></h2>
-    <p class="sec-sub">On day one you choose the type of business you want to build. Your mentor, AI system, and curriculum are all tailored to that specific path.</p>
-  </div>
-
-  <div class="pw-strip">
-    <div class="pw-fade-l"></div>
-    <div class="pw-fade-r"></div>
-    <div class="pw-track" id="pw-track">
-      <div class="pw-card"><div class="pw-n">P01</div><div class="pw-icon">🤖</div><div class="pw-t">AI SaaS</div><div class="pw-outcome">$5K–50K MRR in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P02</div><div class="pw-icon">🏪</div><div class="pw-t">Marketplace</div><div class="pw-outcome">100+ transactions in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P03</div><div class="pw-icon">🎓</div><div class="pw-t">EdTech</div><div class="pw-outcome">$3K–20K MRR in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P04</div><div class="pw-icon">🍔</div><div class="pw-t">Food Business</div><div class="pw-outcome">MVP + first 50 customers in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P05</div><div class="pw-icon">🧑‍💼</div><div class="pw-t">Consulting &amp; Services</div><div class="pw-outcome">$8K–15K MRR in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P06</div><div class="pw-icon">📦</div><div class="pw-t">D2C &amp; E-commerce</div><div class="pw-outcome">$2M ARR potential in 18 months</div></div>
-      <div class="pw-card"><div class="pw-n">P07</div><div class="pw-icon">✍️</div><div class="pw-t">Content-Led Business</div><div class="pw-outcome">10K subscribers + revenue</div></div>
-      <div class="pw-card"><div class="pw-n">P08</div><div class="pw-icon">💄</div><div class="pw-t">Cosmetics Business</div><div class="pw-outcome">$5K–30K MRR in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P09</div><div class="pw-icon">🌐</div><div class="pw-t">Agency &amp; Freelance</div><div class="pw-outcome">$15K–25K MRR in 6 months</div></div>
-      <div class="pw-card"><div class="pw-n">P10</div><div class="pw-icon">🏥</div><div class="pw-t">Health, Climate &amp; Deep Tech</div><div class="pw-outcome">Pre-seed raise in 12 months</div></div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div style="margin-top:16px;padding:20px 32px;border-radius:10px;background:color-mix(in oklab,var(--fire) 6%,transparent);border:.5px solid color-mix(in oklab,var(--fire) 16%,transparent);display:flex;align-items:center;gap:24px">
-      <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">10</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,238,216,0.70);line-height:1.9">Dedicated business pathways · Each with a custom roadmap, AI-powered support, and a mentor matched to your industry · You pick your path on day one</div>
-    </div>
-  </div>
-</section>
-<style>
-  .pw-strip{position:relative;overflow:hidden;margin-top:40px;padding:8px 0}
-  .pw-fade-l,.pw-fade-r{position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-  .pw-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
-  .pw-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
-  .pw-track{display:flex;gap:14px;width:max-content;padding:0 48px;animation:pw-scroll 38s linear infinite}
-  .pw-track:hover{animation-play-state:paused}
-  @keyframes pw-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-  .pw-card{flex:0 0 auto;width:172px;padding:24px 20px;border-radius:14px;text-align:center;
-    background:color-mix(in oklab,var(--paper) 4%,var(--ink));
-    border:.5px solid rgba(245,238,216,0.12);
-    transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.2,1)}
-  .pw-card:hover{border-color:color-mix(in oklab,var(--fire) 55%,transparent);transform:translateY(-4px)}
-  .pw-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--fire);opacity:.65;margin-bottom:10px}
-  .pw-icon{font-size:30px;margin-bottom:10px;line-height:1}
-  .pw-t{font-family:var(--serif);font-size:18px;font-style:italic;letter-spacing:-0.005em;
-    color:var(--paper);line-height:1.2;margin-bottom:14px;min-height:44px;display:flex;align-items:center;justify-content:center}
-  .pw-outcome{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;
-    color:rgba(245,238,216,0.62);line-height:1.5;padding-top:12px;border-top:.5px solid rgba(245,238,216,0.08)}
-  @media(max-width:600px){
-    .pw-card{width:148px;padding:20px 16px}
-    .pw-fade-l,.pw-fade-r{width:40px}
-  }
-</style>
-<script>
-(function(){
-  var t = document.getElementById('pw-track');
-  if(!t) return;
-  Array.from(t.querySelectorAll('.pw-card')).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
-})();
-</script>
 
 <!-- AI TOOLS -->
 <section>
@@ -1926,85 +2235,6 @@ footer{border-top:.5px solid rgba(245,238,216,0.08);padding:36px 48px;
   </div>
 </section>
 
-
-
-
-
-<!-- OUTCOMES (copied exactly from homepage) -->
-<section id="launches" class="dark-sec">
-  <div class="wrap">
-    <div class="sec-l">Companies Built</div>
-    <h2 class="sec-h">Companies built <em>with us.</em></h2>
-    <p class="sec-sub">30+ ventures shipped by alumni across six geographies.</p>
-    <div class="startup-grid" id="startup-grid" style="margin-top:32px">
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/salt-and-sun.jpg" alt="Foliages — startup founded by Reyo Augustine · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Foliages</div><div class="by">REYO AUGUSTINE · BENGALURU</div><div class="desc" style="margin-top:8px">India's favourite e-commerce brand for premium plants</div></div><div class="raised">BOOTSTRAPPED · PROFITABLE</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/forge-labs.jpg" alt="Devananta — startup founded by Devyansh Agarwal · Mumbai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Devananta</div><div class="by">DEVYANSH AGARWAL · MUMBAI</div><div class="desc" style="margin-top:8px">Future of Battery Sustainability</div></div><div class="raised">$200K SEED · GOVT GRANTS</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/maitri.jpg" alt="Mvaak.ai — startup founded by Shivam Pal · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Mvaak.ai</div><div class="by">SHIVAM PAL · DELHI</div><div class="desc" style="margin-top:8px">Audio AI Solutions for Enterprises</div></div><div class="raised">$200K PRE-SEED</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/otra.jpg" alt="Jopana — startup founded by Dr Ananth Srinivasan · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Jopana</div><div class="by">DR ANANTH SRINIVASAN · BENGALURU</div><div class="desc" style="margin-top:8px">Marketplace for healthcare domestic workers</div></div><div class="raised">BOOTSTRAPPED · REVENUE GENERATING</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/lumen.jpg" alt="Cyclo Care — startup founded by Manish Charhate · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Cyclo Care</div><div class="by">MANISH CHARHATE · BENGALURU</div><div class="desc" style="margin-top:8px">Period Tracking App for Women in Tier 3 Cities</div></div><div class="raised">10,000+ DOWNLOADS · BOOTSTRAPPED</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/quill.jpg" alt="Reel Ninja Studios — startup founded by Swarit Bharadwaj · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Reel Ninja Studios</div><div class="by">SWARIT BHARADWAJ · DELHI</div><div class="desc" style="margin-top:8px">AI content creation platform for SMEs and Enterprises</div></div><div class="raised">$20K GRANTS · PRODUCT MARKET FIT</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s7.jpg" alt="ClaimBack — startup founded by Abhijith Jajio · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">ClaimBack</div><div class="by">ABHIJITH JAJIO · BENGALURU</div><div class="desc" style="margin-top:8px">AI-powered platform for asset recollection</div></div><div class="raised">6.5 CR INR ASSETS MANAGED</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s8.jpg" alt="BlendYeh — startup founded by Samrudh R · Chennai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">BlendYeh</div><div class="by">SAMRUDH R · CHENNAI</div><div class="desc" style="margin-top:8px">Automated food kiosks for smoothies, milkshakes and juices</div></div><div class="raised">IIT MADRAS DROPOUT · PILOT LIVE</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s9.jpg" alt="Sustainify — startup founded by Guliz · Singapore" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Sustainify</div><div class="by">GULIZ · SINGAPORE</div><div class="desc" style="margin-top:8px">Carbon credit marketplace for Asian manufacturers</div></div><div class="raised">SEMI-FINALIST · WORLD ASEAN STARTUP COMPETITION</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s10.jpg" alt="CloudComm.io — startup founded by Alex · Spain" onerror="this.style.opacity='0'"></div></div><div><div class="nm">CloudComm.io</div><div class="by">ALEX · SPAIN</div><div class="desc" style="margin-top:8px">E-commerce automated infrastructure for Southeast Asia</div></div><div class="raised">$50K+ MRR</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s11.jpg" alt="Vandan Group — startup founded by Ayush Agarwal · Pune" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Vandan Group</div><div class="by">AYUSH AGARWAL · PUNE</div><div class="desc" style="margin-top:8px">Scaling family business across real estate, construction and F&amp;B</div></div><div class="raised">50+ YEARS LEGACY · 100+ TEAM</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s12.jpg" alt="Cureeasy.io — startup founded by Suraj Reddy · Dubai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Cureeasy.io</div><div class="by">SURAJ REDDY · DUBAI</div><div class="desc" style="margin-top:8px">Dubai's Home Recovery and Preventive Care Solution</div></div><div class="raised">BOOTSTRAPPED · REVENUE GENERATING</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s13.jpg" alt="Wordful — startup founded by Charles Bohannan · San Francisco" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Wordful</div><div class="by">CHARLES BOHANNAN · SAN FRANCISCO</div><div class="desc" style="margin-top:8px">AI Marketing Platform for Founders</div></div><div class="raised">$200K PRE-SEED · PROFITABLE</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s14.jpg" alt="Ojiva.ai — startup founded by Vinay Reddy · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Ojiva.ai</div><div class="by">VINAY REDDY · HYDERABAD</div><div class="desc" style="margin-top:8px">Vernacular Youtube Channel for Kids related to Health</div></div><div class="raised">100,000+ SUBSCRIBERS</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s15.jpg" alt="Vakalo.ai — startup founded by Sai Kiran · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Vakalo.ai</div><div class="by">SAI KIRAN · HYDERABAD</div><div class="desc" style="margin-top:8px">Audio AI Solution for Enterprises for India</div></div><div class="raised">$100K+ IN GRANTS</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s16.jpg" alt="Aesthetic Essentials — startup founded by Vishesh Arora · Delhi" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Aesthetic Essentials</div><div class="by">VISHESH ARORA · DELHI</div><div class="desc" style="margin-top:8px">D2C Brand for Copper Utensils</div></div><div class="raised">$2M ARR · 150+ SKU's</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s17.jpg" alt="Flare.io — startup founded by Praharsha G · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Flare.io</div><div class="by">PRAHARSHA G · BENGALURU</div><div class="desc" style="margin-top:8px">A conversion recovery layer designed for Shopify and D2C brands</div></div><div class="raised">REVENUE GENERATING · 400,000+ USERS</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '25</span><div class="ph"><img src="../images/founders/s18.jpg" alt="Mindler.AI — startup founded by Sandhya Pradhan · Bengaluru" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Mindler.AI</div><div class="by">SANDHYA PRADHAN · BENGALURU</div><div class="desc" style="margin-top:8px">Personal AI Assistant</div></div><div class="raised">BOOTSTRAPPED · PRODUCT MARKET FIT</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '24</span><div class="ph"><img src="../images/founders/s19.jpg" alt="Ignoimagine — startup founded by Sumana Mandal · Hyderabad" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Ignoimagine</div><div class="by">SUMANA MANDAL · HYDERABAD</div><div class="desc" style="margin-top:8px">AI-powered multitasking mobile robots</div></div><div class="raised">BOOTSTRAPPED · 22+ PROJECTS</div></div>
-      <div class="startup s-card"><div class="top"><span class="badge">Cohort '23</span><div class="ph"><img src="../images/founders/s20.jpg" alt="Human Tag — startup founded by Elsefity Mohammed · Dubai" onerror="this.style.opacity='0'"></div></div><div><div class="nm">Human Tag</div><div class="by">ELSEFITY MOHAMMED · DUBAI</div><div class="desc" style="margin-top:8px">Executive Education Platform for UAE</div></div><div class="raised">$950K REVENUE · SERIES A PIPELINE</div></div>
-
-      <div style="margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in oklab, var(--paper) 55%, var(--ink) 45%)">
-        Showing 20 of 30+ · <a href="#" style="color:var(--fire)">View all ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  .startup-grid{display:grid;grid-template-columns:repeat(5, 1fr);gap:1px;
-    background:color-mix(in oklab, var(--paper) 14%, transparent);
-    border-top:.5px solid color-mix(in oklab, var(--paper) 14%, transparent);
-    border-bottom:.5px solid color-mix(in oklab, var(--paper) 14%, transparent)}
-  .startup{background:var(--ink);padding:24px;display:flex;flex-direction:column;gap:14px;
-    aspect-ratio:1/1;justify-content:space-between;position:relative;overflow:hidden;
-    transition:background .35s, transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s}
-  .startup::before{content:"";position:absolute;inset:0;border:.5px solid transparent;
-    pointer-events:none;transition:border-color .35s;z-index:1}
-  .startup:hover{background:color-mix(in oklab, var(--ink) 84%, var(--fire) 16%);
-    transform:translateY(-5px) scale(1.015);
-    box-shadow:0 24px 64px -16px color-mix(in oklab, var(--fire) 40%, transparent), 0 4px 20px rgba(0,0,0,.4);
-    z-index:2}
-  .startup:hover::before{border-color:color-mix(in oklab, var(--fire) 45%, transparent)}
-  .startup .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-  .startup .ph{width:88px;height:88px;border-radius:10px;overflow:hidden;flex-shrink:0;
-    background: repeating-linear-gradient(45deg,
-      color-mix(in oklab, var(--paper) 12%, transparent) 0 6px,
-      color-mix(in oklab, var(--paper) 6%, transparent) 6px 12px);
-    border:.5px solid color-mix(in oklab, var(--paper) 18%, transparent);
-    transition:transform .4s cubic-bezier(.2,.7,.2,1), border-color .35s}
-  .startup:hover .ph{transform:scale(1.08);border-color:color-mix(in oklab, var(--fire) 60%, transparent)}
-  .startup .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
-    filter:grayscale(20%);transition:filter .4s}
-  .startup:hover .ph img{filter:grayscale(0%)}
-  .startup .badge{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--fire);padding:4px 10px;border-radius:999px;
-    border:.5px solid color-mix(in oklab, var(--fire) 60%, transparent);align-self:flex-start}
-  .startup .nm{font-family:var(--serif);font-size:26px;letter-spacing:-0.01em;line-height:1.05}
-  .startup .by{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-    color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);margin-top:2px}
-  .startup .desc{font-size:12.5px;color:color-mix(in oklab, var(--paper) 65%, var(--ink) 35%);line-height:1.45}
-  .startup .raised{font-family:var(--mono);font-size:10px;letter-spacing:.12em;
-    color:color-mix(in oklab, var(--paper) 78%, var(--ink) 22%);text-transform:uppercase}
-  @media(max-width:1100px){.startup-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:600px){
-    .startup-grid{grid-template-columns:1fr}
-    .startup .nm{font-size:20px}
-  }
-</style>
 
 <!-- ANIMATED JOURNEY -->
 
