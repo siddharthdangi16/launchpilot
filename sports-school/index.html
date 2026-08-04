@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athlo — The Career School for the Global Sports Industry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch: #0a0e0b;
+    --turf-deep: #0e1a13;
+    --turf-mid: #16301f;
+    --turf-line: #244a30;
+    --floodlight: #f6f7f2;
+    --chalk: #b9c4b4;
+    --chalk-dim: #7c8a79;
+    --amber: #e8b23a;
+    --amber-soft: rgba(232,178,58,.14);
+    --green: #5fbf7d;
+    --green-dim: #345d43;
+    --danger: #d8674c;
+    --radius: 2px;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'Space Mono', monospace;
+    --maxw: 1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--pitch);
+    color:var(--floodlight);
+    font-family:var(--body);
+    line-height:1.5;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--amber);color:var(--pitch);}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--amber);display:inline-block;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;text-transform:uppercase;line-height:.94;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    padding:15px 28px;border-radius:var(--radius);border:1px solid transparent;
+    cursor:pointer;transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--amber);color:var(--pitch);font-weight:700;}
+  .btn-primary:hover{transform:translateY(-2px);background:#f2c257;}
+  .btn-ghost{border-color:rgba(246,247,242,.28);color:var(--floodlight);}
+  .btn-ghost:hover{border-color:var(--floodlight);background:rgba(246,247,242,.06);}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:linear-gradient(to bottom, rgba(10,14,11,.92), rgba(10,14,11,0));
+    backdrop-filter:blur(6px);
+  }
+  .nav{
+    max-width:var(--maxw);margin:0 auto;padding:22px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{font-family:var(--display);font-size:26px;letter-spacing:.03em;display:flex;align-items:baseline;gap:8px;}
+  .logo span{font-family:var(--mono);font-size:10px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.12em;}
+  .nav-links{display:flex;gap:34px;font-size:14px;font-weight:500;}
+  .nav-links a{color:var(--chalk);transition:color .2s;position:relative;}
+  .nav-links a:hover{color:var(--floodlight);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .nav-toggle{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:150px 0 60px;
+    background:
+      radial-gradient(ellipse 90% 55% at 50% 0%, rgba(95,191,125,.16), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(232,178,58,.10), transparent 60%),
+      var(--pitch);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background-image: repeating-linear-gradient(180deg, rgba(246,247,242,.035) 0px, rgba(246,247,242,.035) 1px, transparent 1px, transparent 64px);
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent);
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;width:100%;position:relative;z-index:2;}
+  .hero h1{
+    font-size:clamp(52px, 8.6vw, 128px);
+    max-width:1040px;
+  }
+  .hero h1 .accent{color:var(--amber);}
+  .hero-sub{
+    margin-top:28px;max-width:560px;color:var(--chalk);font-size:18px;line-height:1.6;
+  }
+  .hero-ctas{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+  .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .hero-pills span{
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:9px 14px;border:1px solid rgba(246,247,242,.22);color:var(--chalk);
+  }
+  .hero-pills span b{color:var(--amber);font-weight:400;}
+
+  /* substitution board */
+  .subboard{
+    margin-top:64px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    font-family:var(--mono);
+  }
+  .subboard-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--chalk-dim);}
+  .flip-row{display:flex;align-items:center;gap:14px;}
+  .flip-tag{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;
+    border:1px solid rgba(216,103,76,.5);color:var(--danger);
+  }
+  .flip-tag.in{border-color:rgba(95,191,125,.55);color:var(--green);}
+  .flip-card{
+    position:relative;height:44px;min-width:230px;overflow:hidden;
+    background:var(--turf-deep);border:1px solid var(--turf-line);
+  }
+  .flip-card .row{
+    position:absolute;inset:0;display:flex;align-items:center;padding:0 16px;
+    font-size:16px;letter-spacing:.03em;color:var(--floodlight);
+    transform:translateY(0);opacity:1;
+    transition:transform .5s cubic-bezier(.7,0,.2,1), opacity .35s ease;
+  }
+  .flip-card .row.out{transform:translateY(-100%);opacity:0;}
+  .flip-card .row.pending{transform:translateY(100%);opacity:0;}
+
+  /* ticker */
+  .ticker-wrap{
+    border-top:1px solid var(--turf-line);border-bottom:1px solid var(--turf-line);
+    background:var(--turf-deep);padding:16px 0;overflow:hidden;position:relative;
+  }
+  .ticker{display:flex;width:max-content;animation:scroll 32s linear infinite;}
+  .ticker span{
+    font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--chalk);padding:0 28px;display:flex;align-items:center;gap:28px;white-space:nowrap;
+  }
+  .ticker span::after{content:'—';color:var(--amber);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ===== SECTION generic ===== */
+  section{padding:130px 0;position:relative;}
+  .section-head{max-width:680px;margin-bottom:64px;}
+  .section-head h2{font-size:clamp(36px,5vw,64px);margin-top:16px;}
+  .section-head p{color:var(--chalk);font-size:17px;margin-top:18px;max-width:560px;}
+
+  /* PROBLEM */
+  .problem{background:linear-gradient(180deg, var(--pitch), var(--turf-deep));}
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--turf-line);border:1px solid var(--turf-line);}
+  .problem-col{background:var(--pitch);padding:48px 40px;}
+  .problem-col h3{font-size:20px;font-family:var(--body);font-weight:700;text-transform:none;margin-bottom:22px;letter-spacing:0;}
+  .problem-col.no h3{color:var(--danger);}
+  .problem-col.yes h3{color:var(--green);}
+  .problem-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .problem-list li{font-size:15px;color:var(--chalk);display:flex;gap:12px;align-items:baseline;}
+  .problem-list li::before{content:'—';font-family:var(--mono);color:var(--chalk-dim);flex-shrink:0;}
+  .problem-col.yes .problem-list li::before{color:var(--green);content:'✓';}
+  .problem-col.no .problem-list li::before{color:var(--danger);content:'×';}
+
+  /* PROBLEM STATS */
+  .stat-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start;}
+  .problem-copy p{color:var(--chalk);font-size:16px;line-height:1.75;margin-top:20px;max-width:520px;}
+  .problem-quote{
+    margin-top:32px;border-left:2px solid var(--amber);padding-left:24px;
+  }
+  .problem-quote p{
+    font-family:var(--display);font-size:22px;line-height:1.3;text-transform:none;letter-spacing:0;color:var(--floodlight);
+    max-width:460px;
+  }
+  .stat-cards{display:flex;flex-direction:column;gap:2px;}
+  .stat-card{
+    background:var(--turf-deep);border-left:3px solid var(--chalk-dim);padding:26px 28px;
+  }
+  .stat-card.c-danger{border-color:var(--danger);}
+  .stat-card.c-amber{border-color:var(--amber);}
+  .stat-card.c-green{border-color:var(--green);}
+  .stat-num{font-family:var(--display);font-size:52px;line-height:1;letter-spacing:.01em;}
+  .stat-card.c-danger .stat-num{color:var(--danger);}
+  .stat-card.c-amber .stat-num{color:var(--amber);}
+  .stat-card.c-green .stat-num{color:var(--green);}
+  .stat-card p{margin-top:10px;font-size:14px;color:var(--chalk);line-height:1.55;max-width:340px;}
+  .stat-source{font-family:var(--mono);font-size:10px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;margin-top:52px;}
+
+  /* CURRICULUM DEPTH */
+  .foundation{margin-bottom:64px;}
+  .foundation-label{font-family:var(--mono);font-size:12px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;}
+  .foundation-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--turf-line);border:1px solid var(--turf-line);}
+  .foundation-col{background:var(--turf-deep);padding:32px;}
+  .foundation-col .fnum{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em;}
+  .foundation-col h4{font-family:var(--body);font-weight:700;font-size:19px;text-transform:none;letter-spacing:0;margin:12px 0 6px;}
+  .foundation-col .fdesc{font-size:13.5px;color:var(--chalk);line-height:1.55;margin-bottom:22px;}
+  .subject-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--turf-line);border:1px solid var(--turf-line);}
+  .subject-tile{background:var(--pitch);padding:16px 14px;min-height:98px;transition:background .25s ease;}
+  .subject-tile:hover{background:var(--turf-mid);}
+  .subject-code{font-family:var(--mono);font-size:9.5px;color:var(--amber);letter-spacing:.06em;}
+  .subject-title{font-family:var(--body);font-weight:700;font-size:12.5px;line-height:1.3;margin:6px 0 4px;}
+  .subject-desc{font-family:var(--mono);font-size:10px;color:var(--chalk-dim);line-height:1.4;text-transform:uppercase;letter-spacing:.01em;}
+  .then-divider{display:flex;align-items:center;gap:16px;margin:56px 0 28px;}
+  .then-divider .line{flex:1;height:1px;background:var(--turf-line);}
+  .then-divider span{font-family:var(--mono);font-size:12px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;}
+
+  /* MISSION */
+  .mission{
+    background:var(--turf-deep);
+    text-align:left;
+  }
+  .mission-line{
+    font-family:var(--display);
+    font-size:clamp(28px,4.4vw,52px);
+    line-height:1.18;
+    max-width:920px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .mission-line .hl{color:var(--amber);}
+
+  /* WHO WE SERVE */
+  .icp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .icp-card{
+    background:var(--turf-deep);border:1px solid var(--turf-line);padding:44px 38px;position:relative;
+  }
+  .icp-num{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.1em;}
+  .icp-card h3{font-family:var(--body);font-weight:700;text-transform:none;letter-spacing:0;font-size:24px;margin:14px 0 18px;}
+  .icp-card p{color:var(--chalk);font-size:15px;line-height:1.65;}
+  .icp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+  .icp-tags span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--turf-line);padding:6px 10px;color:var(--chalk-dim);}
+
+  /* CURRICULUM / TRACKS */
+  .tracks{background:var(--pitch);}
+  .track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--turf-line);border:1px solid var(--turf-line);}
+  .track-card{
+    background:var(--turf-deep);padding:30px 24px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;
+    transition:background .3s ease;
+  }
+  .track-card:hover{background:var(--turf-mid);}
+  .track-squad{font-family:var(--mono);font-size:34px;color:var(--turf-line);font-weight:700;line-height:1;transition:color .3s ease;}
+  .track-card:hover .track-squad{color:var(--amber);}
+  .track-card h4{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:0;text-transform:none;margin-top:22px;}
+  .track-card span.sub{font-family:var(--mono);font-size:11px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;margin-top:6px;display:block;}
+  .track-skills{list-style:none;display:flex;flex-direction:column;gap:5px;margin-top:16px;}
+  .track-skills li{font-size:12.5px;color:var(--chalk);display:flex;gap:8px;align-items:baseline;}
+  .track-skills li::before{content:'—';color:var(--turf-line);font-family:var(--mono);flex-shrink:0;}
+  .track-card:hover .track-skills li::before{color:var(--amber);}
+
+  /* LEARNING MODEL */
+  .learning{background:var(--turf-deep);}
+  .learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .project-list{display:flex;flex-direction:column;}
+  .project-row{
+    display:flex;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--turf-line);
+  }
+  .project-row:first-child{border-top:1px solid var(--turf-line);}
+  .project-row .clock{font-family:var(--mono);font-size:12px;color:var(--amber);flex-shrink:0;width:64px;}
+  .project-row p{font-size:15px;color:var(--floodlight);}
+
+  /* INDUSTRY ACCESS */
+  .access{background:var(--pitch);}
+  .access-list{border-top:1px solid var(--turf-line);}
+  .access-row{
+    display:flex;align-items:center;gap:32px;padding:32px 0;border-bottom:1px solid var(--turf-line);
+    transition:padding-left .3s ease;
+  }
+  .access-row:hover{padding-left:12px;}
+  .access-icon{
+    width:60px;height:60px;flex-shrink:0;border:1px solid var(--turf-line);
+    display:flex;align-items:center;justify-content:center;color:var(--chalk);
+    transition:border-color .3s ease,color .3s ease;
+  }
+  .access-row:hover .access-icon{border-color:var(--amber);color:var(--amber);}
+  .access-icon svg{width:26px;height:26px;}
+  .access-row-body{flex:1;display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;}
+  .access-row-title{font-family:var(--display);font-size:26px;letter-spacing:.01em;min-width:220px;}
+  .access-row-desc{color:var(--chalk);font-size:15px;}
+  .access-row-num{font-family:var(--mono);font-size:13px;color:var(--turf-line);flex-shrink:0;transition:color .3s ease;}
+  .access-row:hover .access-row-num{color:var(--amber);}
+
+  /* EMPLOYERS */
+  .employers{background:var(--turf-deep);text-align:center;}
+  .employer-marquee{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:20px;
+  }
+  .employer-marquee span{
+    font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+    border:1px solid var(--turf-line);padding:12px 20px;color:var(--chalk);
+  }
+
+  /* CAREER OUTCOMES */
+  .outcomes{background:var(--pitch);}
+  .outcomes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--turf-line);}
+  .outcome-row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--turf-line);padding-right:24px;}
+  .outcome-row:nth-child(odd){padding-right:40px;border-right:1px solid var(--turf-line);}
+  .outcome-row span.role{font-size:15px;}
+  .outcome-row span.n{font-family:var(--mono);font-size:12px;color:var(--chalk-dim);}
+
+  /* FINANCING */
+  .financing{background:var(--turf-deep);}
+  .fin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .fin-card{border:1px solid var(--turf-line);padding:30px 24px;}
+  .fin-card h4{font-family:var(--body);font-weight:700;font-size:16px;text-transform:none;letter-spacing:0;margin-bottom:10px;}
+  .fin-card p{font-size:13.5px;color:var(--chalk-dim);}
+
+  /* COMMUNITY */
+  .community{background:var(--pitch);}
+  .quote-block{
+    border-left:2px solid var(--amber);padding-left:32px;max-width:820px;
+  }
+  .quote-block p{font-family:var(--display);font-size:clamp(24px,3.4vw,38px);line-height:1.25;text-transform:none;letter-spacing:0;}
+  .quote-meta{margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.06em;}
+  .community-list{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .community-list div{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--chalk);border-top:1px solid var(--turf-line);padding-top:14px;}
+
+  /* DIFFERENTIATORS - scoreboard */
+  .diff{background:var(--turf-deep);}
+  .scoreboard{border:1px solid var(--turf-line);}
+  .score-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid var(--turf-line);}
+  .score-row:last-child{border-bottom:none;}
+  .score-row.head{background:var(--turf-mid);}
+  .score-row div{padding:18px 22px;font-size:14px;}
+  .score-row.head div{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--chalk-dim);}
+  .score-row div:not(:first-child){border-left:1px solid var(--turf-line);text-align:center;font-family:var(--mono);font-size:13px;}
+  .score-row div.them{color:var(--chalk-dim);}
+  .score-row div.us{color:var(--green);}
+
+  /* FAQ */
+  .faq{background:var(--pitch);}
+  .faq-list{border-top:1px solid var(--turf-line);max-width:820px;}
+  .faq-item{border-bottom:1px solid var(--turf-line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;color:var(--floodlight);cursor:pointer;
+    padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:600;font-family:var(--body);
+  }
+  .faq-q .plus{font-family:var(--mono);color:var(--amber);font-size:20px;transition:transform .3s ease;flex-shrink:0;margin-left:20px;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-a p{padding-bottom:24px;color:var(--chalk);font-size:15px;line-height:1.65;max-width:640px;}
+
+  /* APPLY */
+  .apply{
+    background:radial-gradient(ellipse 70% 90% at 50% 100%, rgba(232,178,58,.14), transparent 60%), var(--turf-deep);
+    text-align:center;padding:160px 0;
+  }
+  .apply h2{font-size:clamp(40px,7vw,92px);max-width:900px;margin:0 auto;}
+  .apply p{color:var(--chalk);margin:26px auto 44px;max-width:520px;font-size:17px;}
+  .apply-ctas{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{background:var(--pitch);border-top:1px solid var(--turf-line);padding:64px 0 32px;}
+  .foot-top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid var(--turf-line);}
+  .foot-brand .logo{margin-bottom:14px;}
+  .foot-brand p{color:var(--chalk-dim);font-size:14px;max-width:280px;}
+  .foot-col h5{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--chalk-dim);margin-bottom:16px;}
+  .foot-col a{display:block;color:var(--chalk);font-size:14px;margin-bottom:10px;transition:color .2s;}
+  .foot-col a:hover{color:var(--amber);}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:28px;font-family:var(--mono);font-size:11px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;flex-wrap:wrap;gap:12px;}
+
+  /* GLOBAL REACH */
+  .global-reach{background:var(--turf-deep);}
+  .globe-wrap{display:flex;justify-content:center;margin:20px 0 56px;}
+  .globe-svg{width:100%;max-width:900px;height:auto;}
+  .globe-pin{animation:pin-pulse 2.4s ease-in-out infinite;}
+  @keyframes pin-pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+  .region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--turf-line);border:1px solid var(--turf-line);}
+  .region-card{
+    background:var(--pitch);padding:30px 24px;min-height:200px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;transition:background .3s ease;
+  }
+  .region-card:hover{background:var(--turf-mid);}
+  .region-icon{position:absolute;top:20px;right:18px;width:54px;height:54px;color:var(--turf-line);opacity:.9;transition:color .3s ease;}
+  .region-card:hover .region-icon{color:var(--amber);}
+  .region-league{font-family:var(--display);font-size:26px;letter-spacing:.01em;position:relative;z-index:1;}
+  .region-country{font-family:var(--mono);font-size:11px;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin:4px 0 10px;position:relative;z-index:1;}
+  .region-desc{font-size:12.5px;color:var(--chalk);line-height:1.5;position:relative;z-index:1;}
+  .partners{background:var(--turf-deep);}
+  .partner-strip{position:relative;overflow:hidden;margin-top:44px;}
+  .partner-fade-l,.partner-fade-r{position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
+  .partner-fade-l{left:0;background:linear-gradient(90deg,var(--turf-deep),transparent);}
+  .partner-fade-r{right:0;background:linear-gradient(270deg,var(--turf-deep),transparent);}
+  .partner-track{display:flex;gap:16px;width:max-content;animation:partner-scroll 40s linear infinite;}
+  .partner-strip:hover .partner-track{animation-play-state:paused;}
+  @keyframes partner-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .p-card{
+    flex:0 0 auto;width:150px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+    padding:22px 16px;border:1px solid var(--turf-line);background:var(--pitch);
+  }
+  .p-ph{width:56px;height:56px;flex-shrink:0;border:1px solid var(--turf-line);background:rgba(246,247,242,.04);display:flex;align-items:center;justify-content:center;}
+  .p-ph img{width:100%;height:100%;object-fit:contain;padding:8px;filter:grayscale(40%);}
+  .p-nm{font-family:var(--body);font-weight:700;font-size:12.5px;line-height:1.3;}
+  .p-rl{font-family:var(--mono);font-size:9.5px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;}
+
+  /* ACCREDITATION BAR */
+  .accred-bar{
+    border-top:1px solid var(--turf-line);border-bottom:1px solid var(--turf-line);
+    background:var(--turf-deep);padding:20px 0;
+  }
+  .accred-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .accred-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk-dim);flex-shrink:0;}
+  .accred-item{display:flex;align-items:center;gap:10px;}
+  .accred-badge{
+    width:34px;height:34px;border:1px solid var(--turf-line);display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-size:16px;color:var(--amber);flex-shrink:0;background:var(--pitch);
+  }
+  .accred-name{font-family:var(--body);font-weight:700;font-size:14px;}
+  .accred-sub{font-family:var(--mono);font-size:10px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;}
+  .accred-sep{width:1px;height:26px;background:var(--turf-line);}
+
+  /* CREDENTIALS */
+  .credentials{background:var(--pitch);}
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .cred-card{border:1px solid var(--turf-line);background:var(--turf-deep);padding:36px 32px;display:flex;flex-direction:column;position:relative;}
+  .cred-card.featured{border-color:var(--amber);background:var(--turf-mid);}
+  .cred-featured-tag{
+    position:absolute;top:-1px;right:-1px;background:var(--amber);color:var(--pitch);
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;font-weight:700;
+  }
+  .cred-tier{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;}
+  .cred-card h4{font-family:var(--display);font-size:36px;margin:12px 0 6px;letter-spacing:.01em;}
+  .cred-dur{font-family:var(--mono);font-size:12px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:.05em;margin-bottom:20px;}
+  .cred-desc{font-size:14.5px;color:var(--chalk);line-height:1.65;margin-bottom:20px;flex:1;}
+  .cred-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .cred-list li{font-size:13.5px;color:var(--chalk);display:flex;gap:10px;align-items:baseline;}
+  .cred-list li::before{content:'✓';color:var(--green);font-family:var(--mono);flex-shrink:0;}
+  .cred-note{font-family:var(--mono);font-size:11px;color:var(--chalk-dim);margin-top:56px;text-align:center;}
+
+  /* MENTOR NETWORK */
+  .mentors{background:var(--turf-deep);}
+  .m-strip{position:relative;overflow:hidden;padding:6px 0;}
+  .m-track{display:flex;gap:16px;width:max-content;}
+  .m-track.fwd{animation:m-scroll-l 40s linear infinite;}
+  .m-track.rev{animation:m-scroll-r 44s linear infinite;}
+  .m-strip:hover .m-track{animation-play-state:paused;}
+  @keyframes m-scroll-l{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes m-scroll-r{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  .m-fade-l,.m-fade-r{position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
+  .m-fade-l{left:0;background:linear-gradient(90deg,var(--turf-deep),transparent);}
+  .m-fade-r{right:0;background:linear-gradient(270deg,var(--turf-deep),transparent);}
+  .m-card{
+    flex:0 0 auto;width:260px;display:flex;gap:14px;align-items:center;
+    border:1px solid var(--turf-line);background:var(--pitch);padding:14px;
+  }
+  .m-ph{width:52px;height:52px;flex-shrink:0;overflow:hidden;background:var(--turf-mid);border:1px solid var(--turf-line);}
+  .m-ph img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:grayscale(60%);}
+  .m-nm{font-family:var(--body);font-weight:700;font-size:14px;}
+  .m-role{font-family:var(--mono);font-size:10.5px;color:var(--chalk-dim);line-height:1.5;margin-top:2px;}
+
+  /* COHORT STRIP */
+  .cohort-sec{background:var(--pitch);}
+  .cohort-strip{position:relative;overflow:hidden;}
+  .cohort-track{display:flex;gap:14px;width:max-content;}
+  .cohort-track.fwd{animation:cohort-fwd 38s linear infinite;}
+  .cohort-strip:hover .cohort-track{animation-play-state:paused;}
+  @keyframes cohort-fwd{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .cohort-fade-l,.cohort-fade-r{position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+  .cohort-fade-l{left:0;background:linear-gradient(90deg,var(--pitch),transparent);}
+  .cohort-fade-r{right:0;background:linear-gradient(270deg,var(--pitch),transparent);}
+  .cohort-card{flex:0 0 auto;width:340px;height:230px;position:relative;overflow:hidden;border:1px solid var(--turf-line);}
+  .cohort-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(35%);transition:filter .3s,transform .4s;}
+  .cohort-card:hover img{filter:grayscale(0%);transform:scale(1.04);}
+  .cohort-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,14,11,.85));}
+  .cohort-card .cap{position:absolute;left:16px;bottom:14px;z-index:1;font-family:var(--mono);font-size:11px;color:var(--chalk);text-transform:uppercase;letter-spacing:.04em;}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .problem-grid{grid-template-columns:1fr;}
+    .stat-layout{grid-template-columns:1fr;gap:40px;}
+    .foundation-grid{grid-template-columns:1fr;}
+    .subject-grid{grid-template-columns:repeat(2,1fr);}
+    .region-grid{grid-template-columns:repeat(2,1fr);}
+    .icp-grid{grid-template-columns:1fr;}
+    .track-grid{grid-template-columns:repeat(2,1fr);}
+    .learning-grid{grid-template-columns:1fr;gap:36px;}
+    .access-row{flex-wrap:wrap;gap:18px;}
+    .access-row-title{min-width:0;}
+    .access-row-num{display:none;}
+    .outcomes-grid{grid-template-columns:1fr;}
+    .outcome-row:nth-child(odd){border-right:none;padding-right:0;}
+    .fin-grid{grid-template-columns:1fr 1fr;}
+    .cred-grid{grid-template-columns:1fr;}
+    .community-list{grid-template-columns:1fr 1fr;}
+    .score-row{grid-template-columns:1.4fr 1fr 1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .wrap,.hero-inner{padding:0 20px;}
+    section{padding:88px 0;}
+    .track-grid{grid-template-columns:1fr;}
+    .fin-grid{grid-template-columns:1fr;}
+    .region-grid{grid-template-columns:1fr;}
+    .community-list{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr;}
+    .hero-ctas,.apply-ctas{flex-direction:column;align-items:stretch;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">ATHLO <span>School of Sports</span></a>
+    <div class="nav-links">
+      <a href="#programs">Programs</a>
+      <a href="#access">Industry Access</a>
+      <a href="#global">Global</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#financing">Financing</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" onclick="openApplyModal();return false;" class="btn btn-primary">Apply Now</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">THE CAREER SCHOOL FOR THE GLOBAL SPORTS INDUSTRY</div>
+    <h1 style="margin-top:22px;">Never Leave<br>The Sport <span class="accent">You Love.</span></h1>
+    <p class="hero-sub">Whether you're a retiring athlete or someone who's dreamed about working in sport your whole life — we build the pathway from the stands, or the sidelines, into the industry itself. Real projects. Real practitioners. Real jobs.</p>
+    <div class="hero-pills">
+      <span>Format: <b>Online + In-Person</b></span>
+      <span>Campuses: <b>Singapore</b> · <b>Ahmedabad</b> · <b>Dubai</b></span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#" onclick="openApplyModal();return false;" class="btn btn-primary">Apply Now</a>
+      <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+    </div>
+
+    <div class="subboard">
+      <span class="subboard-label">Live substitution</span>
+      <div class="flip-row">
+        <span class="flip-tag">OUT</span>
+        <div class="flip-card" id="flipOut"></div>
+        <span class="flip-tag in">IN</span>
+        <div class="flip-card" id="flipIn"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker"></div>
+</div>
+
+<div class="accred-bar">
+  <div class="wrap accred-inner">
+    <span class="accred-tag">Credentials &amp; Partners</span>
+    <div class="accred-sep"></div>
+    <div class="accred-item">
+      <div class="accred-badge">W</div>
+      <div>
+        <div class="accred-name">Woolf University</div>
+        <div class="accred-sub">EU-Accredited Degree Partner</div>
+      </div>
+    </div>
+    <div class="accred-sep"></div>
+    <div class="accred-item">
+      <div>
+        <div class="accred-name" style="font-family:var(--mono);font-size:12px;">Certificate · PGP · MBA</div>
+        <div class="accred-sub">Choose your credential level</div>
+      </div>
+    </div>
+    <div class="accred-sep"></div>
+    <div class="accred-item">
+      <div>
+        <div class="accred-name" style="font-family:var(--mono);font-size:12px;">Singapore · Ahmedabad · Dubai</div>
+        <div class="accred-sub">Online + in-person campuses</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem">
+  <div class="wrap">
+    <div class="eyebrow reveal">The Problem</div>
+    <div class="stat-layout" style="margin-top:22px;">
+      <div class="problem-copy reveal">
+        <h2>Sport asks people<br>to <span style="color:var(--danger);">choose.</span></h2>
+        <p>Play or study. Compete or build a career. For most people who fall in love with a sport, that's the trade they're handed — often before they're old enough to understand what they're giving up.</p>
+        <p>The ones who choose sport give it everything. Then the sport ends — through injury, age, or simply not making the cut — and they're left with no qualification built for what comes next, no professional network outside the locker room, no roadmap. That isn't a personal failure. It's a gap nobody built the bridge for. Athlo is that bridge.</p>
+        <div class="problem-quote">
+          <p>"The discipline, focus and resilience of an athlete is exactly what every employer wants. The problem was never the athlete — it's the missing bridge."</p>
+        </div>
+      </div>
+      <div class="stat-cards reveal">
+        <div class="stat-card c-green">
+          <div class="stat-num">$500B+</div>
+          <p>Size of the global sports industry today — and still only a fraction of people working in it are athletes.</p>
+        </div>
+        <div class="stat-card c-danger">
+          <div class="stat-num">27–33</div>
+          <p>The age range most professional athletes retire at, decades before a typical career even peaks.</p>
+        </div>
+        <div class="stat-card c-amber">
+          <div class="stat-num">1000s</div>
+          <p>Of commercial, analytics, media and operations roles behind every league — with no structured path in for athletes or fans.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-source">Sources: The Business Research Company, sports industry retirement-age reporting</div>
+  </div>
+</section>
+
+<!-- ===== MISSION ===== -->
+<section class="mission">
+  <div class="wrap">
+    <div class="eyebrow reveal">Mission</div>
+    <p class="mission-line reveal" style="margin-top:22px;">We're building the world's talent infrastructure for the sports economy — <span class="hl">so that anyone who wants a career in sport has a clear, credible way in.</span></p>
+  </div>
+</section>
+
+<!-- ===== WHO WE SERVE ===== -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Who We Serve</div>
+      <h2>Two starting points.<br>One destination.</h2>
+    </div>
+    <div class="icp-grid reveal">
+      <div class="icp-card">
+        <div class="icp-num">ROSTER 01</div>
+        <h3>The Retiring Athlete</h3>
+        <p>You gave your life to the game. You have the discipline and leadership most careers spend years teaching — not the business skills or the network. We keep you in the game, running it instead of playing it.</p>
+        <div class="icp-tags"><span>Discipline</span><span>Leadership</span><span>Resilience</span><span>Needs: business fluency</span></div>
+      </div>
+      <div class="icp-card">
+        <div class="icp-num">ROSTER 02</div>
+        <h3>The Sports-Obsessed</h3>
+        <p>You don't need to play to build a career around the game. You want in at a club, a league, a brand, a broadcaster. We give you the roadmap, the projects, and the introductions.</p>
+        <div class="icp-tags"><span>Passion</span><span>Curiosity</span><span>Drive</span><span>Needs: a way in</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRACKS / CURRICULUM ===== -->
+<section class="tracks" id="programs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Programs</div>
+      <h2>Everyone starts<br>on the same pitch.</h2>
+      <p>Before you specialise, you build the two things every sports career runs on: how business actually works, and how the sports industry actually works. Then you pick your position.</p>
+    </div>
+
+    <div class="foundation reveal">
+      <div class="foundation-label">Phase 01 — Foundation</div>
+      <div class="foundation-grid">
+        <div class="foundation-col">
+          <div class="fnum">TRACK A</div>
+          <h4>Business Fundamentals</h4>
+          <p class="fdesc">The core MBA subject matter, minus the theory-heavy delivery.</p>
+          <div class="subject-grid">
+            <div class="subject-tile"><div class="subject-code">BUS01</div><div class="subject-title">Accounting</div><div class="subject-desc">P&amp;Ls · Budgets</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS02</div><div class="subject-title">Corporate Finance</div><div class="subject-desc">Valuation · Capital</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS03</div><div class="subject-title">Microeconomics</div><div class="subject-desc">Pricing · Markets</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS04</div><div class="subject-title">Marketing Mgmt</div><div class="subject-desc">Positioning · Funnels</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS05</div><div class="subject-title">Sales &amp; Negotiation</div><div class="subject-desc">Deals · Closing</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS06</div><div class="subject-title">Ops &amp; Strategy</div><div class="subject-desc">Models · Execution</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS07</div><div class="subject-title">Org Behaviour</div><div class="subject-desc">Teams · Leadership</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS08</div><div class="subject-title">Data, Excel &amp; AI</div><div class="subject-desc">Analytics · Tools</div></div>
+            <div class="subject-tile"><div class="subject-code">BUS09</div><div class="subject-title">Comm &amp; Branding</div><div class="subject-desc">Pitch · Presence</div></div>
+          </div>
+        </div>
+        <div class="foundation-col">
+          <div class="fnum">TRACK B</div>
+          <h4>Sports Fundamentals</h4>
+          <p class="fdesc">The specialised layer — how the industry itself is run.</p>
+          <div class="subject-grid">
+            <div class="subject-tile"><div class="subject-code">SPT01</div><div class="subject-title">Sports Economics</div><div class="subject-desc">$500B+ Industry</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT02</div><div class="subject-title">Sports Law</div><div class="subject-desc">Contracts · Governance</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT03</div><div class="subject-title">Rights &amp; Media</div><div class="subject-desc">Sponsorship Deals</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT04</div><div class="subject-title">Sports Marketing</div><div class="subject-desc">Fan Engagement</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT05</div><div class="subject-title">Event Mgmt</div><div class="subject-desc">Logistics · Matchday</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT06</div><div class="subject-title">Athlete Mgmt</div><div class="subject-desc">Contracts · Endorsements</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT07</div><div class="subject-title">Club Operations</div><div class="subject-desc">Venue · Membership</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT08</div><div class="subject-title">Sports Tech</div><div class="subject-desc">Analytics · Wearables</div></div>
+            <div class="subject-tile"><div class="subject-code">SPT09</div><div class="subject-title">Sports Finance</div><div class="subject-desc">Ownership · Valuation</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="then-divider reveal">
+      <span>Phase 02 — Pick Your Position</span>
+      <div class="line"></div>
+    </div>
+
+    <div class="track-grid reveal">
+      <div class="track-card"><div><div class="track-squad">07</div><h4>Become a Sports Marketer</h4><span class="sub">Brand · Fan Engagement</span><ul class="track-skills"><li>Fan Engagement &amp; Digital Marketing</li><li>Brand Strategy</li><li>Commercial Partnerships</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">10</div><h4>Become a Data Analyst</h4><span class="sub">Python · SQL · Power BI</span><ul class="track-skills"><li>Python &amp; SQL</li><li>Performance &amp; Business Analytics</li><li>Data Visualisation</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">04</div><h4>Become an Athlete Manager</h4><span class="sub">Contracts · Representation</span><ul class="track-skills"><li>Contracts &amp; Endorsements</li><li>Athlete Personal Branding</li><li>Media Training</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">09</div><h4>Become a Partnerships Manager</h4><span class="sub">Sponsorship · Sales</span><ul class="track-skills"><li>Sponsorship Sales</li><li>Rights &amp; Deal Structuring</li><li>Account Management</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">11</div><h4>Become a Sports Product Manager</h4><span class="sub">SportsTech · AI</span><ul class="track-skills"><li>Product Management</li><li>Wearables &amp; Computer Vision</li><li>AI for Sports</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">08</div><h4>Become a Media Creator</h4><span class="sub">Broadcast · Content</span><ul class="track-skills"><li>Broadcast &amp; Production</li><li>Content Strategy</li><li>Sports Journalism</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">06</div><h4>Run Club &amp; League Operations</h4><span class="sub">Ops · Membership · Finance</span><ul class="track-skills"><li>Club &amp; Venue Operations</li><li>Membership &amp; Fan Experience</li><li>Operational Finance</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">05</div><h4>Become an Event Producer</h4><span class="sub">Operations · Logistics</span><ul class="track-skills"><li>Tournament Operations</li><li>Venue Logistics &amp; Ticketing</li><li>Risk &amp; Volunteer Management</li></ul></div></div>
+      <div class="track-card"><div><div class="track-squad">01</div><h4>Build a Sports Startup</h4><span class="sub">Fundraising · GTM</span><ul class="track-skills"><li>Business Models &amp; Pitching</li><li>Fundraising</li><li>Go-To-Market</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners">
+  <div class="wrap">
+    <div class="eyebrow reveal">Partners</div>
+    <h2 class="reveal" style="margin-top:16px;font-size:clamp(28px,4vw,44px);">Backed by the same network<br>across Mentogram's schools</h2>
+  </div>
+  <div class="partner-strip reveal">
+    <div class="partner-fade-l"></div><div class="partner-fade-r"></div>
+    <div class="partner-track" id="partner-track">
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/woolf-university.png" alt="Woolf University" onerror="this.style.opacity='0'"></div><div class="p-nm">Woolf University</div><div class="p-rl">EU-Accredited Degree</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/ibm.png" alt="IBM" onerror="this.style.opacity='0'"></div><div class="p-nm">IBM</div><div class="p-rl">Technology Partner</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/nus.png" alt="NUS Singapore" onerror="this.style.opacity='0'"></div><div class="p-nm">NUS Singapore</div><div class="p-rl">Academic Partner</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/iit-bombay.png" alt="IIT Bombay" onerror="this.style.opacity='0'"></div><div class="p-nm">IIT Bombay</div><div class="p-rl">Academic Partner</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/meet-ventures.png" alt="Meet Ventures" onerror="this.style.opacity='0'"></div><div class="p-nm">Meet Ventures</div><div class="p-rl">VC Fund</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/asia-pro-ventures.png" alt="Asia Pro Ventures" onerror="this.style.opacity='0'"></div><div class="p-nm">Asia Pro Ventures</div><div class="p-rl">VC Fund</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/transcend-accelerator.png" alt="Transcend Accelerator" onerror="this.style.opacity='0'"></div><div class="p-nm">Transcend Accelerator</div><div class="p-rl">Accelerator</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/chiripal-group.png" alt="Chiripal Group" onerror="this.style.opacity='0'"></div><div class="p-nm">Chiripal Group</div><div class="p-rl">Family Office</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/glean-ventures.png" alt="Glean Ventures" onerror="this.style.opacity='0'"></div><div class="p-nm">Glean Ventures</div><div class="p-rl">VC Fund</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/tins-studio.png" alt="TINS Studio, Boston" onerror="this.style.opacity='0'"></div><div class="p-nm">TINS Studio, Boston</div><div class="p-rl">Venture Studio</div></div>
+      <div class="p-card"><div class="p-ph"><img src="../images/partners/startup-india.png" alt="Startup India" onerror="this.style.opacity='0'"></div><div class="p-nm">Startup India</div><div class="p-rl">Government Recognition</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEARNING MODEL ===== -->
+<section class="learning">
+  <div class="wrap">
+    <div class="learning-grid">
+      <div class="section-head reveal" style="margin-bottom:0;">
+        <div class="eyebrow">Learning Model</div>
+        <h2>No lectures.<br>Every module ends<br>in a real project.</h2>
+        <p>You graduate with a portfolio built on live briefs — not a transcript.</p>
+      </div>
+      <div class="project-list reveal">
+        <div class="project-row"><span class="clock">PROJECT</span><p>Write a sponsorship proposal for a football club</p></div>
+        <div class="project-row"><span class="clock">PROJECT</span><p>Design a ticket-sales campaign for a season with soft demand</p></div>
+        <div class="project-row"><span class="clock">PROJECT</span><p>Analyse a season of fan engagement data and present findings</p></div>
+        <div class="project-row"><span class="clock">PROJECT</span><p>Run matchday operations for a live event</p></div>
+        <div class="project-row"><span class="clock">PROJECT</span><p>Pitch a sports startup to a panel of investors</p></div>
+        <div class="project-row"><span class="clock">PROJECT</span><p>Build an AI tool that solves a real problem for a club</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRY ACCESS ===== -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Industry Access</div>
+      <h2>This isn't campus.<br>This is the industry.</h2>
+      <p>Stadiums, broadcasters and locker rooms are the classroom.</p>
+    </div>
+    <div class="access-list reveal">
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="16" cy="20" rx="12" ry="5"/><path d="M4 20V13a12 5 0 0 1 24 0v7"/><path d="M16 2v6M6 6l3 4M26 6l-3 4"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Matchday</div>
+          <div class="access-row-desc">Shadow live club operations</div>
+        </div>
+        <div class="access-row-num">01</div>
+      </div>
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="17" height="13" rx="1"/><path d="M21 14l7-4v12l-7-4"/><circle cx="12.5" cy="16.5" r="3"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Broadcast</div>
+          <div class="access-row-desc">Sit inside a live production room</div>
+        </div>
+        <div class="access-row-num">02</div>
+      </div>
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="8" width="22" height="16" rx="1"/><path d="M5 13h22M11 24v-5.5M21 24v-5.5"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Boardroom</div>
+          <div class="access-row-desc">Meet club and league executives</div>
+        </div>
+        <div class="access-row-num">03</div>
+      </div>
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6h6l-5 8h5l-8 12 3-9H4z"/><path d="M20 6h6v6M26 6l-8 8M20 16h6v6M26 16l-8 8"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Tournament</div>
+          <div class="access-row-desc">Volunteer inside real event logistics</div>
+        </div>
+        <div class="access-row-num">04</div>
+      </div>
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h22v13H14l-5 5v-5H5z"/><path d="M11 14.5h10"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Fireside</div>
+          <div class="access-row-desc">Sit with founders, athletes, investors</div>
+        </div>
+        <div class="access-row-num">05</div>
+      </div>
+      <div class="access-row">
+        <div class="access-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="8" r="2.4"/><circle cx="25" cy="8" r="2.4"/><circle cx="16" cy="17" r="2.4"/><circle cx="7" cy="26" r="2.4"/><circle cx="25" cy="26" r="2.4"/><path d="M9 9.5l5 6M23 9.5l-5 6M14.5 19l-5.5 5M17.5 19l5.5 5"/></svg></div>
+        <div class="access-row-body">
+          <div class="access-row-title">Studio</div>
+          <div class="access-row-desc">Build inside a sports data &amp; AI lab</div>
+        </div>
+        <div class="access-row-num">06</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENTOR NETWORK ===== -->
+<section class="mentors">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Faculty &amp; Mentors</div>
+      <h2>Taught by people<br>who've done it.</h2>
+      <p>Athlo draws on the same practitioner network across Mentogram's schools — founders, operators and investors, not professors.</p>
+    </div>
+  </div>
+  <div class="m-strip reveal">
+    <div class="m-fade-l"></div><div class="m-fade-r"></div>
+    <div class="m-track fwd" id="m-track-1">
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/jason-kraus.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Jason Kraus</div><div class="m-role">Founder, Prepare4VC · Partner, EQx Fund</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/renuka-belwalkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Renuka Belwalkar</div><div class="m-role">Investor · Forbes Under 30 Scholar</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/yash-shah.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Yash Shah</div><div class="m-role">GenAI Head India &amp; SEA · AWS</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/andrew-chow.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Andrew Chow</div><div class="m-role">Co-Founder, Asia Pro Ventures · NTU</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/justin-strackany.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Justin Strackany</div><div class="m-role">LP at GTMFund · 3 exits</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/gaurav-thakkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Gaurav Thakkar</div><div class="m-role">Principal VC, Silicon Road · ex-Morgan Stanley</div></div></div>
+    </div>
+  </div>
+  <div class="m-strip reveal" style="margin-top:2px;">
+    <div class="m-fade-l"></div><div class="m-fade-r"></div>
+    <div class="m-track rev" id="m-track-2">
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/john-lim.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">John Lim</div><div class="m-role">Partner, Meet Ventures SG</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Sarvash Malani</div><div class="m-role">DeepTech VC, Temasek · Wharton</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/daniel-ling.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Daniel Ling</div><div class="m-role">ex-VP Design, Lazada &amp; DBS · NUS</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/shavin-goswami.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Shavin Goswami</div><div class="m-role">Global Risk Ops, Meta</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/rajesh-shetty.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Rajesh Setty</div><div class="m-role">19x Author · Mentor, Founder Institute</div></div></div>
+      <div class="m-card"><div class="m-ph"><img src="../images/mentors/prantik-mazumdar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Prantik Mazumdar</div><div class="m-role">President, TiE Singapore</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COHORT STRIP ===== -->
+<section class="cohort-sec">
+  <div class="wrap">
+    <div class="eyebrow reveal">Community</div>
+    <h2 class="reveal" style="margin-top:16px;font-size:clamp(28px,4vw,44px);">Life inside a cohort</h2>
+  </div>
+  <div class="cohort-strip reveal" style="margin-top:36px;">
+    <div class="cohort-fade-l"></div><div class="cohort-fade-r"></div>
+    <div class="cohort-track fwd" id="cohort-track">
+      <div class="cohort-card"><img src="../images/cohort/01.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Cohort Kickoff</div></div>
+      <div class="cohort-card"><img src="../images/cohort/02.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Mentor Session</div></div>
+      <div class="cohort-card"><img src="../images/cohort/03.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Team Project</div></div>
+      <div class="cohort-card"><img src="../images/cohort/04.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Industry Immersion</div></div>
+      <div class="cohort-card"><img src="../images/cohort/05.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Guest Fireside</div></div>
+      <div class="cohort-card"><img src="../images/cohort/06.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Student Spotlight</div></div>
+      <div class="cohort-card"><img src="../images/cohort/07.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Workshop Day</div></div>
+      <div class="cohort-card"><img src="../images/cohort/08.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Faculty Visit</div></div>
+      <div class="cohort-card"><img src="../images/cohort/09.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Cohort Community</div></div>
+      <div class="cohort-card"><img src="../images/cohort/10.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Global Immersion</div></div>
+      <div class="cohort-card"><img src="../images/cohort/11.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">On Site</div></div>
+      <div class="cohort-card"><img src="../images/cohort/12.jpg" alt="" onerror="this.style.opacity='0'"><div class="cap">Demo Day</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMPLOYERS ===== -->
+<section class="employers">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="justify-content:center;">Employer Network</div>
+    <h2 class="reveal" style="margin-top:16px;font-size:clamp(28px,4vw,44px);">Where graduates go to work</h2>
+    <div class="employer-marquee reveal">
+      <span>Sports Teams</span><span>Leagues</span><span>Sports Brands</span><span>Broadcasters</span>
+      <span>Media Companies</span><span>Sports Startups</span><span>Federations</span><span>Agencies</span>
+      <span>Data Companies</span><span>Event Organisers</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GLOBAL REACH ===== -->
+<section class="global-reach" id="global">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Global Reach</div>
+      <h2>Built around the world's<br>biggest leagues.</h2>
+      <p>Wherever the game is played at the highest level, that's where the curriculum, mentors and placements point.</p>
+    </div>
+  </div>
+
+  <div class="globe-wrap reveal">
+    <svg class="globe-svg" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- wireframe sphere -->
+      <circle cx="450" cy="250" r="150" fill="none" stroke="var(--turf-line)" stroke-width="1"/>
+      <ellipse cx="450" cy="250" rx="150" ry="55" fill="none" stroke="var(--turf-line)" stroke-width="1"/>
+      <ellipse cx="450" cy="250" rx="150" ry="105" fill="none" stroke="var(--turf-line)" stroke-width="1"/>
+      <ellipse cx="450" cy="250" rx="55" ry="150" fill="none" stroke="var(--turf-line)" stroke-width="1"/>
+      <ellipse cx="450" cy="250" rx="105" ry="150" fill="none" stroke="var(--turf-line)" stroke-width="1"/>
+      <line x1="300" y1="250" x2="600" y2="250" stroke="var(--turf-line)" stroke-width="1"/>
+
+      <!-- India / IPL -->
+      <line x1="512" y1="205" x2="700" y2="110" stroke="var(--turf-line)" stroke-width="1"/>
+      <circle class="globe-pin" cx="512" cy="205" r="5" fill="var(--amber)"/>
+      <circle cx="512" cy="205" r="9" fill="none" stroke="var(--amber)" stroke-width="1"/>
+      <text x="705" y="100" font-family="var(--mono)" font-size="10" letter-spacing="1" fill="var(--chalk-dim)">INDIA</text>
+      <text x="705" y="122" font-family="var(--display)" font-size="24" fill="var(--floodlight)">IPL</text>
+      <text x="705" y="140" font-family="var(--mono)" font-size="9.5" fill="var(--chalk)">Cricket</text>
+
+      <!-- USA / NFL -->
+      <line x1="378" y1="195" x2="195" y2="105" stroke="var(--turf-line)" stroke-width="1"/>
+      <circle class="globe-pin" cx="378" cy="195" r="5" fill="var(--amber)"/>
+      <circle cx="378" cy="195" r="9" fill="none" stroke="var(--amber)" stroke-width="1"/>
+      <text x="90" y="95" font-family="var(--mono)" font-size="10" letter-spacing="1" fill="var(--chalk-dim)">UNITED STATES</text>
+      <text x="90" y="117" font-family="var(--display)" font-size="24" fill="var(--floodlight)">NFL</text>
+      <text x="90" y="135" font-family="var(--mono)" font-size="9.5" fill="var(--chalk)">American Football</text>
+
+      <!-- England / EPL -->
+      <line x1="418" y1="165" x2="195" y2="395" stroke="var(--turf-line)" stroke-width="1"/>
+      <circle class="globe-pin" cx="418" cy="165" r="5" fill="var(--amber)"/>
+      <circle cx="418" cy="165" r="9" fill="none" stroke="var(--amber)" stroke-width="1"/>
+      <text x="90" y="390" font-family="var(--mono)" font-size="10" letter-spacing="1" fill="var(--chalk-dim)">ENGLAND</text>
+      <text x="90" y="412" font-family="var(--display)" font-size="24" fill="var(--floodlight)">EPL</text>
+      <text x="90" y="430" font-family="var(--mono)" font-size="9.5" fill="var(--chalk)">Football</text>
+
+      <!-- UAE -->
+      <line x1="500" y1="300" x2="700" y2="395" stroke="var(--turf-line)" stroke-width="1"/>
+      <circle class="globe-pin" cx="500" cy="300" r="5" fill="var(--amber)"/>
+      <circle cx="500" cy="300" r="9" fill="none" stroke="var(--amber)" stroke-width="1"/>
+      <text x="705" y="390" font-family="var(--mono)" font-size="10" letter-spacing="1" fill="var(--chalk-dim)">UAE</text>
+      <text x="705" y="412" font-family="var(--display)" font-size="24" fill="var(--floodlight)">ILT20 &amp; F1</text>
+      <text x="705" y="430" font-family="var(--mono)" font-size="9.5" fill="var(--chalk)">Cricket &amp; Motorsport</text>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <div class="region-grid reveal">
+      <div class="region-card">
+        <svg class="region-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="14" y1="8" x2="14" y2="34"/><line x1="24" y1="6" x2="24" y2="34"/><line x1="34" y1="8" x2="34" y2="34"/><line x1="12" y1="6" x2="16" y2="6"/><line x1="22" y1="4" x2="26" y2="4"/><line x1="32" y1="6" x2="36" y2="6"/><line x1="6" y1="34" x2="42" y2="34"/></svg>
+        <div class="region-league">IPL</div>
+        <div class="region-country">India</div>
+        <div class="region-desc">World's most-watched cricket league — commercial, broadcast &amp; fan-engagement case studies.</div>
+      </div>
+      <div class="region-card">
+        <svg class="region-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="8" y1="6" x2="8" y2="42"/><line x1="40" y1="6" x2="40" y2="42"/><path d="M8 12h9M8 12v-4M8 8h9M17 8v8M31 12h9M40 12v-4M31 8h9M31 8v8"/></svg>
+        <div class="region-league">NFL</div>
+        <div class="region-country">United States</div>
+        <div class="region-desc">The blueprint for franchise economics, media rights and matchday production.</div>
+      </div>
+      <div class="region-card">
+        <svg class="region-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="10" width="32" height="22" rx="1"/><path d="M8 16h8v4H8zM32 16h8v4h-8zM24 4v6M20 4h8"/></svg>
+        <div class="region-league">EPL</div>
+        <div class="region-country">England</div>
+        <div class="region-desc">The global standard in club operations, sponsorship value and fan culture.</div>
+      </div>
+      <div class="region-card">
+        <svg class="region-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 34c8-14 32-14 40 0"/><circle cx="24" cy="12" r="5"/><path d="M14 34l4-8M34 34l-4-8"/></svg>
+        <div class="region-league">ILT20 &amp; F1</div>
+        <div class="region-country">UAE</div>
+        <div class="region-desc">The fastest-growing hub for cricket, motorsport, and sovereign sports investment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAREER OUTCOMES ===== -->
+<section class="outcomes" id="outcomes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Career Outcomes</div>
+      <h2>Where this leads.</h2>
+    </div>
+    <div class="outcomes-grid reveal">
+      <div class="outcome-row"><span class="role">Sports Marketing Manager</span><span class="n">01</span></div>
+      <div class="outcome-row"><span class="role">Commercial Partnerships Manager</span><span class="n">02</span></div>
+      <div class="outcome-row"><span class="role">Athlete Manager</span><span class="n">03</span></div>
+      <div class="outcome-row"><span class="role">Sports Data Analyst</span><span class="n">04</span></div>
+      <div class="outcome-row"><span class="role">Sports Product Manager</span><span class="n">05</span></div>
+      <div class="outcome-row"><span class="role">Event Manager</span><span class="n">06</span></div>
+      <div class="outcome-row"><span class="role">Broadcast Producer</span><span class="n">07</span></div>
+      <div class="outcome-row"><span class="role">Sponsorship Sales</span><span class="n">08</span></div>
+      <div class="outcome-row"><span class="role">Fan Engagement Lead</span><span class="n">09</span></div>
+      <div class="outcome-row"><span class="role">Club Operations Manager</span><span class="n">10</span></div>
+      <div class="outcome-row"><span class="role">Esports Manager</span><span class="n">11</span></div>
+      <div class="outcome-row"><span class="role">Sports Startup Founder</span><span class="n">12</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINANCING ===== -->
+<section class="financing" id="financing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Financing</div>
+      <h2>Everyone deserves access.</h2>
+    </div>
+    <div class="fin-grid reveal">
+      <div class="fin-card"><h4>Scholarships</h4><p>Merit and need-based support for athletes and underrepresented talent.</p></div>
+      <div class="fin-card"><h4>Pay After Placement</h4><p>Start now, pay once you're earning in a role.</p></div>
+      <div class="fin-card"><h4>Income Share</h4><p>A share of future income instead of upfront tuition.</p></div>
+      <div class="fin-card"><h4>Employer-Sponsored</h4><p>Cohorts backed by clubs, leagues and brands hiring direct.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY ===== -->
+<section class="community">
+  <div class="wrap">
+    <div class="eyebrow reveal">Community</div>
+    <div class="quote-block reveal" style="margin-top:26px;">
+      <p>"If you want to work in sport, anywhere in the world — this should be the first place you think of."</p>
+      <div class="quote-meta">The Athlo Standard</div>
+    </div>
+    <div class="community-list reveal">
+      <div>Weekly founder talks</div>
+      <div>Athlete fireside chats</div>
+      <div>Alumni job board</div>
+      <div>Lifetime community access</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFFERENTIATORS ===== -->
+<section class="diff">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Scoreboard</div>
+      <h2>Not another degree.</h2>
+    </div>
+    <div class="scoreboard reveal">
+      <div class="score-row head"><div>—</div><div>Traditional School</div><div>Athlo</div></div>
+      <div class="score-row"><div>Format</div><div class="them">Theory & lectures</div><div class="us">Real industry projects</div></div>
+      <div class="score-row"><div>Taught by</div><div class="them">Professors</div><div class="us">Practitioners</div></div>
+      <div class="score-row"><div>Outcome</div><div class="them">A degree</div><div class="us">A portfolio + placement</div></div>
+      <div class="score-row"><div>Access</div><div class="them">A classroom</div><div class="us">Stadiums, clubs, broadcasters</div></div>
+      <div class="score-row"><div>Network</div><div class="them">Alumni directory</div><div class="us">Employer partnerships</div></div>
+      <div class="score-row"><div>Cost model</div><div class="them">Upfront tuition</div><div class="us">Pay after placement</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<!-- ===== CREDENTIALS ===== -->
+<section class="credentials" id="credentials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Credentials</div>
+      <h2>Choose what<br>you walk away with.</h2>
+      <p>Same practitioner-led model, three levels of depth — the MBA is awarded in partnership with Woolf University, an EU-accredited institution.</p>
+    </div>
+    <div class="cred-grid reveal">
+      <div class="cred-card">
+        <div class="cred-tier">Level 01</div>
+        <h4>Certificate</h4>
+        <div class="cred-dur">3 Months · Foundation Only</div>
+        <p class="cred-desc">A fast, focused entry point — the business + sports fundamentals, one specialisation track, and a portfolio project.</p>
+        <ul class="cred-list">
+          <li>Foundation phase</li>
+          <li>1 specialisation track</li>
+          <li>1 portfolio project</li>
+        </ul>
+      </div>
+      <div class="cred-card featured">
+        <div class="cred-featured-tag">Most Chosen</div>
+        <div class="cred-tier">Level 02</div>
+        <h4>PGP</h4>
+        <div class="cred-dur">6 Months · Postgraduate Programme</div>
+        <p class="cred-desc">Full foundation, a chosen specialisation in depth, live industry projects, and placement support.</p>
+        <ul class="cred-list">
+          <li>Foundation phase</li>
+          <li>1 specialisation track, in depth</li>
+          <li>Multiple live industry projects</li>
+          <li>Career coaching &amp; placement support</li>
+        </ul>
+      </div>
+      <div class="cred-card">
+        <div class="cred-tier">Level 03</div>
+        <h4>MBA</h4>
+        <div class="cred-dur">12–18 Months · Woolf University</div>
+        <p class="cred-desc">An EU-accredited MBA degree, built around the sports industry — full curriculum, industry immersion, and a global credential.</p>
+        <ul class="cred-list">
+          <li>Everything in the PGP</li>
+          <li>EU-accredited MBA degree</li>
+          <li>Extended industry immersion</li>
+          <li>Global mentor &amp; employer network</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cred-note reveal">MBA awarded in partnership with Woolf University, an EU-accredited higher education institution.</div>
+  </div>
+</section>
+
+<!-- ===== APPLY ===== -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="justify-content:center;">Applications Open</div>
+    <h2 class="reveal" style="margin-top:18px;">Stay In<br>The Game.</h2>
+    <p class="reveal">Cohorts are small and fill on a rolling basis. Tell us where you want to end up — we'll help you build the path there.</p>
+    <div class="apply-ctas reveal">
+      <a href="#" onclick="openApplyModal();return false;" class="btn btn-primary">Apply Now</a>
+      <a href="#" onclick="openApplyModal();return false;" class="btn btn-ghost">Talk To Admissions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Good questions.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Do I need a sports background to apply? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No. We take both retiring athletes and people who've never played competitively but are serious about a career in the industry. What matters is commitment, not your CV.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What do I actually walk away with? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Depends on the level you choose. Certificate and PGP are practitioner credentials from Athlo. The MBA is an EU-accredited degree, awarded in partnership with Woolf University.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long is the program? <span class="plus">+</span></button>
+        <div class="faq-a"><p>3 months for the Certificate, 6 for the PGP, 12–18 for the MBA — all built on the same foundation phase, followed by your chosen specialisation track.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Which leagues does the curriculum draw on? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Case studies, mentors and industry access are built around the world's biggest leagues — the IPL in India, the NFL in the US, the EPL in England, and ILT20 &amp; F1 in the UAE, among others.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I can't pay upfront? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Scholarships, income share agreements and pay-after-placement options exist so cost isn't the reason you don't apply.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will you help me get hired? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — career coaching, interview preparation and direct introductions through our employer network are built into every cohort.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">ATHLO</div>
+        <p>The career school for the global sports industry. Never leave the sport you love — just change your position on the team.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Programs</h5>
+        <a href="#programs">Sports Marketing</a>
+        <a href="#programs">Sports Analytics</a>
+        <a href="#programs">Athlete Management</a>
+        <a href="#programs">Sports Technology</a>
+      </div>
+      <div class="foot-col">
+        <h5>School</h5>
+        <a href="#who">Who We Serve</a>
+        <a href="#access">Industry Access</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#financing">Financing</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get In Touch</h5>
+        <a href="#" onclick="openApplyModal();return false;">Apply Now</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" onclick="openApplyModal();return false;">Admissions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Athlo School of Sports</span>
+      <span>Never leave the sport you love</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  reveals.forEach(el=>io.observe(el));
+
+  // Duplicate mentor and cohort marquee cards for seamless loop
+  ['m-track-1','m-track-2','cohort-track','partner-track'].forEach(id=>{
+    const track = document.getElementById(id);
+    if(!track) return;
+    const clones = Array.from(track.children).map(c=>c.cloneNode(true));
+    clones.forEach(c=>track.appendChild(c));
+  });
+
+  // Ticker content
+  const roles = ["Sports Marketing","Sports Analytics","Athlete Management","Sports Technology","Media & Content","Club Operations","Event Production","Entrepreneurship","Sponsorship","Fan Engagement","Broadcast","Data & AI"];
+  const tickerEl = document.getElementById('ticker');
+  const tickerContent = roles.concat(roles).map(r=>`<span>${r}</span>`).join('');
+  tickerEl.innerHTML = tickerContent + tickerContent;
+
+  // Substitution board flip
+  const pairs = [
+    ["Athlete","Sports Marketer"],
+    ["Fan","Data Analyst"],
+    ["Coach","Athlete Manager"],
+    ["Spectator","Product Manager"],
+    ["Player","Broadcast Producer"],
+    ["Supporter","Event Producer"]
+  ];
+  function buildFlip(el, text){
+    const row = document.createElement('div');
+    row.className = 'row pending';
+    row.textContent = text;
+    el.appendChild(row);
+    requestAnimationFrame(()=> row.classList.remove('pending'));
+    return row;
+  }
+  const outEl = document.getElementById('flipOut');
+  const inEl = document.getElementById('flipIn');
+  let idx = 0;
+  let currentOut = buildFlip(outEl, pairs[0][0]);
+  let currentIn = buildFlip(inEl, pairs[0][1]);
+  setInterval(()=>{
+    idx = (idx+1) % pairs.length;
+    currentOut.classList.add('out');
+    currentIn.classList.add('out');
+    const nextOut = buildFlip(outEl, pairs[idx][0]);
+    const nextIn = buildFlip(inEl, pairs[idx][1]);
+    setTimeout(()=>{
+      currentOut.remove();
+      currentIn.remove();
+      currentOut = nextOut;
+      currentIn = nextIn;
+    }, 550);
+  }, 2600);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+<!-- ===== APPLY MODAL ===== -->
+<style>
+  .apply-modal-overlay{
+    position:fixed;inset:0;z-index:200;background:rgba(10,14,11,.86);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .apply-modal-overlay.open{opacity:1;pointer-events:auto;}
+  .apply-modal{
+    background:var(--turf-deep);border:1px solid var(--turf-line);max-width:520px;width:100%;
+    padding:40px;max-height:90vh;overflow-y:auto;position:relative;
+    transform:translateY(16px);transition:transform .25s ease;
+  }
+  .apply-modal-overlay.open .apply-modal{transform:translateY(0);}
+  .apply-modal-close{
+    position:absolute;top:18px;right:18px;background:none;border:1px solid var(--turf-line);
+    color:var(--chalk);width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1;
+  }
+  .apply-modal h3{font-family:var(--display);font-size:32px;margin-bottom:10px;}
+  .am-sub{color:var(--chalk);font-size:14px;margin-bottom:28px;line-height:1.6;}
+  .am-field{margin-bottom:16px;}
+  .am-field label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk-dim);margin-bottom:7px;}
+  .am-field input,.am-field textarea,.am-field select{
+    width:100%;background:var(--pitch);border:1px solid var(--turf-line);padding:12px 13px;
+    font-family:var(--body);font-size:14px;color:var(--floodlight);outline:none;transition:border-color .2s;resize:vertical;
+  }
+  .am-field input:focus,.am-field textarea:focus,.am-field select:focus{border-color:var(--amber);}
+  .am-field textarea{min-height:70px;}
+  .am-field select{
+    appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%237c8a79' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;
+  }
+  .am-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .am-submit{width:100%;margin-top:6px;}
+  .am-status{margin-top:14px;font-family:var(--mono);font-size:12.5px;text-align:center;line-height:1.5;display:none;}
+  .am-status.show{display:block;}
+  .am-status.success{color:var(--green);}
+  .am-status.error{color:var(--danger);}
+  @media(max-width:600px){
+    .apply-modal{padding:28px 22px;}
+    .am-row2{grid-template-columns:1fr;}
+  }
+</style>
+
+<div class="apply-modal-overlay" id="apply-modal-overlay">
+  <div class="apply-modal">
+    <button class="apply-modal-close" onclick="closeApplyModal()" aria-label="Close">✕</button>
+    <h3>Apply to <span style="color:var(--amber);">Athlo</span></h3>
+    <p class="am-sub">Tell us a bit about you and where you want to end up. We'll be in touch within 48 hours.</p>
+
+    <form id="apply-form">
+      <div class="am-row2">
+        <div class="am-field"><label for="am-name">Full Name</label><input type="text" id="am-name" required></div>
+        <div class="am-field"><label for="am-email">Email</label><input type="email" id="am-email" required></div>
+      </div>
+      <div class="am-row2">
+        <div class="am-field"><label for="am-whatsapp">WhatsApp Number</label><input type="tel" id="am-whatsapp" placeholder="+65 XXXX XXXX" required></div>
+        <div class="am-field"><label for="am-linkedin">LinkedIn Profile</label><input type="text" id="am-linkedin" placeholder="linkedin.com/in/..."></div>
+      </div>
+      <div class="am-field">
+        <label for="am-track">Which program are you applying for?</label>
+        <select id="am-track">
+          <option value="Sports School" selected>Sports School (Athlo)</option>
+          <option value="Founder MBA">Founder MBA</option>
+          <option value="Borderless MBA">Borderless MBA</option>
+          <option value="Executive MBA">Executive MBA</option>
+          <option value="Family Business MBA">Family Business MBA</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+      <div class="am-field">
+        <label for="am-credential">Which credential level?</label>
+        <select id="am-credential">
+          <option value="" disabled selected>Select a level</option>
+          <option value="Certificate">Certificate — 3 Months</option>
+          <option value="PGP">PGP — 6 Months</option>
+          <option value="MBA">MBA — 12–18 Months (Woolf University)</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+      <div class="am-field"><label for="am-what">Where do you want to end up in sports?</label><textarea id="am-what" placeholder="A club, a league, a brand, a broadcaster, your own startup..."></textarea></div>
+      <div class="am-field"><label for="am-why">Why now?</label><textarea id="am-why" placeholder="What's driving you to make this move?"></textarea></div>
+
+      <button type="submit" class="btn btn-primary am-submit" id="am-submit-btn">Submit Application →</button>
+      <div class="am-status" id="am-status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwUisrzmLWEt-RA5nLOwrn55IbQZiMQcZ5JJVe4K4qOGiztyvQ5IJCMr0TC0dxsV9U1/exec";
+
+  var overlay = document.getElementById('apply-modal-overlay');
+  var form = document.getElementById('apply-form');
+  var statusEl = document.getElementById('am-status');
+  var submitBtn = document.getElementById('am-submit-btn');
+  var trackSelect = document.getElementById('am-track');
+
+  window.openApplyModal = function(presetTrack){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    trackSelect.value = presetTrack || 'Sports School';
+  };
+
+  window.closeApplyModal = function(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeApplyModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) closeApplyModal(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var payload = {
+      name: document.getElementById('am-name').value,
+      email: document.getElementById('am-email').value,
+      whatsapp: document.getElementById('am-whatsapp').value,
+      linkedin: document.getElementById('am-linkedin').value,
+      track: trackSelect.value,
+      credentialLevel: document.getElementById('am-credential').value,
+      whatToBuild: document.getElementById('am-what').value,
+      whyBuild: document.getElementById('am-why').value,
+      source: 'Athlo School of Sports'
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    statusEl.className = 'am-status';
+
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(){
+      statusEl.textContent = "Application received. We'll be in touch within 48 hours.";
+      statusEl.className = 'am-status show success';
+      submitBtn.textContent = "Submitted ✓";
+      form.reset();
+      setTimeout(function(){
+        closeApplyModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Application →";
+        statusEl.className = 'am-status';
+      }, 2200);
+    })
+    .catch(function(){
+      statusEl.textContent = "Something went wrong. Please try again or email hello@athlo.school.";
+      statusEl.className = 'am-status show error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Application →";
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

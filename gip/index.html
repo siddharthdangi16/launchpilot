@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LaunchPilot × NUS — Global Innovators Program Singapore</title>
+<meta name="description" content="A 6-month Global Innovators Program in partnership with NUS. For early-stage founders and working professionals ready to build. Demo Day in Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:   #ffffff;
+  --off:     oklch(0.97 0.005 75);
+  --off-2:   oklch(0.93 0.007 75);
+  --off-3:   oklch(0.88 0.009 75);
+  --ink:     oklch(0.14 0.014 55);
+  --ink-2:   oklch(0.26 0.012 55);
+  --muted:   oklch(0.50 0.010 60);
+  --rule:    oklch(0.84 0.008 70);
+  --fire:    oklch(0.67 0.19 42);
+  --fire-d:  oklch(0.57 0.21 36);
+  --fire-pale: oklch(0.95 0.04 62);
+  --nus:     oklch(0.32 0.14 258);
+  --serif:   "Instrument Serif", Georgia, serif;
+  --sans:    "Inter Tight", system-ui, sans-serif;
+  --mono:    "JetBrains Mono", monospace;
+}
+html,body{background:var(--white);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--fire);color:#fff}
+a{color:inherit;text-decoration:none}
+img{display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 56px;
+  height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:12px}
+.nav-logo{font-family:var(--serif);font-size:18px;letter-spacing:-0.01em;color:var(--ink)}
+.nav-logo em{font-style:italic;color:var(--fire)}
+.nav-x{color:var(--rule);font-size:14px;margin:0 4px}
+.nav-nus{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--nus);font-weight:500}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-apply{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 22px;border-radius:100px;background:var(--ink);color:var(--white);
+  transition:background .2s,transform .15s;cursor:pointer;border:none}
+.nav-apply:hover{background:var(--fire);transform:translateY(-1px)}
+
+/* WRAP */
+.wrap{max-width:1400px;margin:0 auto;padding:0 56px}
+
+/* ── HERO ── */
+.hero{background:var(--white);padding:120px 0 80px;border-bottom:1px solid var(--rule)}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:32px}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--fire)}
+.hero h1{font-family:var(--serif);font-weight:400;
+  font-size:clamp(56px,8.5vw,128px);
+  letter-spacing:-0.03em;line-height:0.92;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--fire)}
+.hero-divider{height:1px;background:var(--rule);margin:44px 0}
+.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.hero-lede{font-family:var(--serif);font-size:clamp(17px,1.8vw,22px);
+  letter-spacing:-0.005em;line-height:1.6;color:var(--ink-2);
+  max-width:44ch;margin-bottom:32px}
+.hero-lede em{font-style:italic;color:var(--fire)}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.pill{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 14px;border-radius:100px;border:1px solid var(--rule);color:var(--muted)}
+.hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-fire{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;padding:14px 28px;border-radius:100px;
+  background:var(--fire);color:#fff;transition:background .2s,transform .15s;cursor:pointer;border:none}
+.btn-fire:hover{background:var(--fire-d);transform:translateY(-1px)}
+.btn-ghost{font-size:13px;color:var(--muted);
+  display:flex;align-items:center;gap:8px;transition:color .2s}
+.btn-ghost:hover{color:var(--ink)}
+.hero-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--rule);overflow:hidden}
+.h-num{background:var(--off);padding:28px 24px}
+.h-nv{font-family:var(--serif);font-size:clamp(36px,4vw,52px);font-style:italic;
+  letter-spacing:-0.025em;line-height:1;color:var(--fire)}
+.h-nl{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-top:6px;line-height:1.4}
+
+/* COMMUNITY PHOTO STRIP — after hero */
+.community-strip{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:3px;
+  height:400px;background:var(--rule)}
+.cph{overflow:hidden;position:relative;background:var(--off-2)}
+.cph img{width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(10%);transition:filter .5s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.cph:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.cph-lbl{position:absolute;bottom:12px;left:14px;
+  font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);text-shadow:0 1px 4px rgba(0,0,0,.5)}
+
+/* PARTNERS BAR */
+.partners-bar{padding:18px 0;border-bottom:1px solid var(--rule);
+  background:var(--off)}
+.partners-inner{display:flex;align-items:center;gap:0;overflow:hidden}
+.p-tag{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);padding:0 28px 0 0;border-right:1px solid var(--rule);
+  margin-right:0;white-space:nowrap;flex-shrink:0}
+.p-scroll{position:relative;overflow:hidden;flex:1}
+.p-scroll::before,.p-scroll::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.p-scroll::before{left:0;background:linear-gradient(90deg,var(--off),transparent)}
+.p-scroll::after{right:0;background:linear-gradient(270deg,var(--off),transparent)}
+.p-track{display:flex;gap:16px;width:max-content;animation:pscroll 36s linear infinite;padding:0 28px}
+@keyframes pscroll{to{transform:translateX(-50%)}}
+.p-card{display:flex;align-items:center;gap:10px;padding:10px 18px;
+  border-radius:8px;border:1px solid var(--rule);background:var(--white);
+  white-space:nowrap;flex-shrink:0;transition:border-color .2s}
+.p-card:hover{border-color:color-mix(in oklab,var(--fire) 50%,transparent)}
+.p-card-ph{width:32px;height:32px;border-radius:5px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;background:var(--off-2)}
+.p-card-ph img{width:100%;height:100%;object-fit:contain;padding:4px}
+.p-card-nm{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink-2)}
+.p-card-rl{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* SECTION SHARED */
+.sec{padding:96px 0;border-bottom:1px solid var(--rule)}
+.sec-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:14px}
+.sec-h{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,72px);
+  letter-spacing:-0.025em;line-height:1.0}
+.sec-h em{font-style:italic;color:var(--fire)}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:60ch;margin-top:16px}
+
+/* ABOUT / HIGHLIGHTS */
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--rule);margin-top:48px;overflow:hidden}
+.hl{background:var(--white);padding:36px 28px;display:flex;flex-direction:column;gap:10px;
+  transition:background .25s}
+.hl:hover{background:var(--fire-pale)}
+.hl-n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);opacity:.55}
+.hl-t{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.15}
+.hl-d{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* FOR WHO */
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--rule);margin-top:48px;overflow:hidden}
+.for-card{background:var(--white);padding:44px 40px;
+  display:flex;flex-direction:column;gap:12px;
+  transition:background .25s}
+.for-card:hover{background:var(--fire-pale)}
+.for-tag{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire)}
+.for-t{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);font-style:italic;
+  letter-spacing:-0.01em;color:var(--ink);line-height:1.15}
+.for-d{font-size:14px;color:var(--muted);line-height:1.7;max-width:44ch}
+.for-pts{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.for-pt{font-size:13.5px;color:var(--ink-2);display:flex;gap:10px;line-height:1.5}
+.for-pt::before{content:'→';color:var(--fire);flex-shrink:0;font-family:var(--mono);font-size:10px;margin-top:2px}
+
+/* WHAT YOU BUILD — 6 sprints */
+.sprint-list{display:flex;flex-direction:column;gap:1px;background:var(--rule);
+  margin-top:48px;overflow:hidden;border-radius:2px}
+.sprint{display:grid;grid-template-columns:200px 1fr 180px;gap:0;background:var(--rule);
+  cursor:default;transition:background .2s}
+.sprint:hover .sprint-center{background:var(--fire-pale)}
+.sprint-left{background:var(--off);padding:28px 28px;display:flex;flex-direction:column;gap:6px}
+.sprint-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--fire);opacity:.6}
+.sprint-t{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ink);line-height:1.2;margin-top:4px}
+.sprint-center{background:var(--white);padding:28px 36px;transition:background .25s}
+.sprint-pts{display:flex;flex-direction:column;gap:0}
+.sprint-pt{padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;
+  color:var(--ink-2);display:flex;gap:12px;line-height:1.5}
+.sprint-pt::before{content:'→';color:var(--fire);flex-shrink:0;font-family:var(--mono);font-size:10px;margin-top:2px}
+.sprint-pt:last-child{border-bottom:0}
+.sprint-right{background:var(--off);padding:28px 20px;display:flex;flex-direction:column;
+  gap:6px;align-items:flex-end;justify-content:flex-start;text-align:right}
+.sprint-del-l{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.sprint-del-v{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--fire);line-height:1.4;margin-top:2px}
+
+/* AI COPILOT */
+.ai-section{background:var(--ink);color:var(--off)}
+.ai-two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:56px}
+.ai-feat{padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.07);
+  display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+.ai-feat:last-child{border-bottom:0}
+.ai-feat-icon{width:32px;height:32px;border-radius:6px;
+  background:color-mix(in oklab,var(--fire) 14%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 28%,transparent);
+  display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ai-feat-t{font-family:var(--serif);font-size:16px;font-style:italic;
+  color:var(--off);margin-bottom:4px}
+.ai-feat-d{font-size:13px;color:rgba(245,238,216,0.42);line-height:1.6}
+.chat-w{background:oklch(0.12 0.01 260);border:.5px solid rgba(255,255,255,0.1);
+  border-radius:14px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.4)}
+.chat-bar{background:oklch(0.16 0.012 260);padding:11px 16px;
+  display:flex;align-items:center;gap:10px;border-bottom:.5px solid rgba(255,255,255,0.07)}
+.chat-dots{display:flex;gap:5px}
+.chat-dot{width:9px;height:9px;border-radius:50%}
+.chat-title{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin:0 auto}
+.chat-live{font-family:var(--mono);font-size:9px;color:var(--fire);
+  display:flex;align-items:center;gap:5px}
+.chat-live::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--fire);animation:cpulse 2s ease-in-out infinite}
+@keyframes cpulse{50%{opacity:.3}}
+.chat-body{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:300px}
+.c-msg{display:flex;flex-direction:column;gap:3px;max-width:87%}
+.c-msg.u{align-self:flex-end;align-items:flex-end}
+.c-msg.b{align-self:flex-start}
+.c-who{font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.2);padding:0 3px}
+.c-msg.u .c-who{text-align:right}
+.c-bub{padding:10px 14px;border-radius:11px;font-size:12.5px;line-height:1.55;font-family:var(--sans)}
+.c-msg.u .c-bub{background:color-mix(in oklab,var(--fire) 16%,transparent);
+  border:.5px solid color-mix(in oklab,var(--fire) 28%,transparent);
+  border-bottom-right-radius:3px;color:rgba(255,255,255,0.88)}
+.c-msg.b .c-bub{background:rgba(255,255,255,0.06);
+  border:.5px solid rgba(255,255,255,0.09);
+  border-bottom-left-radius:3px;color:rgba(255,255,255,0.80)}
+.c-msg.b .c-bub strong{color:var(--fire);font-weight:500}
+.c-msg.b .c-bub ul{margin-top:7px;padding-left:14px;display:flex;flex-direction:column;gap:4px}
+.c-msg.b .c-bub li{font-size:12px;color:rgba(255,255,255,0.62)}
+.c-typ span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);
+  display:inline-block;margin-right:3px}
+.c-typ span:nth-child(1){animation:ctyp .9s .0s ease-in-out infinite}
+.c-typ span:nth-child(2){animation:ctyp .9s .15s ease-in-out infinite}
+.c-typ span:nth-child(3){animation:ctyp .9s .3s ease-in-out infinite}
+@keyframes ctyp{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px);background:var(--fire)}}
+.chat-input{padding:12px 14px;border-top:.5px solid rgba(255,255,255,0.06);
+  display:flex;gap:8px;background:oklch(0.14 0.01 260)}
+.chat-field{flex:1;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);
+  border-radius:6px;padding:8px 12px;font-size:12.5px;font-family:var(--sans);
+  color:rgba(255,255,255,0.3)}
+.chat-send{width:30px;height:30px;border-radius:4px;background:var(--fire);
+  border:none;font-size:13px;color:#fff;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center}
+
+/* MENTORS */
+.m-strip{position:relative;overflow:hidden;padding:8px 0}
+.m-strip::before,.m-strip::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.m-strip::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
+.m-strip::after{right:0;background:linear-gradient(270deg,var(--white),transparent)}
+.m-track{display:flex;gap:12px;width:max-content;animation:mscroll 70s linear infinite}
+.m-track.rev{animation-direction:reverse;animation-duration:80s}
+.m-strip:hover .m-track{animation-play-state:paused}
+@keyframes mscroll{to{transform:translateX(-50%)}}
+.m-card{flex:0 0 auto;display:flex;align-items:center;gap:14px;
+  padding:14px 22px 14px 14px;border-radius:100px;
+  border:1px solid var(--rule);background:var(--white);
+  transition:border-color .25s,background .25s;cursor:default}
+.m-card:hover{border-color:color-mix(in oklab,var(--fire) 50%,transparent);background:var(--fire-pale)}
+.m-ph{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  background:var(--off-2);border:1px solid var(--rule)}
+.m-ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.m-nm{font-family:var(--serif);font-size:18px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)}
+.m-role{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+
+/* PHOTO GALLERY — 2 rows scrolling */
+.cohort-strip{display:flex;flex-direction:column;gap:12px;margin-top:48px;position:relative;overflow:hidden}
+.cohort-strip::before,.cohort-strip::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.cohort-strip::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
+.cohort-strip::after{right:0;background:linear-gradient(270deg,var(--white),transparent)}
+.cohort-track{display:flex;gap:12px;width:max-content}
+.cohort-track.fwd{animation:cfwd 40s linear infinite}
+.cohort-track.rev{animation:crev 48s linear infinite}
+.cohort-track:hover{animation-play-state:paused}
+@keyframes cfwd{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes crev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.cohort-card{flex:0 0 440px;height:300px;border-radius:12px;overflow:hidden;
+  position:relative;background:var(--off-2);border:1px solid var(--rule)}
+.cohort-card img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(10%);transition:filter .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.cohort-card:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.cohort-card::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55))}
+.cohort-cap{position:absolute;bottom:14px;left:16px;z-index:1;color:#fff}
+.cohort-cap b{display:block;font-family:var(--serif);font-size:20px;font-style:italic;
+  font-weight:400;letter-spacing:-0.01em;margin-bottom:2px}
+.cohort-cap span{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+
+/* STUDENT LAUNCHES */
+.launches-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:var(--rule);margin-top:48px;overflow:hidden;border-radius:2px}
+.lc{background:var(--white);padding:24px;display:flex;flex-direction:column;gap:12px;
+  aspect-ratio:1;justify-content:space-between;transition:background .25s}
+.lc:hover{background:var(--fire-pale)}
+.lc-badge{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--fire)}
+.lc-ph{width:44px;height:44px;border-radius:8px;overflow:hidden;background:var(--off-2);border:1px solid var(--rule)}
+.lc-ph img{width:100%;height:100%;object-fit:cover}
+.lc-nm{font-family:var(--serif);font-size:17px;font-style:italic;letter-spacing:-0.01em;color:var(--ink);line-height:1.15}
+.lc-by{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lc-stat{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fire);border-top:1px solid var(--rule);padding-top:10px;margin-top:auto}
+
+/* DEMO DAY */
+.dday{background:var(--off);border-bottom:1px solid var(--rule)}
+.dday-inner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)}
+.dday-left{background:var(--white);padding:72px 56px}
+.dday-right{background:var(--fire-pale);padding:72px 56px;display:flex;flex-direction:column;gap:28px}
+.dday-day{display:flex;flex-direction:column;gap:6px}
+.dday-day-n{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);opacity:.7}
+.dday-day-t{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.2}
+.dday-day-d{font-size:13px;color:var(--muted);line-height:1.6;margin-top:4px}
+.dday-rule{height:1px;background:var(--rule)}
+
+/* OUTCOMES */
+.oc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:var(--rule);margin-top:48px;overflow:hidden}
+.oc{background:var(--white);padding:28px 22px;display:flex;flex-direction:column;gap:8px;
+  transition:background .25s;cursor:default}
+.oc:hover{background:var(--fire-pale)}
+.oc-n{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);opacity:.55}
+.oc-t{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--ink);line-height:1.2}
+.oc-d{font-size:12px;color:var(--muted);line-height:1.6}
+.oc-tag{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fire);opacity:.6;margin-top:auto;padding-top:10px;border-top:1px solid var(--rule)}
+
+/* CTA FINAL */
+.cta-final{padding:120px 0;text-align:center;position:relative;overflow:hidden;
+  background:var(--ink)}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:60vw;height:60vw;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in oklab,var(--fire) 12%,transparent),transparent 65%);
+  filter:blur(80px);pointer-events:none}
+.cta-final .sec-kicker{color:var(--fire)}
+.cta-final .sec-h{color:var(--off)}
+
+/* FOOTER */
+footer{padding:28px 56px;border-top:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-links{display:flex;gap:24px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.foot-links a:hover{color:var(--fire)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(14,10,6,0.78);
+  display:none;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .25s}
+.modal-overlay.open{display:flex;opacity:1}
+.modal{position:relative;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;
+  background:var(--ink);border-radius:16px;padding:48px;color:var(--off);
+  transform:translateY(20px) scale(.97);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-x{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;
+  background:transparent;border:.5px solid rgba(245,238,216,0.2);color:rgba(245,238,216,0.5);
+  cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;line-height:1}
+.modal-x:hover{border-color:var(--fire);color:var(--fire)}
+.modal h3{font-family:var(--serif);font-size:28px;font-style:italic;letter-spacing:-0.01em;
+  color:var(--off);margin-bottom:6px}
+.modal-sub{font-size:14px;color:rgba(245,238,216,0.55);line-height:1.55;margin-bottom:28px}
+.m-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.m-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.m-field label{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.45)}
+.m-field input,.m-field select,.m-field textarea{
+  background:rgba(245,238,216,0.06);border:.5px solid rgba(245,238,216,0.14);
+  border-radius:6px;padding:11px 14px;font-family:var(--sans);font-size:14px;
+  color:var(--off);outline:none;width:100%;transition:border-color .2s}
+.m-field input:focus,.m-field select:focus,.m-field textarea:focus{border-color:var(--fire)}
+.m-field select option{background:var(--ink)}
+.m-field textarea{resize:vertical;min-height:76px}
+.m-submit{width:100%;padding:13px;border-radius:100px;background:var(--fire);
+  color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;border:none;cursor:pointer;margin-top:8px;transition:background .2s}
+.m-submit:hover{background:var(--fire-d)}
+.m-status{font-family:var(--mono);font-size:11px;text-align:center;
+  margin-top:10px;min-height:18px;color:var(--fire)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero-bottom,.ai-two-col,.for-grid,.dday-inner{grid-template-columns:1fr!important;gap:32px!important}
+  .hero-photos{grid-template-columns:1fr 1fr;height:240px}
+  .hero h1{font-size:clamp(52px,11vw,80px)}
+  .hl-grid,.oc-grid,.launches-grid{grid-template-columns:repeat(3,1fr)!important}
+  .sprint{grid-template-columns:180px 1fr}
+  .sprint-right{display:none}
+}
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .nav-inner{padding:0 20px}
+  nav .nav-links{display:none}
+  .hero-photos{grid-template-columns:1fr;height:240px}
+  .hero-photos .hph:nth-child(n+2){display:none}
+  .hl-grid{grid-template-columns:1fr 1fr!important}
+  .oc-grid,.launches-grid{grid-template-columns:1fr 1fr!important}
+  .sprint{grid-template-columns:1fr}
+  .sprint-left{padding:20px}
+  .m-row2{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hl-grid,.oc-grid,.launches-grid{grid-template-columns:1fr!important}
+}
+
+@media(max-width:768px){
+  .community-strip{grid-template-columns:1fr 1fr;height:280px}
+  .community-strip .cph:nth-child(n+3){display:none}
+}
+@media(max-width:480px){
+  .community-strip{grid-template-columns:1fr;height:220px}
+  .community-strip .cph:nth-child(n+2){display:none}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-logo">Launch<em>Pilot</em></div>
+      <span class="nav-x">×</span>
+      <div class="nav-nus">NUS Singapore</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#demoday">Demo Day</a></li>
+      <li><a href="#cohorts">Cohorts</a></li>
+    </ul>
+    <button class="nav-apply" onclick="openModal()">Apply Now ↗</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-kicker">LaunchPilot × NUS · Singapore · 2026</div>
+    <h1>Have an idea?<br>Build your company<br>in <em>Singapore.</em></h1>
+    <div class="hero-divider"></div>
+    <div class="hero-bottom">
+      <div>
+        <p class="hero-lede">A 6-month Global Innovators Program with NUS — for early-stage founders and working professionals ready to <em>actually build</em>. Not theorise. Not wait. Build.</p>
+        <div class="hero-pills">
+          <span class="pill">6 Months · Part-time</span>
+          <span class="pill">NUS Singapore</span>
+          <span class="pill">AI-First</span>
+          <span class="pill">$1M+ Startup Benefits</span>
+          <span class="pill">Demo Day · Singapore</span>
+        </div>
+        <div class="hero-ctas">
+          <button class="btn-fire" onclick="openModal()">Apply for Cohort '26 ↗</button>
+          <a href="#program" class="btn-ghost">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--fire);display:inline-block;flex-shrink:0"></span>
+            See the program
+          </a>
+        </div>
+      </div>
+      <div class="hero-nums">
+        <div class="h-num"><div class="h-nv">6</div><div class="h-nl">Months to Demo Day</div></div>
+        <div class="h-num"><div class="h-nv">$1M+</div><div class="h-nl">Startup benefits</div></div>
+        <div class="h-num"><div class="h-nv">80+</div><div class="h-nl">Global mentors</div></div>
+        <div class="h-num"><div class="h-nv">700+</div><div class="h-nl">Alumni worldwide</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY PHOTOS — scrolling strip -->
+<div class="cohort-strip" style="margin-top:0">
+  <div class="cohort-track fwd" id="ct-hero-a"></div>
+  <div class="cohort-track rev" id="ct-hero-b"></div>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners-bar">
+  <div class="wrap">
+    <div class="partners-inner">
+      <div class="p-tag">Partners</div>
+      <div class="p-scroll">
+        <div class="p-track" id="p-track">
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/nus.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">NUS Singapore</div><div class="p-card-rl">Academic Partner</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/ibm.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">IBM</div><div class="p-card-rl">Technology Partner</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/meet-ventures.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">Meet Ventures</div><div class="p-card-rl">VC Fund</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/asia-pro-ventures.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">Asia Pro Ventures</div><div class="p-card-rl">VC Fund</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/transcend-accelerator.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">Transcend Accelerator</div><div class="p-card-rl">Accelerator</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/iit-bombay.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">IIT Bombay</div><div class="p-card-rl">Academic Partner</div></div></div>
+          <div class="p-card"><div class="p-card-ph"><img src="../images/partners/glean-ventures.png" alt="" onerror="this.style.opacity='0'"></div><div><div class="p-card-nm">Glean Ventures</div><div class="p-card-rl">VC Fund</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-kicker">Why this exists</div>
+    <h2 class="sec-h">Most programs teach you<br>to talk about building.<br><em>This one makes you build.</em></h2>
+    <p class="sec-sub">LaunchPilot × NUS is a 6-month accelerator for founders and professionals who want to launch something real — with structure, mentors, an AI copilot, and a room full of people doing the same thing.</p>
+    <div class="hl-grid">
+      <div class="hl"><div class="hl-n">01</div><div class="hl-t">Built with NUS Singapore</div><div class="hl-d">In partnership with one of Asia's top universities — world-class academic rigour, Southeast Asia's best startup network.</div></div>
+      <div class="hl"><div class="hl-n">02</div><div class="hl-t">AI Copilot from Day One</div><div class="hl-d">Your own AI system learns your startup, your stage, and your blockers — available 24/7, personalised to you.</div></div>
+      <div class="hl"><div class="hl-n">03</div><div class="hl-t">Real Mentors. Real Access.</div><div class="hl-d">80+ global founders, VCs, and operators. Matched to your stage. Not random. Not group Q&As.</div></div>
+      <div class="hl"><div class="hl-n">04</div><div class="hl-t">Demo Day in Singapore</div><div class="hl-d">You pitch your company to investors, ecosystem partners, and the NUS network. Month 6. Real stakes.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="sec" id="who" style="background:var(--off)">
+  <div class="wrap">
+    <div class="sec-kicker">Who this is for</div>
+    <h2 class="sec-h">Two types of people<br><em>get accepted.</em></h2>
+    <p class="sec-sub">We're not for everyone — and that's the point. If you're in one of these two groups, this was built for you.</p>
+    <div class="for-grid">
+      <div class="for-card">
+        <div class="for-tag">Early-Stage Founder</div>
+        <div class="for-t">You've started. Now you need to scale it.</div>
+        <div class="for-d">You have an idea, maybe some early traction, and you're ready to go full structure. You want mentors who've done it, an AI system that knows your startup, and a cohort to build alongside.</div>
+        <div class="for-pts">
+          <div class="for-pt">Pre-revenue to $10K MRR — all welcome</div>
+          <div class="for-pt">Solo founders and co-founder teams</div>
+          <div class="for-pt">Any industry, any geography</div>
+          <div class="for-pt">Ready to commit 10–15 hours a week</div>
+        </div>
+      </div>
+      <div class="for-card">
+        <div class="for-tag">Working Professional</div>
+        <div class="for-t">You have a job. You want to launch something.</div>
+        <div class="for-d">You've been thinking about it for two years. You have the skills, the industry knowledge, maybe even the idea. You need structure, accountability, and a program that fits around your life.</div>
+        <div class="for-pts">
+          <div class="for-pt">Keep your job — this is part-time and structured</div>
+          <div class="for-pt">Validate your idea in Sprint 01 before going all-in</div>
+          <div class="for-pt">Build alongside 30 others doing the same thing</div>
+          <div class="for-pt">Graduate with a real company — not a certificate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="sec" id="program">
+  <div class="wrap">
+    <div class="sec-kicker">The Program</div>
+    <h2 class="sec-h">6 sprints.<br><em>One real company.</em></h2>
+    <p class="sec-sub">Every sprint is 3–4 weeks. Fast. Ends with a real deliverable — not an assignment. You graduate with a company, real customers, and a pitch you've delivered to actual investors.</p>
+    <div class="sprint-list">
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 01</div><div class="sprint-t">Idea to Validated Problem</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Customer discovery — 20 interviews before you write a line of code</div>
+          <div class="sprint-pt">ICP definition, Jobs-to-be-Done, and market sizing</div>
+          <div class="sprint-pt">AI copilot onboarding — it learns your startup context</div>
+          <div class="sprint-pt">Kill criteria: either you have signal, or you pivot here</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">Validated problem + paying ICP</div></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 02</div><div class="sprint-t">MVP in 30 Days</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Scope your MVP to the one thing that proves the value</div>
+          <div class="sprint-pt">AI-assisted building — no-code, low-code, or full-stack</div>
+          <div class="sprint-pt">Business model and pricing — before you build more</div>
+          <div class="sprint-pt">First user feedback loop: ship, measure, iterate</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">Live MVP with first users</div></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 03</div><div class="sprint-t">First Revenue</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Founder-led sales — cold outreach, demos, and closing</div>
+          <div class="sprint-pt">Your first $1,000: the most important milestone you'll hit</div>
+          <div class="sprint-pt">Sales process: CRM, pipeline, and follow-up systems</div>
+          <div class="sprint-pt">Pricing experiments and willingness-to-pay validation</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">First paying customers</div></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 04</div><div class="sprint-t">Growth & Distribution</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Pick one channel and go deep — content, community, or paid</div>
+          <div class="sprint-pt">Growth loops, referral mechanics, and retention</div>
+          <div class="sprint-pt">AI-powered GTM stack: Clay, Apollo, content automation</div>
+          <div class="sprint-pt">10 customers → 100: the systems that compound</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">Repeatable growth channel</div></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 05</div><div class="sprint-t">Fundraising Foundations</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Financial model, unit economics, and investor narrative</div>
+          <div class="sprint-pt">Pitch deck construction — structure, story, and data</div>
+          <div class="sprint-pt">VC landscape: who funds your stage, your sector, your geography</div>
+          <div class="sprint-pt">Warm intro strategy using the LaunchPilot and NUS network</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">Investor-ready pitch deck + model</div></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-left"><div class="sprint-n">Sprint 06</div><div class="sprint-t">Demo Day</div></div>
+        <div class="sprint-center"><div class="sprint-pts">
+          <div class="sprint-pt">Full pitch rehearsals with mentors and peers — 3 rounds</div>
+          <div class="sprint-pt">Investor introductions: 10+ warm meetings before Demo Day</div>
+          <div class="sprint-pt">Demo Day at NUS Singapore — real investors, real stakes</div>
+          <div class="sprint-pt">Post-Demo: deal support, term sheet guidance, and what comes next</div>
+        </div></div>
+        <div class="sprint-right"><div class="sprint-del-l">Deliverable</div><div class="sprint-del-v">Public pitch + investor meetings</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI COPILOT -->
+<section class="sec ai-section">
+  <div class="wrap">
+    <div class="sec-kicker" style="color:var(--fire)">AI Copilot</div>
+    <h2 class="sec-h" style="color:var(--off)">Your AI knows your<br>startup. <em>Not just startups.</em></h2>
+    <p class="sec-sub" style="color:rgba(245,238,216,0.52)">Not a chatbot. An AI that learns your business, your ICP, your stage, and your blockers — available 24/7 wherever you are.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px">
+
+      <!-- Chat 1: Sales -->
+      <div class="chat-w">
+        <div class="chat-bar">
+          <div class="chat-dots"><div class="chat-dot" style="background:#ff5f57"></div><div class="chat-dot" style="background:#ffbd2e"></div><div class="chat-dot" style="background:#28c840"></div></div>
+          <div class="chat-title">AI Copilot · Sprint 03 · Sales</div>
+          <div class="chat-live">Active</div>
+        </div>
+        <div class="chat-body" style="min-height:260px">
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub">You're in Sprint 03. 3 leads went cold after your demo. Want to diagnose why and fix your follow-up?</div></div>
+          <div class="c-msg u"><div class="c-who">You</div><div class="c-bub">Yes — I sent a recap email but no one replied.</div></div>
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub">Usually one of three things: <strong>no clear next step</strong>, too long, or wrong timing. Which feels closest? I'll rewrite the email with you now.</div></div>
+          <div class="c-msg u"><div class="c-who">You</div><div class="c-bub">No clear next step. Show me a better version.</div></div>
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub"><div class="c-typ"><span></span><span></span><span></span></div></div></div>
+        </div>
+        <div class="chat-input">
+          <div class="chat-field">Ask anything about your startup...</div>
+          <div class="chat-send">→</div>
+        </div>
+      </div>
+
+      <!-- Chat 2: Fundraising -->
+      <div class="chat-w">
+        <div class="chat-bar">
+          <div class="chat-dots"><div class="chat-dot" style="background:#ff5f57"></div><div class="chat-dot" style="background:#ffbd2e"></div><div class="chat-dot" style="background:#28c840"></div></div>
+          <div class="chat-title">AI Copilot · Sprint 05 · Fundraising</div>
+          <div class="chat-live">Active</div>
+        </div>
+        <div class="chat-body" style="min-height:260px">
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub">You're preparing for Demo Day. Your pitch deck is strong but your unit economics slide is the weakest part. Want to fix it?</div></div>
+          <div class="c-msg u"><div class="c-who">You</div><div class="c-bub">Yes — my LTV:CAC is 2.8x. Is that good enough for a pre-seed?</div></div>
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub">For pre-seed, 2.8x is fine — investors care more about the trajectory. If it was 1.2x six months ago, <strong>that's the story to lead with</strong>. What was it then?</div></div>
+          <div class="c-msg u"><div class="c-who">You</div><div class="c-bub">It was 1.4x. Should I put both numbers in the deck?</div></div>
+          <div class="c-msg b"><div class="c-who">AI Copilot</div><div class="c-bub"><div class="c-typ"><span></span><span></span><span></span></div></div></div>
+        </div>
+        <div class="chat-input">
+          <div class="chat-field">Ask anything about your startup...</div>
+          <div class="chat-send">→</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MENTORS -->
+<section class="sec" id="mentors">
+  <div class="wrap">
+    <div class="sec-kicker">Faculty & Mentors</div>
+    <h2 class="sec-h">Matched to your stage.<br><em>Not a random assignment.</em></h2>
+    <p class="sec-sub">80+ global founders, VCs, and operators. One dedicated to you. The rest available every week.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);margin-top:48px;overflow:hidden">
+      <div style="background:var(--white);padding:24px 28px;display:flex;align-items:center;gap:16px"><div style="width:4px;height:40px;border-radius:2px;background:var(--fire);flex-shrink:0"></div><div><div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">Exited Founders</div><div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink)">Built and sold companies</div></div></div>
+      <div style="background:var(--off);padding:24px 28px;display:flex;align-items:center;gap:16px"><div style="width:4px;height:40px;border-radius:2px;background:var(--fire);flex-shrink:0"></div><div><div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">VCs & Angels</div><div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink)">They fund what you build</div></div></div>
+      <div style="background:var(--white);padding:24px 28px;display:flex;align-items:center;gap:16px"><div style="width:4px;height:40px;border-radius:2px;background:var(--fire);flex-shrink:0"></div><div><div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:4px">Operators & CXOs</div><div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink)">Scaled from 0 to $10M+</div></div></div>
+    </div>
+  </div>
+  <div style="margin-top:48px;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:20px">Some of your mentors</div>
+  <div class="m-strip"><div class="m-track" id="m-track-1">
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/jason-kraus.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Jason Kraus</div><div class="m-role">Founder, Prepare4VC · Partner, EQx Fund</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/renuka-belwalkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Renuka Belwalkar</div><div class="m-role">Investor · Forbes Under 30 Scholar</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/yash-shah.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Yash Shah</div><div class="m-role">GenAI Head India & SEA · AWS</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/andrew-chow.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Andrew Chow</div><div class="m-role">Co-Founder, Asia Pro Ventures · NTU</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/justin-strackany.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Justin Strackany</div><div class="m-role">LP at GTMFund · 3 exits (SecureLink/Vista)</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/gaurav-thakkar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Gaurav Thakkar</div><div class="m-role">Principal VC, Silicon Road · ex-Morgan Stanley</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/soundarya.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Soundarya B.</div><div class="m-role">3x Author · 100K+ LinkedIn · ex-PM Salesforce</div></div></div>
+  </div></div>
+  <div class="m-strip" style="margin-top:12px"><div class="m-track rev" id="m-track-2">
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/john-lim.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">John Lim</div><div class="m-role">Partner, Meet Ventures SG</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Sarvash Malani</div><div class="m-role">DeepTech VC, Temasek · Wharton</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/daniel-ling.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Daniel Ling</div><div class="m-role">ex-VP Design, Lazada & DBS · NUS</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/shavin-goswami.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Shavin Goswami</div><div class="m-role">Global Risk Ops, Meta · ex-EY</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/prantik-mazumdar.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Prantik Mazumdar</div><div class="m-role">President, TiE Singapore · Exited Founder</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/edmund-tan.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Edmund Tan</div><div class="m-role">Fund Manager · Investor & VC</div></div></div>
+    <div class="m-card"><div class="m-ph"><img src="../images/mentors/rajesh-tever.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="m-nm">Rajesh Tever</div><div class="m-role">Founder & Investor, Ikigai SG</div></div></div>
+  </div></div>
+</section>
+
+<!-- CO-FOUNDER & COMMUNITY -->
+<section class="sec" style="background:var(--off)" id="community">
+  <div class="wrap">
+    <div class="sec-kicker">Community · Singapore</div>
+    <h2 class="sec-h">Find your co-founder.<br><em>Find your people.</em></h2>
+    <p class="sec-sub">Some of the best startups in Asia started with a conversation between two people at a LaunchPilot session. Your cohort of 30 is your first network — and it lasts long after Demo Day.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:48px;overflow:hidden">
+      <div style="background:var(--white);padding:40px 32px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--fire);line-height:1">30</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.2">founders in your cohort</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.65">Carefully selected. Across industries. All building something real. You'll know every one of them by week 4.</div>
+      </div>
+      <div style="background:var(--fire-pale);padding:40px 32px;display:flex;flex-direction:column;gap:12px;border:.5px solid color-mix(in oklab,var(--fire) 15%,transparent)">
+        <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--fire);line-height:1">Weekly</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.2">Sunday Labs in Singapore</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.65">Every week. Live. In Singapore. You build together, present together, and get real feedback — not cheerleading.</div>
+      </div>
+      <div style="background:var(--white);padding:40px 32px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-family:var(--serif);font-size:38px;font-style:italic;color:var(--fire);line-height:1">700+</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.2">alumni across the globe</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.65">The network doesn't end at Demo Day. Graduates are in Singapore, India, Dubai, the US, and 20+ other countries.</div>
+      </div>
+    </div>
+
+    <!-- Photo grid: community angle -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px;margin-top:3px;height:280px;background:var(--rule);overflow:hidden">
+      <div style="overflow:hidden;position:relative;background:var(--off-2)"><img src="../images/cohort/02.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;filter:grayscale(10%);transition:filter .4s,transform .5s" onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.04)'" onmouseout="this.style.filter='grayscale(10%)';this.style.transform='scale(1)'"></div>
+      <div style="overflow:hidden;position:relative;background:var(--off-2)"><img src="../images/cohort/06.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;filter:grayscale(10%);transition:filter .4s,transform .5s" onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.04)'" onmouseout="this.style.filter='grayscale(10%)';this.style.transform='scale(1)'"></div>
+      <div style="overflow:hidden;position:relative;background:var(--off-2)"><img src="../images/cohort/09.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;filter:grayscale(10%);transition:filter .4s,transform .5s" onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.04)'" onmouseout="this.style.filter='grayscale(10%)';this.style.transform='scale(1)'"></div>
+      <div style="overflow:hidden;position:relative;background:var(--off-2)"><img src="../images/cohort/11.jpg" alt="" onerror="this.style.opacity='0'" style="width:100%;height:100%;object-fit:cover;filter:grayscale(10%);transition:filter .4s,transform .5s" onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.04)'" onmouseout="this.style.filter='grayscale(10%)';this.style.transform='scale(1)'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COHORT PHOTOS -->
+<section class="sec" id="cohorts" style="background:var(--off)">
+  <div class="wrap">
+    <div class="sec-kicker">Past Cohorts</div>
+    <h2 class="sec-h">A tribe to build,<br>fail, <em>and live with.</em></h2>
+    <p class="sec-sub">Your cohort is 30 founders going through it alongside you. The relationships you build here are the ones that last.</p>
+  </div>
+  <div class="cohort-strip">
+    <div class="cohort-track fwd" id="ct-a"></div>
+    <div class="cohort-track rev" id="ct-b"></div>
+  </div>
+</section>
+
+<!-- STUDENT LAUNCHES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-kicker">What gets built</div>
+    <h2 class="sec-h">Real companies.<br><em>Real results.</em></h2>
+    <p class="sec-sub">A small selection of companies built by LaunchPilot graduates — funded, profitable, and scaling.</p>
+    <div class="launches-grid">
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/salt-and-sun.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Foliages</div><div class="lc-by">Reyo Augustine · Bengaluru</div></div><div class="lc-stat">Bootstrapped · Profitable</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '23</div><div class="lc-ph"><img src="../images/founders/forge-labs.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Devananta</div><div class="lc-by">Devyansh Agarwal · Mumbai</div></div><div class="lc-stat">$200K Seed</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/maitri.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Mvaak.ai</div><div class="lc-by">Shivam Pal · Delhi</div></div><div class="lc-stat">$200K Pre-Seed</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/s16.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Aesthetic Essentials</div><div class="lc-by">Vishesh Arora · Delhi</div></div><div class="lc-stat">$2M ARR · 150+ SKUs</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/s7.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">ClaimBack</div><div class="lc-by">Abhijith Jajio · Bengaluru</div></div><div class="lc-stat">6.5 Cr INR Managed</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '25</div><div class="lc-ph"><img src="../images/founders/s10.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">CloudComm.io</div><div class="lc-by">Alex · Spain</div></div><div class="lc-stat">$50K+ MRR</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/s17.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Flare.io</div><div class="lc-by">Praharsha G · Bengaluru</div></div><div class="lc-stat">400K+ Users</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '25</div><div class="lc-ph"><img src="../images/founders/s9.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Sustainify</div><div class="lc-by">Guliz · Singapore</div></div><div class="lc-stat">ASEAN Finalist</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '24</div><div class="lc-ph"><img src="../images/founders/s13.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Wordful</div><div class="lc-by">Charles Bohannan · SF</div></div><div class="lc-stat">$200K Pre-Seed</div></div>
+      <div class="lc"><div class="lc-badge">Cohort '25</div><div class="lc-ph"><img src="../images/founders/s18.jpg" alt="" onerror="this.style.opacity='0'"></div><div><div class="lc-nm">Mindler.AI</div><div class="lc-by">Sandhya Pradhan · Bengaluru</div></div><div class="lc-stat">Bootstrapped · PMF</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO DAY -->
+<div class="dday" id="demoday">
+  <div class="dday-inner">
+    <div class="dday-left">
+      <div class="sec-kicker">Month 6 · Singapore</div>
+      <h2 class="sec-h">Demo Day.<br><em>The room that changes everything.</em></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;max-width:46ch;margin-top:20px">Every 6 months, LaunchPilot × NUS hosts a Demo Day in Singapore. Investors, ecosystem partners, and the NUS network in one room. You pitch the real company you've spent 6 months building.</p>
+      <div style="margin-top:36px;display:flex;gap:1px;background:var(--rule);overflow:hidden;border-radius:4px">
+        <div style="background:var(--white);padding:20px 24px;flex:1"><div style="font-family:var(--serif);font-size:32px;font-style:italic;color:var(--fire);line-height:1">$28M+</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px">Raised by past cohorts</div></div>
+        <div style="background:var(--white);padding:20px 24px;flex:1"><div style="font-family:var(--serif);font-size:32px;font-style:italic;color:var(--fire);line-height:1">50+</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px">Investors in the room</div></div>
+        <div style="background:var(--white);padding:20px 24px;flex:1"><div style="font-family:var(--serif);font-size:32px;font-style:italic;color:var(--fire);line-height:1">100%</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px">Of graduates pitch live</div></div>
+      </div>
+    </div>
+    <div class="dday-right">
+      <div class="sec-kicker">The week in Singapore</div>
+      <div class="dday-day"><div class="dday-day-n">Monday — Wednesday</div><div class="dday-day-t">Pitch Prep & Rehearsals</div><div class="dday-day-d">Three rounds of live pitch practice with mentors, peers, and guest investors. By Thursday, your pitch is sharp.</div></div>
+      <div class="dday-rule"></div>
+      <div class="dday-day"><div class="dday-day-n">Thursday</div><div class="dday-day-t">Investor Meetings</div><div class="dday-day-d">10+ warm investor meetings arranged through the LaunchPilot and NUS network. No cold emails. Real conversations.</div></div>
+      <div class="dday-rule"></div>
+      <div class="dday-day"><div class="dday-day-n">Friday</div><div class="dday-day-t">Demo Day</div><div class="dday-day-d">You present your company to a room of 50+ investors, mentors, and ecosystem partners. This is what 6 months of building was for.</div></div>
+      <button class="btn-fire" onclick="openModal()" style="margin-top:8px;align-self:flex-start">Apply for Cohort '26 ↗</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEALS & DISCOUNTS -->
+<section class="sec" style="background:var(--off)" id="benefits">
+  <div class="wrap">
+    <div class="sec-kicker">Startup Benefits</div>
+    <h2 class="sec-h">$1M+ in tools<br><em>from day one.</em></h2>
+    <p class="sec-sub">Every founder in the program gets access to the same software stack that funded startups run on — included in your program fee. No upsells. No negotiations.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:48px;overflow:hidden">
+
+      <div style="background:var(--white);padding:36px 32px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);opacity:.7">Infrastructure</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);margin-bottom:4px">Cloud & Hosting</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">AWS Credits</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$5,000</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Vercel Pro</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">1 year free</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Supabase Pro</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$300 credit</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0"><span style="font-size:13.5px;color:var(--ink-2)">DigitalOcean</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$500 credit</span></div>
+        </div>
+      </div>
+
+      <div style="background:var(--white);padding:36px 32px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);opacity:.7">AI & Product</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);margin-bottom:4px">AI Tools & Build Stack</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">OpenAI API Credits</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$2,500</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Anthropic / Claude</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$500 credit</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Notion Team</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">6 months free</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0"><span style="font-size:13.5px;color:var(--ink-2)">Linear</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">1 year free</span></div>
+        </div>
+      </div>
+
+      <div style="background:var(--white);padding:36px 32px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);opacity:.7">Growth & Sales</div>
+        <div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);margin-bottom:4px">Go-to-Market Stack</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">HubSpot CRM</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">90% off · 1 year</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Stripe</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">$20K fee-free processing</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)"><span style="font-size:13.5px;color:var(--ink-2)">Apollo.io</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">50% off · 1 year</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0"><span style="font-size:13.5px;color:var(--ink-2)">Webflow</span><span style="font-family:var(--mono);font-size:10px;color:var(--fire);font-weight:500">1 year free</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:4px;padding:20px 32px;background:color-mix(in oklab,var(--fire) 6%,transparent);border:.5px solid color-mix(in oklab,var(--fire) 18%,transparent);border-radius:0 0 4px 4px;display:flex;align-items:center;gap:20px">
+      <div style="font-family:var(--serif);font-size:36px;font-style:italic;color:var(--fire);line-height:1;flex-shrink:0">$1M+</div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.8">Total startup benefits · 500+ tools and discounts · AWS, Stripe, Notion, OpenAI, HubSpot, Vercel, Supabase, Apollo, Linear, Webflow and more · All included from day one</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- OUTCOMES -->
+<section class="sec" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-kicker">What you leave with</div>
+    <h2 class="sec-h">Not a certificate.<br><em>A company.</em></h2>
+    <p class="sec-sub">Every graduate leaves with ten tangible outcomes — not theory, not frameworks, but real assets for their real business.</p>
+    <div class="oc-grid">
+      <div class="oc"><div class="oc-n">01</div><div class="oc-t">A revenue-generating company</div><div class="oc-d">Real customers, real revenue, built and validated across 6 sprints.</div><div class="oc-tag">Core outcome</div></div>
+      <div class="oc"><div class="oc-n">02</div><div class="oc-t">A pitch you've already delivered</div><div class="oc-d">Rehearsed, refined, and delivered to real investors on Demo Day.</div><div class="oc-tag">Investor ready</div></div>
+      <div class="oc"><div class="oc-n">03</div><div class="oc-t">$1M+ in startup benefits</div><div class="oc-d">AWS, Notion, Stripe, OpenAI, Linear — the stack serious startups run on.</div><div class="oc-tag">Tools</div></div>
+      <div class="oc"><div class="oc-n">04</div><div class="oc-t">A global mentor relationship</div><div class="oc-d">Your dedicated mentor knows your business — and that relationship outlasts the program.</div><div class="oc-tag">Network</div></div>
+      <div class="oc"><div class="oc-n">05</div><div class="oc-t">An AI-powered company</div><div class="oc-d">Your startup runs on AI from day one — in sales, ops, product, and marketing.</div><div class="oc-tag">AI</div></div>
+      <div class="oc"><div class="oc-n">06</div><div class="oc-t">A validated business model</div><div class="oc-d">You know exactly how your company makes money — and you've proven it with real customers.</div><div class="oc-tag">Business</div></div>
+      <div class="oc"><div class="oc-n">07</div><div class="oc-t">A financial model</div><div class="oc-d">Built, stress-tested, and presented to investors. You know your numbers cold.</div><div class="oc-tag">Finance</div></div>
+      <div class="oc"><div class="oc-n">08</div><div class="oc-t">A distribution channel</div><div class="oc-d">One channel that works and compounds. Not tactics — a repeatable growth system.</div><div class="oc-tag">Growth</div></div>
+      <div class="oc"><div class="oc-n">09</div><div class="oc-t">The LaunchPilot × NUS network</div><div class="oc-d">700+ alumni, 80+ mentors, investors across Singapore, India, UAE, and the US.</div><div class="oc-tag">Community</div></div>
+      <div class="oc"><div class="oc-n">10</div><div class="oc-t">Founder identity</div><div class="oc-d">The confidence, language, and conviction that only comes from actually doing it for 6 months.</div><div class="oc-tag">Personal</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<!-- FAQ -->
+<section class="sec" style="background:var(--off)">
+  <div class="wrap">
+    <div class="sec-kicker">FAQ</div>
+    <h2 class="sec-h">Questions we<br><em>always get asked.</em></h2>
+
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:48px;border-top:1px solid var(--rule)">
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          Do I need to quit my job to join?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px;transition:transform .3s">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">No. The Global Innovators Program is designed to run alongside your job. It requires 10–15 hours a week — Sunday Labs, your AI Copilot sessions, and sprint work. Most of our working professional cohort keep their jobs until they have real traction, then decide.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          Do I need an idea before I apply?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">Not necessarily. Sprint 01 is specifically designed to help you validate, sharpen, or find a better idea. Many of our best companies came from founders who scrapped their original idea in week 3 and found something real. What matters is that you have a space you're curious about and the drive to build.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          Do I need to be based in Singapore?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">The Sunday Labs are in Singapore and we strongly recommend being here — the city's startup ecosystem is a core part of the program. However, the curriculum and AI Copilot are fully online. We've had founders join from India, Indonesia, Dubai, and the UK who flew in for key sessions and Demo Day.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          What is the time commitment?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">Roughly 10–15 hours per week: Sunday Labs (3–4 hours live), AI Copilot sessions (2–3 hours), and sprint work (5–8 hours). The program is intense by design — building a company while working isn't easy, and we don't pretend it is. But 6 months is a very short time to go from idea to Demo Day.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          What does the AI Copilot actually do?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">It's a personalised AI trained on everything LaunchPilot knows about building startups — and it learns your specific context during onboarding. Your ICP, your business model, your stage, your blockers. So when you ask "how should I price this?", the answer is about your product, not a generic framework. It's available 24/7 and gets smarter the more you use it.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          Can I find a co-founder through the program?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">Yes — and it happens all the time. Your cohort of 30 includes technical founders, operators, marketers, and domain experts. We actively facilitate introductions between complementary founders during Sprint 01. Some of the strongest companies to come out of LaunchPilot were co-founded by people who met in the program.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--rule);padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          What happens after Demo Day?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">You join the LaunchPilot × NUS alumni network of 700+ founders globally. If you're raising, we facilitate continued investor introductions. If you're hiring, the network is your talent pool. Many graduates come back as mentors for future cohorts. The program ends — the community doesn't.</div>
+      </details>
+
+      <details style="padding:0">
+        <summary style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:20px;font-style:italic;letter-spacing:-0.01em;color:var(--ink)">
+          Is $1M in startup benefits real?
+          <span style="font-family:var(--mono);font-size:18px;color:var(--fire);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:64ch">Yes. AWS credits ($5,000), OpenAI API credits ($2,500), Stripe fee-free processing ($20,000), HubSpot (90% off), Vercel, Supabase, Notion, Linear, Apollo, Webflow — and 490+ more tools and discounts. These are real credits, not trial accounts. The same stack that funded startups run on, from day one.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-orb"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-kicker">Applications Open · Cohort '26</div>
+    <h2 class="sec-h" style="font-size:clamp(52px,8vw,110px);letter-spacing:-0.03em;line-height:0.92;color:var(--off)">6 months.<br>One company.<br><em>Let's build Singapore.</em></h2>
+    <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-fire" onclick="openModal()" style="font-size:11px;padding:15px 32px">Apply for Cohort '26 ↗</button>
+      <a href="mailto:hello@launchpilotschool.com" style="display:inline-block;font-size:13px;color:rgba(245,238,216,0.45);padding:15px;align-self:center">Talk to us first →</a>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,216,0.22)">Cohort '26 · Limited to 30 founders · Rolling applications</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:var(--serif);font-size:18px;letter-spacing:-0.01em;color:var(--ink)">Launch<em style="font-style:italic;color:var(--fire)">Pilot</em> × NUS</div>
+  <div class="foot-links">
+    <a href="../index.html">Home</a>
+    <a href="../founder-mba/">All Programs</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../terms.html">Terms</a>
+  </div>
+  <div style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">© 2025 LaunchPilot School of Business · Singapore</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">&#x2715;</button>
+    <h3>Apply to LaunchPilot × NUS</h3>
+    <p class="modal-sub">Tell us about you and what you want to build. We'll be in touch within 48 hours.</p>
+    <form id="modal-form">
+      <div class="m-row2">
+        <div class="m-field"><label>Full Name</label><input type="text" id="m-name" required></div>
+        <div class="m-field"><label>Email</label><input type="email" id="m-email" required></div>
+      </div>
+      <div class="m-row2">
+        <div class="m-field"><label>WhatsApp</label><input type="tel" id="m-phone" placeholder="+65 XXXX XXXX"></div>
+        <div class="m-field"><label>LinkedIn</label><input type="text" id="m-linkedin" placeholder="linkedin.com/in/..."></div>
+      </div>
+      <div class="m-field">
+        <label>I am a...</label>
+        <select id="m-type">
+          <option value="Early-stage founder">Early-stage founder</option>
+          <option value="Working professional">Working professional with an idea</option>
+          <option value="Both">Both</option>
+        </select>
+      </div>
+      <div class="m-field"><label>What do you want to build?</label><textarea id="m-what"></textarea></div>
+      <div class="m-field"><label>Why now?</label><textarea id="m-why"></textarea></div>
+      <button type="submit" class="m-submit" id="m-btn">Submit Application</button>
+      <div class="m-status" id="m-status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Partners scroll clone
+(function(){
+  var t=document.getElementById('p-track');
+  if(!t)return;
+  Array.from(t.querySelectorAll('.p-card')).forEach(function(c){t.appendChild(c.cloneNode(true));});
+  t.addEventListener('mouseenter',function(){t.style.animationPlayState='paused';});
+  t.addEventListener('mouseleave',function(){t.style.animationPlayState='running';});
+})();
+
+// Mentor scroll clone
+['m-track-1','m-track-2'].forEach(function(id){
+  var t=document.getElementById(id);
+  if(!t)return;
+  Array.from(t.querySelectorAll('.m-card')).forEach(function(c){t.appendChild(c.cloneNode(true));});
+});
+
+// Cohort strip
+var CARDS_A=[
+  {src:'../images/cohort/01.jpg',label:"Cohort '25",sub:'Demo Day · Singapore'},
+  {src:'../images/cohort/02.jpg',label:'Andrew Chow',sub:'AI Session'},
+  {src:'../images/cohort/05.jpg',label:"Cohort '24",sub:'Dubai'},
+  {src:'../images/cohort/07.jpg',label:"Cohort '25",sub:'IIT Bombay · Mumbai'},
+  {src:'../images/cohort/09.jpg',label:"Cohort '23",sub:'AI at IIT Bombay'},
+  {src:'../images/cohort/12.jpg',label:"Cohort '24",sub:'After Demo Day'},
+];
+var CARDS_B=[
+  {src:'../images/cohort/03.jpg',label:'Co-founder Smiles',sub:'United States'},
+  {src:'../images/cohort/04.jpg',label:'US Immersion',sub:'New York'},
+  {src:'../images/cohort/08.jpg',label:'Daniel Ling Session',sub:'Design Thinking'},
+  {src:'../images/cohort/10.jpg',label:"Cohort '23",sub:'China'},
+  {src:'../images/cohort/11.jpg',label:'Alex',sub:'Snowy NYC'},
+  {src:'../images/cohort/06.jpg',label:'Reyo Augustine',sub:'Founder'},
+];
+function mkCard(c){
+  var d=document.createElement('div');d.className='cohort-card';
+  var img=document.createElement('img');img.src=c.src;img.alt=c.label;
+  img.onerror=function(){img.style.display='none'};
+  var cap=document.createElement('div');cap.className='cohort-cap';
+  cap.innerHTML='<b>'+c.label+'</b><span>'+c.sub+'</span>';
+  d.appendChild(img);d.appendChild(cap);return d;
+}
+var ta=document.getElementById('ct-a'),tb=document.getElementById('ct-b');
+if(ta)[...CARDS_A,...CARDS_A].forEach(function(c){ta.appendChild(mkCard(c));});
+if(tb)[...CARDS_B,...CARDS_B].forEach(function(c){tb.appendChild(mkCard(c));});
+
+// Modal
+function openModal(){
+  var o=document.getElementById('modal-overlay');
+  o.style.display='flex';
+  requestAnimationFrame(function(){o.classList.add('open');});
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  var o=document.getElementById('modal-overlay');
+  o.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal-overlay').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+var SHEET="https://script.google.com/macros/s/AKfycbwUisrzmLWEt-RA5nLOwrn55IbQZiMQcZ5JJVe4K4qOGiztyvQ5IJCMr0TC0dxsV9U1/exec";
+document.getElementById('modal-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var btn=document.getElementById('m-btn'),st=document.getElementById('m-status');
+  btn.textContent='Sending...';btn.disabled=true;
+  var payload={
+    name:document.getElementById('m-name').value,
+    email:document.getElementById('m-email').value,
+    whatsapp:document.getElementById('m-phone').value,
+    linkedin:document.getElementById('m-linkedin').value,
+    track:'LaunchPilot × NUS Accelerator',
+    whatToBuild:document.getElementById('m-what').value,
+    whyBuild:document.getElementById('m-why').value,
+  };
+  fetch(SHEET,{method:'POST',body:JSON.stringify(payload)})
+    .then(function(){
+      st.textContent="Application received. We'll be in touch within 48 hours.";
+      this.reset();btn.textContent='Submit Application';btn.disabled=false;
+    }.bind(this))
+    .catch(function(){
+      st.textContent='Something went wrong. Email hello@launchpilotschool.com directly.';
+      btn.textContent='Submit Application';btn.disabled=false;
+    });
+});
+
+// Scroll fade-in
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+  });
+},{threshold:.06});
+document.querySelectorAll('.hl,.oc,.for-card,.sprint,.lc').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(14px)';
+  el.style.transition='opacity .45s ease,transform .45s ease';io.observe(el);
+});
+</script>
+
+<script>
+document.querySelectorAll('details').forEach(function(d){
+  d.addEventListener('toggle', function(){
+    var icon = d.querySelector('summary span');
+    if(icon) icon.textContent = d.open ? '−' : '+';
+  });
+});
+</script>
+
+
+<script>
+(function(){
+  var CARDS_HA=[
+    {src:'../images/cohort/01.jpg',label:"Cohort '25",sub:'Demo Day · Singapore'},
+    {src:'../images/cohort/05.jpg',label:"Cohort '24",sub:'Dubai'},
+    {src:'../images/cohort/07.jpg',label:"Cohort '25",sub:'IIT Bombay · Mumbai'},
+    {src:'../images/cohort/09.jpg',label:"Cohort '23",sub:'AI Workshop'},
+    {src:'../images/cohort/12.jpg',label:"Cohort '24",sub:'After Demo Day'},
+    {src:'../images/cohort/03.jpg',label:'Co-founder Smiles',sub:'United States'},
+  ];
+  var CARDS_HB=[
+    {src:'../images/cohort/08.jpg',label:'Workshop',sub:'Singapore'},
+    {src:'../images/cohort/02.jpg',label:'Andrew Chow',sub:'AI Session'},
+    {src:'../images/cohort/06.jpg',label:'Reyo Augustine',sub:'Indian Airforce to Founder'},
+    {src:'../images/cohort/10.jpg',label:"Cohort '23",sub:'China'},
+    {src:'../images/cohort/04.jpg',label:'US Immersion',sub:'New York'},
+    {src:'../images/cohort/11.jpg',label:'Alex',sub:'Snowy NYC'},
+  ];
+  function mkC(c){
+    var d=document.createElement('div');d.className='cohort-card';
+    var img=document.createElement('img');img.src=c.src;img.alt=c.label;
+    img.onerror=function(){img.style.display='none'};
+    var cap=document.createElement('div');cap.className='cohort-cap';
+    cap.innerHTML='<b>'+c.label+'</b><span>'+c.sub+'</span>';
+    d.appendChild(img);d.appendChild(cap);return d;
+  }
+  var ta=document.getElementById('ct-hero-a'),tb=document.getElementById('ct-hero-b');
+  if(ta)[...CARDS_HA,...CARDS_HA].forEach(function(c){ta.appendChild(mkC(c));});
+  if(tb)[...CARDS_HB,...CARDS_HB].forEach(function(c){tb.appendChild(mkC(c));});
+})();
+</script>
+
+</body>
+</html>
