@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Learn Live From The Top 1%</title>
+<meta name="description" content="Advanced, live, cohort-based courses taught by operators who've actually done it — VCs, AI leads, institutional investors, and design leaders. Not pre-recorded videos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#F9F4EF;
+  --ink-2:#ECE7E1;
+  --ink-3:#E3DDD6;
+  --brass:#FF6A00;
+  --brass-2:#CC5500;
+  --parchment:#120C08;
+  --parchment-dim:rgba(18,12,8,0.62);
+  --parchment-faint:rgba(18,12,8,0.38);
+  --white:#120C08;
+  --display:'Instrument Serif','Times New Roman',Georgia,serif;
+  --body:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--parchment);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brass);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+section{padding:110px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--brass)}
+.sec-h{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.8vw,52px);letter-spacing:-0.015em;line-height:1.05;margin-bottom:18px;color:var(--white)}
+.sec-sub{font-family:var(--body);font-size:16px;line-height:1.7;color:var(--parchment-dim);max-width:58ch}
+.raised-sec{background:var(--ink-2)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(249,244,239,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,106,0,0.14)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 48px;height:76px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--display);font-style:italic;font-size:21px;color:var(--white);display:flex;align-items:center;gap:8px}
+.nav-logo small{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-style:normal}
+.nav-ul{list-style:none;display:flex;gap:40px}
+.nav-ul a{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment-dim);transition:color .25s}
+.nav-ul a:hover{color:var(--brass)}
+.nav-cta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--brass);color:var(--ink);
+  padding:12px 22px;border-radius:2px;transition:background .25s;border:0;cursor:pointer}
+.nav-cta:hover{background:var(--brass-2)}
+#hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+#hamburger span{width:22px;height:1.5px;background:var(--white)}
+#mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--ink);z-index:59;
+  flex-direction:column;padding:32px 32px;gap:26px;overflow-y:auto}
+#mobile-menu a{font-family:var(--display);font-style:italic;font-size:26px;color:var(--white)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:16px 30px;transition:all .3s;cursor:pointer;border:0}
+.btn-solid{background:var(--brass);color:var(--ink)}
+.btn-solid:hover{background:var(--brass-2)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(18,12,8,0.25)}
+.btn-outline:hover{border-color:var(--brass);color:var(--brass)}
+
+/* ── HERO ── */
+.hero{padding:168px 0 90px;overflow:hidden}
+.hero-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass);background:var(--ink-2);border:1px solid rgba(255,106,0,0.2);
+  padding:9px 18px;border-radius:20px;margin-bottom:36px}
+.hero-h{font-family:var(--display);font-weight:400;font-size:clamp(40px,4.6vw,68px);letter-spacing:-0.02em;line-height:1.05;
+  color:var(--white);max-width:15ch}
+.hero-h em{color:var(--brass);font-style:italic}
+.hero-sub{font-family:var(--body);font-size:17px;line-height:1.7;color:var(--parchment-dim);max-width:56ch;margin-top:28px}
+.hero-cta-row{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:44px;margin-top:72px;flex-wrap:wrap}
+.hero-stat-v{font-family:var(--display);font-style:italic;font-size:36px;color:var(--brass);line-height:1}
+.hero-stat-l{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment-faint);margin-top:8px}
+
+.hero-mentors{position:relative;height:560px;display:grid;grid-template-columns:1fr 1fr;gap:16px;overflow:hidden}
+.hero-mentors-fade-t,.hero-mentors-fade-b{position:absolute;left:0;right:0;height:80px;z-index:3;pointer-events:none}
+.hero-mentors-fade-t{top:0;background:linear-gradient(180deg,var(--ink),transparent)}
+.hero-mentors-fade-b{bottom:0;background:linear-gradient(0deg,var(--ink),transparent)}
+.hero-mentor-col{display:flex;flex-direction:column;gap:14px;will-change:transform}
+.hero-mentor-card{display:flex;align-items:center;gap:12px;background:var(--ink-2);border-radius:12px;padding:12px;
+  box-shadow:0 6px 16px -8px rgba(18,12,8,0.18)}
+.hero-mentor-ph{width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--ink-3)}
+.hero-mentor-ph img{width:100%;height:100%;object-fit:cover}
+.hero-mentor-ph img.face-zoom{object-position:center 15%;transform:scale(1.4)}
+.hero-mentor-nm{font-family:var(--display);font-style:italic;font-size:14px;color:var(--white);line-height:1.15}
+.hero-mentor-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-top:3px}
+
+/* ── VALUE PROP ── */
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,106,0,0.16);margin-top:48px}
+.value-card{background:var(--ink);padding:36px 30px}
+.value-n{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--brass)}
+.value-t{font-family:var(--display);font-style:italic;font-size:24px;color:var(--white);margin-top:14px}
+.value-d{font-family:var(--body);font-size:13px;line-height:1.65;color:var(--parchment-dim);margin-top:14px}
+
+/* ── FILTER CHIPS ── */
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px}
+.filter-chip{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 18px;border-radius:20px;border:1px solid rgba(18,12,8,0.18);color:var(--parchment-dim);
+  background:transparent;cursor:pointer;transition:all .25s}
+.filter-chip:hover{border-color:var(--brass);color:var(--brass)}
+.filter-chip.active{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+
+/* ── COURSE GRID ── */
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.course-card{background:var(--ink-2);border-radius:14px;overflow:hidden;position:relative;
+  box-shadow:0 4px 20px -10px rgba(18,12,8,0.14);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;
+  opacity:0;transform:translateY(20px)}
+.course-card.revealed{opacity:1;transform:translateY(0)}
+.course-card:hover{transform:translateY(-6px);box-shadow:0 26px 46px -16px rgba(255,106,0,0.28)}
+.course-tag{position:absolute;top:18px;left:18px;z-index:2;font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--brass);background:rgba(249,244,239,0.92);backdrop-filter:blur(6px);
+  padding:6px 12px;border-radius:20px}
+.course-level{position:absolute;top:18px;right:18px;z-index:2;font-family:var(--mono);font-size:8px;letter-spacing:.1em;
+  text-transform:uppercase;color:#fff;background:rgba(18,12,8,0.72);backdrop-filter:blur(6px);
+  padding:6px 12px;border-radius:20px}
+.course-mentor-photo{width:100%;height:280px;position:relative;overflow:hidden;background:var(--ink-3)}
+.course-mentor-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;
+  filter:grayscale(8%);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.course-mentor-photo img.face-zoom{object-position:center 15%;transform:scale(1.4)}
+.course-card:hover .course-mentor-photo img{transform:scale(1.06);filter:grayscale(0%)}
+.course-card:hover .course-mentor-photo img.face-zoom{transform:scale(1.46);filter:grayscale(0%)}
+.course-mentor-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,12,8,0.82) 0%,rgba(18,12,8,0.05) 45%,transparent 65%);
+  pointer-events:none}
+.course-mentor-id{position:absolute;left:20px;right:20px;bottom:14px;pointer-events:none}
+.course-mentor-nm{font-family:var(--display);font-style:italic;font-size:24px;color:#fff;line-height:1.1;
+  text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.course-mentor-rl{font-family:var(--mono);font-size:8.5px;letter-spacing:.04em;color:rgba(255,255,255,0.85);
+  margin-top:5px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.course-body{padding:22px 22px 24px}
+.course-title{font-family:var(--display);font-style:italic;font-size:23px;color:var(--white);line-height:1.2}
+.course-desc{font-family:var(--body);font-size:12.5px;line-height:1.6;color:var(--parchment-dim);margin-top:10px}
+.course-meta{display:flex;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(18,12,8,0.1);flex-wrap:wrap}
+.course-meta-item{font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--parchment-faint)}
+.course-meta-item b{color:var(--white);font-weight:600;display:block;font-family:var(--body);font-size:13px;margin-top:3px;text-transform:none}
+
+.course-toggle{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;
+  border-top:1px dashed rgba(18,12,8,0.18);cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;
+  width:100%;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.course-toggle-icon{transition:transform .3s}
+.course-card.open .course-toggle-icon{transform:rotate(180deg)}
+.course-details{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.course-card.open .course-details{max-height:1100px}
+.cd-block{padding-top:18px}
+.cd-label{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.cd-value{font-family:var(--body);font-size:12.5px;line-height:1.6;color:var(--parchment-dim);margin-top:6px}
+.cd-list{margin-top:6px;padding-left:16px}
+.cd-list li{font-family:var(--body);font-size:12.5px;line-height:1.7;color:var(--parchment-dim)}
+.course-cta-full{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:22px;
+  background:var(--brass);color:var(--ink);border:0;padding:14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+.course-cta-full:hover{background:var(--brass-2)}
+
+/* ── HOW IT WORKS ── */
+.hiw-strip{display:flex;justify-content:space-between;margin-top:56px;position:relative}
+.hiw-line{position:absolute;top:27px;left:5%;right:5%;height:2px;background:rgba(255,106,0,0.2);z-index:0}
+.hiw-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;width:22%}
+.hiw-num{width:54px;height:54px;border-radius:50%;background:var(--ink-2);border:2px solid var(--brass);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-size:20px;color:var(--brass)}
+.hiw-t{font-family:var(--display);font-style:italic;font-size:19px;color:var(--white);margin-top:18px}
+.hiw-d{font-family:var(--body);font-size:12.5px;line-height:1.6;color:var(--parchment-dim);margin-top:8px}
+
+/* ── COHORT PHOTOS ── */
+.cohort-marquee-wrap{position:relative;overflow:hidden;margin-top:44px}
+.cohort-marquee-fade-l,.cohort-marquee-fade-r{position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.cohort-marquee-fade-l{left:0;background:linear-gradient(90deg,var(--ink-2),transparent)}
+.cohort-marquee-fade-r{right:0;background:linear-gradient(270deg,var(--ink-2),transparent)}
+.cohort-row{display:flex;gap:16px;margin-bottom:16px;will-change:transform}
+.cohort-tile{flex:0 0 240px;height:170px;border-radius:12px;overflow:hidden;position:relative;background:var(--ink-3);
+  box-shadow:0 8px 20px -10px rgba(18,12,8,0.25)}
+.cohort-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(12%) saturate(1.05);
+  transition:filter .4s,transform .5s}
+.cohort-tile:hover img{filter:grayscale(0%) saturate(1.15);transform:scale(1.05)}
+
+/* ── FAQ ── */
+.faq-list{margin-top:44px;max-width:820px}
+.faq-item{border-bottom:1px solid rgba(18,12,8,0.1)}
+.faq-item:first-child{border-top:1px solid rgba(18,12,8,0.1)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 4px;cursor:pointer;gap:20px}
+.faq-q-t{font-family:var(--display);font-style:italic;font-size:17px;color:var(--white)}
+.faq-a{font-family:var(--mono);font-size:12px;color:var(--parchment-faint);transition:transform .3s}
+.faq-item.open .faq-a{transform:rotate(180deg)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-body{max-height:300px}
+.faq-body-in{padding:0 4px 24px;font-family:var(--body);font-size:14px;line-height:1.7;color:var(--parchment-dim);max-width:70ch}
+
+/* ── FINAL CTA ── */
+.final-cta{text-align:center;padding:140px 0}
+.final-cta .sec-h{margin:0 auto 20px;max-width:16ch}
+.final-cta .sec-sub{margin:0 auto 40px}
+.final-cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{background:var(--ink-3);padding:64px 0 32px}
+.foot-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.foot-logo{font-family:var(--display);font-style:italic;font-size:22px;color:var(--white)}
+.foot-links{display:flex;gap:32px}
+.foot-links a{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--parchment-dim)}
+.foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(18,12,8,0.1);
+  font-family:var(--mono);font-size:9.5px;color:var(--parchment-faint);text-transform:uppercase;letter-spacing:.06em}
+
+/* ── ENROLL MODAL ── */
+.im-overlay{position:fixed;inset:0;z-index:100;background:rgba(18,23,31,0.86);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:24px}
+.im-overlay.open{display:flex}
+.im-modal{background:var(--ink-2);border:1px solid rgba(255,106,0,0.25);max-width:520px;width:100%;padding:44px;
+  position:relative;max-height:90vh;overflow-y:auto}
+.im-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--parchment-faint);font-size:16px;cursor:pointer}
+.im-modal h3{font-family:var(--display);font-size:28px;color:var(--white);margin-bottom:8px;font-style:italic}
+.im-sub{font-family:var(--body);font-size:13.5px;color:var(--parchment-dim);margin-bottom:28px;line-height:1.6}
+.im-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.im-field{margin-bottom:14px}
+.im-field label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--parchment-faint);margin-bottom:7px}
+.im-field input,.im-field select,.im-field textarea{width:100%;background:var(--ink);border:1px solid rgba(255,106,0,0.2);
+  padding:12px 14px;font-family:var(--body);font-size:13.5px;color:var(--parchment);border-radius:2px}
+.im-field textarea{resize:vertical;min-height:80px}
+.im-field input:focus,.im-field select:focus,.im-field textarea:focus{outline:none;border-color:var(--brass)}
+.im-submit{width:100%;background:var(--brass);color:var(--ink);border:0;padding:16px;margin-top:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+.im-submit:hover{background:var(--brass-2)}
+.im-submit:disabled{opacity:.6;cursor:not-allowed}
+.im-status{font-family:var(--body);font-size:12.5px;margin-top:14px;text-align:center;display:none}
+.im-status.show{display:block}
+.im-status.success{color:var(--brass)}
+.im-status.error{color:#a3372e}
+
+@media(max-width:1100px){
+  .wrap,.nav-inner,footer .wrap{padding-left:32px;padding-right:32px}
+  .course-grid{grid-template-columns:repeat(2,1fr)}
+  .value-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .nav-ul{display:none}
+  #hamburger{display:flex}
+  section{padding:88px 0}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-mentors{height:360px;margin-top:40px}
+  .hiw-strip{flex-direction:column;gap:36px}
+  .hiw-line{display:none}
+  .hiw-step{width:100%;flex-direction:row;align-items:center;gap:18px}
+  .hiw-num{flex-shrink:0}
+}
+@media(max-width:600px){
+  .wrap,.nav-inner,footer .wrap{padding-left:20px;padding-right:20px}
+  section{padding:72px 0}
+  .hero{padding:120px 0 60px}
+  .hero-stats{gap:32px}
+  .course-grid{grid-template-columns:1fr}
+  .value-grid{grid-template-columns:1fr}
+  .im-row2{grid-template-columns:1fr}
+  .foot-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Courses<small>By LaunchPilot</small></a>
+    <ul class="nav-ul">
+      <li><a href="#browse">Browse Courses</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openEnrollModal()">Apply Now ↗</button>
+    <button id="hamburger" onclick="document.getElementById('mobile-menu').style.display='flex'" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <a href="#browse" onclick="closeMobileMenu()">Browse Courses</a>
+  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#" onclick="openEnrollModal();closeMobileMenu();return false;" style="color:var(--brass)">Apply Now ↗</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-wrap">
+    <div class="hero-left">
+      <div class="hero-eyebrow">● Live Cohorts · Small Groups · Taught By Practitioners</div>
+      <h1 class="hero-h">One great mentor<br>changes everything.<br>Learn, <em>with them.</em></h1>
+      <p class="hero-sub">Advanced, cohort-based courses taught by the operators actually doing the work — VCs writing checks, AI leads shipping production systems, fund managers running $100M+ books. Four to eight weeks. No fluff, no beginner content. Built for anyone ready to go deeper, not just founders.</p>
+      <div class="hero-cta-row">
+        <a href="#browse" class="btn btn-solid">Browse Courses ↓</a>
+        <a href="#how" class="btn btn-outline">How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-v">Live</div><div class="hero-stat-l">Every Session</div></div>
+        <div><div class="hero-stat-v">4–8</div><div class="hero-stat-l">Weeks Per Cohort</div></div>
+        <div><div class="hero-stat-v">15-20</div><div class="hero-stat-l">Max Cohort Size</div></div>
+        <div><div class="hero-stat-v">100%</div><div class="hero-stat-l">Live, Not Recorded</div></div>
+      </div>
+    </div>
+
+    <div class="hero-mentors">
+      <div class="hero-mentors-fade-t"></div>
+      <div class="hero-mentors-fade-b"></div>
+      <div class="hero-mentor-col" id="hero-mcol-1">
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/daniel-ling.jpg" alt="Daniel Ling" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Daniel Ling</div><div class="hero-mentor-tag">Design Thinking</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/andrew-chow.jpg" alt="Andrew Chow" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Andrew Chow</div><div class="hero-mentor-tag">AI & Marketing</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/investors/01.jpg" alt="Siddharth Dangi" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Siddharth Dangi</div><div class="hero-mentor-tag">Product & Automation</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/toyoyuki-ushioda.jpg" alt="Toyoyuki Ushioda" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Toyoyuki Ushioda</div><div class="hero-mentor-tag">Institutional Finance</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/sunil-kamath.jpg" alt="Sunil Kamath" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Sunil Kamath</div><div class="hero-mentor-tag">Consumer & D2C</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/edmund-tan.jpg" alt="Edmund Tan" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Edmund Tan</div><div class="hero-mentor-tag">Seed Fundraising</div></div></div>
+      </div>
+      <div class="hero-mentor-col" id="hero-mcol-2">
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/investors/03.jpg" alt="Vansh Chiripal" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Vansh Chiripal</div><div class="hero-mentor-tag">Leadership</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="Sarvash Malani" class="face-zoom" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Sarvash Malani</div><div class="hero-mentor-tag">Venture Capital</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/rajesh-shetty.jpg" alt="Rajesh Shetty" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Rajesh Shetty</div><div class="hero-mentor-tag">Fundraising</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/yash-shah.jpg" alt="Yash Shah" class="face-zoom" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Yash Shah</div><div class="hero-mentor-tag">GenAI</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/mentors/john-lim.jpg" alt="John Lim" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">John Lim</div><div class="hero-mentor-tag">Enterprise Sales</div></div></div>
+        <div class="hero-mentor-card"><div class="hero-mentor-ph"><img src="../images/investors/02.jpg" alt="Sarvesh Tusnial" onerror="this.parentElement.style.background='var(--ink-3)'"></div><div><div class="hero-mentor-nm">Sarvesh Tusnial</div><div class="hero-mentor-tag">Go-To-Market</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROP -->
+<section class="raised-sec" id="how">
+  <div class="wrap">
+    <div class="eyebrow">Not Another Online Course</div>
+    <h2 class="sec-h">Pre-recorded videos<br>are where <em style="color:var(--brass);font-style:italic">learning goes to die.</em></h2>
+    <p class="sec-sub">Every course here runs live, in a small cohort, taught by someone who's actually operating at the level you're trying to reach. You show up every week, you do the work, and the person teaching you is still doing the job right now — not narrating it from memory.</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-n">01</div>
+        <div class="value-t">Live, Not Recorded</div>
+        <div class="value-d">Every session is live. You ask the question mid-lecture and get a real answer, not a comment section nobody reads.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-n">02</div>
+        <div class="value-t">Small Cohorts</div>
+        <div class="value-d">Capped at 15-20 people. Small enough that the mentor knows your name and your project by week two.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-n">03</div>
+        <div class="value-t">Advanced By Design</div>
+        <div class="value-d">No "introduction to." Every course assumes you already know the basics and starts from where that leaves off.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-n">04</div>
+        <div class="value-t">Practitioners Only</div>
+        <div class="value-d">Every mentor is actively doing the job today — investing, building, operating — not teaching full-time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BROWSE COURSES -->
+<section id="browse">
+  <div class="wrap">
+    <div class="eyebrow">The Catalogue</div>
+    <h2 class="sec-h">Pick what you're<br><em style="color:var(--brass)">going deep on.</em></h2>
+    <p class="sec-sub">Every cohort is capped, reviewed on application, and runs live. Reserve a seat and we'll confirm your spot before the next cohort fills.</p>
+
+    <div class="filter-row" id="filter-row">
+      <button class="filter-chip active" data-filter="all">All Courses</button>
+      <button class="filter-chip" data-filter="AI & Technology">AI &amp; Technology</button>
+      <button class="filter-chip" data-filter="Venture & Capital">Venture &amp; Capital</button>
+      <button class="filter-chip" data-filter="Design & Product">Design &amp; Product</button>
+      <button class="filter-chip" data-filter="Growth & Operations">Growth &amp; Operations</button>
+      <button class="filter-chip" data-filter="Sales & GTM">Sales &amp; GTM</button>
+      <button class="filter-chip" data-filter="Personal Finance">Personal Finance</button>
+    </div>
+
+    <div class="course-grid" id="course-grid">
+      <div class="course-card" data-cat="Design & Product">
+        <div class="course-tag">Design & Product</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/daniel-ling.jpg" alt="Daniel Ling" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Daniel Ling</div>
+            <div class="course-mentor-rl">Singapore's Best Design Thinking Expert · ex-DBS, Lazada</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">The Design Sprint Method</div>
+          <div class="course-desc">The exact sprint framework top product teams use to turn ambiguous, high-stakes problems into tested, shippable decisions — in days, not months.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>The insider framework for framing ambiguous problems as sharp design questions</li>
+              <li>Rapid prototyping techniques used under real deadline pressure</li>
+              <li>Running a stakeholder critique that actually shifts decisions</li>
+              <li>Turning raw insight into a product spec leadership will greenlight</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Take one genuinely unresolved problem from your own work and run it through the full sprint — framing, prototyping, testing — ending with a decision you can defend to your leadership team.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A battle-tested sprint framework you'll use for the rest of your career</li>
+              <li>A completed, real-world case study built from your own work</li>
+              <li>Direct, unfiltered feedback from Daniel on your prototype</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('The Design Sprint Method', 'Daniel Ling')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="AI & Technology">
+        <div class="course-tag">AI & Technology</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/andrew-chow.jpg" alt="Andrew Chow" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Andrew Chow</div>
+            <div class="course-mentor-rl">Co-Founder, Asia Pro Ventures · NTU Singapore</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Building AI Agents</div>
+          <div class="course-desc">Go beyond prompting. Master the architecture, evaluation, and deployment patterns behind agents that actually take action in the real world.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>6 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>The agent architecture stack — memory, tools, and planning, decoded</li>
+              <li>Designing multi-step agent workflows that don't fall apart in production</li>
+              <li>Guardrails and failure-handling techniques used by teams shipping at scale</li>
+              <li>Deploying and monitoring an agent like a production engineer, not a hobbyist</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Design, build, and ship a working AI agent solving a real problem — from architecture through a live demo in front of the cohort.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A working AI agent you built and can show off</li>
+              <li>An agent architecture playbook you'll reuse on every future build</li>
+              <li>Direct feedback from Andrew on your technical decisions</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Building AI Agents', 'Andrew Chow')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Design & Product">
+        <div class="course-tag">Design & Product</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/investors/01.jpg" alt="Siddharth Dangi" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Siddharth Dangi</div>
+            <div class="course-mentor-rl">Co-Founder, LaunchPilot</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Building Products</div>
+          <div class="course-desc">The practitioner's playbook for building products people actually adopt — from first signal of user insight to a shipped, defensible feature.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Turning raw user insight into a defensible product decision</li>
+              <li>Ruthless prioritization when everything feels urgent</li>
+              <li>Partnering with engineering without becoming the bottleneck</li>
+              <li>Measuring whether a feature actually moved the needle</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Take a real product idea from your own work through a fully scoped build plan with a defined, measurable success metric.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A scoped, buildable product plan ready to pitch</li>
+              <li>A prioritization framework you'll use on every roadmap after this</li>
+              <li>Direct feedback from Siddharth on your plan</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Building Products', 'Siddharth Dangi')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Personal Finance">
+        <div class="course-tag">Personal Finance</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/toyoyuki-ushioda.jpg" alt="Toyoyuki Ushioda" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Toyoyuki Ushioda</div>
+            <div class="course-mentor-rl">Former SVP at Mapletree (SGD 80B AUM) & GLP</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Finance 101: Personal Investing</div>
+          <div class="course-desc">The mental models institutional investors use to allocate billions — applied to building and defending your own personal portfolio.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>How institutional capital actually thinks about asset classes</li>
+              <li>Building a diversified portfolio that survives market cycles</li>
+              <li>Risk tolerance, time horizon, and disciplined rebalancing</li>
+              <li>The quiet mistakes that cost retail investors the most</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build your own personal investment policy and full portfolio allocation, stress-tested and reviewed live with Toyoyuki.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A personal investment policy you'll actually follow</li>
+              <li>An institutional-grade framework for evaluating any opportunity</li>
+              <li>Direct feedback from Toyoyuki on your portfolio</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Finance 101: Personal Investing', 'Toyoyuki Ushioda')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Growth & Operations">
+        <div class="course-tag">Growth & Operations</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/sunil-kamath.jpg" alt="Sunil Kamath" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Sunil Kamath</div>
+            <div class="course-mentor-rl">Founder & Partner at Early Hustle Ventures</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Building Consumer & D2C Brands</div>
+          <div class="course-desc">How the sharpest consumer and D2C brands find product-market fit, acquire customers profitably, and scale — from the VC who's backed dozens of them.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Finding true product-market fit for a consumer brand</li>
+              <li>Profitable acquisition across paid, organic, and owned channels</li>
+              <li>Building the loyalty loops that drive repeat purchase</li>
+              <li>The metrics investors actually scrutinize in a D2C pitch</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a complete growth and brand strategy for a real consumer product — channel strategy, unit economics, and all.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A complete, investor-ready D2C growth strategy</li>
+              <li>A unit economics model you can defend under scrutiny</li>
+              <li>Direct feedback from Sunil on your brand strategy</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Building Consumer & D2C Brands', 'Sunil Kamath')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Venture & Capital">
+        <div class="course-tag">Venture & Capital</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/edmund-tan.jpg" alt="Edmund Tan" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Edmund Tan</div>
+            <div class="course-mentor-rl">Fund Manager, Investor and VC</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Raising Your Seed Round</div>
+          <div class="course-desc">The insider mechanics of a successful seed raise, from an investor who's sat across the table for hundreds of these conversations.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>4 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Building an investor list and outreach sequence that gets replies</li>
+              <li>What actually belongs in a seed deck, and what kills momentum</li>
+              <li>Running a fundraising process with real, compounding momentum</li>
+              <li>Reading and negotiating your first term sheet like a pro</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a complete seed fundraising plan — deck outline, investor list, and process timeline — reviewed live with Edmund.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A fundraising-ready deck outline</li>
+              <li>A targeted, prioritized investor list for your raise</li>
+              <li>Direct feedback from Edmund on your pitch</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Raising Your Seed Round', 'Edmund Tan')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Growth & Operations">
+        <div class="course-tag">Growth & Operations</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/investors/03.jpg" alt="Vansh Chiripal" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Vansh Chiripal</div>
+            <div class="course-mentor-rl">Promoter and Director, Chiripal Group of Companies</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Management & Leadership</div>
+          <div class="course-desc">The conversations, decisions, and systems that separate a manager from a leader people actually want to follow.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Giving feedback that changes behavior, not just morale</li>
+              <li>Building a team people fight to stay on</li>
+              <li>Making high-stakes decisions under real uncertainty</li>
+              <li>Managing performance without becoming the bottleneck</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Work through a real, unresolved management challenge from your own team, with structured feedback from Vansh and the cohort.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A concrete action plan for a real team challenge</li>
+              <li>A personal leadership framework you'll keep using</li>
+              <li>Direct feedback from Vansh on your approach</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Management & Leadership', 'Vansh Chiripal')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Venture & Capital">
+        <div class="course-tag">Venture & Capital</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/sarvash-malani.jpg" alt="Sarvash Malani" class="face-zoom" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Sarvash Malani</div>
+            <div class="course-mentor-rl">DeepTech VC at Temasek Singapore · Wharton Grad</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Breaking Into Venture Capital</div>
+          <div class="course-desc">The insider path into VC, from someone who's personally hired and evaluated dozens of analysts and associates.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>How VC firms actually hire, behind the polished job posts</li>
+              <li>Building an investment thesis sharp enough to get noticed</li>
+              <li>Networking into the industry without a warm intro</li>
+              <li>What separates a good analyst from one who gets promoted</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a real investment memo and personal thesis you can walk into an actual VC interview with, reviewed live with Sarvash.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>An interview-ready investment memo</li>
+              <li>A personal thesis you can pitch to any firm</li>
+              <li>Direct feedback from Sarvash on your candidacy</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Breaking Into Venture Capital', 'Sarvash Malani')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Venture & Capital">
+        <div class="course-tag">Venture & Capital</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/rajesh-shetty.jpg" alt="Rajesh Shetty" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Rajesh Shetty</div>
+            <div class="course-mentor-rl">Silicon Valley 19x Investor, Teacher & Founder</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Fundraising & Deal Negotiation</div>
+          <div class="course-desc">What actually happens on the other side of the table, from an investor who's made 19 bets and seen every negotiation tactic in the book.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>4 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>How investors actually evaluate a deal behind closed doors</li>
+              <li>Negotiation tactics from the investor's chair</li>
+              <li>Term sheet structuring, and the red flags most founders miss</li>
+              <li>Closing a round without quietly giving away your leverage</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Negotiate a mock term sheet against a real investor, then get a full debrief on exactly what worked and what didn't.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A negotiated term sheet you can benchmark against</li>
+              <li>Unfiltered insight into investor psychology</li>
+              <li>Direct feedback from Rajesh on your pitch and negotiation</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Fundraising & Deal Negotiation', 'Rajesh Shetty')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="AI & Technology">
+        <div class="course-tag">AI & Technology</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/yash-shah.jpg" alt="Yash Shah" class="face-zoom" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Yash Shah</div>
+            <div class="course-mentor-rl">GenAI Head, India, South East Asia & Korea, AWS</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">GenAI Applications</div>
+          <div class="course-desc">Hands-on, in-the-weeds building of real GenAI applications — from raw prototype to something people actually reach for.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>6 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Choosing the right GenAI approach for a real, messy problem</li>
+              <li>Prompt and context design that holds up outside the demo</li>
+              <li>Building a working prototype end-to-end, not just a proof of concept</li>
+              <li>Handling edge cases and failure modes before users find them</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a working GenAI application solving a real problem, from prototype to a live demo in front of the cohort.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A working GenAI application you built yourself</li>
+              <li>A repeatable framework for scoping GenAI use cases</li>
+              <li>Direct feedback from Yash on your build</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('GenAI Applications', 'Yash Shah')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Sales & GTM">
+        <div class="course-tag">Sales & GTM</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/john-lim.jpg" alt="John Lim" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">John Lim</div>
+            <div class="course-mentor-rl">Partner at Meet Ventures Singapore · ex-HOD of $100M Fund</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Enterprise B2B Sales</div>
+          <div class="course-desc">How enterprise deals actually get sourced, navigated, and closed, from someone who's sat on both sides of the negotiating table.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>6 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Navigating complex, multi-stakeholder buying committees</li>
+              <li>Building a pipeline that doesn't stall out at "interested"</li>
+              <li>Handling procurement and legal without losing the deal</li>
+              <li>Closing without quietly discounting your way there</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a complete enterprise sales plan for a real deal you're working, including a stakeholder map and close strategy.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A stakeholder map and close plan for a real, live deal</li>
+              <li>A reusable enterprise sales framework</li>
+              <li>Direct feedback from John on your deal strategy</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Enterprise B2B Sales', 'John Lim')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="Sales & GTM">
+        <div class="course-tag">Sales & GTM</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/investors/02.jpg" alt="Sarvesh Tusnial" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Sarvesh Tusnial</div>
+            <div class="course-mentor-rl">Co-Founder, LaunchPilot</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Go-To-Market Strategy</div>
+          <div class="course-desc">The playbook for designing a go-to-market strategy that actually scales — channel selection, positioning, and the systems that make growth repeatable.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Choosing the GTM motion that actually fits your product</li>
+              <li>Positioning and messaging sharp enough to differentiate</li>
+              <li>Building a repeatable sales and channel system</li>
+              <li>Aligning sales, marketing, and product around one GTM plan</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a complete go-to-market plan for a real product — channel strategy, positioning, and a 90-day execution plan.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A complete GTM strategy ready to execute</li>
+              <li>A positioning framework you'll reuse on every launch</li>
+              <li>Direct feedback from Sarvesh on your plan</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Go-To-Market Strategy', 'Sarvesh Tusnial')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card" data-cat="Growth & Operations">
+        <div class="course-tag">Growth & Operations</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/andrew-chow.jpg" alt="Andrew Chow" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Andrew Chow</div>
+            <div class="course-mentor-rl">Co-Founder, Asia Pro Ventures · NTU Singapore</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">Modern Marketing Strategy</div>
+          <div class="course-desc">The playbook for marketing that actually moves revenue — positioning, channel strategy, and the systems that make growth measurable, not guesswork.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Positioning and messaging sharp enough to cut through noise</li>
+              <li>Choosing channels based on real unit economics, not trends</li>
+              <li>Building a marketing system you can actually measure</li>
+              <li>Balancing brand-building with performance marketing</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a full marketing strategy and channel plan for a real product, including budget allocation and success metrics.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A complete marketing strategy ready to execute</li>
+              <li>A channel and budget allocation plan you can defend</li>
+              <li>Direct feedback from Andrew on your strategy</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('Modern Marketing Strategy', 'Andrew Chow')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="AI & Technology">
+        <div class="course-tag">AI & Technology</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/investors/01.jpg" alt="Siddharth Dangi" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Siddharth Dangi</div>
+            <div class="course-mentor-rl">Co-Founder, LaunchPilot</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">AI Automations</div>
+          <div class="course-desc">How to build AI automations that actually run in production — not a demo, a system that keeps working long after you stop watching it.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>Identifying which workflows are genuinely worth automating</li>
+              <li>Designing automations that gracefully handle edge cases</li>
+              <li>Wiring AI tools into an existing workflow without breaking it</li>
+              <li>Monitoring and maintaining an automation after launch</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build a working AI automation for a real workflow in your own work, from design through a live demo.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A working automation you built and can point to</li>
+              <li>A repeatable framework for scoping automation opportunities</li>
+              <li>Direct feedback from Siddharth on your build</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('AI Automations', 'Siddharth Dangi')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-cat="AI & Technology">
+        <div class="course-tag">AI & Technology</div>
+        <div class="course-level">Advanced</div>
+        <div class="course-mentor-photo">
+          <img src="../images/mentors/toyoyuki-ushioda.jpg" alt="Toyoyuki Ushioda" onerror="this.parentElement.style.background='var(--ink-3)'">
+          <div class="course-mentor-scrim"></div>
+          <div class="course-mentor-id">
+            <div class="course-mentor-nm">Toyoyuki Ushioda</div>
+            <div class="course-mentor-rl">Former SVP at Mapletree (SGD 80B AUM) &amp; GLP</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-title">AI In Finance</div>
+          <div class="course-desc">Where AI is genuinely reshaping institutional and personal finance, and where the hype still outpaces the substance.</div>
+          <div class="course-meta">
+            <div class="course-meta-item">Duration<b>5 Weeks</b></div>
+            <div class="course-meta-item">Format<b>Live, Weekly</b></div>
+            <div class="course-meta-item">Cohort<b>15-20 Seats</b></div>
+          </div>
+
+          <button class="course-toggle" onclick="toggleCourse(this)">Read More<span class="course-toggle-icon">▾</span></button>
+
+          <div class="course-details">
+            <div class="cd-block">
+              <div class="cd-label">What You'll Learn</div>
+              <ul class="cd-list">
+              <li>How institutional investors are actually deploying AI today</li>
+              <li>AI-driven risk modeling and portfolio analysis in practice</li>
+              <li>Where AI still can't replace institutional-grade judgment</li>
+              <li>Practical AI tools for sharper personal and professional investing</li>
+              </ul>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">The Live Project</div>
+              <div class="cd-value">Build an AI-assisted investment analysis workflow for a real portfolio or deal, and present your findings to the cohort.</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-label">Outcomes</div>
+              <ul class="cd-list">
+              <li>A working AI-assisted analysis workflow</li>
+              <li>A sharp framework for evaluating AI tools in finance</li>
+              <li>Direct feedback from Toyoyuki on your approach</li>
+              </ul>
+            </div>
+            <button class="course-cta-full" onclick="openEnrollModal('AI In Finance', 'Toyoyuki Ushioda')">Reserve Seat<span>↗</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="sec-h">Four steps.<br>Then you're <em style="color:var(--brass);font-style:italic">in the room.</em></h2>
+
+    <div class="hiw-strip">
+      <div class="hiw-line"></div>
+      <div class="hiw-step">
+        <div class="hiw-num">01</div>
+        <div class="hiw-t">Reserve Your Seat</div>
+        <div class="hiw-d">Pick a course and tell us a bit about where you're at. Takes two minutes.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">02</div>
+        <div class="hiw-t">Get Confirmed</div>
+        <div class="hiw-d">Applications are reviewed on a rolling basis — cohorts stay small, so we confirm early.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <div class="hiw-t">Show Up Live</div>
+        <div class="hiw-d">Weekly live sessions with your mentor and a small group doing the same work.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">04</div>
+        <div class="hiw-t">Keep The Access</div>
+        <div class="hiw-d">You leave with a direct line to your mentor and a cohort of people at your level.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COHORT PHOTOS -->
+<section class="raised-sec" id="proof">
+  <div class="wrap">
+    <div class="eyebrow">Inside The Room</div>
+    <h2 class="sec-h">Small enough<br>to be <em style="color:var(--brass);font-style:italic">worth showing up to.</em></h2>
+    <p class="sec-sub">Every cohort is capped at 15-20 people. This is what that room actually looks like.</p>
+  </div>
+
+  <div class="cohort-marquee-wrap">
+    <div class="cohort-marquee-fade-l"></div>
+    <div class="cohort-marquee-fade-r"></div>
+    <div class="cohort-row" id="cohort-row-1">
+      <div class="cohort-tile"><img src="../images/cohort/01.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/02.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/03.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/04.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/05.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/06.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="cohort-row" id="cohort-row-2">
+      <div class="cohort-tile"><img src="../images/cohort/07.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/08.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/09.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/10.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/11.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/12.jpg" alt="Cohort session" onerror="this.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Questions</div>
+    <h2 class="sec-h">Before you <em style="color:var(--brass);font-style:italic">reserve a seat.</em></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Do I need to be a founder to take these?</span><span class="faq-a">▾</span></div>
+        <div class="faq-body"><div class="faq-body-in">No. These courses are built for anyone who wants to go deep on a specific, advanced skill — operators, investors-in-training, product managers, corporate finance professionals. The material assumes competence, not a specific job title.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">Are these actually advanced, or beginner content in disguise?</span><span class="faq-a">▾</span></div>
+        <div class="faq-body"><div class="faq-body-in">Advanced. Every course assumes you already understand the fundamentals of the subject and starts from there — no "introduction to" material. If a course isn't a fit for your level, we'll tell you before you enroll.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">What happens if I miss a live session?</span><span class="faq-a">▾</span></div>
+        <div class="faq-body"><div class="faq-body-in">Sessions are recorded for enrolled participants to catch up, but the format is built around live participation — most of the value is in the real-time discussion, not the recording.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">How are cohorts kept so small?</span><span class="faq-a">▾</span></div>
+        <div class="faq-body"><div class="faq-body-in">Every course is capped at 15-20 seats and applications are reviewed — we're not optimizing for enrollment volume, we're optimizing for a room the mentor can actually engage with.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-t">When does the next cohort start?</span><span class="faq-a">▾</span></div>
+        <div class="faq-body"><div class="faq-body-in">Cohorts run on a rolling basis throughout the year. Reserve a seat for the course you want and we'll confirm the exact start date for the next available cohort.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="raised-sec final-cta">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Ready When You Are</div>
+    <h2 class="sec-h">Pick a mentor.<br>Change <em style="color:var(--brass);font-style:italic">your life.</em></h2>
+    <p class="sec-sub">Reserve your seat today and we'll confirm your spot for the next available cohort.</p>
+    <div class="final-cta-row">
+      <a href="#browse" class="btn btn-solid">Browse Courses ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-logo">Courses</div>
+      <div class="foot-links">
+        <a href="#browse">Browse Courses</a>
+        <a href="#how">How It Works</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Courses, A LaunchPilot Program. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- ENROLL MODAL -->
+<div class="im-overlay" id="im-overlay">
+  <div class="im-modal">
+    <button class="im-close" onclick="closeEnrollModal()" aria-label="Close">✕</button>
+    <h3>Reserve Your Seat</h3>
+    <p class="im-sub" id="im-sub">Tell us a bit about yourself. We'll confirm your spot for the next available cohort within 48 hours.</p>
+    <form id="enroll-form">
+      <div class="im-row2">
+        <div class="im-field"><label for="im-name">Full Name *</label><input type="text" id="im-name" required></div>
+        <div class="im-field"><label for="im-email">Email *</label><input type="email" id="im-email" required></div>
+      </div>
+      <div class="im-row2">
+        <div class="im-field"><label for="im-whatsapp">Phone / WhatsApp *</label><input type="tel" id="im-whatsapp" placeholder="+1 XXX XXX XXXX" required></div>
+        <div class="im-field"><label for="im-course">Course *</label>
+          <select id="im-course" required>
+            <option value="">Select a course</option>
+            <option>The Design Sprint Method — Daniel Ling</option>
+            <option>Building AI Agents — Andrew Chow</option>
+            <option>Modern Marketing Strategy — Andrew Chow</option>
+            <option>Building Products — Siddharth Dangi</option>
+            <option>AI Automations — Siddharth Dangi</option>
+            <option>Finance 101: Personal Investing — Toyoyuki Ushioda</option>
+            <option>AI In Finance — Toyoyuki Ushioda</option>
+            <option>Building Consumer & D2C Brands — Sunil Kamath</option>
+            <option>Raising Your Seed Round — Edmund Tan</option>
+            <option>Management & Leadership — Vansh Chiripal</option>
+            <option>Breaking Into Venture Capital — Sarvash Malani</option>
+            <option>Fundraising & Deal Negotiation — Rajesh Shetty</option>
+            <option>GenAI Applications — Yash Shah</option>
+            <option>Enterprise B2B Sales — John Lim</option>
+            <option>Go-To-Market Strategy — Sarvesh Tusnial</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="im-field"><label for="im-role">What Do You Do Today?</label><input type="text" id="im-role" placeholder="e.g. Product Manager, Analyst, Founder"></div>
+      <div class="im-field"><label for="im-why">Why This Course?</label><textarea id="im-why" placeholder="What are you hoping to walk away with?"></textarea></div>
+      <button type="submit" class="im-submit" id="im-submit-btn">Submit Request →</button>
+      <div class="im-status" id="im-status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+function toggleCourse(btn){
+  var card = btn.closest('.course-card');
+  card.classList.toggle('open');
+  btn.textContent = '';
+  var label = document.createElement('span');
+  label.textContent = card.classList.contains('open') ? 'Show Less' : 'Read More';
+  var icon = document.createElement('span');
+  icon.className = 'course-toggle-icon';
+  icon.textContent = '▾';
+  btn.appendChild(label);
+  btn.appendChild(icon);
+}
+function toggleFaq(hd){
+  var item = hd.parentElement;
+  var open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(f){ f.classList.remove('open'); });
+  if (!open) item.classList.add('open');
+}
+function closeMobileMenu(){ document.getElementById('mobile-menu').style.display = 'none'; }
+
+(function(){
+  function initVerticalMarquee(id, speed, dir){
+    var t = document.getElementById(id);
+    if (!t) return;
+    var items = t.querySelectorAll('.hero-mentor-card');
+    Array.from(items).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+    var pos = 0, paused = false, last = null, halfH = 0;
+    function measure(){ halfH = t.scrollHeight / 2; if (dir === 'up') pos = halfH * 0.5; }
+    requestAnimationFrame(function(){ measure(); window.addEventListener('resize', measure); });
+    t.addEventListener('mouseenter', function(){ paused = true; });
+    t.addEventListener('mouseleave', function(){ paused = false; });
+    function tick(ts){
+      if (last && !paused && halfH) {
+        if (dir === 'up') { pos -= speed * (ts - last) / 1000; if (pos <= 0) pos = halfH; }
+        else { pos += speed * (ts - last) / 1000; if (pos >= halfH) pos = 0; }
+        t.style.transform = 'translateY(-' + pos.toFixed(1) + 'px)';
+      }
+      last = ts;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  initVerticalMarquee('hero-mcol-1', 22, 'up');
+  initVerticalMarquee('hero-mcol-2', 22, 'down');
+})();
+
+(function(){
+  function initMarquee(id, speed, dir){
+    var t = document.getElementById(id);
+    if (!t) return;
+    var items = t.querySelectorAll('.cohort-tile');
+    Array.from(items).forEach(function(c){ t.appendChild(c.cloneNode(true)); });
+    var pos = 0, paused = false, last = null, halfW = 0;
+    function measure(){ halfW = t.scrollWidth / 2; if (dir === 'right') pos = halfW * 0.5; }
+    requestAnimationFrame(function(){ measure(); window.addEventListener('resize', measure); });
+    t.addEventListener('mouseenter', function(){ paused = true; });
+    t.addEventListener('mouseleave', function(){ paused = false; });
+    function tick(ts){
+      if (last && !paused && halfW) {
+        if (dir === 'right') { pos -= speed * (ts - last) / 1000; if (pos <= 0) pos = halfW; }
+        else { pos += speed * (ts - last) / 1000; if (pos >= halfW) pos = 0; }
+        t.style.transform = 'translateX(-' + pos.toFixed(1) + 'px)';
+      }
+      last = ts;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  initMarquee('cohort-row-1', 28, 'left');
+  initMarquee('cohort-row-2', 28, 'right');
+})();
+
+(function(){
+  // Category filter
+  var chips = document.querySelectorAll('.filter-chip');
+  var cards = document.querySelectorAll('.course-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var show = (f === 'all') || (card.getAttribute('data-cat') === f);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // Scroll-reveal for course cards
+  if (cards.length && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if (entry.isIntersecting) {
+          setTimeout(function(){ entry.target.classList.add('revealed'); }, i * 60);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(function(c){ obs.observe(c); });
+  } else {
+    cards.forEach(function(c){ c.classList.add('revealed'); });
+  }
+})();
+
+(function(){
+  // NOTE: replace with your own Google Apps Script (or other) endpoint before going live.
+  var SHEET_ENDPOINT = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
+  var overlay = document.getElementById('im-overlay');
+  var form = document.getElementById('enroll-form');
+  var statusEl = document.getElementById('im-status');
+  var submitBtn = document.getElementById('im-submit-btn');
+  var courseSelect = document.getElementById('im-course');
+  var subEl = document.getElementById('im-sub');
+
+  window.openEnrollModal = function(courseTitle, mentorName){
+    if (courseTitle && mentorName) {
+      var exact = courseTitle + " — " + mentorName;
+      var match = Array.from(courseSelect.options).find(function(o){ return o.text === exact; });
+      if (!match) match = Array.from(courseSelect.options).find(function(o){ return o.text.indexOf(mentorName) !== -1; });
+      if (match) courseSelect.value = match.value;
+      subEl.textContent = "Reserving a seat in \"" + courseTitle + "\" with " + mentorName + ". We'll confirm within 48 hours.";
+    } else {
+      subEl.textContent = "Tell us a bit about yourself. We'll confirm your spot for the next available cohort within 48 hours.";
+    }
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeEnrollModal = function(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeEnrollModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) closeEnrollModal(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var payload = {
+      name: document.getElementById('im-name').value,
+      email: document.getElementById('im-email').value,
+      whatsapp: document.getElementById('im-whatsapp').value,
+      course: courseSelect.value,
+      role: document.getElementById('im-role').value,
+      why: document.getElementById('im-why').value,
+      source: "Courses Catalogue"
+    };
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    statusEl.className = 'im-status';
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    }).then(function(){
+      statusEl.textContent = "Got it. We'll confirm your seat within 48 hours.";
+      statusEl.className = 'im-status show success';
+      submitBtn.textContent = "Submitted ✓";
+      form.reset();
+      setTimeout(function(){
+        closeEnrollModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Request →";
+        statusEl.className = 'im-status';
+      }, 2200);
+    }).catch(function(){
+      statusEl.textContent = "Something went wrong. Please try again or email hello@launchpilotschool.com.";
+      statusEl.className = 'im-status show error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Request →";
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
