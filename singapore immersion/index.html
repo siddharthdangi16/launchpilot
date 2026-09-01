@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singapore Fundraising Immersion 2026 — LaunchPilot</title>
+<meta name="description" content="5 days in Singapore. Pitch directly to Meet Ventures and a jury of Singapore-based investors, attend SWITCH — one of Asia's largest investor gatherings — and get rapid mentoring from operators who've exited and raised. October 25–30, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#F9F4EF;
+  --ink-2:#ECE7E1;
+  --ink-3:#E3DDD6;
+  --fire:#FF6A00;
+  --fire-2:#CC5500;
+  --parchment:#120C08;
+  --parchment-dim:rgba(18,12,8,0.62);
+  --parchment-faint:rgba(18,12,8,0.38);
+  --white:#120C08;
+  --serif:'Instrument Serif','Times New Roman',Georgia,serif;
+  --sans:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--parchment);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+section{padding:100px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:22px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--fire)}
+.sec-h{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,50px);letter-spacing:-0.015em;line-height:1.05;margin-bottom:18px;color:var(--white)}
+.sec-h em{color:var(--fire);font-style:italic}
+.sec-sub{font-size:16px;line-height:1.7;color:var(--parchment-dim);max-width:58ch}
+.raised{background:var(--ink-2)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:60;background:var(--ink);border-bottom:1px solid rgba(255,106,0,0.14)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 48px;height:76px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--white);display:flex;align-items:center;gap:8px}
+.nav-logo small{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fire);font-style:normal}
+.nav-cta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--fire);color:var(--ink);
+  padding:12px 22px;border-radius:999px;transition:background .25s;border:0;cursor:pointer}
+.nav-cta:hover{background:var(--fire-2)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:16px 30px;border-radius:999px;transition:all .3s;cursor:pointer;border:0}
+.btn-solid{background:var(--fire);color:var(--ink)}
+.btn-solid:hover{background:var(--fire-2)}
+.btn-outline{background:rgba(249,244,239,0.9);color:var(--white);border:1px solid rgba(18,12,8,0.2)}
+.btn-outline:hover{border-color:var(--fire);color:var(--fire)}
+.btn-light{background:#fff;color:var(--white)}
+.btn-light:hover{background:var(--ink)}
+
+/* HERO — full bleed Singapore skyline */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:0 0 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(18,12,8,0.88) 0%, rgba(18,12,8,0.55) 42%, rgba(18,12,8,0.15) 70%, rgba(18,12,8,0.35) 100%)}
+.hero-inner{position:relative;z-index:1;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:#fff;background:rgba(255,106,0,0.22);border:1px solid rgba(255,106,0,0.5);
+  padding:9px 18px;border-radius:999px;margin-bottom:32px;backdrop-filter:blur(6px)}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px rgba(74,222,128,.9)}
+.hero-h{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.2vw,88px);letter-spacing:-0.02em;line-height:1.01;
+  color:#fff;max-width:16ch;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero-h em{color:var(--fire);font-style:italic}
+.hero-sub{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.88);max-width:58ch;margin-top:26px;
+  text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.hero-cta-row{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+.hero-facts{display:flex;gap:1px;background:rgba(255,255,255,0.18);margin-top:56px;
+  border:1px solid rgba(255,255,255,0.22);border-radius:14px;overflow:hidden;backdrop-filter:blur(10px)}
+.hero-fact{flex:1;background:rgba(18,12,8,0.42);padding:20px 22px}
+.hero-fact-v{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--fire);line-height:1}
+.hero-fact-l{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-top:8px}
+
+/* COHORT MARQUEE */
+.cohort-strip-label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--parchment-faint);text-align:center}
+.cohort-marquee-wrap{position:relative;overflow:hidden;padding:24px 0 48px;display:flex;flex-direction:column;gap:14px}
+.cohort-marquee-fade-l,.cohort-marquee-fade-r{position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.cohort-marquee-fade-l{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.cohort-marquee-fade-r{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.cohort-row{display:flex;gap:14px;width:max-content}
+#cohort-row-1{animation:cohort-fwd 40s linear infinite}
+#cohort-row-2{animation:cohort-rev 40s linear infinite}
+@keyframes cohort-fwd{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes cohort-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.cohort-tile{flex:0 0 auto;width:260px;height:170px;border-radius:12px;overflow:hidden;position:relative;
+  background:var(--ink-3);box-shadow:0 8px 20px -10px rgba(18,12,8,0.25)}
+.cohort-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(8%) saturate(1.05);
+  transition:filter .4s,transform .5s}
+.cohort-tile:hover img{filter:grayscale(0%) saturate(1.15);transform:scale(1.05)}
+
+/* WHERE YOU'LL BE */
+.where-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;gap:16px;margin-top:48px}
+.where-tile{position:relative;border-radius:16px;overflow:hidden;background:var(--ink-3);
+  box-shadow:0 10px 26px -12px rgba(18,12,8,0.25)}
+.where-tile-big{grid-column:span 2;grid-row:span 2}
+.where-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.where-tile:hover img{transform:scale(1.06)}
+.where-tile::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(18,12,8,0.75) 0%, rgba(18,12,8,0.05) 45%, transparent 65%)}
+.where-cap{position:absolute;left:18px;bottom:14px;right:18px;z-index:1}
+.where-cap-t{font-family:var(--serif);font-style:italic;font-size:19px;color:#fff;line-height:1.15;
+  text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.where-tile-big .where-cap-t{font-size:26px}
+.where-cap-s{font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,0.85);margin-top:5px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+
+/* WHY FUNDRAISING */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,106,0,0.16);margin-top:48px;border-radius:14px;overflow:hidden}
+.why-card{background:var(--ink);padding:32px 26px}
+.why-n{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--fire)}
+.why-t{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--white);margin-top:14px}
+.why-d{font-size:13px;line-height:1.6;color:var(--parchment-dim);margin-top:14px}
+
+/* MENTORS */
+.mentor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.mentor-card-highlight{border-color:rgba(255,106,0,0.4);background:linear-gradient(155deg,var(--ink-2),var(--ink-3))}
+.mentor-card{background:var(--ink-2);border-radius:16px;padding:28px 22px;border:1px solid rgba(18,12,8,0.08);
+  transition:border-color .25s, transform .25s, box-shadow .25s}
+.mentor-card:hover{border-color:rgba(255,106,0,0.4);transform:translateY(-4px);box-shadow:0 16px 30px -14px rgba(18,12,8,0.2)}
+.mentor-ph{width:76px;height:76px;border-radius:50%;overflow:hidden;margin-bottom:20px;
+  border:2px solid rgba(255,106,0,0.35)}
+.mentor-ph img{width:100%;height:100%;object-fit:cover}
+.mentor-nm{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--white)}
+.mentor-rl{font-size:12px;line-height:1.5;color:var(--parchment-dim);margin-top:8px;min-height:44px}
+.mentor-session{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--fire);
+  margin-top:16px;padding-top:16px;border-top:1px dashed rgba(18,12,8,0.14)}
+
+/* VC ECOSYSTEM */
+.vc-featured{margin-top:48px;background:linear-gradient(135deg,var(--ink-2),var(--ink-3));
+  border:1px solid rgba(255,106,0,0.35);border-radius:16px;padding:32px 36px}
+.vc-featured-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fire)}
+.vc-featured-nm{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--white);margin-top:10px}
+.vc-featured-d{font-size:13.5px;line-height:1.6;color:var(--parchment-dim);margin-top:10px;max-width:60ch}
+.vc-grid-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--parchment-faint);margin-top:44px;margin-bottom:20px}
+.vc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(18,12,8,0.1);
+  border-radius:12px;overflow:hidden}
+.vc-tile{background:var(--ink);padding:22px 20px;font-family:var(--serif);font-style:italic;font-size:16px;
+  color:var(--white);text-align:center;transition:background .2s ease}
+.vc-tile:hover{background:var(--ink-2)}
+.vc-disclaimer{font-family:var(--mono);font-size:10px;line-height:1.6;color:var(--parchment-faint);margin-top:24px;max-width:70ch}
+
+/* ITINERARY */
+.itin-list{margin-top:48px;display:flex;flex-direction:column;gap:1px;background:rgba(18,12,8,0.1);
+  border-radius:14px;overflow:hidden}
+.itin-day{background:var(--ink);padding:36px 40px}
+.itin-day-head{display:flex;align-items:baseline;gap:20px;margin-bottom:20px;flex-wrap:wrap}
+.itin-day-num{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fire);
+  flex-shrink:0;min-width:70px}
+.itin-day-t{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--white)}
+.itin-items{list-style:none;display:flex;flex-direction:column;gap:10px;padding-left:90px}
+.itin-items li{position:relative;font-size:13.5px;line-height:1.55;color:var(--parchment-dim)}
+.itin-items li::before{content:"—";position:absolute;left:-20px;color:rgba(18,12,8,0.28)}
+.itin-items li.itin-highlight{color:var(--white);font-weight:500}
+.itin-items li.itin-highlight::before{content:"★";color:var(--fire);left:-20px;font-size:11px}
+
+/* PRICING */
+.price-block{display:grid;grid-template-columns:340px 1fr;gap:48px;margin-top:48px;align-items:start}
+.price-card{background:var(--ink-2);border:1px solid rgba(255,106,0,0.3);
+  border-radius:16px;padding:36px 30px}
+.price-tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--parchment-dim)}
+.price-amt{font-family:var(--serif);font-style:italic;font-size:52px;color:var(--fire);margin-top:14px;line-height:1}
+.price-amt span{font-family:var(--mono);font-size:11px;font-style:normal;color:var(--parchment-dim);margin-left:8px}
+.price-note{font-size:12.5px;line-height:1.6;color:var(--parchment-dim);margin-top:18px}
+.price-includes{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.incl-h{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fire);margin-bottom:20px}
+.incl-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.incl-list li{position:relative;padding-left:22px;font-size:13.5px;line-height:1.5;color:var(--white)}
+.incl-list li::before{content:"✓";position:absolute;left:0;color:var(--fire);font-weight:600}
+.incl-list-not li{color:var(--parchment-dim)}
+.incl-list-not li::before{content:"–";color:rgba(18,12,8,0.3)}
+
+/* FINAL CTA — photo backdrop */
+.final-cta{position:relative;text-align:center;padding:140px 0;overflow:hidden}
+.final-cta-bg{position:absolute;inset:0;z-index:0}
+.final-cta-bg img{width:100%;height:100%;object-fit:cover}
+.final-cta-bg::after{content:"";position:absolute;inset:0;background:rgba(18,12,8,0.72)}
+.final-cta-inner{position:relative;z-index:1}
+.final-cta .eyebrow{justify-content:center;color:var(--fire)}
+.final-cta .sec-h{margin:0 auto 20px}
+
+/* FOOTER */
+footer{background:var(--ink-2);padding:56px 0 28px}
+.foot-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px}
+.foot-logo{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--white)}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap}
+.foot-links a{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--parchment-dim)}
+.foot-links a:hover{color:var(--fire)}
+.foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(18,12,8,0.1);
+  font-family:var(--mono);font-size:9.5px;color:var(--parchment-faint);text-transform:uppercase;letter-spacing:.06em}
+
+/* APPLY MODAL */
+.am-overlay{position:fixed;inset:0;z-index:100;background:rgba(18,12,8,0.7);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:24px}
+.am-overlay.open{display:flex}
+.am-modal{background:var(--ink);border:1px solid rgba(255,106,0,0.25);max-width:520px;width:100%;padding:44px;
+  position:relative;max-height:90vh;overflow-y:auto;border-radius:16px}
+.am-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--parchment-dim);font-size:16px;cursor:pointer}
+.am-modal h3{font-family:var(--serif);font-size:28px;color:var(--white);margin-bottom:8px;font-style:italic}
+.am-sub{font-size:13.5px;color:var(--parchment-dim);margin-bottom:28px;line-height:1.6}
+.am-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.am-field{margin-bottom:14px}
+.am-field label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--parchment-dim);margin-bottom:7px}
+.am-field input,.am-field textarea{width:100%;background:var(--ink-2);border:1px solid rgba(255,106,0,0.2);
+  padding:12px 14px;font-family:var(--sans);font-size:13.5px;color:var(--parchment);border-radius:8px}
+.am-field textarea{resize:vertical;min-height:80px}
+.am-field input:focus,.am-field textarea:focus{outline:none;border-color:var(--fire)}
+.am-submit{width:100%;background:var(--fire);color:var(--ink);border:0;padding:16px;margin-top:8px;border-radius:999px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+.am-submit:hover{background:var(--fire-2)}
+.am-submit:disabled{opacity:.6;cursor:not-allowed}
+.am-status{font-size:12.5px;margin-top:14px;text-align:center;display:none}
+.am-status.show{display:block}
+.am-status.success{color:var(--fire)}
+.am-status.error{color:#c0392b}
+
+@media(max-width:1000px){
+  .wrap,.nav-inner{padding-left:32px;padding-right:32px}
+  .where-grid{grid-template-columns:repeat(2,1fr)}
+  .where-tile-big{grid-column:span 2}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .mentor-grid{grid-template-columns:repeat(2,1fr)}
+  .vc-grid{grid-template-columns:repeat(2,1fr)}
+  .price-block{grid-template-columns:1fr}
+  .price-includes{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:640px){
+  .wrap,.nav-inner{padding-left:20px;padding-right:20px}
+  section{padding:72px 0}
+  .hero{min-height:auto;padding-top:140px}
+  .hero-facts{flex-direction:column}
+  .where-grid{grid-template-columns:1fr;grid-auto-rows:200px}
+  .where-tile-big{grid-column:span 1;grid-row:span 1}
+  .why-grid{grid-template-columns:1fr}
+  .mentor-grid{grid-template-columns:1fr}
+  .vc-grid{grid-template-columns:1fr}
+  .itin-day{padding:28px 24px}
+  .itin-items{padding-left:0;margin-top:16px}
+  .itin-day-head{flex-direction:column;gap:8px}
+  .am-row2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Singapore Immersion<small>By LaunchPilot</small></a>
+    <button class="nav-cta" onclick="openApplyModal()">Apply Now ↗</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg&w=1900&h=1200&fit=cover&a=attention&q=85" alt="Singapore Marina Bay skyline at dusk" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg'">
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Oct 25–30, 2026 · 14 Seats · Applications Open</div>
+    <h1 class="hero-h">Welcome To Singapore's<br><em>Startup Ecosystem.</em></h1>
+    <p class="hero-sub">Five days in Singapore built around one goal: get your startup in front of the people who write checks. Pitch directly to Meet Ventures and a jury of Singapore-based investors, get floor access to SWITCH — one of Asia's largest investor gatherings — and walk away with the intros that actually move a raise forward.</p>
+    <div class="hero-cta-row">
+      <button class="btn btn-solid" onclick="openApplyModal()">Apply Now ↗</button>
+      <a href="#itinerary" class="btn btn-light">See The Itinerary ↓</a>
+    </div>
+    <div class="hero-facts">
+      <div class="hero-fact"><div class="hero-fact-v">5 Days</div><div class="hero-fact-l">Oct 25–30, 2026</div></div>
+      <div class="hero-fact"><div class="hero-fact-v">$4,000</div><div class="hero-fact-l">All-Inclusive</div></div>
+      <div class="hero-fact"><div class="hero-fact-v">1-on-1</div><div class="hero-fact-l">Investor Pitch Slot</div></div>
+      <div class="hero-fact"><div class="hero-fact-v">3,000+</div><div class="hero-fact-l">Investors &amp; Founders At SWITCH</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COHORT MARQUEE -->
+<section style="padding:0" id="cohort-strip">
+  <div class="wrap" style="padding-top:56px;padding-bottom:8px">
+    <div class="cohort-strip-label">Real Cohorts. Real Rooms. Real Investors.</div>
+  </div>
+  <div class="cohort-marquee-wrap">
+    <div class="cohort-marquee-fade-l"></div>
+    <div class="cohort-marquee-fade-r"></div>
+    <div class="cohort-row" id="cohort-row-1">
+      <div class="cohort-tile"><img src="../images/cohort/01.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/02.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/03.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/04.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/05.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/06.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/01.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/02.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/03.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/04.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/05.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/06.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="cohort-row" id="cohort-row-2">
+      <div class="cohort-tile"><img src="../images/cohort/07.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/08.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/09.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/10.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/11.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/12.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/07.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/08.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/09.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/10.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/11.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+      <div class="cohort-tile"><img src="../images/cohort/12.jpg" alt="Cohort" onerror="this.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE YOU'LL BE -->
+<section id="where">
+  <div class="wrap">
+    <div class="eyebrow">Where You'll Be</div>
+    <h2 class="sec-h">Not a hotel conference room.<br><em>Singapore's</em> biggest stages.</h2>
+    <p class="sec-sub">SWITCH's main floor, the NUS/SMU campus, Gardens by the Bay, Marina Bay Sands — this is the backdrop for five days of pitching, mentoring, and building relationships that outlast the trip.</p>
+
+    <div class="where-grid">
+      <div class="where-tile where-tile-big">
+        <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg&w=1000&h=760&fit=cover&a=attention&q=85" alt="Marina Bay, Singapore" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg'">
+        <div class="where-cap"><div class="where-cap-t">Marina Bay</div><div class="where-cap-s">Where the week unfolds</div></div>
+      </div>
+      <div class="where-tile">
+        <img src="../images/cohort/05.jpg" alt="Marina Bay Sands" onerror="this.style.display='none'">
+        <div class="where-cap"><div class="where-cap-t">Marina Bay Sands</div><div class="where-cap-s">Lunch &amp; conference days</div></div>
+      </div>
+      <div class="where-tile">
+        <img src="../images/cohort/08.jpg" alt="Gardens by the Bay" onerror="this.style.display='none'">
+        <div class="where-cap"><div class="where-cap-t">Gardens By The Bay</div><div class="where-cap-s">Group activities</div></div>
+      </div>
+      <div class="where-tile">
+        <img src="../images/cohort/07.jpg" alt="NUS SMU campus visit" onerror="this.style.display='none'">
+        <div class="where-cap"><div class="where-cap-t">NUS / SMU Campus</div><div class="where-cap-s">University experience</div></div>
+      </div>
+      <div class="where-tile">
+        <img src="../images/cohort/01.jpg" alt="Cohort at LaunchPilot event" onerror="this.style.display='none'">
+        <div class="where-cap"><div class="where-cap-t">LaunchPilot Mixer</div><div class="where-cap-s">Global mentor network</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FUNDRAISING -->
+<section class="raised" id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why This Immersion</div>
+    <h2 class="sec-h">Built to get you<br><em>funded</em>, not just photographed.</h2>
+    <p class="sec-sub">Most immersion programs are networking dressed up as substance. This one is built around a single outcome — putting your pitch in front of people who can actually write you a check.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-n">01</div>
+        <div class="why-t">A Real Pitch Slot</div>
+        <div class="why-d">You don't just attend a conference — you pitch directly to Meet Ventures and a jury of Singapore-based investors, with a real Q&amp;A, not a polite Q&amp;A.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-n">02</div>
+        <div class="why-t">Floor Access To SWITCH</div>
+        <div class="why-d">Three full days inside one of Asia's largest investor and startup gatherings — Main Stage, Global Stage, Trade Floor, and in-app business matching with thousands of attendees.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-n">03</div>
+        <div class="why-t">Rapid Mentoring From Operators</div>
+        <div class="why-d">Not speakers reading slides — investors and exited founders running AMAs and 1-on-1 rapid mentoring sessions built to sharpen your raise before you're in the room.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-n">04</div>
+        <div class="why-t">SG &amp; SEA Market Entry, Explained</div>
+        <div class="why-d">A dedicated GTM masterclass and founder fireside on actually entering the Singapore and Southeast Asian market — not tourist-level takeaways.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTORS -->
+<section id="mentors">
+  <div class="wrap">
+    <div class="eyebrow">Who You'll Learn From</div>
+    <h2 class="sec-h">People who've actually<br>raised, exited, and <em>written checks.</em></h2>
+    <p class="sec-sub">Prantik, Toyoyuki, Andrew, and John are confirmed on this itinerary's schedule. The rest of LaunchPilot's global mentor network is active throughout the program and across every cohort.</p>
+
+    <div class="mentor-grid">
+      <div class="mentor-card mentor-card-highlight">
+        <div class="mentor-ph"><img src="../images/mentors/prantik-mazumdar.jpg" alt="Prantik Mazumdar" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Prantik Mazumdar</div>
+        <div class="mentor-rl">President of TiE Singapore · Sold his company to Dentsu</div>
+        <div class="mentor-session">Fireside Chat &amp; Rapid Mentoring</div>
+      </div>
+      <div class="mentor-card mentor-card-highlight">
+        <div class="mentor-ph"><img src="../images/mentors/toyoyuki-ushioda.jpg" alt="Toyoyuki Ushioda" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Toyoyuki Ushioda</div>
+        <div class="mentor-rl">Angel Investor · Former SVP at Mapletree (SGD 80B AUM)</div>
+        <div class="mentor-session">Rapid Mentoring &amp; AMA</div>
+      </div>
+      <div class="mentor-card mentor-card-highlight">
+        <div class="mentor-ph"><img src="../images/mentors/andrew-chow.jpg" alt="Andrew Chow" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Andrew Chow</div>
+        <div class="mentor-rl">Co-Founder, Asia Pro Ventures · NTU Singapore</div>
+        <div class="mentor-session">Networking Lunch &amp; AMA</div>
+      </div>
+      <div class="mentor-card mentor-card-highlight">
+        <div class="mentor-ph"><img src="../images/mentors/john-lim.jpg" alt="John Lim" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">John Lim</div>
+        <div class="mentor-rl">Partner at Meet Ventures Singapore · ex-HOD of $100M Fund</div>
+        <div class="mentor-session">Investor Pitch Jury</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/daniel-ling.jpg" alt="Daniel Ling" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Daniel Ling</div>
+        <div class="mentor-rl">Singapore's Best Design Thinking Expert · ex-DBS, Lazada</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/investors/01.jpg" alt="Siddharth Dangi" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Siddharth Dangi</div>
+        <div class="mentor-rl">Co-Founder, LaunchPilot</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/investors/03.jpg" alt="Vansh Chiripal" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Vansh Chiripal</div>
+        <div class="mentor-rl">Promoter &amp; Director, Chiripal Group of Companies</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/investors/02.jpg" alt="Sarvesh Tusnial" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Sarvesh Tusnial</div>
+        <div class="mentor-rl">Co-Founder, LaunchPilot</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/sunil-kamath.jpg" alt="Sunil Kamath" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Sunil Kamath</div>
+        <div class="mentor-rl">Founder &amp; Partner at Early Hustle Ventures</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/edmund-tan.jpg" alt="Edmund Tan" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Edmund Tan</div>
+        <div class="mentor-rl">Fund Manager, Investor and VC</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/sarvash-malani.jpg" alt="Sarvash Malani" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Sarvash Malani</div>
+        <div class="mentor-rl">DeepTech VC at Temasek Singapore · Wharton Grad</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/rajesh-shetty.jpg" alt="Rajesh Shetty" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Rajesh Shetty</div>
+        <div class="mentor-rl">Silicon Valley 19x Investor, Teacher &amp; Founder</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-ph"><img src="../images/mentors/yash-shah.jpg" alt="Yash Shah" onerror="this.parentElement.style.background='var(--ink-3)'"></div>
+        <div class="mentor-nm">Yash Shah</div>
+        <div class="mentor-rl">GenAI Head, India, South East Asia &amp; Korea, AWS</div>
+        <div class="mentor-session">LaunchPilot Global Mentor Network</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VC ECOSYSTEM -->
+<section id="vcs">
+  <div class="wrap">
+    <div class="eyebrow">The Investor Landscape</div>
+    <h2 class="sec-h">You're not pitching<br>into a <em>vacuum.</em></h2>
+    <p class="sec-sub">Meet Ventures is your confirmed pitch partner and jury lead. SWITCH itself draws thousands of investors and founders from across the region — this is the kind of firm-dense floor you'll be walking.</p>
+
+    <div class="vc-featured">
+      <div class="vc-featured-tag">Confirmed Pitch Partner</div>
+      <div class="vc-featured-nm">Meet Ventures</div>
+      <div class="vc-featured-d">You pitch directly to Meet Ventures and their jury of Singapore-based investors on Day 2 of the immersion.</div>
+    </div>
+
+    <div class="vc-grid-label">Firms Represented Across Singapore's VC &amp; SWITCH Ecosystem</div>
+    <div class="vc-grid">
+      <div class="vc-tile">Peak XV Partners</div>
+      <div class="vc-tile">Vertex Ventures</div>
+      <div class="vc-tile">Golden Gate Ventures</div>
+      <div class="vc-tile">Jungle Ventures</div>
+      <div class="vc-tile">Wavemaker Partners</div>
+      <div class="vc-tile">East Ventures</div>
+      <div class="vc-tile">Insignia Ventures Partners</div>
+      <div class="vc-tile">Monk's Hill Ventures</div>
+      <div class="vc-tile">Openspace Ventures</div>
+      <div class="vc-tile">Antler</div>
+      <div class="vc-tile">Genesis Alternative Ventures</div>
+      <div class="vc-tile">Asia Pro Ventures</div>
+    </div>
+    <p class="vc-disclaimer">Names above represent firms active in Singapore's venture ecosystem and typically present at SWITCH — not all are confirmed LaunchPilot partners or jury members for this specific cohort.</p>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="raised" id="itinerary">
+  <div class="wrap">
+    <div class="eyebrow">The Schedule</div>
+    <h2 class="sec-h">Six days.<br>Every hour <em>earns its place.</em></h2>
+    <p class="sec-sub">October 25–30, 2026. Schedule and mentors may shift slightly — the dates and the fundraising focus won't.</p>
+
+    <div class="itin-list">
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 25</div>
+          <div class="itin-day-t">Arrival &amp; Welcome</div>
+        </div>
+        <ul class="itin-items">
+          <li>Check-in at Hotel Boss (4-star, shared accommodation)</li>
+          <li>Welcome dinner, briefing &amp; rehearsals at the iconic Lau Pa Sat</li>
+        </ul>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 26</div>
+          <div class="itin-day-t">Founder Connect &amp; Investor Pitch Day</div>
+        </div>
+        <ul class="itin-items">
+          <li>Founder fireside chat: Singapore &amp; SEA market entry and insights</li>
+          <li>Networking lunch</li>
+          <li class="itin-highlight">Pitch directly to Meet Ventures and a jury of leading Singapore-based investors</li>
+          <li>Visit Singapore's top innovation hub</li>
+          <li>Welcome note by Professor Simone Santamaria + tour of the iconic NUS/SMU campus</li>
+          <li>Authentic Singaporean dinner</li>
+        </ul>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 27</div>
+          <div class="itin-day-t">SWITCH Day 1 + Fireside With Prantik Mazumdar</div>
+        </div>
+        <ul class="itin-items">
+          <li>SWITCH Conference Day 1 — Main Stage, Global Stage, Trade Floor, in-app business matching &amp; meeting scheduling</li>
+          <li class="itin-highlight">Fireside chat + AMA with Prantik Mazumdar, President of TiE Singapore</li>
+          <li>Lunch at Marina Bay Sands</li>
+          <li>Diwali dinner at Costa Rhu &amp; networking</li>
+        </ul>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 28</div>
+          <div class="itin-day-t">SWITCH Day 2 + Rapid Mentoring With Toyoyuki Ushioda</div>
+        </div>
+        <ul class="itin-items">
+          <li>SWITCH Conference Day 2</li>
+          <li>Visit Gardens by the Bay and the world-famous Marina Bay Sands</li>
+          <li>Lunch at Marina Bay Sands</li>
+          <li class="itin-highlight">Rapid mentoring, fireside chat &amp; AMA with Toyoyuki Ushioda, ex-SVP at Mapletree (SGD 80B AUM)</li>
+          <li>Local authentic hot pot dinner</li>
+          <li>Secret rooftop party from 10pm onwards</li>
+        </ul>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 29</div>
+          <div class="itin-day-t">SWITCH Day 3 + LaunchPilot Mixer</div>
+        </div>
+        <ul class="itin-items">
+          <li>SWITCH Conference Day 3</li>
+          <li>Free time for shopping</li>
+          <li class="itin-highlight">Networking lunch with Andrew Chow — fireside chat &amp; AMA</li>
+          <li>LaunchPilot Singapore Mixer — networking &amp; mentoring with our global mentor community</li>
+          <li>Optional: after-party at Universal Studios Singapore (+SGD 90)</li>
+        </ul>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-head">
+          <div class="itin-day-num">Oct 30</div>
+          <div class="itin-day-t">Check-Out &amp; Departure</div>
+        </div>
+        <ul class="itin-items">
+          <li>Farewell return journey to Singapore Changi Airport</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Investment</div>
+    <h2 class="sec-h">One price.<br><em>Everything</em> that matters is included.</h2>
+
+    <div class="price-block">
+      <div class="price-card">
+        <div class="price-tag">Singapore Fundraising Immersion</div>
+        <div class="price-amt">$4,000<span>USD / seat</span></div>
+        <div class="price-note">You may bring up to two additional co-founders, friends, or family members at a discounted add-on rate.</div>
+        <button class="btn btn-solid" style="width:100%;justify-content:center;margin-top:28px" onclick="openApplyModal()">Apply Now ↗</button>
+      </div>
+
+      <div class="price-includes">
+        <div class="incl-col">
+          <div class="incl-h">Included</div>
+          <ul class="incl-list">
+            <li>Shared 4-star hotel, 5 nights / 6 days</li>
+            <li>All meals and breakfast</li>
+            <li>Internal transportation to all official venues</li>
+            <li>Full SWITCH Conference access (3 days)</li>
+            <li>1-on-1 investor pitch slot with Meet Ventures &amp; jury</li>
+            <li>Rapid mentoring sessions with all featured mentors</li>
+            <li>NUS / SMU university campus experience</li>
+            <li>Curated networking events &amp; LaunchPilot Mixer</li>
+          </ul>
+        </div>
+        <div class="incl-col">
+          <div class="incl-h">Not Included</div>
+          <ul class="incl-list incl-list-not">
+            <li>Visa fees and application</li>
+            <li>Flight tickets</li>
+            <li>Personal expenses</li>
+            <li>Airport transfer (self-arranged via Grab/Gojek)</li>
+            <li>Universal Studios after-party — optional, SGD 90</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA — photo backdrop -->
+<section class="final-cta">
+  <div class="final-cta-bg">
+    <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg&w=1900&h=1000&fit=cover&a=attention&q=85" alt="Singapore skyline" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg'">
+  </div>
+  <div class="wrap final-cta-inner">
+    <div class="eyebrow" style="justify-content:center">14 Seats · Applications Reviewed On A Rolling Basis</div>
+    <h2 class="sec-h" style="color:#fff">Your pitch deserves<br>a room full of <em>the right people.</em></h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,0.85);margin:0 auto 40px">Applications are reviewed as they come in. The earlier you apply, the more prep time you get before your pitch to Meet Ventures.</p>
+    <button class="btn btn-solid" onclick="openApplyModal()">Apply Now ↗</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-logo">Singapore Immersion</div>
+      <div class="foot-links">
+        <a href="#why">Why This Immersion</a>
+        <a href="#mentors">Mentors</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Singapore Fundraising Immersion, A LaunchPilot Program. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- APPLY MODAL -->
+<div class="am-overlay" id="am-overlay">
+  <div class="am-modal">
+    <button class="am-close" onclick="closeApplyModal()" aria-label="Close">✕</button>
+    <h3>Apply For Singapore</h3>
+    <p class="am-sub">Tell us a bit about you and your startup. We'll follow up within 48 hours with next steps.</p>
+    <form id="apply-form">
+      <div class="am-row2">
+        <div class="am-field"><label for="am-name">Full Name *</label><input type="text" id="am-name" required></div>
+        <div class="am-field"><label for="am-email">Email *</label><input type="email" id="am-email" required></div>
+      </div>
+      <div class="am-row2">
+        <div class="am-field"><label for="am-whatsapp">Phone / WhatsApp *</label><input type="tel" id="am-whatsapp" placeholder="+1 XXX XXX XXXX" required></div>
+        <div class="am-field"><label for="am-linkedin">LinkedIn</label><input type="text" id="am-linkedin" placeholder="linkedin.com/in/..."></div>
+      </div>
+      <div class="am-field"><label for="am-what">What Are You Building?</label><input type="text" id="am-what" placeholder="e.g. B2B SaaS, pre-seed, ~$5K MRR"></div>
+      <div class="am-field"><label for="am-why">Why Singapore, Why Now?</label><textarea id="am-why" placeholder="What are you hoping to walk away with from this pitch?"></textarea></div>
+      <button type="submit" class="am-submit" id="am-submit-btn">Submit Application →</button>
+      <div class="am-status" id="am-status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwUisrzmLWEt-RA5nLOwrn55IbQZiMQcZ5JJVe4K4qOGiztyvQ5IJCMr0TC0dxsV9U1/exec";
+  var overlay = document.getElementById('am-overlay');
+  var form = document.getElementById('apply-form');
+  var statusEl = document.getElementById('am-status');
+  var submitBtn = document.getElementById('am-submit-btn');
+
+  window.openApplyModal = function(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeApplyModal = function(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeApplyModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) closeApplyModal(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var payload = {
+      name: document.getElementById('am-name').value,
+      email: document.getElementById('am-email').value,
+      whatsapp: document.getElementById('am-whatsapp').value,
+      linkedin: document.getElementById('am-linkedin').value,
+      track: "Singapore Fundraising Immersion 2026",
+      whatToBuild: document.getElementById('am-what').value,
+      whyBuild: document.getElementById('am-why').value
+    };
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    statusEl.className = 'am-status';
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    }).then(function(){
+      statusEl.textContent = "Application received. We'll be in touch within 48 hours.";
+      statusEl.className = 'am-status show success';
+      submitBtn.textContent = "Submitted ✓";
+      form.reset();
+      setTimeout(function(){
+        closeApplyModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Application →";
+        statusEl.className = 'am-status';
+      }, 2200);
+    }).catch(function(){
+      statusEl.textContent = "Something went wrong. Please try again or email hello@launchpilotschool.com.";
+      statusEl.className = 'am-status show error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Application →";
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
